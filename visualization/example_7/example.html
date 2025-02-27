@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>OctoTools Example Visualization</title>
+    
+    <!-- Reuse styles from index.html -->
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/css/bulma.min.css">
+    <link rel="stylesheet" href="../../static/css/fontawesome.all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../static/css/visualization.css">
+
+    <!-- Custom JS -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="../../static/js/example.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Wrap sections in new container -->
+        <div class="top-sections-wrapper">
+            <!-- Query Section -->
+            <div class="query-section">
+                <h3 class="query-badge">The Query</h3>
+                <div class="query-content">
+                    <div class="image-container">
+                        <img src="example_pathcls_286.jpg" alt="image" style="width: 100%;">
+                    </div>
+                    <div class="query-details">
+                        <p><strong>Image path:</strong> tissue.jpg</p>
+                        <p><strong>Question:</strong> 
+                            This is a hematoxylin and eosin (H&E) stained osteosarcoma histology image of:
+                            <ul>
+                                <li>A) Non-tumor</li>
+                                <li>B) Necrotic tumor</li>
+                                <li>C) Viable tumor</li>
+                            </ul>
+                            Choose the correct option.
+                        </p>
+                        <p><strong>Ground truth:</strong> B) Necrotic tumor</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Wrong Prediction -->
+            <div class="wrong-prediction">
+                <h3 class="wrong-prediction-badge">Wrong Prediction from GPT-4o</h3>
+                <div id="wrong-prediction-content"></div>
+            </div>
+                        
+        </div>
+
+        <!-- Steps Section -->
+        <h3 class="steps-badge">Prediction from the OctoTool Framework</h3>
+
+        <div class="button-legend">
+            <div class="legend-item">
+                <span class="legend-dot planner"></span>
+                <span class="legend-text">Planner Components</span>
+                <span class="legend-dot executor"></span>
+                <span class="legend-text">Executor Components</span>
+                <span class="legend-dot answer"></span>
+                <span class="legend-text">Final Answer</span>
+            </div>
+        </div>
+
+        <div class="steps-container">
+            <div class="steps-buttons">
+                <button class="step-button planner" data-step="step0">Step 0: Initial Plan from Query Analyzer</button>
+                <br>
+                <button class="step-button planner" data-step="step1-action">Step 1: Action from Action Predictor</button>
+                <button class="step-button executor" data-step="step1-command">Step 1: Command from Command Generator</button>
+                <button class="step-button executor" data-step="step1-result">Step 1: Result from Command Executor</button>
+                <button class="step-button planner" data-step="step1-verify">Step 1: Verification from Context Verifier</button>
+                <br>
+                <!-- <button class="step-button planner" data-step="step2-action">Step 2: Action from Action Predictor</button>
+                <button class="step-button executor" data-step="step2-command">Step 2: Command from Command Generator</button>
+                <button class="step-button executor" data-step="step2-result">Step 2: Result from Command Executor</button>
+                <button class="step-button planner" data-step="step2-verify">Step 2: Verification from Context Verifier</button>
+                <br> -->
+                <!-- <button class="step-button answer" data-step="final-context">Full Trajectory in the Context</button>
+                <button class="step-button answer" data-step="final-summary">Summary from Solution Summarizer</button> -->
+                <button class="step-button answer" data-step="final">Final Answer</button>
+            </div>
+            <div class="step-content"></div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+    "tool_name": "Pubmed_Search_Tool",
+    "tool_description": "A tool that searches PubMed Central to retrieve relevant article abstracts based on a given list of text queries. Use this ONLY if you cannot use the other more specific ontology tools.",
+    "input_types": {
+        "queries": "list[str] - list of queries terms for searching PubMed."
+    },
+    "output_type": "list - List of items matching the search query. Each item consists of the title, abstract, keywords, and URL of the article. If no results found, a string message is returned.",
+    "demo_commands": [
+        {
+            "command": "execution = tool.execute(queries=[\"scoliosis\", \"injury\"])",
+            "description": "Search for PubMed articles mentioning 'scoliosis' OR 'injury'."
+        },
+        {
+            "command": "execution = tool.execute(queries=[\"COVID\", \"vaccine\", \"occupational health\"])", 
+            "description": "Search for PubMed articles mentioning 'COVID' OR 'vaccine' OR 'occupational health'."
+        }
+    ],
+    "user_metadata": {
+        "limitations": "Try to use shorter and more general search queries."
+    }
+}

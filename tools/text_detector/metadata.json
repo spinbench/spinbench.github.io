@@ -1,0 +1,36 @@
+{
+    "tool_name": "Text_Detector_Tool",
+    "tool_description": "A tool that detects text in an image using EasyOCR.",
+    "input_types": {
+        "image": "str - The path to the image file.",
+        "languages": "list - A list of language codes for the OCR model.",
+        "detail": "int - The level of detail in the output. Set to 0 for simpler output, 1 for detailed output."
+    },
+    "output_type": "list - A list of detected text blocks.",
+    "demo_commands": [
+        {
+            "command": "execution = tool.execute(image=\"path/to/image.png\", languages=[\"en\"])",
+            "description": "Detect text in an image using the default language (English)."
+        },
+        {
+            "command": "execution = tool.execute(image=\"path/to/image.png\", languages=[\"en\", \"de\"])", 
+            "description": "Detect text in an image using multiple languages (English and German)."
+        },
+        {
+            "command": "execution = tool.execute(image=\"path/to/image.png\", languages=[\"en\"], detail=0)",
+            "description": "Detect text in an image with simpler output (text without coordinates and scores)."
+        }
+    ],
+    "user_metadata": {
+        "frequently_used_language": {
+            "ch_sim": "Simplified Chinese",
+            "ch_tra": "Traditional Chinese", 
+            "de": "German",
+            "en": "English",
+            "es": "Spanish",
+            "fr": "French",
+            "hi": "Hindi",
+            "ja": "Japanese"
+        }
+    }
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>OctoTools Example Visualization</title>
+    
+    <!-- Reuse styles from index.html -->
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/css/bulma.min.css">
+    <link rel="stylesheet" href="../../static/css/fontawesome.all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../static/css/visualization.css">
+
+    <!-- Custom JS -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="../../static/js/example.js"></script>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Wrap sections in new container -->
+        <div class="top-sections-wrapper">
+            <!-- Query Section -->
+            <div class="query-section">
+                <h3 class="query-badge">The Query</h3>
+                <div class="query-content">
+                    <div class="image-container">
+                        <img src="rotting_kiwi.jpg" alt="Baseball image">
+                    </div>
+                    <div class="query-details">
+                        <p><strong>Image path:</strong> rotting_kiwi.jpg</p>
+                        <p><strong>Question:</strong> You are given a 3 x 3 grid in which each cell can contain either no kiwi, one fresh kiwi, or one rotten kiwi. Every minute, any fresh kiwi that is 4-directionally adjacent to a rotten kiwi also becomes rotten. What is the minimum number of minutes that must elapse until no cell has a fresh kiwi?</p>
+                        <p><strong>Ground truth:</strong> 4 minutes</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Wrong Prediction -->
+            <div class="wrong-prediction">
+                <h3 class="wrong-prediction-badge">Wrong Prediction from GPT-4o</h3>
+                <div id="wrong-prediction-content"></div>
+            </div>
+   
+        </div>
+
+        <!-- Steps Section -->
+        <h3 class="steps-badge">Prediction from the OctoTool Framework</h3>
+
+        <div class="button-legend">
+            <div class="legend-item">
+                <span class="legend-dot planner"></span>
+                <span class="legend-text">Planner Components</span>
+                <span class="legend-dot executor"></span>
+                <span class="legend-text">Executor Components</span>
+                <span class="legend-dot answer"></span>
+                <span class="legend-text">Final Answer</span>
+            </div>
+        </div>
+
+        <div class="steps-container">
+            <div class="steps-buttons">
+                <button class="step-button planner" data-step="step0">Step 0: Initial Plan from Query Analyzer</button>
+                <br>
+                <button class="step-button planner" data-step="step1-action">Step 1: Action from Action Predictor</button>
+                <button class="step-button executor" data-step="step1-command">Step 1: Command from Command Generator</button>
+                <button class="step-button executor" data-step="step1-result">Step 1: Result from Command Executor</button>
+                <button class="step-button planner" data-step="step1-verify">Step 1: Verification from Context Verifier</button>
+                <br>
+                <button class="step-button answer" data-step="final">Final Answer</button>
+            </div>
+            <div class="step-content"></div>
+        </div>
+    </div>
+
+</body>
+</html>

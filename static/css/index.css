@@ -1,0 +1,114 @@
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+:root {
+  --color-octo-red: #da2851;
+  --color-tools-blue: #246cae;
+  --color-tool-cards-orange: #e89a1e;
+  --color-planner-red: #da2851;
+  --color-executor-blue: #246cae;
+}
+
+.footer .icon-link {
+    font-size: 25px;
+    color: #000;
+}
+
+.link-block a {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.teaser .hero-body {
+  padding-top: 0;
+  padding-bottom: 3rem;
+}
+
+.teaser {
+  font-family: 'Google Sans', sans-serif;
+}
+
+.publication-title {
+    font-family: 'Google Sans', sans-serif;
+}
+
+.publication-authors {
+    font-family: 'Google Sans', sans-serif;
+}
+
+.publication-venue {
+    color: #555;
+    width: fit-content;
+    font-weight: bold;
+}
+
+.publication-awards {
+    color: #ff3860;
+    width: fit-content;
+    font-weight: bolder;
+}
+
+.publication-authors a {
+   color: hsl(204, 86%, 53%) !important;
+}
+
+.publication-authors a:hover {
+    text-decoration: underline;
+}
+
+.author-block {
+  display: inline-block;
+}
+
+.results-carousel {
+  overflow: hidden;
+}
+
+.stats-image {
+  max-height: 250px;
+}
+
+#org-banners {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.org-banner {
+  /* margin: 5px; */
+  max-width: 100%;
+  height: 6em;
+  margin: 10px;
+  padding: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  #org-banners {
+    flex-direction: column;
+    justify-content: space-around;
+  }
+}
+
+.octotools::before {
+  content: "OctoTools";
+  font-weight: bold;
+}
+
+/* If you want the two-color version */
+.octotools-colored::before {
+  content: "Octo";
+  color: var(--color-octo-red);
+  font-weight: bold;
+}
+
+.octotools-colored::after {
+  content: "Tools";
+  color: var(--color-tools-blue);
+  font-weight: bold;
+}
+
+
+

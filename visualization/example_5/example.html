@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>OctoTools Example Visualization</title>
+    
+    <!-- Reuse styles from index.html -->
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/css/bulma.min.css">
+    <link rel="stylesheet" href="../../static/css/fontawesome.all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../static/css/visualization.css">
+
+    <!-- Custom JS -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="../../static/js/example.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Wrap sections in new container -->
+        <div class="top-sections-wrapper">
+            <!-- Query Section -->
+            <div class="query-section" style="flex: 0 0 68%;">
+                <h3 class="query-badge">The Query</h3>
+                <div class="query-content">
+                    <!-- <div class="image-container">
+                        <img src="baseball.png" alt="Baseball image" style="width: 100%;">
+                    </div> -->
+                    <div class="query-details" style="flex: 0 0 100%;">
+                        <p><strong>Question:</strong> 
+                            Which of the following describes the fallacy of appeal to indignation?
+                            <ul>
+                                <li>A) presenting two options as the only possible ones when more options exist</li>
+                                <li>B) attacking an argument by exaggerating, misrepresenting, or even completely fabricating parts of it</li>
+                                <li>C) arguing against a position only based on personal feelings toward the position</li>
+                                <li>D) responding to charges of wrongdoing by saying other people do the same thing</li>
+                                <li>E) arguing that a claim is true because it has not been proven false</li>
+                                <li>F) responding to an argument with an expression of derision instead of a counter argument</li>
+                                <li>G) making a claim based on popularity or majority opinion instead of evidence</li>
+                                <li>H) attacking the character or background of someone making an argument instead of his or her evidence and reasoning</li>
+                                <li>I) making a claim seem true or false based on irrelevant information or associations</li>
+                            </ul>
+                            Choose the correct option.
+                        </p>
+                        <p><strong>Ground truth:</strong> E</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Wrong Prediction -->
+            <div class="wrong-prediction" style="flex: 0 0 30%;">
+                <h3 class="wrong-prediction-badge">Wrong Prediction from GPT-4o</h3>
+                <div id="wrong-prediction-content"></div>
+            </div>
+                        
+        </div>
+
+        <!-- Steps Section -->
+        <h3 class="steps-badge">Prediction from the OctoTool Framework</h3>
+
+        <div class="button-legend">
+            <div class="legend-item">
+                <span class="legend-dot planner"></span>
+                <span class="legend-text">Planner Components</span>
+                <span class="legend-dot executor"></span>
+                <span class="legend-text">Executor Components</span>
+                <span class="legend-dot answer"></span>
+                <span class="legend-text">Final Answer</span>
+            </div>
+        </div>
+
+        <div class="steps-container">
+            <div class="steps-buttons">
+                <button class="step-button planner" data-step="step0">Step 0: Initial Plan from Query Analyzer</button>
+                <br>
+                <button class="step-button planner" data-step="step1-action">Step 1: Action from Action Predictor</button>
+                <button class="step-button executor" data-step="step1-command">Step 1: Command from Command Generator</button>
+                <button class="step-button executor" data-step="step1-result">Step 1: Result from Command Executor</button>
+                <button class="step-button planner" data-step="step1-verify">Step 1: Verification from Context Verifier</button>
+                <br>
+                <button class="step-button planner" data-step="step2-action">Step 2: Action from Action Predictor</button>
+                <button class="step-button executor" data-step="step2-command">Step 2: Command from Command Generator</button>
+                <button class="step-button executor" data-step="step2-result">Step 2: Result from Command Executor</button>
+                <button class="step-button planner" data-step="step2-verify">Step 2: Verification from Context Verifier</button>
+                <br>
+                <!-- <button class="step-button answer" data-step="final-context">Full Trajectory in the Context</button>
+                <button class="step-button answer" data-step="final-summary">Summary from Solution Summarizer</button> -->
+                <button class="step-button answer" data-step="final">Final Answer</button>
+            </div>
+            <div class="step-content"></div>
+        </div>
+    </div>
+
+</body>
+</html>

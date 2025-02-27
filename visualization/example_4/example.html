@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>OctoTools Example Visualization</title>
+    
+    <!-- Reuse styles from index.html -->
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/css/bulma.min.css">
+    <link rel="stylesheet" href="../../static/css/fontawesome.all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../static/css/visualization.css">
+
+    <!-- Custom JS -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="../../static/js/example.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Wrap sections in new container -->
+        <div class="top-sections-wrapper">
+            <!-- Query Section -->
+            <div class="query-section">
+                <h3 class="query-badge">The Query</h3>
+                <div class="query-content">
+                    <!-- <div class="image-container">
+                        <img src="baseball.png" alt="Baseball image" style="width: 100%;">
+                    </div> -->
+                    <div class="query-details" style="flex: 0 0 100%;">
+                        <p><strong>Question:</strong> 
+                            Consider the following symbols: 𒐜  𒐐𒐚
+                            <br>
+                            This is a number written using the Mesopotamian/Babylonian number system and represented with Sumerian cuneiform. Convert this number into Arabic numerals as a decimal number.
+                        </p>
+                        <p><strong>Ground truth:</strong> 536</p>
+                        <br>
+                        <p><strong>Annotated solution:</strong>
+                            <li>Look up Babylonian number system (base 60, using uniform hashmarks as counters)</li>
+                            <li>Converted the Cuniform to Arabic (𒐜: 8 𒐐𒐚: 56)</li>
+                            <li>Since Babylonian is a base 60 system, converted the 60's place to decimal (8*60=480)</li>
+                            <li>Added 56 to 480 (536)</li>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Wrong Prediction -->
+            <div class="wrong-prediction">
+                <h3 class="wrong-prediction-badge">Wrong Prediction from GPT-4o</h3>
+                <div id="wrong-prediction-content"></div>
+            </div>
+
+            <!-- Wrong Prediction -->
+            <!-- <div class="wrong-prediction">
+                <h3 class="wrong-prediction-badge">Wrong Prediction from GPT-4o</h3>
+                <div class="wrong-prediction-content">
+                    <p>The given symbols are written in Sumerian cuneiform and follow the Babylonian number system, which is a 𒐐𒐚.</p>
+                    
+                    <p>Let's analyze the symbols:</p>
+                    <ol>
+                        <li>𒐜 : This symbol represents 60 in the Babylonian numeral system.</li>
+                        <li>𒐐𒐚:
+                            <ul>
+                                <li>𒐐 represents 10</li>
+                                <li>𒐚 represents 2</li>
+                                <li>Together, 𒐐𒐚 represents 12</li>
+                            </ul>
+                        </li>
+                    </ol>
+
+                    <p>Now, interpreting the full number:</p>
+                    <ul>
+                        <li>In a positional system, the leftmost symbols represent higher powers of 60.</li>
+                        <li>𒐜 = 60 (this is in the 60¹ place)</li>
+                        <li>𒐐𒐚 = 12 (this is in the 60⁰ place)</li>
+                    </ul>
+
+                    <p>Compute the decimal equivalent:</p>
+                    <p>(60 × 1) + (12 × 1) = 60 + 12 = 72</p>
+
+                    <p><strong>Thus, the number written in Arabic numerals is 72.</strong></p>
+                </div>
+            </div> -->
+
+        </div>
+
+        <!-- Steps Section -->
+        <h3 class="steps-badge">Prediction from the OctoTool Framework</h3>
+
+        <div class="button-legend">
+            <div class="legend-item">
+                <span class="legend-dot planner"></span>
+                <span class="legend-text">Planner Components</span>
+                <span class="legend-dot executor"></span>
+                <span class="legend-text">Executor Components</span>
+                <span class="legend-dot answer"></span>
+                <span class="legend-text">Final Answer</span>
+            </div>
+        </div>
+
+        <div class="steps-container">
+            <div class="steps-buttons">
+                <button class="step-button planner" data-step="step0">Step 0: Initial Plan from Query Analyzer</button>
+                <br>
+                <button class="step-button planner" data-step="step1-action">Step 1: Action from Action Predictor</button>
+                <button class="step-button executor" data-step="step1-command">Step 1: Command from Command Generator</button>
+                <button class="step-button executor" data-step="step1-result">Step 1: Result from Command Executor</button>
+                <button class="step-button planner" data-step="step1-verify">Step 1: Verification from Context Verifier</button>
+                <br>
+                <button class="step-button planner" data-step="step2-action">Step 2: Action from Action Predictor</button>
+                <button class="step-button executor" data-step="step2-command">Step 2: Command from Command Generator</button>
+                <button class="step-button executor" data-step="step2-result">Step 2: Result from Command Executor</button>
+                <button class="step-button planner" data-step="step2-verify">Step 2: Verification from Context Verifier</button>
+                <br>
+                <button class="step-button planner" data-step="step3-action">Step 3: Action from Action Predictor</button>
+                <button class="step-button executor" data-step="step3-command">Step 3: Command from Command Generator</button>
+                <button class="step-button executor" data-step="step3-result">Step 3: Result from Command Executor</button>
+                <button class="step-button planner" data-step="step3-verify">Step 3: Verification from Context Verifier</button>
+                <br>
+                <button class="step-button planner" data-step="step4-action">Step 4: Action from Action Predictor</button>
+                <button class="step-button executor" data-step="step4-command">Step 4: Command from Command Generator</button>
+                <button class="step-button executor" data-step="step4-result">Step 4: Result from Command Executor</button>
+                <button class="step-button planner" data-step="step4-verify">Step 4: Verification from Context Verifier</button>
+                <br>
+                <button class="step-button planner" data-step="step5-action">Step 5: Action from Action Predictor</button>
+                <button class="step-button executor" data-step="step5-command">Step 5: Command from Command Generator</button>
+                <button class="step-button executor" data-step="step5-result">Step 5: Result from Command Executor</button>
+                <button class="step-button planner" data-step="step5-verify">Step 5: Verification from Context Verifier</button>
+                <br>            
+                <!-- <button class="step-button answer" data-step="final-context">Full Trajectory in the Context</button>
+                <button class="step-button answer" data-step="final-summary">Summary from Solution Summarizer</button> -->
+                <button class="step-button answer" data-step="final">Final Answer</button>
+            </div>
+            <div class="step-content"></div>
+        </div>
+    </div>
+
+</body>
+</html>

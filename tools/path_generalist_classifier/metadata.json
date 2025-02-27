@@ -1,0 +1,23 @@
+{
+    "tool_name": "Path_Generalist_Classifier_Tool",
+    "tool_description": "A tool for answering multiple choice questions about H&E microscopy images. Do NOT use for open-ended questions. Do NOT use for images that are not H&E-stained.",
+    "input_types": {
+        "image": "str - The path to the histopathology image.",
+        "options": "list[str] - A list of options to classify the image against."
+    },
+    "output_type": "str - The classification result.",
+    "demo_commands": [
+        {
+            "command": "execution = tool.execute(image=\"path/to/image.jpg\", options=[\"lung adenocarcinoma\", \"lung squamous cell carcinoma\"])",
+            "description": "Classify the image into one of the given options."
+        },
+        {
+            "command": "execution = tool.execute(image=\"path/to/image.png\", options=[\"debris\", \"cancer-associated stroma\", \"adipose\", \"normal colon mucosa\", \"colorectal adenocarcinoma epithelium\", \"none of the above\"])",
+            "description": "Classify the image into one of the given options."
+        }
+    ],
+    "user_metadata": {
+        "limitations": "This tool is designed ONLY for answering multiple choice questions about H&E-stained microscopy images. Do NOT use this tool for open ended questions. Do NOT use this tool if the input is a natural image, a medical image of other domains (such as IHC, CT, MRI, or X-ray images), or a raw whole slide image (i.e., svs, ndpi, czi, etc). This tool is not always reliable and the result should be cross-referenced by other tools or your own knowledge.",
+        "best_practice": "Provide clear and specific options for classification. This tool is ideal for classification tasks where the options are well-defined and specific to histopathology (H&E) images, such as multiple choice questions. For multiple choice questions, if needed, you can choose a subset of the provided choices (or remove obviously wrong choices) based on your own knowledge to be used by the tool. If you think the output of this tool is incorrect, you can remove that choice from the list of choices and run this tool again. Do not run this tool again with the same options as before."
+    }
+}

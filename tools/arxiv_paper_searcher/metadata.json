@@ -1,0 +1,28 @@
+{
+    "tool_name": "ArXiv_Paper_Searcher_Tool",
+    "tool_description": "A tool that searches arXiv for papers based on a given query.",
+    "input_types": {
+        "query": "str - The search query for arXiv papers.",
+        "size": "int - The number of results per page (25, 50, 100, or 200). If None, use 25.",
+        "max_results": "int - The maximum number of papers to return (default: 25). Should be less than or equal to 100."
+    },
+    "output_type": "list - A list of dictionaries containing paper information.",
+    "demo_commands": [
+        {
+            "command": "execution = tool.execute(query=\"tool agents with large language models\")",
+            "description": "Search for papers about tool agents with large language models."
+        },
+        {
+            "command": "execution = tool.execute(query=\"quantum computing\", size=100, max_results=50)",
+            "description": "Search for quantum computing papers, with 100 results per page, returning a maximum of 50 papers."
+        },
+        {
+            "command": "execution = tool.execute(query=\"machine learning\", max_results=75)",
+            "description": "Search for machine learning papers, returning a maximum of 75 papers."
+        }
+    ],
+    "user_metadata": {
+        "valid_sizes": [25, 50, 100, 200],
+        "base_url": "https://arxiv.org/search/"
+    }
+}

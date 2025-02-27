@@ -1,0 +1,22 @@
+{
+    "tool_name": "Wikipedia_Knowledge_Searcher_Tool",
+    "tool_description": "A tool that searches Wikipedia and returns web text based on a given query.",
+    "input_types": {
+        "query": "str - The search query for Wikipedia."
+    },
+    "output_type": "dict - A dictionary containing the search results, extracted text, and any error messages.",
+    "demo_commands": [
+        {
+            "command": "execution = tool.execute(query=\"Python programming language\")",
+            "description": "Search Wikipedia for information about Python programming language."
+        },
+        {
+            "command": "execution = tool.execute(query=\"Artificial Intelligence\")", 
+            "description": "Search Wikipedia for information about Artificial Intelligence"
+        },
+        {
+            "command": "execution = tool.execute(query=\"Theory of Relativity\")",
+            "description": "Search Wikipedia for the full article about the Theory of Relativity."
+        }
+    ]
+}

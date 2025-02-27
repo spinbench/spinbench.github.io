@@ -1,0 +1,47 @@
+html {
+    scroll-behavior: smooth;
+  }
+
+  /* Add new styles for the navigation */
+  .toc-wrapper {
+    position: fixed;
+    right: 20px;
+    top: 100px;
+    width: 250px;
+    background: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+
+  .toc-list {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  .toc-list li {
+    margin: 8px 0;
+  }
+
+  .toc-list a {
+    color: #4a4a4a;
+    text-decoration: none;
+    font-size: 0.9em;
+  }
+
+  .toc-list a:hover {
+    color: #3273dc;
+  }
+
+  .toc-list .toc-subitem {
+    padding-left: 15px;
+    font-size: 0.85em;
+  }
+
+  @media screen and (max-width: 1200px) {
+    .toc-wrapper {
+      display: none;
+    }
+  }

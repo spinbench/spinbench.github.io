@@ -1,0 +1,19 @@
+{
+    "tool_name": "Nature_News_Fetcher_Tool",
+    "tool_description": "A tool that fetches the latest news articles from Nature.",
+    "input_types": {
+        "num_articles": "int - The number of articles to fetch (default: 100).",
+        "max_pages": "int - The maximum number of pages to fetch (default: 5)."
+    },
+    "output_type": "list - A list of dictionaries containing information about the latest Nature news articles.",
+    "demo_commands": [
+        {
+            "command": "execution = tool.execute()",
+            "description": "Fetch the latest 100 news articles from Nature."
+        },
+        {
+            "command": "execution = tool.execute(num_articles=50, max_pages=3)", 
+            "description": "Fetch the latest 50 news articles from Nature, searching up to 3 pages."
+        }
+    ]
+}
