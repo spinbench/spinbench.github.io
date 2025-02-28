@@ -46,7 +46,7 @@
 
 <body>
 
-  <nav class="navbar" role="navigation" aria-label="main navigation">
+  <!-- <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
         <span aria-hidden="true"></span>
@@ -102,7 +102,7 @@
             </a>
           </div>
         </div>
-      </div>
+      </div> -->
 
     </div>
   </nav>
@@ -140,16 +140,16 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <h1 class="title is-1 publication-title is-bold">
-              <img src="assets/logos/octotools.svg" style="width:1em;vertical-align: middle" alt="Logo">
-              <span style="vertical-align: middle">
+              <!-- <img src="assets/logos/octotools.svg" style="width:1em;vertical-align: middle" alt="Logo"> -->
+              <!-- <span style="vertical-align: middle">
                 <span style="color: var(--color-octo-red);">Octo</span><span
                   style="color: var(--color-tools-blue);">Tools</span>
-              </span>
+              </span> -->
             </h1>
             <h2 class="subtitle is-3 publication-subtitle">
-              An Agentic Framework with Extensible Tools for <br>Complex Reasoning
+              SPIN-Bench: How Well Do LLMs Plan Strategically and Reason Socially?
             </h2>
-            <div class="is-size-5 publication-authors">
+            <!-- <div class="is-size-5 publication-authors">
               <span class="author-block">
                 <a href="https://lupantech.github.io/" target="_blank">Pan Lu</a>*
                 <a href="mailto:lupantech@gmail.com"><i class="fas fa-envelope"></i></a>,</span>
@@ -164,12 +164,12 @@
               <span class="author-block">
                 <a href="https://www.james-zou.com/" target="_blank">James Zou</a>
                 <a href="mailto:jamesz@stanford.edu"><i class="fas fa-envelope"></i></a></span>
-            </div>
+            </div> -->
 
-            <div class="is-size-5 publication-authors">
+            <!-- <div class="is-size-5 publication-authors">
               <span class="author-block">Stanford University</span><br>
               <span class="paper-block"><b>* Equal Contribution</b></span>
-            </div>
+            </div> -->
 
             <div class="column has-text-centered">
               <div class="publication-links">
@@ -255,30 +255,21 @@
   <section class="hero teaser">
     <div class="container is-max-desktop">
       <div class="content has-text-centered">
-        <img src="assets/models/framework_overall.png" width="100%">
+        <img src="assets/models/main_table.png" width="100%">
         <p style="text-align: left;">
-          The overall framework of <span style="color: var(--color-octo-red);"><b>Octo</b></span><span
-            style="color: var(--color-tools-blue);"><b>Tools</b></span>.
-          (1) <b style="color: var(--color-tool-cards-orange)">Tool cards</b> define tool-usage metadata and encapsulate
-          heterogeneous tools, enabling training-free integration of new tools without additional training or framework
-          refinement.
-          (2) The <b style="color: var(--color-planner-red)">planner</b> governs both high-level and low-level planning
-          to address the global objective and refine actions step by step.
-          (3) The <b style="color: var(--color-executor-blue)">executor</b> instantiates tool calls by generating
-          executable commands and save structured results in the context. The final answer is summarized from the full
-          trajectory in the context.
-          Furthermore, the <b style="color: var(--color-tool-cards-orange)">task-specific toolset optimization</b>
-          algorithm learns a beneficial subset of tools for downstream tasks.
+          Overview of the Strategic Planning, Interaction, and Negotiation (SPIN-Bench) framework, highlighting its two core components: (1) the Game Agent, which
+          encompasses the LLMs and their adaptive prompting, and (2) the Environment and Evaluation subsystem,
+          which manage game logic, track interactions, and quantify performance
         </p>
       </div>
-      <div class="content has-text-centered">
+      <!-- <div class="content has-text-centered">
         <img src="assets/models/framework_example.png" width="100%">
         <p style="text-align: left;">
           The demonstration of the self-contained example.
           We visualize the <b>tool cards</b> for selected tools, the initial plan, and two steps in which the
           <b>planner</b> and the <b>executor</b> orchestrate low-level planing and tool usage.
         </p>
-      </div>
+      </div> -->
     </div>
   </section>
 
@@ -291,36 +282,42 @@
           <h2 class="title is-3">Introduction</h2>
           <div class="content has-text-justified">
             <p>
-              Solving complex reasoning tasks may involve visual understanding, domain knowledge retrieval, numerical
-              calculation, and multi-step reasoning. Existing methods augment <b>large language models (LLMs)</b> with
-              external
-              tools but are restricted to specialized domains, limited tool types, or require additional training data.
+              We introduce <strong>Strategic Planning, Interaction, and Negotiation (SPIN-Bench)</strong>, a comprehensive framework
+              for evaluating
+              <em>long-horizon strategic planning</em> and <em>social intelligence</em> in Large Language Models (LLMs).
+              Unlike prior work that confines itself to narrow planning or isolated single-agent tasks,
+              <strong>SPIN-Bench</strong> combines formal PDDL challenges, competitive board games, cooperative card games,
+              and multi-agent negotiation scenarios within a single evaluation.
             </p>
+            
             <p>
-              We introduce
-              <span style="color: var(--color-octo-red);"><b>Octo</b></span><span
-                style="color: var(--color-tools-blue);"><b>Tools</b></span>, a training-free, user-friendly, and easily
-              extensible open-source agentic framework designed to tackle complex reasoning across diverse domains.
-              <span style="color: var(--color-octo-red);"><b>Octo</b></span><span
-                style="color: var(--color-tools-blue);"><b>Tools</b></span>
-              introduces standardized tool cards to encapsulate tool functionality, a planner for both high-level and
-              low-level planning, and an
-              executor to carry out tool usage. We validate <span
-                style="color: var(--color-octo-red);"><b>Octo</b></span><span
-                style="color: var(--color-tools-blue);"><b>Tools</b></span>’ generality across <b>16 diverse tasks</b>
-              (including MathVista, MMLU-Pro, MedQA, and GAIA-Text), achieving substantial average accuracy gains of
-              <b>9.3%</b> over
-              <b>GPT-4o</b>. Furthermore, <span style="color: var(--color-octo-red);"><b>Octo</b></span><span
-                style="color: var(--color-tools-blue);"><b>Tools</b></span> also outperforms <b>AutoGen</b>,
-              <b>GPT-Functions</b> and <b>LangChain</b> by up to <b>10.6%</b> when given the same set of tools. Through
-              comprehensive analysis and ablations,
-              <span style="color: var(--color-octo-red);"><b>Octo</b></span><span
-                style="color: var(--color-tools-blue);"><b>Tools</b></span>
-              demonstrates advantages in task planning, effective tool usage, and multi-step problem solving.
+              By systematically varying action spaces, state complexity, and the number of interacting agents,
+              <strong>SPIN-Bench</strong> tests not only <em>methodical, step-wise</em> decision-making but also
+              <em>conceptual inference</em> about hidden information and adversarial or cooperative strategies.
+              Our experiments reveal that while contemporary LLMs handle <em>basic fact retrieval</em> and
+              <em>short-range planning</em> reasonably well, they encounter significant performance bottlenecks
+              in tasks requiring <em>deep multi-hop reasoning</em> over large state spaces and <em>socially adept</em>
+              coordination under uncertainty.
+            </p>
+            
+            <p>
+              In particular, we find that strong models (e.g., <code>O1</code>) can still struggle with
+              <em>extended-horizon planning</em> when multiple agents and hidden intentions are introduced,
+              and that extensive social interaction can sometimes degrade chain-of-thought coherence.
+              These insights highlight persistent gaps in <em>multi-agent negotiation</em>,
+              <em>alliance formation</em>, and <em>perspective-taking</em>, underscoring where further
+              advances in LLM architectures and training might be needed.
+            </p>
+            
+            <p>
+              By drawing on both human baselines and domain-specific solvers, our results shed light on the
+              real-world potential and current shortcomings of LLMs for strategic, multi-agent settings.
+              We envision <strong>SPIN-Bench</strong> as a catalyst for future research on robust multi-agent planning,
+              social reasoning, and human–AI teaming.
             </p>
           </div>
           <div class="container is-max-desktop">
-            <div class="content has-text-centered">
+            <!-- <div class="content has-text-centered">
               <img src="assets/results/main_scores_bar_chart.png" width="40%">
               <p style="text-align: left;">
                 Performance comparison across 16 diverse tasks. <span
@@ -329,7 +326,7 @@
                 GPT-4o and other frameworks including AutoGen, GPT-Functions, and LangChain when given access to the
                 same set of tools.
               </p>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -345,8 +342,7 @@
     <div class="container">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h2 class="title is-3">Tool Cards in <span style="color: var(--color-octo-red);"><b>Octo</b></span><span
-              style="color: var(--color-tools-blue);"><b>Tools</b></span></h2>
+          <h2 class="title is-3">Dataset Visualization Demo</h2>
           <div class="content has-text-justified">
             <p>
               Our framework provides a diverse set of tools to handle different types of tasks. Here are some key tools in our toolbox:
