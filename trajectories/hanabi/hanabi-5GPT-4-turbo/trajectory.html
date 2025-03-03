@@ -1,0 +1,3368 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>Hanabi Game Trajectories</title>
+<style>
+
+				.state {
+						display: none;
+						border: 1px solid #ccc;
+						padding: 10px;
+						margin-bottom: 10px;
+						white-space: pre-wrap;
+						font-family: monospace;
+				}
+				.navigation {
+						margin-top: 20px;
+				}
+				button {
+						margin-right: 10px;
+				}
+		
+</style>
+</head>
+<body>
+<h1>Hanabi Game Trajectories</h1>
+<div class='state' id='state0'>
+<h2>State 21</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 8</p>
+<p><strong>Fireworks:</strong> R0 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: Unknown</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = Y5 | Hint = None</li>
+<li>Card 2: Visible = G5 | Hint = None</li>
+<li>Card 3: Visible = W2 | Hint = None</li>
+<li>Card 4: Visible = G4 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = Y2 | Hint = None</li>
+<li>Card 2: Visible = R2 | Hint = None</li>
+<li>Card 3: Visible = Y4 | Hint = None</li>
+<li>Card 4: Visible = W1 | Hint = None</li>
+</ul>
+<p><strong>Player +3:</strong></p>
+<ul>
+<li>Card 1: Visible = B3 | Hint = None</li>
+<li>Card 2: Visible = G4 | Hint = None</li>
+<li>Card 3: Visible = Y1 | Hint = None</li>
+<li>Card 4: Visible = Y2 | Hint = None</li>
+</ul>
+<p><strong>Player +4:</strong></p>
+<ul>
+<li>Card 1: Visible = R1 | Hint = None</li>
+<li>Card 2: Visible = B2 | Hint = None</li>
+<li>Card 3: Visible = Y1 | Hint = None</li>
+<li>Card 4: Visible = R1 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 4: Play card 1</li>
+<li>Action 5: Play card 2</li>
+<li>Action 6: Play card 3</li>
+<li>Action 7: Play card 4</li>
+<li>Action 9: Reveal player +1 color Y</li>
+<li>Action 10: Reveal player +1 color G</li>
+<li>Action 11: Reveal player +1 color W</li>
+<li>Action 13: Reveal player +2 color R</li>
+<li>Action 14: Reveal player +2 color Y</li>
+<li>Action 16: Reveal player +2 color W</li>
+<li>Action 19: Reveal player +3 color Y</li>
+<li>Action 20: Reveal player +3 color G</li>
+<li>Action 22: Reveal player +3 color B</li>
+<li>Action 23: Reveal player +4 color R</li>
+<li>Action 24: Reveal player +4 color Y</li>
+<li>Action 27: Reveal player +4 color B</li>
+<li>Action 29: Reveal player +1 rank 2</li>
+<li>Action 31: Reveal player +1 rank 4</li>
+<li>Action 32: Reveal player +1 rank 5</li>
+<li>Action 33: Reveal player +2 rank 1</li>
+<li>Action 34: Reveal player +2 rank 2</li>
+<li>Action 36: Reveal player +2 rank 4</li>
+<li>Action 38: Reveal player +3 rank 1</li>
+<li>Action 39: Reveal player +3 rank 2</li>
+<li>Action 40: Reveal player +3 rank 3</li>
+<li>Action 41: Reveal player +3 rank 4</li>
+<li>Action 43: Reveal player +4 rank 1</li>
+<li>Action 44: Reveal player +4 rank 2</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Reveal color to Player +4 to enable playing 'R1' safely, maximizing the use of hint by covering two cards.", 'action': 23}</p>
+</div>
+<div class='state' id='state1'>
+<h2>State 22</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 7</p>
+<p><strong>Fireworks:</strong> R0 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: Unknown</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = Y2 | Hint = None</li>
+<li>Card 2: Visible = R2 | Hint = None</li>
+<li>Card 3: Visible = Y4 | Hint = None</li>
+<li>Card 4: Visible = W1 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = B3 | Hint = None</li>
+<li>Card 2: Visible = G4 | Hint = None</li>
+<li>Card 3: Visible = Y1 | Hint = None</li>
+<li>Card 4: Visible = Y2 | Hint = None</li>
+</ul>
+<p><strong>Player +3:</strong></p>
+<ul>
+<li>Card 1: Visible = R1 | Hint = RX</li>
+<li>Card 2: Visible = B2 | Hint = None</li>
+<li>Card 3: Visible = Y1 | Hint = None</li>
+<li>Card 4: Visible = R1 | Hint = RX</li>
+</ul>
+<p><strong>Player +4:</strong></p>
+<ul>
+<li>Card 1: Visible = Y1 | Hint = None</li>
+<li>Card 2: Visible = W1 | Hint = None</li>
+<li>Card 3: Visible = R3 | Hint = None</li>
+<li>Card 4: Visible = G1 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Play card 1</li>
+<li>Action 5: Play card 2</li>
+<li>Action 6: Play card 3</li>
+<li>Action 7: Play card 4</li>
+<li>Action 8: Reveal player +1 color R</li>
+<li>Action 9: Reveal player +1 color Y</li>
+<li>Action 11: Reveal player +1 color W</li>
+<li>Action 14: Reveal player +2 color Y</li>
+<li>Action 15: Reveal player +2 color G</li>
+<li>Action 17: Reveal player +2 color B</li>
+<li>Action 18: Reveal player +3 color R</li>
+<li>Action 19: Reveal player +3 color Y</li>
+<li>Action 22: Reveal player +3 color B</li>
+<li>Action 23: Reveal player +4 color R</li>
+<li>Action 24: Reveal player +4 color Y</li>
+<li>Action 25: Reveal player +4 color G</li>
+<li>Action 26: Reveal player +4 color W</li>
+<li>Action 28: Reveal player +1 rank 1</li>
+<li>Action 29: Reveal player +1 rank 2</li>
+<li>Action 31: Reveal player +1 rank 4</li>
+<li>Action 33: Reveal player +2 rank 1</li>
+<li>Action 34: Reveal player +2 rank 2</li>
+<li>Action 35: Reveal player +2 rank 3</li>
+<li>Action 36: Reveal player +2 rank 4</li>
+<li>Action 38: Reveal player +3 rank 1</li>
+<li>Action 39: Reveal player +3 rank 2</li>
+<li>Action 43: Reveal player +4 rank 1</li>
+<li>Action 45: Reveal player +4 rank 3</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Revealing the color red to player +3 will confirm both 'R1' cards are red, enabling them to start the red firework stack without risking a mistake. This action uses an info token but strategically sets up key plays to boost our score early in the game.", 'action': 18}</p>
+</div>
+<div class='state' id='state2'>
+<h2>State 23</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 6</p>
+<p><strong>Fireworks:</strong> R0 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: Unknown</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = B3 | Hint = None</li>
+<li>Card 2: Visible = G4 | Hint = None</li>
+<li>Card 3: Visible = Y1 | Hint = None</li>
+<li>Card 4: Visible = Y2 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = R1 | Hint = RX</li>
+<li>Card 2: Visible = B2 | Hint = None</li>
+<li>Card 3: Visible = Y1 | Hint = None</li>
+<li>Card 4: Visible = R1 | Hint = RX</li>
+</ul>
+<p><strong>Player +3:</strong></p>
+<ul>
+<li>Card 1: Visible = Y1 | Hint = None</li>
+<li>Card 2: Visible = W1 | Hint = None</li>
+<li>Card 3: Visible = R3 | Hint = None</li>
+<li>Card 4: Visible = G1 | Hint = None</li>
+</ul>
+<p><strong>Player +4:</strong></p>
+<ul>
+<li>Card 1: Visible = Y5 | Hint = None</li>
+<li>Card 2: Visible = G5 | Hint = None</li>
+<li>Card 3: Visible = W2 | Hint = None</li>
+<li>Card 4: Visible = G4 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Play card 1</li>
+<li>Action 5: Play card 2</li>
+<li>Action 6: Play card 3</li>
+<li>Action 7: Play card 4</li>
+<li>Action 9: Reveal player +1 color Y</li>
+<li>Action 10: Reveal player +1 color G</li>
+<li>Action 12: Reveal player +1 color B</li>
+<li>Action 13: Reveal player +2 color R</li>
+<li>Action 14: Reveal player +2 color Y</li>
+<li>Action 17: Reveal player +2 color B</li>
+<li>Action 18: Reveal player +3 color R</li>
+<li>Action 19: Reveal player +3 color Y</li>
+<li>Action 20: Reveal player +3 color G</li>
+<li>Action 21: Reveal player +3 color W</li>
+<li>Action 24: Reveal player +4 color Y</li>
+<li>Action 25: Reveal player +4 color G</li>
+<li>Action 26: Reveal player +4 color W</li>
+<li>Action 28: Reveal player +1 rank 1</li>
+<li>Action 29: Reveal player +1 rank 2</li>
+<li>Action 30: Reveal player +1 rank 3</li>
+<li>Action 31: Reveal player +1 rank 4</li>
+<li>Action 33: Reveal player +2 rank 1</li>
+<li>Action 34: Reveal player +2 rank 2</li>
+<li>Action 38: Reveal player +3 rank 1</li>
+<li>Action 40: Reveal player +3 rank 3</li>
+<li>Action 44: Reveal player +4 rank 2</li>
+<li>Action 46: Reveal player +4 rank 4</li>
+<li>Action 47: Reveal player +4 rank 5</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Give a hint to Player +2 about the color Y to enable them to play the card 'Y1' which is immediately playable and crucial for building the base of the yellow fireworks stack.", 'action': 14}</p>
+</div>
+<div class='state' id='state3'>
+<h2>State 24</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 5</p>
+<p><strong>Fireworks:</strong> R0 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: Unknown</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = R1 | Hint = RX</li>
+<li>Card 2: Visible = B2 | Hint = None</li>
+<li>Card 3: Visible = Y1 | Hint = YX</li>
+<li>Card 4: Visible = R1 | Hint = RX</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = Y1 | Hint = None</li>
+<li>Card 2: Visible = W1 | Hint = None</li>
+<li>Card 3: Visible = R3 | Hint = None</li>
+<li>Card 4: Visible = G1 | Hint = None</li>
+</ul>
+<p><strong>Player +3:</strong></p>
+<ul>
+<li>Card 1: Visible = Y5 | Hint = None</li>
+<li>Card 2: Visible = G5 | Hint = None</li>
+<li>Card 3: Visible = W2 | Hint = None</li>
+<li>Card 4: Visible = G4 | Hint = None</li>
+</ul>
+<p><strong>Player +4:</strong></p>
+<ul>
+<li>Card 1: Visible = Y2 | Hint = None</li>
+<li>Card 2: Visible = R2 | Hint = None</li>
+<li>Card 3: Visible = Y4 | Hint = None</li>
+<li>Card 4: Visible = W1 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Play card 1</li>
+<li>Action 5: Play card 2</li>
+<li>Action 6: Play card 3</li>
+<li>Action 7: Play card 4</li>
+<li>Action 8: Reveal player +1 color R</li>
+<li>Action 9: Reveal player +1 color Y</li>
+<li>Action 12: Reveal player +1 color B</li>
+<li>Action 13: Reveal player +2 color R</li>
+<li>Action 14: Reveal player +2 color Y</li>
+<li>Action 15: Reveal player +2 color G</li>
+<li>Action 16: Reveal player +2 color W</li>
+<li>Action 19: Reveal player +3 color Y</li>
+<li>Action 20: Reveal player +3 color G</li>
+<li>Action 21: Reveal player +3 color W</li>
+<li>Action 23: Reveal player +4 color R</li>
+<li>Action 24: Reveal player +4 color Y</li>
+<li>Action 26: Reveal player +4 color W</li>
+<li>Action 28: Reveal player +1 rank 1</li>
+<li>Action 29: Reveal player +1 rank 2</li>
+<li>Action 33: Reveal player +2 rank 1</li>
+<li>Action 35: Reveal player +2 rank 3</li>
+<li>Action 39: Reveal player +3 rank 2</li>
+<li>Action 41: Reveal player +3 rank 4</li>
+<li>Action 42: Reveal player +3 rank 5</li>
+<li>Action 43: Reveal player +4 rank 1</li>
+<li>Action 44: Reveal player +4 rank 2</li>
+<li>Action 46: Reveal player +4 rank 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': 'Giving a hint to Player +1 about all rank 1 cards maximizes our chances for correct plays and immediate score boost, helping start three color stacks efficiently.', 'action': 28}</p>
+</div>
+<div class='state' id='state4'>
+<h2>State 25</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 4</p>
+<p><strong>Fireworks:</strong> R0 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: R1</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: Y1</li>
+<li>Card 4: R1</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = Y1 | Hint = None</li>
+<li>Card 2: Visible = W1 | Hint = None</li>
+<li>Card 3: Visible = R3 | Hint = None</li>
+<li>Card 4: Visible = G1 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = Y5 | Hint = None</li>
+<li>Card 2: Visible = G5 | Hint = None</li>
+<li>Card 3: Visible = W2 | Hint = None</li>
+<li>Card 4: Visible = G4 | Hint = None</li>
+</ul>
+<p><strong>Player +3:</strong></p>
+<ul>
+<li>Card 1: Visible = Y2 | Hint = None</li>
+<li>Card 2: Visible = R2 | Hint = None</li>
+<li>Card 3: Visible = Y4 | Hint = None</li>
+<li>Card 4: Visible = W1 | Hint = None</li>
+</ul>
+<p><strong>Player +4:</strong></p>
+<ul>
+<li>Card 1: Visible = B3 | Hint = None</li>
+<li>Card 2: Visible = G4 | Hint = None</li>
+<li>Card 3: Visible = Y1 | Hint = None</li>
+<li>Card 4: Visible = Y2 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Play card 1</li>
+<li>Action 5: Play card 2</li>
+<li>Action 6: Play card 3</li>
+<li>Action 7: Play card 4</li>
+<li>Action 8: Reveal player +1 color R</li>
+<li>Action 9: Reveal player +1 color Y</li>
+<li>Action 10: Reveal player +1 color G</li>
+<li>Action 11: Reveal player +1 color W</li>
+<li>Action 14: Reveal player +2 color Y</li>
+<li>Action 15: Reveal player +2 color G</li>
+<li>Action 16: Reveal player +2 color W</li>
+<li>Action 18: Reveal player +3 color R</li>
+<li>Action 19: Reveal player +3 color Y</li>
+<li>Action 21: Reveal player +3 color W</li>
+<li>Action 24: Reveal player +4 color Y</li>
+<li>Action 25: Reveal player +4 color G</li>
+<li>Action 27: Reveal player +4 color B</li>
+<li>Action 28: Reveal player +1 rank 1</li>
+<li>Action 30: Reveal player +1 rank 3</li>
+<li>Action 34: Reveal player +2 rank 2</li>
+<li>Action 36: Reveal player +2 rank 4</li>
+<li>Action 37: Reveal player +2 rank 5</li>
+<li>Action 38: Reveal player +3 rank 1</li>
+<li>Action 39: Reveal player +3 rank 2</li>
+<li>Action 41: Reveal player +3 rank 4</li>
+<li>Action 43: Reveal player +4 rank 1</li>
+<li>Action 44: Reveal player +4 rank 2</li>
+<li>Action 45: Reveal player +4 rank 3</li>
+<li>Action 46: Reveal player +4 rank 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Playing 'R1' from my hand because it matches the required next card in the red fireworks stack and is a confirmed safe play based on the hints given. This action advances the game state positively without risking a life token.", 'action': 4}</p>
+</div>
+<div class='state' id='state5'>
+<h2>State 27</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 4</p>
+<p><strong>Fireworks:</strong> R1 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: Unknown</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = Y5 | Hint = None</li>
+<li>Card 2: Visible = G5 | Hint = None</li>
+<li>Card 3: Visible = W2 | Hint = None</li>
+<li>Card 4: Visible = G4 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = Y2 | Hint = None</li>
+<li>Card 2: Visible = R2 | Hint = None</li>
+<li>Card 3: Visible = Y4 | Hint = None</li>
+<li>Card 4: Visible = W1 | Hint = None</li>
+</ul>
+<p><strong>Player +3:</strong></p>
+<ul>
+<li>Card 1: Visible = B3 | Hint = None</li>
+<li>Card 2: Visible = G4 | Hint = None</li>
+<li>Card 3: Visible = Y1 | Hint = None</li>
+<li>Card 4: Visible = Y2 | Hint = None</li>
+</ul>
+<p><strong>Player +4:</strong></p>
+<ul>
+<li>Card 1: Visible = B2 | Hint = None</li>
+<li>Card 2: Visible = Y1 | Hint = Y1</li>
+<li>Card 3: Visible = R1 | Hint = R1</li>
+<li>Card 4: Visible = G2 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Play card 1</li>
+<li>Action 5: Play card 2</li>
+<li>Action 6: Play card 3</li>
+<li>Action 7: Play card 4</li>
+<li>Action 9: Reveal player +1 color Y</li>
+<li>Action 10: Reveal player +1 color G</li>
+<li>Action 11: Reveal player +1 color W</li>
+<li>Action 13: Reveal player +2 color R</li>
+<li>Action 14: Reveal player +2 color Y</li>
+<li>Action 16: Reveal player +2 color W</li>
+<li>Action 19: Reveal player +3 color Y</li>
+<li>Action 20: Reveal player +3 color G</li>
+<li>Action 22: Reveal player +3 color B</li>
+<li>Action 23: Reveal player +4 color R</li>
+<li>Action 24: Reveal player +4 color Y</li>
+<li>Action 25: Reveal player +4 color G</li>
+<li>Action 27: Reveal player +4 color B</li>
+<li>Action 29: Reveal player +1 rank 2</li>
+<li>Action 31: Reveal player +1 rank 4</li>
+<li>Action 32: Reveal player +1 rank 5</li>
+<li>Action 33: Reveal player +2 rank 1</li>
+<li>Action 34: Reveal player +2 rank 2</li>
+<li>Action 36: Reveal player +2 rank 4</li>
+<li>Action 38: Reveal player +3 rank 1</li>
+<li>Action 39: Reveal player +3 rank 2</li>
+<li>Action 40: Reveal player +3 rank 3</li>
+<li>Action 41: Reveal player +3 rank 4</li>
+<li>Action 43: Reveal player +4 rank 1</li>
+<li>Action 44: Reveal player +4 rank 2</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Revealing color 'Y' to Player +2 allows them to play 'Y2' immediately, advancing our score and utilizing our hints efficiently.", 'action': 14}</p>
+</div>
+<div class='state' id='state6'>
+<h2>State 28</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 3</p>
+<p><strong>Fireworks:</strong> R1 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: Unknown</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = Y2 | Hint = YX</li>
+<li>Card 2: Visible = R2 | Hint = None</li>
+<li>Card 3: Visible = Y4 | Hint = YX</li>
+<li>Card 4: Visible = W1 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = B3 | Hint = None</li>
+<li>Card 2: Visible = G4 | Hint = None</li>
+<li>Card 3: Visible = Y1 | Hint = None</li>
+<li>Card 4: Visible = Y2 | Hint = None</li>
+</ul>
+<p><strong>Player +3:</strong></p>
+<ul>
+<li>Card 1: Visible = B2 | Hint = None</li>
+<li>Card 2: Visible = Y1 | Hint = Y1</li>
+<li>Card 3: Visible = R1 | Hint = R1</li>
+<li>Card 4: Visible = G2 | Hint = None</li>
+</ul>
+<p><strong>Player +4:</strong></p>
+<ul>
+<li>Card 1: Visible = Y1 | Hint = None</li>
+<li>Card 2: Visible = W1 | Hint = None</li>
+<li>Card 3: Visible = R3 | Hint = None</li>
+<li>Card 4: Visible = G1 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Play card 1</li>
+<li>Action 5: Play card 2</li>
+<li>Action 6: Play card 3</li>
+<li>Action 7: Play card 4</li>
+<li>Action 8: Reveal player +1 color R</li>
+<li>Action 9: Reveal player +1 color Y</li>
+<li>Action 11: Reveal player +1 color W</li>
+<li>Action 14: Reveal player +2 color Y</li>
+<li>Action 15: Reveal player +2 color G</li>
+<li>Action 17: Reveal player +2 color B</li>
+<li>Action 18: Reveal player +3 color R</li>
+<li>Action 19: Reveal player +3 color Y</li>
+<li>Action 20: Reveal player +3 color G</li>
+<li>Action 22: Reveal player +3 color B</li>
+<li>Action 23: Reveal player +4 color R</li>
+<li>Action 24: Reveal player +4 color Y</li>
+<li>Action 25: Reveal player +4 color G</li>
+<li>Action 26: Reveal player +4 color W</li>
+<li>Action 28: Reveal player +1 rank 1</li>
+<li>Action 29: Reveal player +1 rank 2</li>
+<li>Action 31: Reveal player +1 rank 4</li>
+<li>Action 33: Reveal player +2 rank 1</li>
+<li>Action 34: Reveal player +2 rank 2</li>
+<li>Action 35: Reveal player +2 rank 3</li>
+<li>Action 36: Reveal player +2 rank 4</li>
+<li>Action 38: Reveal player +3 rank 1</li>
+<li>Action 39: Reveal player +3 rank 2</li>
+<li>Action 43: Reveal player +4 rank 1</li>
+<li>Action 45: Reveal player +4 rank 3</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Revealing color yellow to Player +2 to identify their 'Y1' for immediate play and preparing the setup for 'Y2', efficiently progressing the yellow firework.", 'action': 14}</p>
+</div>
+<div class='state' id='state7'>
+<h2>State 29</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 2</p>
+<p><strong>Fireworks:</strong> R1 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: YX</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: YX</li>
+<li>Card 4: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = B3 | Hint = None</li>
+<li>Card 2: Visible = G4 | Hint = None</li>
+<li>Card 3: Visible = Y1 | Hint = YX</li>
+<li>Card 4: Visible = Y2 | Hint = YX</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = B2 | Hint = None</li>
+<li>Card 2: Visible = Y1 | Hint = Y1</li>
+<li>Card 3: Visible = R1 | Hint = R1</li>
+<li>Card 4: Visible = G2 | Hint = None</li>
+</ul>
+<p><strong>Player +3:</strong></p>
+<ul>
+<li>Card 1: Visible = Y1 | Hint = None</li>
+<li>Card 2: Visible = W1 | Hint = None</li>
+<li>Card 3: Visible = R3 | Hint = None</li>
+<li>Card 4: Visible = G1 | Hint = None</li>
+</ul>
+<p><strong>Player +4:</strong></p>
+<ul>
+<li>Card 1: Visible = Y5 | Hint = None</li>
+<li>Card 2: Visible = G5 | Hint = None</li>
+<li>Card 3: Visible = W2 | Hint = None</li>
+<li>Card 4: Visible = G4 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Play card 1</li>
+<li>Action 5: Play card 2</li>
+<li>Action 6: Play card 3</li>
+<li>Action 7: Play card 4</li>
+<li>Action 9: Reveal player +1 color Y</li>
+<li>Action 10: Reveal player +1 color G</li>
+<li>Action 12: Reveal player +1 color B</li>
+<li>Action 13: Reveal player +2 color R</li>
+<li>Action 14: Reveal player +2 color Y</li>
+<li>Action 15: Reveal player +2 color G</li>
+<li>Action 17: Reveal player +2 color B</li>
+<li>Action 18: Reveal player +3 color R</li>
+<li>Action 19: Reveal player +3 color Y</li>
+<li>Action 20: Reveal player +3 color G</li>
+<li>Action 21: Reveal player +3 color W</li>
+<li>Action 24: Reveal player +4 color Y</li>
+<li>Action 25: Reveal player +4 color G</li>
+<li>Action 26: Reveal player +4 color W</li>
+<li>Action 28: Reveal player +1 rank 1</li>
+<li>Action 29: Reveal player +1 rank 2</li>
+<li>Action 30: Reveal player +1 rank 3</li>
+<li>Action 31: Reveal player +1 rank 4</li>
+<li>Action 33: Reveal player +2 rank 1</li>
+<li>Action 34: Reveal player +2 rank 2</li>
+<li>Action 38: Reveal player +3 rank 1</li>
+<li>Action 40: Reveal player +3 rank 3</li>
+<li>Action 44: Reveal player +4 rank 2</li>
+<li>Action 46: Reveal player +4 rank 4</li>
+<li>Action 47: Reveal player +4 rank 5</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Revealing rank 1 to Player +3 allows them to play 'Y1', progressing the yellow firework and effectively using the limited info tokens to set up immediate scoring opportunities.", 'action': 38}</p>
+</div>
+<div class='state' id='state8'>
+<h2>State 30</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 1</p>
+<p><strong>Fireworks:</strong> R1 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: Unknown</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: YX</li>
+<li>Card 4: YX</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = B2 | Hint = None</li>
+<li>Card 2: Visible = Y1 | Hint = Y1</li>
+<li>Card 3: Visible = R1 | Hint = R1</li>
+<li>Card 4: Visible = G2 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = Y1 | Hint = None</li>
+<li>Card 2: Visible = W1 | Hint = None</li>
+<li>Card 3: Visible = R3 | Hint = None</li>
+<li>Card 4: Visible = G1 | Hint = None</li>
+</ul>
+<p><strong>Player +3:</strong></p>
+<ul>
+<li>Card 1: Visible = Y5 | Hint = None</li>
+<li>Card 2: Visible = G5 | Hint = None</li>
+<li>Card 3: Visible = W2 | Hint = None</li>
+<li>Card 4: Visible = G4 | Hint = None</li>
+</ul>
+<p><strong>Player +4:</strong></p>
+<ul>
+<li>Card 1: Visible = Y2 | Hint = YX</li>
+<li>Card 2: Visible = R2 | Hint = None</li>
+<li>Card 3: Visible = Y4 | Hint = YX</li>
+<li>Card 4: Visible = W1 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Play card 1</li>
+<li>Action 5: Play card 2</li>
+<li>Action 6: Play card 3</li>
+<li>Action 7: Play card 4</li>
+<li>Action 8: Reveal player +1 color R</li>
+<li>Action 9: Reveal player +1 color Y</li>
+<li>Action 10: Reveal player +1 color G</li>
+<li>Action 12: Reveal player +1 color B</li>
+<li>Action 13: Reveal player +2 color R</li>
+<li>Action 14: Reveal player +2 color Y</li>
+<li>Action 15: Reveal player +2 color G</li>
+<li>Action 16: Reveal player +2 color W</li>
+<li>Action 19: Reveal player +3 color Y</li>
+<li>Action 20: Reveal player +3 color G</li>
+<li>Action 21: Reveal player +3 color W</li>
+<li>Action 23: Reveal player +4 color R</li>
+<li>Action 24: Reveal player +4 color Y</li>
+<li>Action 26: Reveal player +4 color W</li>
+<li>Action 28: Reveal player +1 rank 1</li>
+<li>Action 29: Reveal player +1 rank 2</li>
+<li>Action 33: Reveal player +2 rank 1</li>
+<li>Action 35: Reveal player +2 rank 3</li>
+<li>Action 39: Reveal player +3 rank 2</li>
+<li>Action 41: Reveal player +3 rank 4</li>
+<li>Action 42: Reveal player +3 rank 5</li>
+<li>Action 43: Reveal player +4 rank 1</li>
+<li>Action 44: Reveal player +4 rank 2</li>
+<li>Action 46: Reveal player +4 rank 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Confirming the identity of the playable Yellow 1 card in Player +1's hand to ensure it is played, maintaining firework progress and using the last info token effectively.", 'action': 9}</p>
+</div>
+<div class='state' id='state9'>
+<h2>State 31</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 0</p>
+<p><strong>Fireworks:</strong> R1 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: Unknown</li>
+<li>Card 2: Y1</li>
+<li>Card 3: R1</li>
+<li>Card 4: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = Y1 | Hint = None</li>
+<li>Card 2: Visible = W1 | Hint = None</li>
+<li>Card 3: Visible = R3 | Hint = None</li>
+<li>Card 4: Visible = G1 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = Y5 | Hint = None</li>
+<li>Card 2: Visible = G5 | Hint = None</li>
+<li>Card 3: Visible = W2 | Hint = None</li>
+<li>Card 4: Visible = G4 | Hint = None</li>
+</ul>
+<p><strong>Player +3:</strong></p>
+<ul>
+<li>Card 1: Visible = Y2 | Hint = YX</li>
+<li>Card 2: Visible = R2 | Hint = None</li>
+<li>Card 3: Visible = Y4 | Hint = YX</li>
+<li>Card 4: Visible = W1 | Hint = None</li>
+</ul>
+<p><strong>Player +4:</strong></p>
+<ul>
+<li>Card 1: Visible = B3 | Hint = None</li>
+<li>Card 2: Visible = G4 | Hint = None</li>
+<li>Card 3: Visible = Y1 | Hint = YX</li>
+<li>Card 4: Visible = Y2 | Hint = YX</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Play card 1</li>
+<li>Action 5: Play card 2</li>
+<li>Action 6: Play card 3</li>
+<li>Action 7: Play card 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': 'Playing Y1 from my hand as it correctly starts the yellow fireworks with no risk of error.', 'action': 5}</p>
+</div>
+<div class='state' id='state10'>
+<h2>State 33</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 0</p>
+<p><strong>Fireworks:</strong> R1 Y1 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: X1</li>
+<li>Card 2: X1</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: X1</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = Y5 | Hint = None</li>
+<li>Card 2: Visible = G5 | Hint = None</li>
+<li>Card 3: Visible = W2 | Hint = None</li>
+<li>Card 4: Visible = G4 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = Y2 | Hint = YX</li>
+<li>Card 2: Visible = R2 | Hint = None</li>
+<li>Card 3: Visible = Y4 | Hint = YX</li>
+<li>Card 4: Visible = W1 | Hint = None</li>
+</ul>
+<p><strong>Player +3:</strong></p>
+<ul>
+<li>Card 1: Visible = B3 | Hint = None</li>
+<li>Card 2: Visible = G4 | Hint = None</li>
+<li>Card 3: Visible = Y1 | Hint = YX</li>
+<li>Card 4: Visible = Y2 | Hint = YX</li>
+</ul>
+<p><strong>Player +4:</strong></p>
+<ul>
+<li>Card 1: Visible = B2 | Hint = None</li>
+<li>Card 2: Visible = R1 | Hint = R1</li>
+<li>Card 3: Visible = G2 | Hint = None</li>
+<li>Card 4: Visible = W3 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Play card 1</li>
+<li>Action 5: Play card 2</li>
+<li>Action 6: Play card 3</li>
+<li>Action 7: Play card 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': 'Attempting to play one of the rank 1 cards in hopes it is either G1, W1, or B1 to start a new firework stack.', 'action': 4}</p>
+</div>
+<div class='state' id='state11'>
+<h2>State 35</h2>
+<p><strong>Tokens:</strong> Life tokens = 2, Info tokens = 0</p>
+<p><strong>Fireworks:</strong> R1 Y1 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: Unknown</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = Y2 | Hint = YX</li>
+<li>Card 2: Visible = R2 | Hint = None</li>
+<li>Card 3: Visible = Y4 | Hint = YX</li>
+<li>Card 4: Visible = W1 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = B3 | Hint = None</li>
+<li>Card 2: Visible = G4 | Hint = None</li>
+<li>Card 3: Visible = Y1 | Hint = YX</li>
+<li>Card 4: Visible = Y2 | Hint = YX</li>
+</ul>
+<p><strong>Player +3:</strong></p>
+<ul>
+<li>Card 1: Visible = B2 | Hint = None</li>
+<li>Card 2: Visible = R1 | Hint = R1</li>
+<li>Card 3: Visible = G2 | Hint = None</li>
+<li>Card 4: Visible = W3 | Hint = None</li>
+</ul>
+<p><strong>Player +4:</strong></p>
+<ul>
+<li>Card 1: Visible = W1 | Hint = None</li>
+<li>Card 2: Visible = R3 | Hint = None</li>
+<li>Card 3: Visible = G1 | Hint = None</li>
+<li>Card 4: Visible = W4 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Play card 1</li>
+<li>Action 5: Play card 2</li>
+<li>Action 6: Play card 3</li>
+<li>Action 7: Play card 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': 'Chose to discard a card to gain an Info token, enabling future hints since no cards in my hand have been identified and risking a blind play could cost a life token.', 'action': 0}</p>
+</div>
+<div class='state' id='state12'>
+<h2>State 37</h2>
+<p><strong>Tokens:</strong> Life tokens = 2, Info tokens = 1</p>
+<p><strong>Fireworks:</strong> R1 Y1 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: YX</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: YX</li>
+<li>Card 4: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = B3 | Hint = None</li>
+<li>Card 2: Visible = G4 | Hint = None</li>
+<li>Card 3: Visible = Y1 | Hint = YX</li>
+<li>Card 4: Visible = Y2 | Hint = YX</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = B2 | Hint = None</li>
+<li>Card 2: Visible = R1 | Hint = R1</li>
+<li>Card 3: Visible = G2 | Hint = None</li>
+<li>Card 4: Visible = W3 | Hint = None</li>
+</ul>
+<p><strong>Player +3:</strong></p>
+<ul>
+<li>Card 1: Visible = W1 | Hint = None</li>
+<li>Card 2: Visible = R3 | Hint = None</li>
+<li>Card 3: Visible = G1 | Hint = None</li>
+<li>Card 4: Visible = W4 | Hint = None</li>
+</ul>
+<p><strong>Player +4:</strong></p>
+<ul>
+<li>Card 1: Visible = G5 | Hint = None</li>
+<li>Card 2: Visible = W2 | Hint = None</li>
+<li>Card 3: Visible = G4 | Hint = None</li>
+<li>Card 4: Visible = G1 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Play card 1</li>
+<li>Action 5: Play card 2</li>
+<li>Action 6: Play card 3</li>
+<li>Action 7: Play card 4</li>
+<li>Action 9: Reveal player +1 color Y</li>
+<li>Action 10: Reveal player +1 color G</li>
+<li>Action 12: Reveal player +1 color B</li>
+<li>Action 13: Reveal player +2 color R</li>
+<li>Action 15: Reveal player +2 color G</li>
+<li>Action 16: Reveal player +2 color W</li>
+<li>Action 17: Reveal player +2 color B</li>
+<li>Action 18: Reveal player +3 color R</li>
+<li>Action 20: Reveal player +3 color G</li>
+<li>Action 21: Reveal player +3 color W</li>
+<li>Action 25: Reveal player +4 color G</li>
+<li>Action 26: Reveal player +4 color W</li>
+<li>Action 28: Reveal player +1 rank 1</li>
+<li>Action 29: Reveal player +1 rank 2</li>
+<li>Action 30: Reveal player +1 rank 3</li>
+<li>Action 31: Reveal player +1 rank 4</li>
+<li>Action 33: Reveal player +2 rank 1</li>
+<li>Action 34: Reveal player +2 rank 2</li>
+<li>Action 35: Reveal player +2 rank 3</li>
+<li>Action 38: Reveal player +3 rank 1</li>
+<li>Action 40: Reveal player +3 rank 3</li>
+<li>Action 41: Reveal player +3 rank 4</li>
+<li>Action 43: Reveal player +4 rank 1</li>
+<li>Action 44: Reveal player +4 rank 2</li>
+<li>Action 46: Reveal player +4 rank 4</li>
+<li>Action 47: Reveal player +4 rank 5</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Enabling Player +1 to securely play 'Y1' by confirming its rank, thereby facilitating a series of correct plays for Yellow fireworks", 'action': 28}</p>
+</div>
+<div class='state' id='state13'>
+<h2>State 38</h2>
+<p><strong>Tokens:</strong> Life tokens = 2, Info tokens = 0</p>
+<p><strong>Fireworks:</strong> R1 Y1 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: Unknown</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: Y1</li>
+<li>Card 4: YX</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = B2 | Hint = None</li>
+<li>Card 2: Visible = R1 | Hint = R1</li>
+<li>Card 3: Visible = G2 | Hint = None</li>
+<li>Card 4: Visible = W3 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = W1 | Hint = None</li>
+<li>Card 2: Visible = R3 | Hint = None</li>
+<li>Card 3: Visible = G1 | Hint = None</li>
+<li>Card 4: Visible = W4 | Hint = None</li>
+</ul>
+<p><strong>Player +3:</strong></p>
+<ul>
+<li>Card 1: Visible = G5 | Hint = None</li>
+<li>Card 2: Visible = W2 | Hint = None</li>
+<li>Card 3: Visible = G4 | Hint = None</li>
+<li>Card 4: Visible = G1 | Hint = None</li>
+</ul>
+<p><strong>Player +4:</strong></p>
+<ul>
+<li>Card 1: Visible = Y2 | Hint = YX</li>
+<li>Card 2: Visible = R2 | Hint = None</li>
+<li>Card 3: Visible = Y4 | Hint = YX</li>
+<li>Card 4: Visible = W1 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Play card 1</li>
+<li>Action 5: Play card 2</li>
+<li>Action 6: Play card 3</li>
+<li>Action 7: Play card 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': 'Discarding Card 0 to gain an info token, which is critical for giving useful hints in future turns and for avoiding playing wrong cards with only 2 life tokens remaining', 'action': 0}</p>
+</div>
+<div class='state' id='state14'>
+<h2>State 40</h2>
+<p><strong>Tokens:</strong> Life tokens = 2, Info tokens = 1</p>
+<p><strong>Fireworks:</strong> R1 Y1 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: Unknown</li>
+<li>Card 2: R1</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = W1 | Hint = None</li>
+<li>Card 2: Visible = R3 | Hint = None</li>
+<li>Card 3: Visible = G1 | Hint = None</li>
+<li>Card 4: Visible = W4 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = G5 | Hint = None</li>
+<li>Card 2: Visible = W2 | Hint = None</li>
+<li>Card 3: Visible = G4 | Hint = None</li>
+<li>Card 4: Visible = G1 | Hint = None</li>
+</ul>
+<p><strong>Player +3:</strong></p>
+<ul>
+<li>Card 1: Visible = Y2 | Hint = YX</li>
+<li>Card 2: Visible = R2 | Hint = None</li>
+<li>Card 3: Visible = Y4 | Hint = YX</li>
+<li>Card 4: Visible = W1 | Hint = None</li>
+</ul>
+<p><strong>Player +4:</strong></p>
+<ul>
+<li>Card 1: Visible = G4 | Hint = None</li>
+<li>Card 2: Visible = Y1 | Hint = Y1</li>
+<li>Card 3: Visible = Y2 | Hint = YX</li>
+<li>Card 4: Visible = W2 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Play card 1</li>
+<li>Action 5: Play card 2</li>
+<li>Action 6: Play card 3</li>
+<li>Action 7: Play card 4</li>
+<li>Action 8: Reveal player +1 color R</li>
+<li>Action 10: Reveal player +1 color G</li>
+<li>Action 11: Reveal player +1 color W</li>
+<li>Action 15: Reveal player +2 color G</li>
+<li>Action 16: Reveal player +2 color W</li>
+<li>Action 18: Reveal player +3 color R</li>
+<li>Action 19: Reveal player +3 color Y</li>
+<li>Action 21: Reveal player +3 color W</li>
+<li>Action 24: Reveal player +4 color Y</li>
+<li>Action 25: Reveal player +4 color G</li>
+<li>Action 26: Reveal player +4 color W</li>
+<li>Action 28: Reveal player +1 rank 1</li>
+<li>Action 30: Reveal player +1 rank 3</li>
+<li>Action 31: Reveal player +1 rank 4</li>
+<li>Action 33: Reveal player +2 rank 1</li>
+<li>Action 34: Reveal player +2 rank 2</li>
+<li>Action 36: Reveal player +2 rank 4</li>
+<li>Action 37: Reveal player +2 rank 5</li>
+<li>Action 38: Reveal player +3 rank 1</li>
+<li>Action 39: Reveal player +3 rank 2</li>
+<li>Action 41: Reveal player +3 rank 4</li>
+<li>Action 43: Reveal player +4 rank 1</li>
+<li>Action 44: Reveal player +4 rank 2</li>
+<li>Action 46: Reveal player +4 rank 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Discarding the redundant 'R1' card to gain an info token, necessary for future rounds of hints.", 'action': 1}</p>
+</div>
+<div class='state' id='state15'>
+<h2>State 42</h2>
+<p><strong>Tokens:</strong> Life tokens = 2, Info tokens = 2</p>
+<p><strong>Fireworks:</strong> R1 Y1 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: X1</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: X1</li>
+<li>Card 4: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = G5 | Hint = None</li>
+<li>Card 2: Visible = W2 | Hint = None</li>
+<li>Card 3: Visible = G4 | Hint = None</li>
+<li>Card 4: Visible = G1 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = Y2 | Hint = YX</li>
+<li>Card 2: Visible = R2 | Hint = None</li>
+<li>Card 3: Visible = Y4 | Hint = YX</li>
+<li>Card 4: Visible = W1 | Hint = None</li>
+</ul>
+<p><strong>Player +3:</strong></p>
+<ul>
+<li>Card 1: Visible = G4 | Hint = None</li>
+<li>Card 2: Visible = Y1 | Hint = Y1</li>
+<li>Card 3: Visible = Y2 | Hint = YX</li>
+<li>Card 4: Visible = W2 | Hint = None</li>
+</ul>
+<p><strong>Player +4:</strong></p>
+<ul>
+<li>Card 1: Visible = B2 | Hint = None</li>
+<li>Card 2: Visible = G2 | Hint = None</li>
+<li>Card 3: Visible = W3 | Hint = None</li>
+<li>Card 4: Visible = W4 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Play card 1</li>
+<li>Action 5: Play card 2</li>
+<li>Action 6: Play card 3</li>
+<li>Action 7: Play card 4</li>
+<li>Action 10: Reveal player +1 color G</li>
+<li>Action 11: Reveal player +1 color W</li>
+<li>Action 13: Reveal player +2 color R</li>
+<li>Action 14: Reveal player +2 color Y</li>
+<li>Action 16: Reveal player +2 color W</li>
+<li>Action 19: Reveal player +3 color Y</li>
+<li>Action 20: Reveal player +3 color G</li>
+<li>Action 21: Reveal player +3 color W</li>
+<li>Action 25: Reveal player +4 color G</li>
+<li>Action 26: Reveal player +4 color W</li>
+<li>Action 27: Reveal player +4 color B</li>
+<li>Action 28: Reveal player +1 rank 1</li>
+<li>Action 29: Reveal player +1 rank 2</li>
+<li>Action 31: Reveal player +1 rank 4</li>
+<li>Action 32: Reveal player +1 rank 5</li>
+<li>Action 33: Reveal player +2 rank 1</li>
+<li>Action 34: Reveal player +2 rank 2</li>
+<li>Action 36: Reveal player +2 rank 4</li>
+<li>Action 38: Reveal player +3 rank 1</li>
+<li>Action 39: Reveal player +3 rank 2</li>
+<li>Action 41: Reveal player +3 rank 4</li>
+<li>Action 44: Reveal player +4 rank 2</li>
+<li>Action 45: Reveal player +4 rank 3</li>
+<li>Action 46: Reveal player +4 rank 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': 'This hint enables Player +1 to immediately play their Green 1, starting the Green firework, which is currently at 0. This action uses our limited info tokens strategically, ensuring a play that directly contributes to our score, preserving our life tokens.', 'action': 10}</p>
+</div>
+<div class='state' id='state16'>
+<h2>State 43</h2>
+<p><strong>Tokens:</strong> Life tokens = 2, Info tokens = 1</p>
+<p><strong>Fireworks:</strong> R1 Y1 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: GX</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: GX</li>
+<li>Card 4: GX</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = Y2 | Hint = YX</li>
+<li>Card 2: Visible = R2 | Hint = None</li>
+<li>Card 3: Visible = Y4 | Hint = YX</li>
+<li>Card 4: Visible = W1 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = G4 | Hint = None</li>
+<li>Card 2: Visible = Y1 | Hint = Y1</li>
+<li>Card 3: Visible = Y2 | Hint = YX</li>
+<li>Card 4: Visible = W2 | Hint = None</li>
+</ul>
+<p><strong>Player +3:</strong></p>
+<ul>
+<li>Card 1: Visible = B2 | Hint = None</li>
+<li>Card 2: Visible = G2 | Hint = None</li>
+<li>Card 3: Visible = W3 | Hint = None</li>
+<li>Card 4: Visible = W4 | Hint = None</li>
+</ul>
+<p><strong>Player +4:</strong></p>
+<ul>
+<li>Card 1: Visible = W1 | Hint = None</li>
+<li>Card 2: Visible = R3 | Hint = None</li>
+<li>Card 3: Visible = G1 | Hint = None</li>
+<li>Card 4: Visible = W4 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Play card 1</li>
+<li>Action 5: Play card 2</li>
+<li>Action 6: Play card 3</li>
+<li>Action 7: Play card 4</li>
+<li>Action 8: Reveal player +1 color R</li>
+<li>Action 9: Reveal player +1 color Y</li>
+<li>Action 11: Reveal player +1 color W</li>
+<li>Action 14: Reveal player +2 color Y</li>
+<li>Action 15: Reveal player +2 color G</li>
+<li>Action 16: Reveal player +2 color W</li>
+<li>Action 20: Reveal player +3 color G</li>
+<li>Action 21: Reveal player +3 color W</li>
+<li>Action 22: Reveal player +3 color B</li>
+<li>Action 23: Reveal player +4 color R</li>
+<li>Action 25: Reveal player +4 color G</li>
+<li>Action 26: Reveal player +4 color W</li>
+<li>Action 28: Reveal player +1 rank 1</li>
+<li>Action 29: Reveal player +1 rank 2</li>
+<li>Action 31: Reveal player +1 rank 4</li>
+<li>Action 33: Reveal player +2 rank 1</li>
+<li>Action 34: Reveal player +2 rank 2</li>
+<li>Action 36: Reveal player +2 rank 4</li>
+<li>Action 39: Reveal player +3 rank 2</li>
+<li>Action 40: Reveal player +3 rank 3</li>
+<li>Action 41: Reveal player +3 rank 4</li>
+<li>Action 43: Reveal player +4 rank 1</li>
+<li>Action 45: Reveal player +4 rank 3</li>
+<li>Action 46: Reveal player +4 rank 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Revealing yellow to player +1 enables immediate playing of 'Y2', aligning with our current needs and maximizing the use of our limited info token to facilitate correct plays", 'action': 9}</p>
+</div>
+<div class='state' id='state17'>
+<h2>State 44</h2>
+<p><strong>Tokens:</strong> Life tokens = 2, Info tokens = 0</p>
+<p><strong>Fireworks:</strong> R1 Y1 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: YX</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: YX</li>
+<li>Card 4: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = G4 | Hint = None</li>
+<li>Card 2: Visible = Y1 | Hint = Y1</li>
+<li>Card 3: Visible = Y2 | Hint = YX</li>
+<li>Card 4: Visible = W2 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = B2 | Hint = None</li>
+<li>Card 2: Visible = G2 | Hint = None</li>
+<li>Card 3: Visible = W3 | Hint = None</li>
+<li>Card 4: Visible = W4 | Hint = None</li>
+</ul>
+<p><strong>Player +3:</strong></p>
+<ul>
+<li>Card 1: Visible = W1 | Hint = None</li>
+<li>Card 2: Visible = R3 | Hint = None</li>
+<li>Card 3: Visible = G1 | Hint = None</li>
+<li>Card 4: Visible = W4 | Hint = None</li>
+</ul>
+<p><strong>Player +4:</strong></p>
+<ul>
+<li>Card 1: Visible = G5 | Hint = GX</li>
+<li>Card 2: Visible = W2 | Hint = None</li>
+<li>Card 3: Visible = G4 | Hint = GX</li>
+<li>Card 4: Visible = G1 | Hint = GX</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Play card 1</li>
+<li>Action 5: Play card 2</li>
+<li>Action 6: Play card 3</li>
+<li>Action 7: Play card 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': 'Choosing to discard a card to gain an information token, enabling strategic hints in the following rounds. Card selected for discard is chosen on the basis of having the least information and potential playability at this stage of the game.', 'action': 1}</p>
+</div>
+<div class='state' id='state18'>
+<h2>State 46</h2>
+<p><strong>Tokens:</strong> Life tokens = 2, Info tokens = 1</p>
+<p><strong>Fireworks:</strong> R1 Y1 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: Unknown</li>
+<li>Card 2: Y1</li>
+<li>Card 3: YX</li>
+<li>Card 4: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = B2 | Hint = None</li>
+<li>Card 2: Visible = G2 | Hint = None</li>
+<li>Card 3: Visible = W3 | Hint = None</li>
+<li>Card 4: Visible = W4 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = W1 | Hint = None</li>
+<li>Card 2: Visible = R3 | Hint = None</li>
+<li>Card 3: Visible = G1 | Hint = None</li>
+<li>Card 4: Visible = W4 | Hint = None</li>
+</ul>
+<p><strong>Player +3:</strong></p>
+<ul>
+<li>Card 1: Visible = G5 | Hint = GX</li>
+<li>Card 2: Visible = W2 | Hint = None</li>
+<li>Card 3: Visible = G4 | Hint = GX</li>
+<li>Card 4: Visible = G1 | Hint = GX</li>
+</ul>
+<p><strong>Player +4:</strong></p>
+<ul>
+<li>Card 1: Visible = Y2 | Hint = YX</li>
+<li>Card 2: Visible = Y4 | Hint = YX</li>
+<li>Card 3: Visible = W1 | Hint = None</li>
+<li>Card 4: Visible = B1 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Play card 1</li>
+<li>Action 5: Play card 2</li>
+<li>Action 6: Play card 3</li>
+<li>Action 7: Play card 4</li>
+<li>Action 10: Reveal player +1 color G</li>
+<li>Action 11: Reveal player +1 color W</li>
+<li>Action 12: Reveal player +1 color B</li>
+<li>Action 13: Reveal player +2 color R</li>
+<li>Action 15: Reveal player +2 color G</li>
+<li>Action 16: Reveal player +2 color W</li>
+<li>Action 20: Reveal player +3 color G</li>
+<li>Action 21: Reveal player +3 color W</li>
+<li>Action 24: Reveal player +4 color Y</li>
+<li>Action 26: Reveal player +4 color W</li>
+<li>Action 27: Reveal player +4 color B</li>
+<li>Action 29: Reveal player +1 rank 2</li>
+<li>Action 30: Reveal player +1 rank 3</li>
+<li>Action 31: Reveal player +1 rank 4</li>
+<li>Action 33: Reveal player +2 rank 1</li>
+<li>Action 35: Reveal player +2 rank 3</li>
+<li>Action 36: Reveal player +2 rank 4</li>
+<li>Action 38: Reveal player +3 rank 1</li>
+<li>Action 39: Reveal player +3 rank 2</li>
+<li>Action 41: Reveal player +3 rank 4</li>
+<li>Action 42: Reveal player +3 rank 5</li>
+<li>Action 43: Reveal player +4 rank 1</li>
+<li>Action 44: Reveal player +4 rank 2</li>
+<li>Action 46: Reveal player +4 rank 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': 'Discarding Card 2 as the Y1 has already been discarded. This action avoids a potential penalty and will help regain an information token for future strategic use.', 'action': 1}</p>
+</div>
+<div class='state' id='state19'>
+<h2>State 48</h2>
+<p><strong>Tokens:</strong> Life tokens = 2, Info tokens = 2</p>
+<p><strong>Fireworks:</strong> R1 Y1 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: Unknown</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = W1 | Hint = None</li>
+<li>Card 2: Visible = R3 | Hint = None</li>
+<li>Card 3: Visible = G1 | Hint = None</li>
+<li>Card 4: Visible = W4 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = G5 | Hint = GX</li>
+<li>Card 2: Visible = W2 | Hint = None</li>
+<li>Card 3: Visible = G4 | Hint = GX</li>
+<li>Card 4: Visible = G1 | Hint = GX</li>
+</ul>
+<p><strong>Player +3:</strong></p>
+<ul>
+<li>Card 1: Visible = Y2 | Hint = YX</li>
+<li>Card 2: Visible = Y4 | Hint = YX</li>
+<li>Card 3: Visible = W1 | Hint = None</li>
+<li>Card 4: Visible = B1 | Hint = None</li>
+</ul>
+<p><strong>Player +4:</strong></p>
+<ul>
+<li>Card 1: Visible = G4 | Hint = None</li>
+<li>Card 2: Visible = Y2 | Hint = YX</li>
+<li>Card 3: Visible = W2 | Hint = None</li>
+<li>Card 4: Visible = R4 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Play card 1</li>
+<li>Action 5: Play card 2</li>
+<li>Action 6: Play card 3</li>
+<li>Action 7: Play card 4</li>
+<li>Action 8: Reveal player +1 color R</li>
+<li>Action 10: Reveal player +1 color G</li>
+<li>Action 11: Reveal player +1 color W</li>
+<li>Action 15: Reveal player +2 color G</li>
+<li>Action 16: Reveal player +2 color W</li>
+<li>Action 19: Reveal player +3 color Y</li>
+<li>Action 21: Reveal player +3 color W</li>
+<li>Action 22: Reveal player +3 color B</li>
+<li>Action 23: Reveal player +4 color R</li>
+<li>Action 24: Reveal player +4 color Y</li>
+<li>Action 25: Reveal player +4 color G</li>
+<li>Action 26: Reveal player +4 color W</li>
+<li>Action 28: Reveal player +1 rank 1</li>
+<li>Action 30: Reveal player +1 rank 3</li>
+<li>Action 31: Reveal player +1 rank 4</li>
+<li>Action 33: Reveal player +2 rank 1</li>
+<li>Action 34: Reveal player +2 rank 2</li>
+<li>Action 36: Reveal player +2 rank 4</li>
+<li>Action 37: Reveal player +2 rank 5</li>
+<li>Action 38: Reveal player +3 rank 1</li>
+<li>Action 39: Reveal player +3 rank 2</li>
+<li>Action 41: Reveal player +3 rank 4</li>
+<li>Action 44: Reveal player +4 rank 2</li>
+<li>Action 46: Reveal player +4 rank 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Enabling Player +1 to play 'W1' by confirming its color as white, which progresses the white fireworks without needing a discard.", 'action': 11}</p>
+</div>
+<div class='state' id='state20'>
+<h2>State 49</h2>
+<p><strong>Tokens:</strong> Life tokens = 2, Info tokens = 1</p>
+<p><strong>Fireworks:</strong> R1 Y1 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: W1</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: X1</li>
+<li>Card 4: WX</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = G5 | Hint = GX</li>
+<li>Card 2: Visible = W2 | Hint = None</li>
+<li>Card 3: Visible = G4 | Hint = GX</li>
+<li>Card 4: Visible = G1 | Hint = GX</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = Y2 | Hint = YX</li>
+<li>Card 2: Visible = Y4 | Hint = YX</li>
+<li>Card 3: Visible = W1 | Hint = None</li>
+<li>Card 4: Visible = B1 | Hint = None</li>
+</ul>
+<p><strong>Player +3:</strong></p>
+<ul>
+<li>Card 1: Visible = G4 | Hint = None</li>
+<li>Card 2: Visible = Y2 | Hint = YX</li>
+<li>Card 3: Visible = W2 | Hint = None</li>
+<li>Card 4: Visible = R4 | Hint = None</li>
+</ul>
+<p><strong>Player +4:</strong></p>
+<ul>
+<li>Card 1: Visible = B2 | Hint = None</li>
+<li>Card 2: Visible = G2 | Hint = None</li>
+<li>Card 3: Visible = W3 | Hint = None</li>
+<li>Card 4: Visible = W4 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Play card 1</li>
+<li>Action 5: Play card 2</li>
+<li>Action 6: Play card 3</li>
+<li>Action 7: Play card 4</li>
+<li>Action 10: Reveal player +1 color G</li>
+<li>Action 11: Reveal player +1 color W</li>
+<li>Action 14: Reveal player +2 color Y</li>
+<li>Action 16: Reveal player +2 color W</li>
+<li>Action 17: Reveal player +2 color B</li>
+<li>Action 18: Reveal player +3 color R</li>
+<li>Action 19: Reveal player +3 color Y</li>
+<li>Action 20: Reveal player +3 color G</li>
+<li>Action 21: Reveal player +3 color W</li>
+<li>Action 25: Reveal player +4 color G</li>
+<li>Action 26: Reveal player +4 color W</li>
+<li>Action 27: Reveal player +4 color B</li>
+<li>Action 28: Reveal player +1 rank 1</li>
+<li>Action 29: Reveal player +1 rank 2</li>
+<li>Action 31: Reveal player +1 rank 4</li>
+<li>Action 32: Reveal player +1 rank 5</li>
+<li>Action 33: Reveal player +2 rank 1</li>
+<li>Action 34: Reveal player +2 rank 2</li>
+<li>Action 36: Reveal player +2 rank 4</li>
+<li>Action 39: Reveal player +3 rank 2</li>
+<li>Action 41: Reveal player +3 rank 4</li>
+<li>Action 44: Reveal player +4 rank 2</li>
+<li>Action 45: Reveal player +4 rank 3</li>
+<li>Action 46: Reveal player +4 rank 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': 'Playing W1 as it is known and will correctly initiate the White fireworks stack, safely increasing our score without risk.', 'action': 4}</p>
+</div>
+<div class='state' id='state21'>
+<h2>State 51</h2>
+<p><strong>Tokens:</strong> Life tokens = 2, Info tokens = 1</p>
+<p><strong>Fireworks:</strong> R1 Y1 G0 W1 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: GX</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: GX</li>
+<li>Card 4: GX</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = Y2 | Hint = YX</li>
+<li>Card 2: Visible = Y4 | Hint = YX</li>
+<li>Card 3: Visible = W1 | Hint = None</li>
+<li>Card 4: Visible = B1 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = G4 | Hint = None</li>
+<li>Card 2: Visible = Y2 | Hint = YX</li>
+<li>Card 3: Visible = W2 | Hint = None</li>
+<li>Card 4: Visible = R4 | Hint = None</li>
+</ul>
+<p><strong>Player +3:</strong></p>
+<ul>
+<li>Card 1: Visible = B2 | Hint = None</li>
+<li>Card 2: Visible = G2 | Hint = None</li>
+<li>Card 3: Visible = W3 | Hint = None</li>
+<li>Card 4: Visible = W4 | Hint = None</li>
+</ul>
+<p><strong>Player +4:</strong></p>
+<ul>
+<li>Card 1: Visible = R3 | Hint = None</li>
+<li>Card 2: Visible = G1 | Hint = None</li>
+<li>Card 3: Visible = W4 | Hint = WX</li>
+<li>Card 4: Visible = W3 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Play card 1</li>
+<li>Action 5: Play card 2</li>
+<li>Action 6: Play card 3</li>
+<li>Action 7: Play card 4</li>
+<li>Action 9: Reveal player +1 color Y</li>
+<li>Action 11: Reveal player +1 color W</li>
+<li>Action 12: Reveal player +1 color B</li>
+<li>Action 13: Reveal player +2 color R</li>
+<li>Action 14: Reveal player +2 color Y</li>
+<li>Action 15: Reveal player +2 color G</li>
+<li>Action 16: Reveal player +2 color W</li>
+<li>Action 20: Reveal player +3 color G</li>
+<li>Action 21: Reveal player +3 color W</li>
+<li>Action 22: Reveal player +3 color B</li>
+<li>Action 23: Reveal player +4 color R</li>
+<li>Action 25: Reveal player +4 color G</li>
+<li>Action 26: Reveal player +4 color W</li>
+<li>Action 28: Reveal player +1 rank 1</li>
+<li>Action 29: Reveal player +1 rank 2</li>
+<li>Action 31: Reveal player +1 rank 4</li>
+<li>Action 34: Reveal player +2 rank 2</li>
+<li>Action 36: Reveal player +2 rank 4</li>
+<li>Action 39: Reveal player +3 rank 2</li>
+<li>Action 40: Reveal player +3 rank 3</li>
+<li>Action 41: Reveal player +3 rank 4</li>
+<li>Action 43: Reveal player +4 rank 1</li>
+<li>Action 45: Reveal player +4 rank 3</li>
+<li>Action 46: Reveal player +4 rank 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Revealing the rank of 'G1' in Player +4's hand ensures an immediate and correct play, opening up further green plays which are potential in my hand once the stack progresses.", 'action': 43}</p>
+</div>
+<div class='state' id='state22'>
+<h2>State 52</h2>
+<p><strong>Tokens:</strong> Life tokens = 2, Info tokens = 0</p>
+<p><strong>Fireworks:</strong> R1 Y1 G0 W1 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: YX</li>
+<li>Card 2: YX</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = G4 | Hint = None</li>
+<li>Card 2: Visible = Y2 | Hint = YX</li>
+<li>Card 3: Visible = W2 | Hint = None</li>
+<li>Card 4: Visible = R4 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = B2 | Hint = None</li>
+<li>Card 2: Visible = G2 | Hint = None</li>
+<li>Card 3: Visible = W3 | Hint = None</li>
+<li>Card 4: Visible = W4 | Hint = None</li>
+</ul>
+<p><strong>Player +3:</strong></p>
+<ul>
+<li>Card 1: Visible = R3 | Hint = None</li>
+<li>Card 2: Visible = G1 | Hint = None</li>
+<li>Card 3: Visible = W4 | Hint = WX</li>
+<li>Card 4: Visible = W3 | Hint = None</li>
+</ul>
+<p><strong>Player +4:</strong></p>
+<ul>
+<li>Card 1: Visible = G5 | Hint = GX</li>
+<li>Card 2: Visible = W2 | Hint = None</li>
+<li>Card 3: Visible = G4 | Hint = GX</li>
+<li>Card 4: Visible = G1 | Hint = GX</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Play card 1</li>
+<li>Action 5: Play card 2</li>
+<li>Action 6: Play card 3</li>
+<li>Action 7: Play card 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': 'Discarding Card 3 as it has no known information and discarding it gains an essential info token for future rounds.', 'action': 2}</p>
+</div>
+<div class='state' id='state23'>
+<h2>State 54</h2>
+<p><strong>Tokens:</strong> Life tokens = 2, Info tokens = 1</p>
+<p><strong>Fireworks:</strong> R1 Y1 G0 W1 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: Unknown</li>
+<li>Card 2: YX</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = B2 | Hint = None</li>
+<li>Card 2: Visible = G2 | Hint = None</li>
+<li>Card 3: Visible = W3 | Hint = None</li>
+<li>Card 4: Visible = W4 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = R3 | Hint = None</li>
+<li>Card 2: Visible = G1 | Hint = None</li>
+<li>Card 3: Visible = W4 | Hint = WX</li>
+<li>Card 4: Visible = W3 | Hint = None</li>
+</ul>
+<p><strong>Player +3:</strong></p>
+<ul>
+<li>Card 1: Visible = G5 | Hint = GX</li>
+<li>Card 2: Visible = W2 | Hint = None</li>
+<li>Card 3: Visible = G4 | Hint = GX</li>
+<li>Card 4: Visible = G1 | Hint = GX</li>
+</ul>
+<p><strong>Player +4:</strong></p>
+<ul>
+<li>Card 1: Visible = Y2 | Hint = YX</li>
+<li>Card 2: Visible = Y4 | Hint = YX</li>
+<li>Card 3: Visible = B1 | Hint = None</li>
+<li>Card 4: Visible = B4 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Play card 1</li>
+<li>Action 5: Play card 2</li>
+<li>Action 6: Play card 3</li>
+<li>Action 7: Play card 4</li>
+<li>Action 10: Reveal player +1 color G</li>
+<li>Action 11: Reveal player +1 color W</li>
+<li>Action 12: Reveal player +1 color B</li>
+<li>Action 13: Reveal player +2 color R</li>
+<li>Action 15: Reveal player +2 color G</li>
+<li>Action 16: Reveal player +2 color W</li>
+<li>Action 20: Reveal player +3 color G</li>
+<li>Action 21: Reveal player +3 color W</li>
+<li>Action 24: Reveal player +4 color Y</li>
+<li>Action 27: Reveal player +4 color B</li>
+<li>Action 29: Reveal player +1 rank 2</li>
+<li>Action 30: Reveal player +1 rank 3</li>
+<li>Action 31: Reveal player +1 rank 4</li>
+<li>Action 33: Reveal player +2 rank 1</li>
+<li>Action 35: Reveal player +2 rank 3</li>
+<li>Action 36: Reveal player +2 rank 4</li>
+<li>Action 38: Reveal player +3 rank 1</li>
+<li>Action 39: Reveal player +3 rank 2</li>
+<li>Action 41: Reveal player +3 rank 4</li>
+<li>Action 42: Reveal player +3 rank 5</li>
+<li>Action 43: Reveal player +4 rank 1</li>
+<li>Action 44: Reveal player +4 rank 2</li>
+<li>Action 46: Reveal player +4 rank 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': 'Enable Player +2 to play G1, starting the Green stack, which is crucial as it is the only color stack not yet started. This play uses the current single info token efficiently by facilitating an immediate necessary play.', 'action': 15}</p>
+</div>
+<div class='state' id='state24'>
+<h2>State 55</h2>
+<p><strong>Tokens:</strong> Life tokens = 2, Info tokens = 0</p>
+<p><strong>Fireworks:</strong> R1 Y1 G0 W1 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: Unknown</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = R3 | Hint = None</li>
+<li>Card 2: Visible = G1 | Hint = G1</li>
+<li>Card 3: Visible = W4 | Hint = WX</li>
+<li>Card 4: Visible = W3 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = G5 | Hint = GX</li>
+<li>Card 2: Visible = W2 | Hint = None</li>
+<li>Card 3: Visible = G4 | Hint = GX</li>
+<li>Card 4: Visible = G1 | Hint = GX</li>
+</ul>
+<p><strong>Player +3:</strong></p>
+<ul>
+<li>Card 1: Visible = Y2 | Hint = YX</li>
+<li>Card 2: Visible = Y4 | Hint = YX</li>
+<li>Card 3: Visible = B1 | Hint = None</li>
+<li>Card 4: Visible = B4 | Hint = None</li>
+</ul>
+<p><strong>Player +4:</strong></p>
+<ul>
+<li>Card 1: Visible = G4 | Hint = None</li>
+<li>Card 2: Visible = Y2 | Hint = YX</li>
+<li>Card 3: Visible = W2 | Hint = None</li>
+<li>Card 4: Visible = R4 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Play card 1</li>
+<li>Action 5: Play card 2</li>
+<li>Action 6: Play card 3</li>
+<li>Action 7: Play card 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': 'Discarding to regain an info token because there are 0 info tokens available, and giving hints is crucial for correct plays in the subsequent rounds.', 'action': 0}</p>
+</div>
+<div class='state' id='state25'>
+<h2>State 57</h2>
+<p><strong>Tokens:</strong> Life tokens = 2, Info tokens = 1</p>
+<p><strong>Fireworks:</strong> R1 Y1 G0 W1 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: Unknown</li>
+<li>Card 2: G1</li>
+<li>Card 3: WX</li>
+<li>Card 4: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = G5 | Hint = GX</li>
+<li>Card 2: Visible = W2 | Hint = None</li>
+<li>Card 3: Visible = G4 | Hint = GX</li>
+<li>Card 4: Visible = G1 | Hint = GX</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = Y2 | Hint = YX</li>
+<li>Card 2: Visible = Y4 | Hint = YX</li>
+<li>Card 3: Visible = B1 | Hint = None</li>
+<li>Card 4: Visible = B4 | Hint = None</li>
+</ul>
+<p><strong>Player +3:</strong></p>
+<ul>
+<li>Card 1: Visible = G4 | Hint = None</li>
+<li>Card 2: Visible = Y2 | Hint = YX</li>
+<li>Card 3: Visible = W2 | Hint = None</li>
+<li>Card 4: Visible = R4 | Hint = None</li>
+</ul>
+<p><strong>Player +4:</strong></p>
+<ul>
+<li>Card 1: Visible = G2 | Hint = None</li>
+<li>Card 2: Visible = W3 | Hint = None</li>
+<li>Card 3: Visible = W4 | Hint = None</li>
+<li>Card 4: Visible = Y3 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Play card 1</li>
+<li>Action 5: Play card 2</li>
+<li>Action 6: Play card 3</li>
+<li>Action 7: Play card 4</li>
+<li>Action 10: Reveal player +1 color G</li>
+<li>Action 11: Reveal player +1 color W</li>
+<li>Action 14: Reveal player +2 color Y</li>
+<li>Action 17: Reveal player +2 color B</li>
+<li>Action 18: Reveal player +3 color R</li>
+<li>Action 19: Reveal player +3 color Y</li>
+<li>Action 20: Reveal player +3 color G</li>
+<li>Action 21: Reveal player +3 color W</li>
+<li>Action 24: Reveal player +4 color Y</li>
+<li>Action 25: Reveal player +4 color G</li>
+<li>Action 26: Reveal player +4 color W</li>
+<li>Action 28: Reveal player +1 rank 1</li>
+<li>Action 29: Reveal player +1 rank 2</li>
+<li>Action 31: Reveal player +1 rank 4</li>
+<li>Action 32: Reveal player +1 rank 5</li>
+<li>Action 33: Reveal player +2 rank 1</li>
+<li>Action 34: Reveal player +2 rank 2</li>
+<li>Action 36: Reveal player +2 rank 4</li>
+<li>Action 39: Reveal player +3 rank 2</li>
+<li>Action 41: Reveal player +3 rank 4</li>
+<li>Action 44: Reveal player +4 rank 2</li>
+<li>Action 45: Reveal player +4 rank 3</li>
+<li>Action 46: Reveal player +4 rank 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': 'Playing G1 from my hand is a certain move that will correctly advance the green firework stack without using the last info token, thus maintaining resources for more critical hints in future turns.', 'action': 5}</p>
+</div>
+<div class='state' id='state26'>
+<h2>State 59</h2>
+<p><strong>Tokens:</strong> Life tokens = 2, Info tokens = 1</p>
+<p><strong>Fireworks:</strong> R1 Y1 G1 W1 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: GX</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: GX</li>
+<li>Card 4: GX</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = Y2 | Hint = YX</li>
+<li>Card 2: Visible = Y4 | Hint = YX</li>
+<li>Card 3: Visible = B1 | Hint = None</li>
+<li>Card 4: Visible = B4 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = G4 | Hint = None</li>
+<li>Card 2: Visible = Y2 | Hint = YX</li>
+<li>Card 3: Visible = W2 | Hint = None</li>
+<li>Card 4: Visible = R4 | Hint = None</li>
+</ul>
+<p><strong>Player +3:</strong></p>
+<ul>
+<li>Card 1: Visible = G2 | Hint = None</li>
+<li>Card 2: Visible = W3 | Hint = None</li>
+<li>Card 3: Visible = W4 | Hint = None</li>
+<li>Card 4: Visible = Y3 | Hint = None</li>
+</ul>
+<p><strong>Player +4:</strong></p>
+<ul>
+<li>Card 1: Visible = R3 | Hint = None</li>
+<li>Card 2: Visible = W4 | Hint = WX</li>
+<li>Card 3: Visible = W3 | Hint = None</li>
+<li>Card 4: Visible = B1 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Play card 1</li>
+<li>Action 5: Play card 2</li>
+<li>Action 6: Play card 3</li>
+<li>Action 7: Play card 4</li>
+<li>Action 9: Reveal player +1 color Y</li>
+<li>Action 12: Reveal player +1 color B</li>
+<li>Action 13: Reveal player +2 color R</li>
+<li>Action 14: Reveal player +2 color Y</li>
+<li>Action 15: Reveal player +2 color G</li>
+<li>Action 16: Reveal player +2 color W</li>
+<li>Action 19: Reveal player +3 color Y</li>
+<li>Action 20: Reveal player +3 color G</li>
+<li>Action 21: Reveal player +3 color W</li>
+<li>Action 23: Reveal player +4 color R</li>
+<li>Action 26: Reveal player +4 color W</li>
+<li>Action 27: Reveal player +4 color B</li>
+<li>Action 28: Reveal player +1 rank 1</li>
+<li>Action 29: Reveal player +1 rank 2</li>
+<li>Action 31: Reveal player +1 rank 4</li>
+<li>Action 34: Reveal player +2 rank 2</li>
+<li>Action 36: Reveal player +2 rank 4</li>
+<li>Action 39: Reveal player +3 rank 2</li>
+<li>Action 40: Reveal player +3 rank 3</li>
+<li>Action 41: Reveal player +3 rank 4</li>
+<li>Action 43: Reveal player +4 rank 1</li>
+<li>Action 45: Reveal player +4 rank 3</li>
+<li>Action 46: Reveal player +4 rank 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Reveal the color Blue to Player +1 enabling them to play 'B1', thus starting the blue firework stack.", 'action': 12}</p>
+</div>
+<div class='state' id='state27'>
+<h2>State 60</h2>
+<p><strong>Tokens:</strong> Life tokens = 2, Info tokens = 0</p>
+<p><strong>Fireworks:</strong> R1 Y1 G1 W1 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: YX</li>
+<li>Card 2: YX</li>
+<li>Card 3: BX</li>
+<li>Card 4: BX</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = G4 | Hint = None</li>
+<li>Card 2: Visible = Y2 | Hint = YX</li>
+<li>Card 3: Visible = W2 | Hint = None</li>
+<li>Card 4: Visible = R4 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = G2 | Hint = None</li>
+<li>Card 2: Visible = W3 | Hint = None</li>
+<li>Card 3: Visible = W4 | Hint = None</li>
+<li>Card 4: Visible = Y3 | Hint = None</li>
+</ul>
+<p><strong>Player +3:</strong></p>
+<ul>
+<li>Card 1: Visible = R3 | Hint = None</li>
+<li>Card 2: Visible = W4 | Hint = WX</li>
+<li>Card 3: Visible = W3 | Hint = None</li>
+<li>Card 4: Visible = B1 | Hint = None</li>
+</ul>
+<p><strong>Player +4:</strong></p>
+<ul>
+<li>Card 1: Visible = G5 | Hint = GX</li>
+<li>Card 2: Visible = W2 | Hint = None</li>
+<li>Card 3: Visible = G4 | Hint = GX</li>
+<li>Card 4: Visible = G1 | Hint = GX</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Play card 1</li>
+<li>Action 5: Play card 2</li>
+<li>Action 6: Play card 3</li>
+<li>Action 7: Play card 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': 'Discarding a blue card to gain an info token while minimizing the risk of removing a potentially critical card, as B3 is already discarded and higher numbers are less immediately necessary.', 'action': 2}</p>
+</div>
+<div class='state' id='state28'>
+<h2>State 62</h2>
+<p><strong>Tokens:</strong> Life tokens = 2, Info tokens = 1</p>
+<p><strong>Fireworks:</strong> R1 Y1 G1 W1 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: Unknown</li>
+<li>Card 2: YX</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = G2 | Hint = None</li>
+<li>Card 2: Visible = W3 | Hint = None</li>
+<li>Card 3: Visible = W4 | Hint = None</li>
+<li>Card 4: Visible = Y3 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = R3 | Hint = None</li>
+<li>Card 2: Visible = W4 | Hint = WX</li>
+<li>Card 3: Visible = W3 | Hint = None</li>
+<li>Card 4: Visible = B1 | Hint = None</li>
+</ul>
+<p><strong>Player +3:</strong></p>
+<ul>
+<li>Card 1: Visible = G5 | Hint = GX</li>
+<li>Card 2: Visible = W2 | Hint = None</li>
+<li>Card 3: Visible = G4 | Hint = GX</li>
+<li>Card 4: Visible = G1 | Hint = GX</li>
+</ul>
+<p><strong>Player +4:</strong></p>
+<ul>
+<li>Card 1: Visible = Y2 | Hint = YX</li>
+<li>Card 2: Visible = Y4 | Hint = YX</li>
+<li>Card 3: Visible = B4 | Hint = BX</li>
+<li>Card 4: Visible = B5 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Play card 1</li>
+<li>Action 5: Play card 2</li>
+<li>Action 6: Play card 3</li>
+<li>Action 7: Play card 4</li>
+<li>Action 9: Reveal player +1 color Y</li>
+<li>Action 10: Reveal player +1 color G</li>
+<li>Action 11: Reveal player +1 color W</li>
+<li>Action 13: Reveal player +2 color R</li>
+<li>Action 16: Reveal player +2 color W</li>
+<li>Action 17: Reveal player +2 color B</li>
+<li>Action 20: Reveal player +3 color G</li>
+<li>Action 21: Reveal player +3 color W</li>
+<li>Action 24: Reveal player +4 color Y</li>
+<li>Action 27: Reveal player +4 color B</li>
+<li>Action 29: Reveal player +1 rank 2</li>
+<li>Action 30: Reveal player +1 rank 3</li>
+<li>Action 31: Reveal player +1 rank 4</li>
+<li>Action 33: Reveal player +2 rank 1</li>
+<li>Action 35: Reveal player +2 rank 3</li>
+<li>Action 36: Reveal player +2 rank 4</li>
+<li>Action 38: Reveal player +3 rank 1</li>
+<li>Action 39: Reveal player +3 rank 2</li>
+<li>Action 41: Reveal player +3 rank 4</li>
+<li>Action 42: Reveal player +3 rank 5</li>
+<li>Action 44: Reveal player +4 rank 2</li>
+<li>Action 46: Reveal player +4 rank 4</li>
+<li>Action 47: Reveal player +4 rank 5</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Using the hint to confirm the color of Player +4's Y2, which is currently playable and will extend the Yellow fireworks stack without risking a life token.", 'action': 24}</p>
+</div>
+<div class='state' id='state29'>
+<h2>State 63</h2>
+<p><strong>Tokens:</strong> Life tokens = 2, Info tokens = 0</p>
+<p><strong>Fireworks:</strong> R1 Y1 G1 W1 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: Unknown</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = R3 | Hint = None</li>
+<li>Card 2: Visible = W4 | Hint = WX</li>
+<li>Card 3: Visible = W3 | Hint = None</li>
+<li>Card 4: Visible = B1 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = G5 | Hint = GX</li>
+<li>Card 2: Visible = W2 | Hint = None</li>
+<li>Card 3: Visible = G4 | Hint = GX</li>
+<li>Card 4: Visible = G1 | Hint = GX</li>
+</ul>
+<p><strong>Player +3:</strong></p>
+<ul>
+<li>Card 1: Visible = Y2 | Hint = YX</li>
+<li>Card 2: Visible = Y4 | Hint = YX</li>
+<li>Card 3: Visible = B4 | Hint = BX</li>
+<li>Card 4: Visible = B5 | Hint = None</li>
+</ul>
+<p><strong>Player +4:</strong></p>
+<ul>
+<li>Card 1: Visible = G4 | Hint = None</li>
+<li>Card 2: Visible = Y2 | Hint = YX</li>
+<li>Card 3: Visible = W2 | Hint = None</li>
+<li>Card 4: Visible = R4 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Play card 1</li>
+<li>Action 5: Play card 2</li>
+<li>Action 6: Play card 3</li>
+<li>Action 7: Play card 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': 'Discarding card 3 to gain an information token, enabling strategic hint giving in the following turns and minimizing risk since no card information is known.', 'action': 3}</p>
+</div>
+<div class='state' id='state30'>
+<h2>State 65</h2>
+<p><strong>Tokens:</strong> Life tokens = 2, Info tokens = 1</p>
+<p><strong>Fireworks:</strong> R1 Y1 G1 W1 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: Unknown</li>
+<li>Card 2: WX</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = G5 | Hint = GX</li>
+<li>Card 2: Visible = W2 | Hint = None</li>
+<li>Card 3: Visible = G4 | Hint = GX</li>
+<li>Card 4: Visible = G1 | Hint = GX</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = Y2 | Hint = YX</li>
+<li>Card 2: Visible = Y4 | Hint = YX</li>
+<li>Card 3: Visible = B4 | Hint = BX</li>
+<li>Card 4: Visible = B5 | Hint = None</li>
+</ul>
+<p><strong>Player +3:</strong></p>
+<ul>
+<li>Card 1: Visible = G4 | Hint = None</li>
+<li>Card 2: Visible = Y2 | Hint = YX</li>
+<li>Card 3: Visible = W2 | Hint = None</li>
+<li>Card 4: Visible = R4 | Hint = None</li>
+</ul>
+<p><strong>Player +4:</strong></p>
+<ul>
+<li>Card 1: Visible = G2 | Hint = None</li>
+<li>Card 2: Visible = W3 | Hint = None</li>
+<li>Card 3: Visible = W4 | Hint = None</li>
+<li>Card 4: Visible = Y4 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Play card 1</li>
+<li>Action 5: Play card 2</li>
+<li>Action 6: Play card 3</li>
+<li>Action 7: Play card 4</li>
+<li>Action 10: Reveal player +1 color G</li>
+<li>Action 11: Reveal player +1 color W</li>
+<li>Action 14: Reveal player +2 color Y</li>
+<li>Action 17: Reveal player +2 color B</li>
+<li>Action 18: Reveal player +3 color R</li>
+<li>Action 19: Reveal player +3 color Y</li>
+<li>Action 20: Reveal player +3 color G</li>
+<li>Action 21: Reveal player +3 color W</li>
+<li>Action 24: Reveal player +4 color Y</li>
+<li>Action 25: Reveal player +4 color G</li>
+<li>Action 26: Reveal player +4 color W</li>
+<li>Action 28: Reveal player +1 rank 1</li>
+<li>Action 29: Reveal player +1 rank 2</li>
+<li>Action 31: Reveal player +1 rank 4</li>
+<li>Action 32: Reveal player +1 rank 5</li>
+<li>Action 34: Reveal player +2 rank 2</li>
+<li>Action 36: Reveal player +2 rank 4</li>
+<li>Action 37: Reveal player +2 rank 5</li>
+<li>Action 39: Reveal player +3 rank 2</li>
+<li>Action 41: Reveal player +3 rank 4</li>
+<li>Action 44: Reveal player +4 rank 2</li>
+<li>Action 45: Reveal player +4 rank 3</li>
+<li>Action 46: Reveal player +4 rank 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Reinforce knowledge of the W2 card in Player +1's hand to ensure it is played next, aiding in the progress of the White stack.", 'action': 11}</p>
+</div>
+<div class='state' id='state31'>
+<h2>State 66</h2>
+<p><strong>Tokens:</strong> Life tokens = 2, Info tokens = 0</p>
+<p><strong>Fireworks:</strong> R1 Y1 G1 W1 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: GX</li>
+<li>Card 2: WX</li>
+<li>Card 3: GX</li>
+<li>Card 4: GX</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = Y2 | Hint = YX</li>
+<li>Card 2: Visible = Y4 | Hint = YX</li>
+<li>Card 3: Visible = B4 | Hint = BX</li>
+<li>Card 4: Visible = B5 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = G4 | Hint = None</li>
+<li>Card 2: Visible = Y2 | Hint = YX</li>
+<li>Card 3: Visible = W2 | Hint = None</li>
+<li>Card 4: Visible = R4 | Hint = None</li>
+</ul>
+<p><strong>Player +3:</strong></p>
+<ul>
+<li>Card 1: Visible = G2 | Hint = None</li>
+<li>Card 2: Visible = W3 | Hint = None</li>
+<li>Card 3: Visible = W4 | Hint = None</li>
+<li>Card 4: Visible = Y4 | Hint = None</li>
+</ul>
+<p><strong>Player +4:</strong></p>
+<ul>
+<li>Card 1: Visible = R3 | Hint = None</li>
+<li>Card 2: Visible = W4 | Hint = WX</li>
+<li>Card 3: Visible = W3 | Hint = None</li>
+<li>Card 4: Visible = B1 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Play card 1</li>
+<li>Action 5: Play card 2</li>
+<li>Action 6: Play card 3</li>
+<li>Action 7: Play card 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': 'Discarding to gain an info token, considering limited hint possibilities and the need to avoid risking lives with uncertain plays. Card 0 is chosen as it seems to be one of multiple green cards and loses fewer potential fireworks advancements compared to others.', 'action': 0}</p>
+</div>
+<div class='state' id='state32'>
+<h2>State 68</h2>
+<p><strong>Tokens:</strong> Life tokens = 2, Info tokens = 1</p>
+<p><strong>Fireworks:</strong> R1 Y1 G1 W1 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: YX</li>
+<li>Card 2: YX</li>
+<li>Card 3: BX</li>
+<li>Card 4: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = G4 | Hint = None</li>
+<li>Card 2: Visible = Y2 | Hint = YX</li>
+<li>Card 3: Visible = W2 | Hint = None</li>
+<li>Card 4: Visible = R4 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = G2 | Hint = None</li>
+<li>Card 2: Visible = W3 | Hint = None</li>
+<li>Card 3: Visible = W4 | Hint = None</li>
+<li>Card 4: Visible = Y4 | Hint = None</li>
+</ul>
+<p><strong>Player +3:</strong></p>
+<ul>
+<li>Card 1: Visible = R3 | Hint = None</li>
+<li>Card 2: Visible = W4 | Hint = WX</li>
+<li>Card 3: Visible = W3 | Hint = None</li>
+<li>Card 4: Visible = B1 | Hint = None</li>
+</ul>
+<p><strong>Player +4:</strong></p>
+<ul>
+<li>Card 1: Visible = W2 | Hint = WX</li>
+<li>Card 2: Visible = G4 | Hint = GX</li>
+<li>Card 3: Visible = G1 | Hint = GX</li>
+<li>Card 4: Visible = B3 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Play card 1</li>
+<li>Action 5: Play card 2</li>
+<li>Action 6: Play card 3</li>
+<li>Action 7: Play card 4</li>
+<li>Action 8: Reveal player +1 color R</li>
+<li>Action 9: Reveal player +1 color Y</li>
+<li>Action 10: Reveal player +1 color G</li>
+<li>Action 11: Reveal player +1 color W</li>
+<li>Action 14: Reveal player +2 color Y</li>
+<li>Action 15: Reveal player +2 color G</li>
+<li>Action 16: Reveal player +2 color W</li>
+<li>Action 18: Reveal player +3 color R</li>
+<li>Action 21: Reveal player +3 color W</li>
+<li>Action 22: Reveal player +3 color B</li>
+<li>Action 25: Reveal player +4 color G</li>
+<li>Action 26: Reveal player +4 color W</li>
+<li>Action 27: Reveal player +4 color B</li>
+<li>Action 29: Reveal player +1 rank 2</li>
+<li>Action 31: Reveal player +1 rank 4</li>
+<li>Action 34: Reveal player +2 rank 2</li>
+<li>Action 35: Reveal player +2 rank 3</li>
+<li>Action 36: Reveal player +2 rank 4</li>
+<li>Action 38: Reveal player +3 rank 1</li>
+<li>Action 40: Reveal player +3 rank 3</li>
+<li>Action 41: Reveal player +3 rank 4</li>
+<li>Action 43: Reveal player +4 rank 1</li>
+<li>Action 44: Reveal player +4 rank 2</li>
+<li>Action 45: Reveal player +4 rank 3</li>
+<li>Action 46: Reveal player +4 rank 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': 'Revealing Y2 to Player +1 enables a guaranteed correct play, increasing our score without using up the life tokens and making use of the final info token strategically.', 'action': 9}</p>
+</div>
+<div class='state' id='state33'>
+<h2>State 69</h2>
+<p><strong>Tokens:</strong> Life tokens = 2, Info tokens = 0</p>
+<p><strong>Fireworks:</strong> R1 Y1 G1 W1 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: Unknown</li>
+<li>Card 2: YX</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = G2 | Hint = None</li>
+<li>Card 2: Visible = W3 | Hint = None</li>
+<li>Card 3: Visible = W4 | Hint = None</li>
+<li>Card 4: Visible = Y4 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = R3 | Hint = None</li>
+<li>Card 2: Visible = W4 | Hint = WX</li>
+<li>Card 3: Visible = W3 | Hint = None</li>
+<li>Card 4: Visible = B1 | Hint = None</li>
+</ul>
+<p><strong>Player +3:</strong></p>
+<ul>
+<li>Card 1: Visible = W2 | Hint = WX</li>
+<li>Card 2: Visible = G4 | Hint = GX</li>
+<li>Card 3: Visible = G1 | Hint = GX</li>
+<li>Card 4: Visible = B3 | Hint = None</li>
+</ul>
+<p><strong>Player +4:</strong></p>
+<ul>
+<li>Card 1: Visible = Y2 | Hint = YX</li>
+<li>Card 2: Visible = Y4 | Hint = YX</li>
+<li>Card 3: Visible = B4 | Hint = BX</li>
+<li>Card 4: Visible = B5 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Play card 1</li>
+<li>Action 5: Play card 2</li>
+<li>Action 6: Play card 3</li>
+<li>Action 7: Play card 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': 'Choosing to discard a potentially duplicative yellow card to gain an info token for future hints, especially since Y2 is visibly playable by another player. This minimizes risk and preserves potential for correct future plays.', 'action': 1}</p>
+</div>
+<div class='state' id='state34'>
+<h2>State 71</h2>
+<p><strong>Tokens:</strong> Life tokens = 2, Info tokens = 1</p>
+<p><strong>Fireworks:</strong> R1 Y1 G1 W1 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: Unknown</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = R3 | Hint = None</li>
+<li>Card 2: Visible = W4 | Hint = WX</li>
+<li>Card 3: Visible = W3 | Hint = None</li>
+<li>Card 4: Visible = B1 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = W2 | Hint = WX</li>
+<li>Card 2: Visible = G4 | Hint = GX</li>
+<li>Card 3: Visible = G1 | Hint = GX</li>
+<li>Card 4: Visible = B3 | Hint = None</li>
+</ul>
+<p><strong>Player +3:</strong></p>
+<ul>
+<li>Card 1: Visible = Y2 | Hint = YX</li>
+<li>Card 2: Visible = Y4 | Hint = YX</li>
+<li>Card 3: Visible = B4 | Hint = BX</li>
+<li>Card 4: Visible = B5 | Hint = None</li>
+</ul>
+<p><strong>Player +4:</strong></p>
+<ul>
+<li>Card 1: Visible = G4 | Hint = None</li>
+<li>Card 2: Visible = W2 | Hint = None</li>
+<li>Card 3: Visible = R4 | Hint = None</li>
+<li>Card 4: Visible = R5 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Play card 1</li>
+<li>Action 5: Play card 2</li>
+<li>Action 6: Play card 3</li>
+<li>Action 7: Play card 4</li>
+<li>Action 8: Reveal player +1 color R</li>
+<li>Action 11: Reveal player +1 color W</li>
+<li>Action 12: Reveal player +1 color B</li>
+<li>Action 15: Reveal player +2 color G</li>
+<li>Action 16: Reveal player +2 color W</li>
+<li>Action 17: Reveal player +2 color B</li>
+<li>Action 19: Reveal player +3 color Y</li>
+<li>Action 22: Reveal player +3 color B</li>
+<li>Action 23: Reveal player +4 color R</li>
+<li>Action 25: Reveal player +4 color G</li>
+<li>Action 26: Reveal player +4 color W</li>
+<li>Action 28: Reveal player +1 rank 1</li>
+<li>Action 30: Reveal player +1 rank 3</li>
+<li>Action 31: Reveal player +1 rank 4</li>
+<li>Action 33: Reveal player +2 rank 1</li>
+<li>Action 34: Reveal player +2 rank 2</li>
+<li>Action 35: Reveal player +2 rank 3</li>
+<li>Action 36: Reveal player +2 rank 4</li>
+<li>Action 39: Reveal player +3 rank 2</li>
+<li>Action 41: Reveal player +3 rank 4</li>
+<li>Action 42: Reveal player +3 rank 5</li>
+<li>Action 44: Reveal player +4 rank 2</li>
+<li>Action 46: Reveal player +4 rank 4</li>
+<li>Action 47: Reveal player +4 rank 5</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': 'Revealing the color Blue to player +1 allows them to identify and play B1, starting the blue fireworks. This is crucial as starting every color is essential for a high score, and we are currently limited on info tokens.', 'action': 12}</p>
+</div>
+<div class='state' id='state35'>
+<h2>State 72</h2>
+<p><strong>Tokens:</strong> Life tokens = 2, Info tokens = 0</p>
+<p><strong>Fireworks:</strong> R1 Y1 G1 W1 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: Unknown</li>
+<li>Card 2: WX</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: BX</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = W2 | Hint = WX</li>
+<li>Card 2: Visible = G4 | Hint = GX</li>
+<li>Card 3: Visible = G1 | Hint = GX</li>
+<li>Card 4: Visible = B3 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = Y2 | Hint = YX</li>
+<li>Card 2: Visible = Y4 | Hint = YX</li>
+<li>Card 3: Visible = B4 | Hint = BX</li>
+<li>Card 4: Visible = B5 | Hint = None</li>
+</ul>
+<p><strong>Player +3:</strong></p>
+<ul>
+<li>Card 1: Visible = G4 | Hint = None</li>
+<li>Card 2: Visible = W2 | Hint = None</li>
+<li>Card 3: Visible = R4 | Hint = None</li>
+<li>Card 4: Visible = R5 | Hint = None</li>
+</ul>
+<p><strong>Player +4:</strong></p>
+<ul>
+<li>Card 1: Visible = G2 | Hint = None</li>
+<li>Card 2: Visible = W3 | Hint = None</li>
+<li>Card 3: Visible = W4 | Hint = None</li>
+<li>Card 4: Visible = Y4 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Play card 1</li>
+<li>Action 5: Play card 2</li>
+<li>Action 6: Play card 3</li>
+<li>Action 7: Play card 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': 'W2 is a safe play to advance the white firework from 1 to 2, aligning with the known information and immediate progression needs.', 'action': 5}</p>
+</div>
+<div class='state' id='state36'>
+<h2>State 74</h2>
+<p><strong>Tokens:</strong> Life tokens = 1, Info tokens = 0</p>
+<p><strong>Fireworks:</strong> R1 Y1 G1 W1 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: WX</li>
+<li>Card 2: GX</li>
+<li>Card 3: GX</li>
+<li>Card 4: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = Y2 | Hint = YX</li>
+<li>Card 2: Visible = Y4 | Hint = YX</li>
+<li>Card 3: Visible = B4 | Hint = BX</li>
+<li>Card 4: Visible = B5 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = G4 | Hint = None</li>
+<li>Card 2: Visible = W2 | Hint = None</li>
+<li>Card 3: Visible = R4 | Hint = None</li>
+<li>Card 4: Visible = R5 | Hint = None</li>
+</ul>
+<p><strong>Player +3:</strong></p>
+<ul>
+<li>Card 1: Visible = G2 | Hint = None</li>
+<li>Card 2: Visible = W3 | Hint = None</li>
+<li>Card 3: Visible = W4 | Hint = None</li>
+<li>Card 4: Visible = Y4 | Hint = None</li>
+</ul>
+<p><strong>Player +4:</strong></p>
+<ul>
+<li>Card 1: Visible = R3 | Hint = None</li>
+<li>Card 2: Visible = W3 | Hint = None</li>
+<li>Card 3: Visible = B1 | Hint = BX</li>
+<li>Card 4: Visible = G2 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Play card 1</li>
+<li>Action 5: Play card 2</li>
+<li>Action 6: Play card 3</li>
+<li>Action 7: Play card 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': 'Playing W2 from position 0 is a safe move to advance the White firework stack from 1 to 2, and no info tokens are needed or risked in this play.', 'action': 4}</p>
+</div>
+<div class='state' id='state37'>
+<h2>State 76</h2>
+<p><strong>Tokens:</strong> Life tokens = 1, Info tokens = 0</p>
+<p><strong>Fireworks:</strong> R1 Y1 G1 W2 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: YX</li>
+<li>Card 2: YX</li>
+<li>Card 3: BX</li>
+<li>Card 4: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = G4 | Hint = None</li>
+<li>Card 2: Visible = W2 | Hint = None</li>
+<li>Card 3: Visible = R4 | Hint = None</li>
+<li>Card 4: Visible = R5 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = G2 | Hint = None</li>
+<li>Card 2: Visible = W3 | Hint = None</li>
+<li>Card 3: Visible = W4 | Hint = None</li>
+<li>Card 4: Visible = Y4 | Hint = None</li>
+</ul>
+<p><strong>Player +3:</strong></p>
+<ul>
+<li>Card 1: Visible = R3 | Hint = None</li>
+<li>Card 2: Visible = W3 | Hint = None</li>
+<li>Card 3: Visible = B1 | Hint = BX</li>
+<li>Card 4: Visible = G2 | Hint = None</li>
+</ul>
+<p><strong>Player +4:</strong></p>
+<ul>
+<li>Card 1: Visible = G4 | Hint = GX</li>
+<li>Card 2: Visible = G1 | Hint = GX</li>
+<li>Card 3: Visible = B3 | Hint = None</li>
+<li>Card 4: Visible = R3 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Play card 1</li>
+<li>Action 5: Play card 2</li>
+<li>Action 6: Play card 3</li>
+<li>Action 7: Play card 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': 'Discard least known card to gain an info token for future hints, as no clear and safe play is currently available without risking the game with only 1 life token left.', 'action': 3}</p>
+</div>
+<div class='state' id='state38'>
+<h2>State 78</h2>
+<p><strong>Tokens:</strong> Life tokens = 1, Info tokens = 1</p>
+<p><strong>Fireworks:</strong> R1 Y1 G1 W2 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: Unknown</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = G2 | Hint = None</li>
+<li>Card 2: Visible = W3 | Hint = None</li>
+<li>Card 3: Visible = W4 | Hint = None</li>
+<li>Card 4: Visible = Y4 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = R3 | Hint = None</li>
+<li>Card 2: Visible = W3 | Hint = None</li>
+<li>Card 3: Visible = B1 | Hint = BX</li>
+<li>Card 4: Visible = G2 | Hint = None</li>
+</ul>
+<p><strong>Player +3:</strong></p>
+<ul>
+<li>Card 1: Visible = G4 | Hint = GX</li>
+<li>Card 2: Visible = G1 | Hint = GX</li>
+<li>Card 3: Visible = B3 | Hint = None</li>
+<li>Card 4: Visible = R3 | Hint = None</li>
+</ul>
+<p><strong>Player +4:</strong></p>
+<ul>
+<li>Card 1: Visible = Y2 | Hint = YX</li>
+<li>Card 2: Visible = Y4 | Hint = YX</li>
+<li>Card 3: Visible = B4 | Hint = BX</li>
+<li>Card 4: Visible = B2 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Play card 1</li>
+<li>Action 5: Play card 2</li>
+<li>Action 6: Play card 3</li>
+<li>Action 7: Play card 4</li>
+<li>Action 9: Reveal player +1 color Y</li>
+<li>Action 10: Reveal player +1 color G</li>
+<li>Action 11: Reveal player +1 color W</li>
+<li>Action 13: Reveal player +2 color R</li>
+<li>Action 15: Reveal player +2 color G</li>
+<li>Action 16: Reveal player +2 color W</li>
+<li>Action 17: Reveal player +2 color B</li>
+<li>Action 18: Reveal player +3 color R</li>
+<li>Action 20: Reveal player +3 color G</li>
+<li>Action 22: Reveal player +3 color B</li>
+<li>Action 24: Reveal player +4 color Y</li>
+<li>Action 27: Reveal player +4 color B</li>
+<li>Action 29: Reveal player +1 rank 2</li>
+<li>Action 30: Reveal player +1 rank 3</li>
+<li>Action 31: Reveal player +1 rank 4</li>
+<li>Action 33: Reveal player +2 rank 1</li>
+<li>Action 34: Reveal player +2 rank 2</li>
+<li>Action 35: Reveal player +2 rank 3</li>
+<li>Action 38: Reveal player +3 rank 1</li>
+<li>Action 40: Reveal player +3 rank 3</li>
+<li>Action 41: Reveal player +3 rank 4</li>
+<li>Action 44: Reveal player +4 rank 2</li>
+<li>Action 46: Reveal player +4 rank 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Hinting Player +2 about the Blue cards will allow them to play 'B1', thus starting the Blue fireworks which are currently at 0. This action leverages the only available info token to secure a certain play, maximizes the immediate impact on the game score, and avoids the risk of making an error with the last life token.", 'action': 17}</p>
+</div>
+<div class='state' id='state39'>
+<h2>State 79</h2>
+<p><strong>Tokens:</strong> Life tokens = 1, Info tokens = 0</p>
+<p><strong>Fireworks:</strong> R1 Y1 G1 W2 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: Unknown</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = R3 | Hint = None</li>
+<li>Card 2: Visible = W3 | Hint = None</li>
+<li>Card 3: Visible = B1 | Hint = BX</li>
+<li>Card 4: Visible = G2 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = G4 | Hint = GX</li>
+<li>Card 2: Visible = G1 | Hint = GX</li>
+<li>Card 3: Visible = B3 | Hint = None</li>
+<li>Card 4: Visible = R3 | Hint = None</li>
+</ul>
+<p><strong>Player +3:</strong></p>
+<ul>
+<li>Card 1: Visible = Y2 | Hint = YX</li>
+<li>Card 2: Visible = Y4 | Hint = YX</li>
+<li>Card 3: Visible = B4 | Hint = BX</li>
+<li>Card 4: Visible = B2 | Hint = None</li>
+</ul>
+<p><strong>Player +4:</strong></p>
+<ul>
+<li>Card 1: Visible = G4 | Hint = None</li>
+<li>Card 2: Visible = W2 | Hint = None</li>
+<li>Card 3: Visible = R4 | Hint = None</li>
+<li>Card 4: Visible = R5 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Play card 1</li>
+<li>Action 5: Play card 2</li>
+<li>Action 6: Play card 3</li>
+<li>Action 7: Play card 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': 'Given the lack of info tokens and uncertainty about my own cards, discarding is the safest option to gain an info token for strategic play in subsequent turns.', 'action': 0}</p>
+</div>
+<div class='state' id='state40'>
+<h2>State 81</h2>
+<p><strong>Tokens:</strong> Life tokens = 1, Info tokens = 1</p>
+<p><strong>Fireworks:</strong> R1 Y1 G1 W2 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: Unknown</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: BX</li>
+<li>Card 4: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = G4 | Hint = GX</li>
+<li>Card 2: Visible = G1 | Hint = GX</li>
+<li>Card 3: Visible = B3 | Hint = None</li>
+<li>Card 4: Visible = R3 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = Y2 | Hint = YX</li>
+<li>Card 2: Visible = Y4 | Hint = YX</li>
+<li>Card 3: Visible = B4 | Hint = BX</li>
+<li>Card 4: Visible = B2 | Hint = None</li>
+</ul>
+<p><strong>Player +3:</strong></p>
+<ul>
+<li>Card 1: Visible = G4 | Hint = None</li>
+<li>Card 2: Visible = W2 | Hint = None</li>
+<li>Card 3: Visible = R4 | Hint = None</li>
+<li>Card 4: Visible = R5 | Hint = None</li>
+</ul>
+<p><strong>Player +4:</strong></p>
+<ul>
+<li>Card 1: Visible = W3 | Hint = None</li>
+<li>Card 2: Visible = W4 | Hint = None</li>
+<li>Card 3: Visible = Y4 | Hint = None</li>
+<li>Card 4: Visible = G1 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Play card 1</li>
+<li>Action 5: Play card 2</li>
+<li>Action 6: Play card 3</li>
+<li>Action 7: Play card 4</li>
+<li>Action 8: Reveal player +1 color R</li>
+<li>Action 10: Reveal player +1 color G</li>
+<li>Action 12: Reveal player +1 color B</li>
+<li>Action 14: Reveal player +2 color Y</li>
+<li>Action 17: Reveal player +2 color B</li>
+<li>Action 18: Reveal player +3 color R</li>
+<li>Action 20: Reveal player +3 color G</li>
+<li>Action 21: Reveal player +3 color W</li>
+<li>Action 24: Reveal player +4 color Y</li>
+<li>Action 25: Reveal player +4 color G</li>
+<li>Action 26: Reveal player +4 color W</li>
+<li>Action 28: Reveal player +1 rank 1</li>
+<li>Action 30: Reveal player +1 rank 3</li>
+<li>Action 31: Reveal player +1 rank 4</li>
+<li>Action 34: Reveal player +2 rank 2</li>
+<li>Action 36: Reveal player +2 rank 4</li>
+<li>Action 39: Reveal player +3 rank 2</li>
+<li>Action 41: Reveal player +3 rank 4</li>
+<li>Action 42: Reveal player +3 rank 5</li>
+<li>Action 43: Reveal player +4 rank 1</li>
+<li>Action 45: Reveal player +4 rank 3</li>
+<li>Action 46: Reveal player +4 rank 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': 'Reveal rank 2 to Player +2 to ensure they know they possess a playable Y2 which advances the Yellow firework safely.', 'action': 34}</p>
+</div>
+<div class='state' id='state41'>
+<h2>State 82</h2>
+<p><strong>Tokens:</strong> Life tokens = 1, Info tokens = 0</p>
+<p><strong>Fireworks:</strong> R1 Y1 G1 W2 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: GX</li>
+<li>Card 2: GX</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = Y2 | Hint = Y2</li>
+<li>Card 2: Visible = Y4 | Hint = YX</li>
+<li>Card 3: Visible = B4 | Hint = BX</li>
+<li>Card 4: Visible = B2 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = G4 | Hint = None</li>
+<li>Card 2: Visible = W2 | Hint = None</li>
+<li>Card 3: Visible = R4 | Hint = None</li>
+<li>Card 4: Visible = R5 | Hint = None</li>
+</ul>
+<p><strong>Player +3:</strong></p>
+<ul>
+<li>Card 1: Visible = W3 | Hint = None</li>
+<li>Card 2: Visible = W4 | Hint = None</li>
+<li>Card 3: Visible = Y4 | Hint = None</li>
+<li>Card 4: Visible = G1 | Hint = None</li>
+</ul>
+<p><strong>Player +4:</strong></p>
+<ul>
+<li>Card 1: Visible = R3 | Hint = None</li>
+<li>Card 2: Visible = W3 | Hint = None</li>
+<li>Card 3: Visible = B1 | Hint = BX</li>
+<li>Card 4: Visible = G2 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Play card 1</li>
+<li>Action 5: Play card 2</li>
+<li>Action 6: Play card 3</li>
+<li>Action 7: Play card 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': 'Discarding Card 3 to gain an info token while minimizing risk of ending the game by playing a wrong card.', 'action': 2}</p>
+</div>
+<div class='state' id='state42'>
+<h2>State 84</h2>
+<p><strong>Tokens:</strong> Life tokens = 1, Info tokens = 1</p>
+<p><strong>Fireworks:</strong> R1 Y1 G1 W2 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: Y2</li>
+<li>Card 2: YX</li>
+<li>Card 3: BX</li>
+<li>Card 4: X2</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = G4 | Hint = None</li>
+<li>Card 2: Visible = W2 | Hint = None</li>
+<li>Card 3: Visible = R4 | Hint = None</li>
+<li>Card 4: Visible = R5 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = W3 | Hint = None</li>
+<li>Card 2: Visible = W4 | Hint = None</li>
+<li>Card 3: Visible = Y4 | Hint = None</li>
+<li>Card 4: Visible = G1 | Hint = None</li>
+</ul>
+<p><strong>Player +3:</strong></p>
+<ul>
+<li>Card 1: Visible = R3 | Hint = None</li>
+<li>Card 2: Visible = W3 | Hint = None</li>
+<li>Card 3: Visible = B1 | Hint = BX</li>
+<li>Card 4: Visible = G2 | Hint = None</li>
+</ul>
+<p><strong>Player +4:</strong></p>
+<ul>
+<li>Card 1: Visible = G4 | Hint = GX</li>
+<li>Card 2: Visible = G1 | Hint = GX</li>
+<li>Card 3: Visible = R3 | Hint = None</li>
+<li>Card 4: Visible = W5 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Play card 1</li>
+<li>Action 5: Play card 2</li>
+<li>Action 6: Play card 3</li>
+<li>Action 7: Play card 4</li>
+<li>Action 8: Reveal player +1 color R</li>
+<li>Action 10: Reveal player +1 color G</li>
+<li>Action 11: Reveal player +1 color W</li>
+<li>Action 14: Reveal player +2 color Y</li>
+<li>Action 15: Reveal player +2 color G</li>
+<li>Action 16: Reveal player +2 color W</li>
+<li>Action 18: Reveal player +3 color R</li>
+<li>Action 20: Reveal player +3 color G</li>
+<li>Action 21: Reveal player +3 color W</li>
+<li>Action 22: Reveal player +3 color B</li>
+<li>Action 23: Reveal player +4 color R</li>
+<li>Action 25: Reveal player +4 color G</li>
+<li>Action 26: Reveal player +4 color W</li>
+<li>Action 29: Reveal player +1 rank 2</li>
+<li>Action 31: Reveal player +1 rank 4</li>
+<li>Action 32: Reveal player +1 rank 5</li>
+<li>Action 33: Reveal player +2 rank 1</li>
+<li>Action 35: Reveal player +2 rank 3</li>
+<li>Action 36: Reveal player +2 rank 4</li>
+<li>Action 38: Reveal player +3 rank 1</li>
+<li>Action 39: Reveal player +3 rank 2</li>
+<li>Action 40: Reveal player +3 rank 3</li>
+<li>Action 43: Reveal player +4 rank 1</li>
+<li>Action 45: Reveal player +4 rank 3</li>
+<li>Action 46: Reveal player +4 rank 4</li>
+<li>Action 47: Reveal player +4 rank 5</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': 'Playing Y2 from my hand as it is the next required card for the yellow stack, advancing our score without risking a life token.', 'action': 4}</p>
+</div>
+<div class='state' id='state43'>
+<h2>State 86</h2>
+<p><strong>Tokens:</strong> Life tokens = 1, Info tokens = 1</p>
+<p><strong>Fireworks:</strong> R1 Y2 G1 W2 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: Unknown</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = W3 | Hint = None</li>
+<li>Card 2: Visible = W4 | Hint = None</li>
+<li>Card 3: Visible = Y4 | Hint = None</li>
+<li>Card 4: Visible = G1 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = R3 | Hint = None</li>
+<li>Card 2: Visible = W3 | Hint = None</li>
+<li>Card 3: Visible = B1 | Hint = BX</li>
+<li>Card 4: Visible = G2 | Hint = None</li>
+</ul>
+<p><strong>Player +3:</strong></p>
+<ul>
+<li>Card 1: Visible = G4 | Hint = GX</li>
+<li>Card 2: Visible = G1 | Hint = GX</li>
+<li>Card 3: Visible = R3 | Hint = None</li>
+<li>Card 4: Visible = W5 | Hint = None</li>
+</ul>
+<p><strong>Player +4:</strong></p>
+<ul>
+<li>Card 1: Visible = Y4 | Hint = YX</li>
+<li>Card 2: Visible = B4 | Hint = BX</li>
+<li>Card 3: Visible = B2 | Hint = None</li>
+<li>Card 4: Visible = R4 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Play card 1</li>
+<li>Action 5: Play card 2</li>
+<li>Action 6: Play card 3</li>
+<li>Action 7: Play card 4</li>
+<li>Action 9: Reveal player +1 color Y</li>
+<li>Action 10: Reveal player +1 color G</li>
+<li>Action 11: Reveal player +1 color W</li>
+<li>Action 13: Reveal player +2 color R</li>
+<li>Action 15: Reveal player +2 color G</li>
+<li>Action 16: Reveal player +2 color W</li>
+<li>Action 17: Reveal player +2 color B</li>
+<li>Action 18: Reveal player +3 color R</li>
+<li>Action 20: Reveal player +3 color G</li>
+<li>Action 21: Reveal player +3 color W</li>
+<li>Action 23: Reveal player +4 color R</li>
+<li>Action 24: Reveal player +4 color Y</li>
+<li>Action 27: Reveal player +4 color B</li>
+<li>Action 28: Reveal player +1 rank 1</li>
+<li>Action 30: Reveal player +1 rank 3</li>
+<li>Action 31: Reveal player +1 rank 4</li>
+<li>Action 33: Reveal player +2 rank 1</li>
+<li>Action 34: Reveal player +2 rank 2</li>
+<li>Action 35: Reveal player +2 rank 3</li>
+<li>Action 38: Reveal player +3 rank 1</li>
+<li>Action 40: Reveal player +3 rank 3</li>
+<li>Action 41: Reveal player +3 rank 4</li>
+<li>Action 42: Reveal player +3 rank 5</li>
+<li>Action 44: Reveal player +4 rank 2</li>
+<li>Action 46: Reveal player +4 rank 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Direct hint to enable a safe play of B1 in Player +2's hand, maximizing score progression without risking the game's single remaining life token.", 'action': 17}</p>
+</div>
+<div class='state' id='state44'>
+<h2>State 87</h2>
+<p><strong>Tokens:</strong> Life tokens = 1, Info tokens = 0</p>
+<p><strong>Fireworks:</strong> R1 Y2 G1 W2 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: Unknown</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = R3 | Hint = None</li>
+<li>Card 2: Visible = W3 | Hint = None</li>
+<li>Card 3: Visible = B1 | Hint = BX</li>
+<li>Card 4: Visible = G2 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = G4 | Hint = GX</li>
+<li>Card 2: Visible = G1 | Hint = GX</li>
+<li>Card 3: Visible = R3 | Hint = None</li>
+<li>Card 4: Visible = W5 | Hint = None</li>
+</ul>
+<p><strong>Player +3:</strong></p>
+<ul>
+<li>Card 1: Visible = Y4 | Hint = YX</li>
+<li>Card 2: Visible = B4 | Hint = BX</li>
+<li>Card 3: Visible = B2 | Hint = None</li>
+<li>Card 4: Visible = R4 | Hint = None</li>
+</ul>
+<p><strong>Player +4:</strong></p>
+<ul>
+<li>Card 1: Visible = G4 | Hint = None</li>
+<li>Card 2: Visible = W2 | Hint = None</li>
+<li>Card 3: Visible = R4 | Hint = None</li>
+<li>Card 4: Visible = R5 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Play card 1</li>
+<li>Action 5: Play card 2</li>
+<li>Action 6: Play card 3</li>
+<li>Action 7: Play card 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': 'Discard a card to gain an info token as no hints can currently be given to assist teammates and no safe play is possible without info. Chose the first card to keep options open for other potential useful cards.', 'action': 0}</p>
+</div>
+<div class='state' id='state45'>
+<h2>State 89</h2>
+<p><strong>Tokens:</strong> Life tokens = 1, Info tokens = 1</p>
+<p><strong>Fireworks:</strong> R1 Y2 G1 W2 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: Unknown</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: BX</li>
+<li>Card 4: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = G4 | Hint = GX</li>
+<li>Card 2: Visible = G1 | Hint = GX</li>
+<li>Card 3: Visible = R3 | Hint = None</li>
+<li>Card 4: Visible = W5 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = Y4 | Hint = YX</li>
+<li>Card 2: Visible = B4 | Hint = BX</li>
+<li>Card 3: Visible = B2 | Hint = None</li>
+<li>Card 4: Visible = R4 | Hint = None</li>
+</ul>
+<p><strong>Player +3:</strong></p>
+<ul>
+<li>Card 1: Visible = G4 | Hint = None</li>
+<li>Card 2: Visible = W2 | Hint = None</li>
+<li>Card 3: Visible = R4 | Hint = None</li>
+<li>Card 4: Visible = R5 | Hint = None</li>
+</ul>
+<p><strong>Player +4:</strong></p>
+<ul>
+<li>Card 1: Visible = W4 | Hint = None</li>
+<li>Card 2: Visible = Y4 | Hint = None</li>
+<li>Card 3: Visible = G1 | Hint = None</li>
+<li>Card 4: Visible = R1 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Play card 1</li>
+<li>Action 5: Play card 2</li>
+<li>Action 6: Play card 3</li>
+<li>Action 7: Play card 4</li>
+<li>Action 8: Reveal player +1 color R</li>
+<li>Action 10: Reveal player +1 color G</li>
+<li>Action 11: Reveal player +1 color W</li>
+<li>Action 13: Reveal player +2 color R</li>
+<li>Action 14: Reveal player +2 color Y</li>
+<li>Action 17: Reveal player +2 color B</li>
+<li>Action 18: Reveal player +3 color R</li>
+<li>Action 20: Reveal player +3 color G</li>
+<li>Action 21: Reveal player +3 color W</li>
+<li>Action 23: Reveal player +4 color R</li>
+<li>Action 24: Reveal player +4 color Y</li>
+<li>Action 25: Reveal player +4 color G</li>
+<li>Action 26: Reveal player +4 color W</li>
+<li>Action 28: Reveal player +1 rank 1</li>
+<li>Action 30: Reveal player +1 rank 3</li>
+<li>Action 31: Reveal player +1 rank 4</li>
+<li>Action 32: Reveal player +1 rank 5</li>
+<li>Action 34: Reveal player +2 rank 2</li>
+<li>Action 36: Reveal player +2 rank 4</li>
+<li>Action 39: Reveal player +3 rank 2</li>
+<li>Action 41: Reveal player +3 rank 4</li>
+<li>Action 42: Reveal player +3 rank 5</li>
+<li>Action 43: Reveal player +4 rank 1</li>
+<li>Action 46: Reveal player +4 rank 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': 'Providing a hint to Player +1 about the color Green will enable them to play G1, which is immediately playable and progresses the Green fireworks without risk of error, preserving our limited life tokens.', 'action': 10}</p>
+</div>
+<div class='state' id='state46'>
+<h2>State 90</h2>
+<p><strong>Tokens:</strong> Life tokens = 1, Info tokens = 0</p>
+<p><strong>Fireworks:</strong> R1 Y2 G1 W2 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: GX</li>
+<li>Card 2: GX</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = Y4 | Hint = YX</li>
+<li>Card 2: Visible = B4 | Hint = BX</li>
+<li>Card 3: Visible = B2 | Hint = None</li>
+<li>Card 4: Visible = R4 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = G4 | Hint = None</li>
+<li>Card 2: Visible = W2 | Hint = None</li>
+<li>Card 3: Visible = R4 | Hint = None</li>
+<li>Card 4: Visible = R5 | Hint = None</li>
+</ul>
+<p><strong>Player +3:</strong></p>
+<ul>
+<li>Card 1: Visible = W4 | Hint = None</li>
+<li>Card 2: Visible = Y4 | Hint = None</li>
+<li>Card 3: Visible = G1 | Hint = None</li>
+<li>Card 4: Visible = R1 | Hint = None</li>
+</ul>
+<p><strong>Player +4:</strong></p>
+<ul>
+<li>Card 1: Visible = R3 | Hint = None</li>
+<li>Card 2: Visible = W3 | Hint = None</li>
+<li>Card 3: Visible = B1 | Hint = BX</li>
+<li>Card 4: Visible = G2 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Play card 1</li>
+<li>Action 5: Play card 2</li>
+<li>Action 6: Play card 3</li>
+<li>Action 7: Play card 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': 'Discarding an unidentified card to regain an Info Token for strategic hints in future turns, especially since safe plays and exact card identities are unknown due to lack of specific hints.', 'action': 2}</p>
+</div>
+<div class='state' id='state47'>
+<h2>State 92</h2>
+<p><strong>Tokens:</strong> Life tokens = 1, Info tokens = 1</p>
+<p><strong>Fireworks:</strong> R1 Y2 G1 W2 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: YX</li>
+<li>Card 2: BX</li>
+<li>Card 3: X2</li>
+<li>Card 4: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = G4 | Hint = None</li>
+<li>Card 2: Visible = W2 | Hint = None</li>
+<li>Card 3: Visible = R4 | Hint = None</li>
+<li>Card 4: Visible = R5 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = W4 | Hint = None</li>
+<li>Card 2: Visible = Y4 | Hint = None</li>
+<li>Card 3: Visible = G1 | Hint = None</li>
+<li>Card 4: Visible = R1 | Hint = None</li>
+</ul>
+<p><strong>Player +3:</strong></p>
+<ul>
+<li>Card 1: Visible = R3 | Hint = None</li>
+<li>Card 2: Visible = W3 | Hint = None</li>
+<li>Card 3: Visible = B1 | Hint = BX</li>
+<li>Card 4: Visible = G2 | Hint = None</li>
+</ul>
+<p><strong>Player +4:</strong></p>
+<ul>
+<li>Card 1: Visible = G4 | Hint = GX</li>
+<li>Card 2: Visible = G1 | Hint = GX</li>
+<li>Card 3: Visible = W5 | Hint = None</li>
+<li>Card 4: Visible = Y3 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Play card 1</li>
+<li>Action 5: Play card 2</li>
+<li>Action 6: Play card 3</li>
+<li>Action 7: Play card 4</li>
+<li>Action 8: Reveal player +1 color R</li>
+<li>Action 10: Reveal player +1 color G</li>
+<li>Action 11: Reveal player +1 color W</li>
+<li>Action 13: Reveal player +2 color R</li>
+<li>Action 14: Reveal player +2 color Y</li>
+<li>Action 15: Reveal player +2 color G</li>
+<li>Action 16: Reveal player +2 color W</li>
+<li>Action 18: Reveal player +3 color R</li>
+<li>Action 20: Reveal player +3 color G</li>
+<li>Action 21: Reveal player +3 color W</li>
+<li>Action 22: Reveal player +3 color B</li>
+<li>Action 24: Reveal player +4 color Y</li>
+<li>Action 25: Reveal player +4 color G</li>
+<li>Action 26: Reveal player +4 color W</li>
+<li>Action 29: Reveal player +1 rank 2</li>
+<li>Action 31: Reveal player +1 rank 4</li>
+<li>Action 32: Reveal player +1 rank 5</li>
+<li>Action 33: Reveal player +2 rank 1</li>
+<li>Action 36: Reveal player +2 rank 4</li>
+<li>Action 38: Reveal player +3 rank 1</li>
+<li>Action 39: Reveal player +3 rank 2</li>
+<li>Action 40: Reveal player +3 rank 3</li>
+<li>Action 43: Reveal player +4 rank 1</li>
+<li>Action 45: Reveal player +4 rank 3</li>
+<li>Action 46: Reveal player +4 rank 4</li>
+<li>Action 47: Reveal player +4 rank 5</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Player +2 has 'G1', which can be played immediately to increase the Green stack from 1 to 2, ensuring a safe play and score increment without risking the last life token.", 'action': 6}</p>
+</div>
+<div class='navigation'>
+<button onclick='prevState()'>Previous</button>
+<button onclick='nextState()'>Next</button>
+</div>
+
+<script>
+var currentStateIndex = 0;
+var totalStates = 48;
+function showState(index) {
+		for (var i = 0; i < totalStates; i++) {
+				document.getElementById("state" + i).style.display = "none";
+		}
+		document.getElementById("state" + index).style.display = "block";
+}
+function nextState() {
+		if (currentStateIndex < totalStates - 1) {
+				currentStateIndex++;
+				showState(currentStateIndex);
+		}
+}
+function prevState() {
+		if (currentStateIndex > 0) {
+				currentStateIndex--;
+				showState(currentStateIndex);
+		}
+}
+showState(currentStateIndex);
+</script>
+		
+</body>
+</html>

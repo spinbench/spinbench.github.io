@@ -1,0 +1,2575 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>Hanabi Game Trajectories</title>
+<style>
+
+				.state {
+						display: none;
+						border: 1px solid #ccc;
+						padding: 10px;
+						margin-bottom: 10px;
+						white-space: pre-wrap;
+						font-family: monospace;
+				}
+				.navigation {
+						margin-top: 20px;
+				}
+				button {
+						margin-right: 10px;
+				}
+		
+</style>
+</head>
+<body>
+<h1>Hanabi Game Trajectories</h1>
+<div class='state' id='state0'>
+<h2>State 16</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 8</p>
+<p><strong>Fireworks:</strong> R0 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: Unknown</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: Unknown</li>
+<li>Card 5: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = G5 | Hint = None</li>
+<li>Card 2: Visible = B3 | Hint = None</li>
+<li>Card 3: Visible = Y4 | Hint = None</li>
+<li>Card 4: Visible = R3 | Hint = None</li>
+<li>Card 5: Visible = R1 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = R5 | Hint = None</li>
+<li>Card 2: Visible = B3 | Hint = None</li>
+<li>Card 3: Visible = G4 | Hint = None</li>
+<li>Card 4: Visible = G3 | Hint = None</li>
+<li>Card 5: Visible = W4 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 5: Play card 1</li>
+<li>Action 6: Play card 2</li>
+<li>Action 7: Play card 3</li>
+<li>Action 8: Play card 4</li>
+<li>Action 9: Play card 5</li>
+<li>Action 10: Reveal player +1 color R</li>
+<li>Action 11: Reveal player +1 color Y</li>
+<li>Action 12: Reveal player +1 color G</li>
+<li>Action 14: Reveal player +1 color B</li>
+<li>Action 15: Reveal player +2 color R</li>
+<li>Action 17: Reveal player +2 color G</li>
+<li>Action 18: Reveal player +2 color W</li>
+<li>Action 19: Reveal player +2 color B</li>
+<li>Action 20: Reveal player +1 rank 1</li>
+<li>Action 22: Reveal player +1 rank 3</li>
+<li>Action 23: Reveal player +1 rank 4</li>
+<li>Action 24: Reveal player +1 rank 5</li>
+<li>Action 27: Reveal player +2 rank 3</li>
+<li>Action 28: Reveal player +2 rank 4</li>
+<li>Action 29: Reveal player +2 rank 5</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Since there are no immediate playable cards and limited information about our own hand, giving a hint to another player could help them make a move, potentially opening up more possibilities for us later. Noticing that Player +1 has 'R3', 'R1', and Player +2 has 'R5', it seems beneficial to give a hint about the color red to Player +1 because they have two low-ranking red cards which might be playable soon if we knew their exact order or could safely discard one to gain information.", 'action': '10'}</p>
+</div>
+<div class='state' id='state1'>
+<h2>State 17</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 7</p>
+<p><strong>Fireworks:</strong> R0 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: Unknown</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: RX</li>
+<li>Card 5: RX</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = R5 | Hint = None</li>
+<li>Card 2: Visible = B3 | Hint = None</li>
+<li>Card 3: Visible = G4 | Hint = None</li>
+<li>Card 4: Visible = G3 | Hint = None</li>
+<li>Card 5: Visible = W4 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = W4 | Hint = None</li>
+<li>Card 2: Visible = B2 | Hint = None</li>
+<li>Card 3: Visible = R2 | Hint = None</li>
+<li>Card 4: Visible = B1 | Hint = None</li>
+<li>Card 5: Visible = W3 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Discard 4</li>
+<li>Action 5: Play card 1</li>
+<li>Action 6: Play card 2</li>
+<li>Action 7: Play card 3</li>
+<li>Action 8: Play card 4</li>
+<li>Action 9: Play card 5</li>
+<li>Action 10: Reveal player +1 color R</li>
+<li>Action 12: Reveal player +1 color G</li>
+<li>Action 13: Reveal player +1 color W</li>
+<li>Action 14: Reveal player +1 color B</li>
+<li>Action 15: Reveal player +2 color R</li>
+<li>Action 18: Reveal player +2 color W</li>
+<li>Action 19: Reveal player +2 color B</li>
+<li>Action 22: Reveal player +1 rank 3</li>
+<li>Action 23: Reveal player +1 rank 4</li>
+<li>Action 24: Reveal player +1 rank 5</li>
+<li>Action 25: Reveal player +2 rank 1</li>
+<li>Action 26: Reveal player +2 rank 2</li>
+<li>Action 27: Reveal player +2 rank 3</li>
+<li>Action 28: Reveal player +2 rank 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Since there are no immediately playable cards based on the given information and considering the potential benefits of gaining more info about other players' hands, it's strategic to hint about a color or rank that could help another player play a card correctly. Given Player +1 has a 'R5', 'B3', 'G4', 'G3', 'W4' and Player +2 has 'W4', 'B2', 'R2', 'B1', 'W3', revealing a color or rank that matches multiple cards could be helpful. However, without direct knowledge of our own hand's specifics aside from two potential reds, giving a hint about a color seems more immediately beneficial than specifying a rank. Since 'Reveal player +1 color R' is available and red is a common color in fireworks, it might prompt Player +1 to play their 'R5' if they feel confident about its position in the sequence after our hint.", 'action': 10}</p>
+</div>
+<div class='state' id='state2'>
+<h2>State 18</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 6</p>
+<p><strong>Fireworks:</strong> R0 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: RX</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: Unknown</li>
+<li>Card 5: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = W4 | Hint = None</li>
+<li>Card 2: Visible = B2 | Hint = None</li>
+<li>Card 3: Visible = R2 | Hint = None</li>
+<li>Card 4: Visible = B1 | Hint = None</li>
+<li>Card 5: Visible = W3 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = G5 | Hint = None</li>
+<li>Card 2: Visible = B3 | Hint = None</li>
+<li>Card 3: Visible = Y4 | Hint = None</li>
+<li>Card 4: Visible = R3 | Hint = RX</li>
+<li>Card 5: Visible = R1 | Hint = RX</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Discard 4</li>
+<li>Action 5: Play card 1</li>
+<li>Action 6: Play card 2</li>
+<li>Action 7: Play card 3</li>
+<li>Action 8: Play card 4</li>
+<li>Action 9: Play card 5</li>
+<li>Action 10: Reveal player +1 color R</li>
+<li>Action 13: Reveal player +1 color W</li>
+<li>Action 14: Reveal player +1 color B</li>
+<li>Action 15: Reveal player +2 color R</li>
+<li>Action 16: Reveal player +2 color Y</li>
+<li>Action 17: Reveal player +2 color G</li>
+<li>Action 19: Reveal player +2 color B</li>
+<li>Action 20: Reveal player +1 rank 1</li>
+<li>Action 21: Reveal player +1 rank 2</li>
+<li>Action 22: Reveal player +1 rank 3</li>
+<li>Action 23: Reveal player +1 rank 4</li>
+<li>Action 25: Reveal player +2 rank 1</li>
+<li>Action 27: Reveal player +2 rank 3</li>
+<li>Action 28: Reveal player +2 rank 4</li>
+<li>Action 29: Reveal player +2 rank 5</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Since there are no immediately playable cards in my hand and given the current state of the game with no firework stacks started, the best strategy is to try and give a useful hint to one of my teammates. Looking at Player +2's hand, they have a card 'R3' which might be red, suggesting it could be playable if we had a red stack going or if more information about its rank was known. However, without any firework stacks initiated, giving a color hint to a player with a potentially playable card based on future moves seems prudent. Player +2 has cards that could potentially start a firework stack (like 'R3' or 'R1'), so hinting about the color red to Player +2 could be beneficial as it might encourage them to play one of these cards if they receive additional information or if the game state changes favorably.", 'action': 15}</p>
+</div>
+<div class='state' id='state3'>
+<h2>State 19</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 5</p>
+<p><strong>Fireworks:</strong> R0 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: Unknown</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: Unknown</li>
+<li>Card 5: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = G5 | Hint = None</li>
+<li>Card 2: Visible = B3 | Hint = None</li>
+<li>Card 3: Visible = Y4 | Hint = None</li>
+<li>Card 4: Visible = R3 | Hint = RX</li>
+<li>Card 5: Visible = R1 | Hint = RX</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = R5 | Hint = RX</li>
+<li>Card 2: Visible = B3 | Hint = None</li>
+<li>Card 3: Visible = G4 | Hint = None</li>
+<li>Card 4: Visible = G3 | Hint = None</li>
+<li>Card 5: Visible = W4 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Discard 4</li>
+<li>Action 5: Play card 1</li>
+<li>Action 6: Play card 2</li>
+<li>Action 7: Play card 3</li>
+<li>Action 8: Play card 4</li>
+<li>Action 9: Play card 5</li>
+<li>Action 10: Reveal player +1 color R</li>
+<li>Action 11: Reveal player +1 color Y</li>
+<li>Action 12: Reveal player +1 color G</li>
+<li>Action 14: Reveal player +1 color B</li>
+<li>Action 15: Reveal player +2 color R</li>
+<li>Action 17: Reveal player +2 color G</li>
+<li>Action 18: Reveal player +2 color W</li>
+<li>Action 19: Reveal player +2 color B</li>
+<li>Action 20: Reveal player +1 rank 1</li>
+<li>Action 22: Reveal player +1 rank 3</li>
+<li>Action 23: Reveal player +1 rank 4</li>
+<li>Action 24: Reveal player +1 rank 5</li>
+<li>Action 27: Reveal player +2 rank 3</li>
+<li>Action 28: Reveal player +2 rank 4</li>
+<li>Action 29: Reveal player +2 rank 5</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Since there are no immediately playable cards and limited information about our own hand, we should focus on gaining more information or helping teammates make a play. However, with no clear opportunity for a safe play or hint that wouldn't risk wasting an Info token without clear benefit, the best initial strategy involves assessing what can be safely discarded to gain an Info token without jeopardizing potential future plays. Given all cards in our hand have the same level of uncertainty and none can be played without more information, any card could potentially be discarded for an Info token. Discarding a card for information seems like the safest bet as it doesn't risk giving away crucial information about our hand and might help us or our teammates in the next turns.", 'action': '0'}</p>
+</div>
+<div class='state' id='state4'>
+<h2>State 21</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 6</p>
+<p><strong>Fireworks:</strong> R0 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: Unknown</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: RX</li>
+<li>Card 5: RX</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = R5 | Hint = RX</li>
+<li>Card 2: Visible = B3 | Hint = None</li>
+<li>Card 3: Visible = G4 | Hint = None</li>
+<li>Card 4: Visible = G3 | Hint = None</li>
+<li>Card 5: Visible = W4 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = B2 | Hint = None</li>
+<li>Card 2: Visible = R2 | Hint = None</li>
+<li>Card 3: Visible = B1 | Hint = None</li>
+<li>Card 4: Visible = W3 | Hint = None</li>
+<li>Card 5: Visible = R1 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Discard 4</li>
+<li>Action 5: Play card 1</li>
+<li>Action 6: Play card 2</li>
+<li>Action 7: Play card 3</li>
+<li>Action 8: Play card 4</li>
+<li>Action 9: Play card 5</li>
+<li>Action 10: Reveal player +1 color R</li>
+<li>Action 12: Reveal player +1 color G</li>
+<li>Action 13: Reveal player +1 color W</li>
+<li>Action 14: Reveal player +1 color B</li>
+<li>Action 15: Reveal player +2 color R</li>
+<li>Action 18: Reveal player +2 color W</li>
+<li>Action 19: Reveal player +2 color B</li>
+<li>Action 22: Reveal player +1 rank 3</li>
+<li>Action 23: Reveal player +1 rank 4</li>
+<li>Action 24: Reveal player +1 rank 5</li>
+<li>Action 25: Reveal player +2 rank 1</li>
+<li>Action 26: Reveal player +2 rank 2</li>
+<li>Action 27: Reveal player +2 rank 3</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Since there are no immediately playable cards based on the current firework stacks and considering the hints received, the best move is to give a hint that maximizes the chance for a correct play. Noticing Player +1 has a card 'R5' which could be playable if the red stack were started, but since we cannot see our own hand's exact colors or ranks clearly except for hints towards red on cards 4 and 5, giving a color hint to Player +1 about their red card seems less directly beneficial than giving a rank or color hint that could unlock multiple potential plays across players. However, looking at the distribution of cards and the fact that no fireworks have been started, it might be more beneficial to consider giving a hint about a specific rank or color that appears frequently or could easily start a firework stack. Considering Player +2 has 'R1', starting with the lowest rank seems logical as it gives the highest chance of being immediately playable or setting up for future plays without risking a wrong move due to lack of information on exact card values in our hand. Thus, revealing rank 1 to Player +2 could help them and us by potentially starting the red firework stack, which looks promising given their 'R1' card.", 'action': 25}</p>
+</div>
+<div class='state' id='state5'>
+<h2>State 22</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 5</p>
+<p><strong>Fireworks:</strong> R0 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: RX</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: Unknown</li>
+<li>Card 5: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = B2 | Hint = None</li>
+<li>Card 2: Visible = R2 | Hint = None</li>
+<li>Card 3: Visible = B1 | Hint = None</li>
+<li>Card 4: Visible = W3 | Hint = None</li>
+<li>Card 5: Visible = R1 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = G5 | Hint = None</li>
+<li>Card 2: Visible = B3 | Hint = None</li>
+<li>Card 3: Visible = Y4 | Hint = None</li>
+<li>Card 4: Visible = R3 | Hint = RX</li>
+<li>Card 5: Visible = R1 | Hint = RX</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Discard 4</li>
+<li>Action 5: Play card 1</li>
+<li>Action 6: Play card 2</li>
+<li>Action 7: Play card 3</li>
+<li>Action 8: Play card 4</li>
+<li>Action 9: Play card 5</li>
+<li>Action 10: Reveal player +1 color R</li>
+<li>Action 13: Reveal player +1 color W</li>
+<li>Action 14: Reveal player +1 color B</li>
+<li>Action 15: Reveal player +2 color R</li>
+<li>Action 16: Reveal player +2 color Y</li>
+<li>Action 17: Reveal player +2 color G</li>
+<li>Action 19: Reveal player +2 color B</li>
+<li>Action 20: Reveal player +1 rank 1</li>
+<li>Action 21: Reveal player +1 rank 2</li>
+<li>Action 22: Reveal player +1 rank 3</li>
+<li>Action 25: Reveal player +2 rank 1</li>
+<li>Action 27: Reveal player +2 rank 3</li>
+<li>Action 28: Reveal player +2 rank 4</li>
+<li>Action 29: Reveal player +2 rank 5</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Since there are no immediately playable cards based on the given information and considering the hints that could be provided to teammates, it seems most beneficial to give a hint about color to player +1 or +2 to potentially unlock a play. Among the visible cards in teammates' hands, 'R2', 'B1', 'W3', 'R1' for player +1 and 'G5', 'B3', 'Y4', 'R3', 'R1' for player +2, providing a color hint could be most useful if it confirms a playable card. Noticing that both players have cards that might be red ('R2', 'R1' for player +1 and 'R3', 'R1' for player +2), giving a hint about the color red could help confirm these cards as potentially playable, especially since there's already a red card ('R1') in both players' hands that we know might be red. However, considering our current hand doesn't offer immediate plays and to avoid wasting an action without direct benefit from playing or discarding our own cards for info (since our hand isn't visible), giving a color hint seems proactive but requires careful consideration of which player and color would yield the highest likelihood of a subsequent playable card. Given that 'R1' appears in both players' hands, it indicates 'R1' could indeed be red. Thus, confirming red to either player could be useful but choosing between them depends on other visible cards they hold. Since there are limited options for direct play from our hand without more info and the potential for a teammate to play based on a well-placed hint is high, let's consider which teammate has more potential plays if given the right hint.", 'action': 10}</p>
+</div>
+<div class='state' id='state6'>
+<h2>State 23</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 4</p>
+<p><strong>Fireworks:</strong> R0 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: Unknown</li>
+<li>Card 2: RX</li>
+<li>Card 3: X1</li>
+<li>Card 4: Unknown</li>
+<li>Card 5: R1</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = G5 | Hint = None</li>
+<li>Card 2: Visible = B3 | Hint = None</li>
+<li>Card 3: Visible = Y4 | Hint = None</li>
+<li>Card 4: Visible = R3 | Hint = RX</li>
+<li>Card 5: Visible = R1 | Hint = RX</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = R5 | Hint = RX</li>
+<li>Card 2: Visible = B3 | Hint = None</li>
+<li>Card 3: Visible = G4 | Hint = None</li>
+<li>Card 4: Visible = G3 | Hint = None</li>
+<li>Card 5: Visible = W4 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Discard 4</li>
+<li>Action 5: Play card 1</li>
+<li>Action 6: Play card 2</li>
+<li>Action 7: Play card 3</li>
+<li>Action 8: Play card 4</li>
+<li>Action 9: Play card 5</li>
+<li>Action 10: Reveal player +1 color R</li>
+<li>Action 11: Reveal player +1 color Y</li>
+<li>Action 12: Reveal player +1 color G</li>
+<li>Action 14: Reveal player +1 color B</li>
+<li>Action 15: Reveal player +2 color R</li>
+<li>Action 17: Reveal player +2 color G</li>
+<li>Action 18: Reveal player +2 color W</li>
+<li>Action 19: Reveal player +2 color B</li>
+<li>Action 20: Reveal player +1 rank 1</li>
+<li>Action 22: Reveal player +1 rank 3</li>
+<li>Action 23: Reveal player +1 rank 4</li>
+<li>Action 24: Reveal player +1 rank 5</li>
+<li>Action 27: Reveal player +2 rank 3</li>
+<li>Action 28: Reveal player +2 rank 4</li>
+<li>Action 29: Reveal player +2 rank 5</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Since there are no immediately playable cards and limited information about our own hand, it's crucial to gain more insight without wasting potential plays. Discarding a card from our hand that seems least likely to be useful based on the current state could provide an Info token, which is valuable for future moves. Given Card 1 has no specific hints and its possible identities are broad, similar to Card 4, but considering the need for information and the potential playability of other cards based on visible hands and game progress, we should focus on maximizing our knowledge first.", 'action': '0'}</p>
+</div>
+<div class='state' id='state7'>
+<h2>State 25</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 5</p>
+<p><strong>Fireworks:</strong> R0 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: Unknown</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: RX</li>
+<li>Card 5: RX</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = R5 | Hint = RX</li>
+<li>Card 2: Visible = B3 | Hint = None</li>
+<li>Card 3: Visible = G4 | Hint = None</li>
+<li>Card 4: Visible = G3 | Hint = None</li>
+<li>Card 5: Visible = W4 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = R2 | Hint = RX</li>
+<li>Card 2: Visible = B1 | Hint = None</li>
+<li>Card 3: Visible = W3 | Hint = None</li>
+<li>Card 4: Visible = R1 | Hint = R1</li>
+<li>Card 5: Visible = B1 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Discard 4</li>
+<li>Action 5: Play card 1</li>
+<li>Action 6: Play card 2</li>
+<li>Action 7: Play card 3</li>
+<li>Action 8: Play card 4</li>
+<li>Action 9: Play card 5</li>
+<li>Action 10: Reveal player +1 color R</li>
+<li>Action 12: Reveal player +1 color G</li>
+<li>Action 13: Reveal player +1 color W</li>
+<li>Action 14: Reveal player +1 color B</li>
+<li>Action 15: Reveal player +2 color R</li>
+<li>Action 18: Reveal player +2 color W</li>
+<li>Action 19: Reveal player +2 color B</li>
+<li>Action 22: Reveal player +1 rank 3</li>
+<li>Action 23: Reveal player +1 rank 4</li>
+<li>Action 24: Reveal player +1 rank 5</li>
+<li>Action 25: Reveal player +2 rank 1</li>
+<li>Action 26: Reveal player +2 rank 2</li>
+<li>Action 27: Reveal player +2 rank 3</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Given the current state of the game, with no firework stacks having any progress and considering the cards in teammates' hands, it seems that giving a hint could be beneficial. Since Player +1 has a visible 'R5' card and we have two cards in our hand that are possibly red (Card 4 and Card 5), hinting about the color red to Player +1 could be useful. This might help them play their 'R5' card if they receive another red card or decide to play based on the information they already have. However, since we do not have any cards that can be immediately played without risk based on the given hints, and considering the action options provided, the best strategy would be to give a hint to facilitate progress in the game. Among the legal actions provided, revealing player +1's color R seems like the most relevant and potentially beneficial move as it directly relates to facilitating play based on the cards we can see and the hints we've received.", 'action': 10}</p>
+</div>
+<div class='state' id='state8'>
+<h2>State 26</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 4</p>
+<p><strong>Fireworks:</strong> R0 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: RX</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: Unknown</li>
+<li>Card 5: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = R2 | Hint = RX</li>
+<li>Card 2: Visible = B1 | Hint = None</li>
+<li>Card 3: Visible = W3 | Hint = None</li>
+<li>Card 4: Visible = R1 | Hint = R1</li>
+<li>Card 5: Visible = B1 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = G5 | Hint = None</li>
+<li>Card 2: Visible = B3 | Hint = None</li>
+<li>Card 3: Visible = Y4 | Hint = None</li>
+<li>Card 4: Visible = R3 | Hint = RX</li>
+<li>Card 5: Visible = R1 | Hint = RX</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Discard 4</li>
+<li>Action 5: Play card 1</li>
+<li>Action 6: Play card 2</li>
+<li>Action 7: Play card 3</li>
+<li>Action 8: Play card 4</li>
+<li>Action 9: Play card 5</li>
+<li>Action 10: Reveal player +1 color R</li>
+<li>Action 13: Reveal player +1 color W</li>
+<li>Action 14: Reveal player +1 color B</li>
+<li>Action 15: Reveal player +2 color R</li>
+<li>Action 16: Reveal player +2 color Y</li>
+<li>Action 17: Reveal player +2 color G</li>
+<li>Action 19: Reveal player +2 color B</li>
+<li>Action 20: Reveal player +1 rank 1</li>
+<li>Action 21: Reveal player +1 rank 2</li>
+<li>Action 22: Reveal player +1 rank 3</li>
+<li>Action 25: Reveal player +2 rank 1</li>
+<li>Action 27: Reveal player +2 rank 3</li>
+<li>Action 28: Reveal player +2 rank 4</li>
+<li>Action 29: Reveal player +2 rank 5</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Since there are no immediately playable cards in my hand and considering the limited information about my own cards, the best move is to try and gain more information or help teammates make a play. However, with only 4 info tokens remaining and none of my cards having enough information to be played safely, I must consider how to use the hint system effectively or discard a card to gain an info token. Given that Player +1 has a 'R2' which they know might be red and could be one of R2345, and another 'R1' with knowledge it's red and rank 1, giving a hint about color or rank to them could be beneficial but their hands are relatively well-informed already. Player +2 has several cards with potential for play if more information is known, particularly the 'R1' which they know might be red. However, without direct playable cards in my hand and considering the need for strategic hinting or discarding to gain info, I should prioritize actions that could lead to immediate plays or significant informational gains. Since none of my cards are directly playable based on the provided information and hints are not immediately obvious without more card information, the best course might be to either discard a card for an info token if it seems useless or attempt to hint towards a teammate's potential play. Given these constraints and looking at the options, discarding to gain information seems like a safe bet but choosing which card to discard requires consideration of what might be least useful based on current firework progress and teammates' hands.", 'action': '2'}</p>
+</div>
+<div class='state' id='state9'>
+<h2>State 28</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 5</p>
+<p><strong>Fireworks:</strong> R0 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: RX</li>
+<li>Card 2: X1</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: R1</li>
+<li>Card 5: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = G5 | Hint = None</li>
+<li>Card 2: Visible = B3 | Hint = None</li>
+<li>Card 3: Visible = Y4 | Hint = None</li>
+<li>Card 4: Visible = R3 | Hint = RX</li>
+<li>Card 5: Visible = R1 | Hint = RX</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = R5 | Hint = RX</li>
+<li>Card 2: Visible = B3 | Hint = None</li>
+<li>Card 3: Visible = G3 | Hint = None</li>
+<li>Card 4: Visible = W4 | Hint = None</li>
+<li>Card 5: Visible = Y2 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Discard 4</li>
+<li>Action 5: Play card 1</li>
+<li>Action 6: Play card 2</li>
+<li>Action 7: Play card 3</li>
+<li>Action 8: Play card 4</li>
+<li>Action 9: Play card 5</li>
+<li>Action 10: Reveal player +1 color R</li>
+<li>Action 11: Reveal player +1 color Y</li>
+<li>Action 12: Reveal player +1 color G</li>
+<li>Action 14: Reveal player +1 color B</li>
+<li>Action 15: Reveal player +2 color R</li>
+<li>Action 16: Reveal player +2 color Y</li>
+<li>Action 17: Reveal player +2 color G</li>
+<li>Action 18: Reveal player +2 color W</li>
+<li>Action 19: Reveal player +2 color B</li>
+<li>Action 20: Reveal player +1 rank 1</li>
+<li>Action 22: Reveal player +1 rank 3</li>
+<li>Action 23: Reveal player +1 rank 4</li>
+<li>Action 24: Reveal player +1 rank 5</li>
+<li>Action 26: Reveal player +2 rank 2</li>
+<li>Action 27: Reveal player +2 rank 3</li>
+<li>Action 28: Reveal player +2 rank 4</li>
+<li>Action 29: Reveal player +2 rank 5</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Based on the current state, it seems that giving a hint about color R to player +1 could be helpful since they have a card 'R3' and 'R1' which suggests they might have more red cards. However, without direct knowledge of our own hand's specifics except for hints, playing or discarding from our hand based on the given information might not directly contribute to completing any firework stack at this moment. Nonetheless, considering the aim is to maximize score through correct sequences and our current lack of immediate playable cards, opting for a strategic hint could guide teammates towards making plays that are currently unseen by us. Since player +1 already has visible red cards and our hand does not immediately offer a playable option based on given data, giving a color hint to them might guide their next moves more effectively than any other action listed.", 'action': 10}</p>
+</div>
+<div class='state' id='state10'>
+<h2>State 29</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 4</p>
+<p><strong>Fireworks:</strong> R0 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: Unknown</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: RX</li>
+<li>Card 5: RX</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = R5 | Hint = RX</li>
+<li>Card 2: Visible = B3 | Hint = None</li>
+<li>Card 3: Visible = G3 | Hint = None</li>
+<li>Card 4: Visible = W4 | Hint = None</li>
+<li>Card 5: Visible = Y2 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = R2 | Hint = RX</li>
+<li>Card 2: Visible = B1 | Hint = None</li>
+<li>Card 3: Visible = W3 | Hint = None</li>
+<li>Card 4: Visible = R1 | Hint = R1</li>
+<li>Card 5: Visible = B1 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Discard 4</li>
+<li>Action 5: Play card 1</li>
+<li>Action 6: Play card 2</li>
+<li>Action 7: Play card 3</li>
+<li>Action 8: Play card 4</li>
+<li>Action 9: Play card 5</li>
+<li>Action 10: Reveal player +1 color R</li>
+<li>Action 11: Reveal player +1 color Y</li>
+<li>Action 12: Reveal player +1 color G</li>
+<li>Action 13: Reveal player +1 color W</li>
+<li>Action 14: Reveal player +1 color B</li>
+<li>Action 15: Reveal player +2 color R</li>
+<li>Action 18: Reveal player +2 color W</li>
+<li>Action 19: Reveal player +2 color B</li>
+<li>Action 21: Reveal player +1 rank 2</li>
+<li>Action 22: Reveal player +1 rank 3</li>
+<li>Action 23: Reveal player +1 rank 4</li>
+<li>Action 24: Reveal player +1 rank 5</li>
+<li>Action 25: Reveal player +2 rank 1</li>
+<li>Action 26: Reveal player +2 rank 2</li>
+<li>Action 27: Reveal player +2 rank 3</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Since there are no immediately playable cards and limited information about the cards in our hand, the best course of action is to try and gain more information. However, with 4 info tokens remaining, using one of them to hint at a player's card could be beneficial if it leads to a play. But given the lack of specific information about our own cards, it might be more prudent to consider discarding a card that seems least likely to be useful based on the hints we have. Cards 4 and 5 both hint at being red, but without knowing their rank or seeing how they could fit into the current game state immediately, and considering that the red stack is empty, it's not immediately clear which card would be safest to discard for an info token. Given this situation, we should prioritize gaining information or setting up potential plays based on what our teammates might know. Since both teammates have visible cards but none are clearly playable without more hints, giving a hint could unlock a play. Notably, Player +2 has two cards that could potentially be B (based on the action list provided), suggesting they might have useful information for completing a firework stack if given the right hint. However, since we can't directly see their full hand or what's been discarded from it recently besides the general discard pile, any hint given would need to be based on maximizing potential without specific knowledge of their exact cards. Given the constraints and focusing on maximizing the chance for a play without immediate risk, revealing color information could be more universally beneficial as it covers more possibilities than rank hints which are very specific. Between players +1 and +2, both have cards that could potentially match the current state or upcoming plays but lack the clarity to act without additional info. Since player +2 has cards with potential for immediate play if given the right color hint (considering the presence of B2 in the discard pile, indicating some blues are already out), giving them a hint about a color seen in their hand could be beneficial. However, we have no direct evidence they hold a red, yellow, or green card that matches our current stacks or upcoming needs directly from the description given. Considering the blue cards and given actions available for revealing colors to player +2, the action (Reveal player +2 color B) stands out because it's directly related to information we have about potential upcoming cards (given the discard pile includes a B card). This could help them identify if they can play or plan around any blue cards, maximizing our team's chances of scoring without specific knowledge of their hand contents. Thus, focusing on an action that has the potential to unlock plays based on the visible state and available hints is key.", 'action': 19}</p>
+</div>
+<div class='state' id='state11'>
+<h2>State 30</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 3</p>
+<p><strong>Fireworks:</strong> R0 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: RX</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: Unknown</li>
+<li>Card 5: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = R2 | Hint = RX</li>
+<li>Card 2: Visible = B1 | Hint = B1</li>
+<li>Card 3: Visible = W3 | Hint = None</li>
+<li>Card 4: Visible = R1 | Hint = R1</li>
+<li>Card 5: Visible = B1 | Hint = BX</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = G5 | Hint = None</li>
+<li>Card 2: Visible = B3 | Hint = None</li>
+<li>Card 3: Visible = Y4 | Hint = None</li>
+<li>Card 4: Visible = R3 | Hint = RX</li>
+<li>Card 5: Visible = R1 | Hint = RX</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Discard 4</li>
+<li>Action 5: Play card 1</li>
+<li>Action 6: Play card 2</li>
+<li>Action 7: Play card 3</li>
+<li>Action 8: Play card 4</li>
+<li>Action 9: Play card 5</li>
+<li>Action 10: Reveal player +1 color R</li>
+<li>Action 13: Reveal player +1 color W</li>
+<li>Action 14: Reveal player +1 color B</li>
+<li>Action 15: Reveal player +2 color R</li>
+<li>Action 16: Reveal player +2 color Y</li>
+<li>Action 17: Reveal player +2 color G</li>
+<li>Action 19: Reveal player +2 color B</li>
+<li>Action 20: Reveal player +1 rank 1</li>
+<li>Action 21: Reveal player +1 rank 2</li>
+<li>Action 22: Reveal player +1 rank 3</li>
+<li>Action 25: Reveal player +2 rank 1</li>
+<li>Action 27: Reveal player +2 rank 3</li>
+<li>Action 28: Reveal player +2 rank 4</li>
+<li>Action 29: Reveal player +2 rank 5</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "The current state of the game shows no immediate playable cards in my hand based on the firework stacks. Considering the visible cards in teammates' hands, Player +1 has a 'R2' which could be played if they had more information about their other cards, but giving a hint about color R to Player +1 might not be directly useful since we already see a red card in their hand. However, looking at Player +2's hand, there are several cards that could potentially be played with the right hint. Notably, 'R3' and 'R1' suggest they have information about red cards. Given the lack of progress on any firework stack and the availability of actions, providing a hint to Player +2 about color R could help them play one of their red cards correctly, potentially starting or adding to the red firework stack. This action utilizes an info token efficiently by attempting to enable a teammate to make a play that advances our collective score.", 'action': '15'}</p>
+</div>
+<div class='state' id='state12'>
+<h2>State 31</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 2</p>
+<p><strong>Fireworks:</strong> R0 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: RX</li>
+<li>Card 2: B1</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: R1</li>
+<li>Card 5: BX</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = G5 | Hint = None</li>
+<li>Card 2: Visible = B3 | Hint = None</li>
+<li>Card 3: Visible = Y4 | Hint = None</li>
+<li>Card 4: Visible = R3 | Hint = RX</li>
+<li>Card 5: Visible = R1 | Hint = RX</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = R5 | Hint = RX</li>
+<li>Card 2: Visible = B3 | Hint = None</li>
+<li>Card 3: Visible = G3 | Hint = None</li>
+<li>Card 4: Visible = W4 | Hint = None</li>
+<li>Card 5: Visible = Y2 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Discard 4</li>
+<li>Action 5: Play card 1</li>
+<li>Action 6: Play card 2</li>
+<li>Action 7: Play card 3</li>
+<li>Action 8: Play card 4</li>
+<li>Action 9: Play card 5</li>
+<li>Action 10: Reveal player +1 color R</li>
+<li>Action 11: Reveal player +1 color Y</li>
+<li>Action 12: Reveal player +1 color G</li>
+<li>Action 14: Reveal player +1 color B</li>
+<li>Action 15: Reveal player +2 color R</li>
+<li>Action 16: Reveal player +2 color Y</li>
+<li>Action 17: Reveal player +2 color G</li>
+<li>Action 18: Reveal player +2 color W</li>
+<li>Action 19: Reveal player +2 color B</li>
+<li>Action 20: Reveal player +1 rank 1</li>
+<li>Action 22: Reveal player +1 rank 3</li>
+<li>Action 23: Reveal player +1 rank 4</li>
+<li>Action 24: Reveal player +1 rank 5</li>
+<li>Action 26: Reveal player +2 rank 2</li>
+<li>Action 27: Reveal player +2 rank 3</li>
+<li>Action 28: Reveal player +2 rank 4</li>
+<li>Action 29: Reveal player +2 rank 5</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Since there are no immediately playable cards based on the current firework stacks and given hints, we need to consider other options. Looking at teammates' hands, Player +1 has a 'B3' which could potentially be played if more information about blue cards is shared, but without direct knowledge of our hand's specifics, giving a hint seems risky with limited info tokens. Considering our own hand, Card 2 has strong hints towards being 'B1', making it potentially playable soon. However, the immediate priority should be to either play a card safely or gain more information. Given the cards in teammates' hands and the discard pile, there's no clear safe play without further hints. Discarding a card to gain an info token might be beneficial for future turns but choosing which card to discard requires careful consideration of potential future plays. Card 4, with possible ranks 'R1-5', seems less immediately useful compared to others based on current stacks and teammate hands. Thus, discarding it could provide an Info token without significantly impacting immediate playability.", 'action': '4'}</p>
+</div>
+<div class='state' id='state13'>
+<h2>State 33</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 3</p>
+<p><strong>Fireworks:</strong> R0 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: Unknown</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: RX</li>
+<li>Card 5: RX</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = R5 | Hint = RX</li>
+<li>Card 2: Visible = B3 | Hint = None</li>
+<li>Card 3: Visible = G3 | Hint = None</li>
+<li>Card 4: Visible = W4 | Hint = None</li>
+<li>Card 5: Visible = Y2 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = R2 | Hint = RX</li>
+<li>Card 2: Visible = B1 | Hint = B1</li>
+<li>Card 3: Visible = W3 | Hint = None</li>
+<li>Card 4: Visible = R1 | Hint = R1</li>
+<li>Card 5: Visible = B4 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Discard 4</li>
+<li>Action 5: Play card 1</li>
+<li>Action 6: Play card 2</li>
+<li>Action 7: Play card 3</li>
+<li>Action 8: Play card 4</li>
+<li>Action 9: Play card 5</li>
+<li>Action 10: Reveal player +1 color R</li>
+<li>Action 11: Reveal player +1 color Y</li>
+<li>Action 12: Reveal player +1 color G</li>
+<li>Action 13: Reveal player +1 color W</li>
+<li>Action 14: Reveal player +1 color B</li>
+<li>Action 15: Reveal player +2 color R</li>
+<li>Action 18: Reveal player +2 color W</li>
+<li>Action 19: Reveal player +2 color B</li>
+<li>Action 21: Reveal player +1 rank 2</li>
+<li>Action 22: Reveal player +1 rank 3</li>
+<li>Action 23: Reveal player +1 rank 4</li>
+<li>Action 24: Reveal player +1 rank 5</li>
+<li>Action 25: Reveal player +2 rank 1</li>
+<li>Action 26: Reveal player +2 rank 2</li>
+<li>Action 27: Reveal player +2 rank 3</li>
+<li>Action 28: Reveal player +2 rank 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Given the current state, none of my cards can be directly played without more information. Looking at teammates' hands, Player +1 has a 'R5', 'B3', 'G3', 'W4', and 'Y2'. Player +2 has a 'R2', 'B1', 'W3', 'R1', and 'B4'. Since I don't have enough info to play or discard safely based on the cards in my hand, giving a hint could be beneficial. However, the best move seems to be trying to gain more information about the cards in my hand by discarding one that appears least likely to be immediately playable or useful. Cards 0-4 in my hand are all potential candidates for this since none can be played without risk. Given that I have two cards with possible color hints (cards 3 and 4), discarding card 0 seems a reasonable choice as it doesn't directly relate to any known firework stack progress or immediate playability based on given hints.", 'action': '0'}</p>
+</div>
+<div class='state' id='state14'>
+<h2>State 35</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 4</p>
+<p><strong>Fireworks:</strong> R0 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: RX</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: Unknown</li>
+<li>Card 5: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = R2 | Hint = RX</li>
+<li>Card 2: Visible = B1 | Hint = B1</li>
+<li>Card 3: Visible = W3 | Hint = None</li>
+<li>Card 4: Visible = R1 | Hint = R1</li>
+<li>Card 5: Visible = B4 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = B3 | Hint = None</li>
+<li>Card 2: Visible = Y4 | Hint = None</li>
+<li>Card 3: Visible = R3 | Hint = RX</li>
+<li>Card 4: Visible = R1 | Hint = RX</li>
+<li>Card 5: Visible = Y1 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Discard 4</li>
+<li>Action 5: Play card 1</li>
+<li>Action 6: Play card 2</li>
+<li>Action 7: Play card 3</li>
+<li>Action 8: Play card 4</li>
+<li>Action 9: Play card 5</li>
+<li>Action 10: Reveal player +1 color R</li>
+<li>Action 13: Reveal player +1 color W</li>
+<li>Action 14: Reveal player +1 color B</li>
+<li>Action 15: Reveal player +2 color R</li>
+<li>Action 16: Reveal player +2 color Y</li>
+<li>Action 19: Reveal player +2 color B</li>
+<li>Action 20: Reveal player +1 rank 1</li>
+<li>Action 21: Reveal player +1 rank 2</li>
+<li>Action 22: Reveal player +1 rank 3</li>
+<li>Action 23: Reveal player +1 rank 4</li>
+<li>Action 25: Reveal player +2 rank 1</li>
+<li>Action 27: Reveal player +2 rank 3</li>
+<li>Action 28: Reveal player +2 rank 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Since there are no immediately playable cards in my hand based on the firework stacks and the hints I've received, the best course of action is to try and give a useful hint to one of my teammates. Looking at Player +1's hand, they have a card 'R2' which suggests it might be red. However, without knowing its exact rank or if it's safe to play, giving a color hint to a player with a potentially playable card could be beneficial. But, considering the cards in both teammates' hands and aiming to maximize the chance of a correct play, I notice that Player +1 has 'R1' and 'B1', suggesting they might have information about red or blue cards. Given that 'R1' is already hinted as red and rank 1, giving an additional hint about color R to Player +1 could reinforce their understanding of the 'R2' card if it indeed is red, but this would not add significant new information since 'R1' is already known to be red. Instead, looking at actions available for providing hints, revealing a color that matches a potential playable card in a teammate's hand without giving away too much unnecessary information seems prudent. Yet, considering the current state and aiming to use a hint effectively, I should focus on the most restrictive and immediately useful piece of information - which is not readily apparent without more context on my own cards' exact values or ranks. Therefore, my strategy shifts towards utilizing an action that can indirectly provide information or set up for future plays by considering discarding or playing based on card values and current game state. However, since none of the cards in my hand are known to be immediately playable and given the constraints of the provided actions, I must choose between discarding a potentially useless card for an Info token, playing a card which might not match any stack, or giving a hint that may not directly lead to a play. Given these considerations and the aim to maximize score through correct sequencing and information sharing, my chosen action should ideally provide immediate benefit or set up future beneficial moves. Without specific knowledge of my hand's cards beyond hints provided and considering the state of the game, the decision hinges on leveraging available information effectively and strategically. Thus, focusing on potential future plays and maximizing information gain without the ability to play a card directly into a firework stack, I should opt for an action that could offer insight or strategic advantage in subsequent turns, such as setting up for potential future hints or clearing non-essential cards for more information.", 'action': '10'}</p>
+</div>
+<div class='state' id='state15'>
+<h2>State 36</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 3</p>
+<p><strong>Fireworks:</strong> R0 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: RX</li>
+<li>Card 2: B1</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: R1</li>
+<li>Card 5: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = B3 | Hint = None</li>
+<li>Card 2: Visible = Y4 | Hint = None</li>
+<li>Card 3: Visible = R3 | Hint = RX</li>
+<li>Card 4: Visible = R1 | Hint = RX</li>
+<li>Card 5: Visible = Y1 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = R5 | Hint = RX</li>
+<li>Card 2: Visible = B3 | Hint = None</li>
+<li>Card 3: Visible = G3 | Hint = None</li>
+<li>Card 4: Visible = W4 | Hint = None</li>
+<li>Card 5: Visible = Y2 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Discard 4</li>
+<li>Action 5: Play card 1</li>
+<li>Action 6: Play card 2</li>
+<li>Action 7: Play card 3</li>
+<li>Action 8: Play card 4</li>
+<li>Action 9: Play card 5</li>
+<li>Action 10: Reveal player +1 color R</li>
+<li>Action 11: Reveal player +1 color Y</li>
+<li>Action 14: Reveal player +1 color B</li>
+<li>Action 15: Reveal player +2 color R</li>
+<li>Action 16: Reveal player +2 color Y</li>
+<li>Action 17: Reveal player +2 color G</li>
+<li>Action 18: Reveal player +2 color W</li>
+<li>Action 19: Reveal player +2 color B</li>
+<li>Action 20: Reveal player +1 rank 1</li>
+<li>Action 22: Reveal player +1 rank 3</li>
+<li>Action 23: Reveal player +1 rank 4</li>
+<li>Action 26: Reveal player +2 rank 2</li>
+<li>Action 27: Reveal player +2 rank 3</li>
+<li>Action 28: Reveal player +2 rank 4</li>
+<li>Action 29: Reveal player +2 rank 5</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Based on the current game state, none of the cards in my hand can be immediately played without risk. Considering teammates' hands, Player +1 has a card 'R1' which could potentially be playable if they had more information about its rank or color, but since they already know it's red and rank 1, giving them a hint doesn't add value here. However, noticing that Player +1 also holds 'Y4', giving a hint about the color yellow to Player +1 might encourage them to play their 'Y1' if safe, or help with future plays. Since the fireworks stacks are all at 0 and no immediate playable cards are in my hand, choosing an action that could facilitate a teammate's move seems prudent. Given the legal actions available, revealing a color to a player who might have a playable card based on that hint is a strategic choice.", 'action': '11'}</p>
+</div>
+<div class='state' id='state16'>
+<h2>State 37</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 2</p>
+<p><strong>Fireworks:</strong> R0 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: Unknown</li>
+<li>Card 2: YX</li>
+<li>Card 3: RX</li>
+<li>Card 4: RX</li>
+<li>Card 5: YX</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = R5 | Hint = RX</li>
+<li>Card 2: Visible = B3 | Hint = None</li>
+<li>Card 3: Visible = G3 | Hint = None</li>
+<li>Card 4: Visible = W4 | Hint = None</li>
+<li>Card 5: Visible = Y2 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = R2 | Hint = RX</li>
+<li>Card 2: Visible = B1 | Hint = B1</li>
+<li>Card 3: Visible = W3 | Hint = None</li>
+<li>Card 4: Visible = R1 | Hint = R1</li>
+<li>Card 5: Visible = B4 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Discard 4</li>
+<li>Action 5: Play card 1</li>
+<li>Action 6: Play card 2</li>
+<li>Action 7: Play card 3</li>
+<li>Action 8: Play card 4</li>
+<li>Action 9: Play card 5</li>
+<li>Action 10: Reveal player +1 color R</li>
+<li>Action 11: Reveal player +1 color Y</li>
+<li>Action 12: Reveal player +1 color G</li>
+<li>Action 13: Reveal player +1 color W</li>
+<li>Action 14: Reveal player +1 color B</li>
+<li>Action 15: Reveal player +2 color R</li>
+<li>Action 18: Reveal player +2 color W</li>
+<li>Action 19: Reveal player +2 color B</li>
+<li>Action 21: Reveal player +1 rank 2</li>
+<li>Action 22: Reveal player +1 rank 3</li>
+<li>Action 23: Reveal player +1 rank 4</li>
+<li>Action 24: Reveal player +1 rank 5</li>
+<li>Action 25: Reveal player +2 rank 1</li>
+<li>Action 26: Reveal player +2 rank 2</li>
+<li>Action 27: Reveal player +2 rank 3</li>
+<li>Action 28: Reveal player +2 rank 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "The goal is to give a hint that maximizes the chance for a correct play while considering the limited hint tokens. Since Player +1 has a card 'R5' which is likely red, and another card 'Y2' which could be useful for the yellow stack, giving a color hint about red to Player +1 could help them make the right decision with their 'R5' card, potentially setting up a future play or clarifying the card's usability.", 'action': 10}</p>
+</div>
+<div class='state' id='state17'>
+<h2>State 38</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 1</p>
+<p><strong>Fireworks:</strong> R0 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: RX</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: Unknown</li>
+<li>Card 5: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = R2 | Hint = RX</li>
+<li>Card 2: Visible = B1 | Hint = B1</li>
+<li>Card 3: Visible = W3 | Hint = None</li>
+<li>Card 4: Visible = R1 | Hint = R1</li>
+<li>Card 5: Visible = B4 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = B3 | Hint = None</li>
+<li>Card 2: Visible = Y4 | Hint = YX</li>
+<li>Card 3: Visible = R3 | Hint = RX</li>
+<li>Card 4: Visible = R1 | Hint = RX</li>
+<li>Card 5: Visible = Y1 | Hint = YX</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Discard 4</li>
+<li>Action 5: Play card 1</li>
+<li>Action 6: Play card 2</li>
+<li>Action 7: Play card 3</li>
+<li>Action 8: Play card 4</li>
+<li>Action 9: Play card 5</li>
+<li>Action 10: Reveal player +1 color R</li>
+<li>Action 13: Reveal player +1 color W</li>
+<li>Action 14: Reveal player +1 color B</li>
+<li>Action 15: Reveal player +2 color R</li>
+<li>Action 16: Reveal player +2 color Y</li>
+<li>Action 19: Reveal player +2 color B</li>
+<li>Action 20: Reveal player +1 rank 1</li>
+<li>Action 21: Reveal player +1 rank 2</li>
+<li>Action 22: Reveal player +1 rank 3</li>
+<li>Action 23: Reveal player +1 rank 4</li>
+<li>Action 25: Reveal player +2 rank 1</li>
+<li>Action 27: Reveal player +2 rank 3</li>
+<li>Action 28: Reveal player +2 rank 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Since there are no immediately playable cards based on the given information and the goal is to maximize the use of hint tokens efficiently, it's crucial to analyze teammates' hands for potential plays or necessary hints. Given that Player +1 has a 'R2' which might be red and could be one of R2345, and considering Player +2 has cards with known color possibilities like 'Y4' which might be yellow and could be one of Y12345, the most informative action seems to be giving a hint about color to a player who can make an immediate play or is closest to being able to play. However, without direct hints towards our hand's cards, we must weigh the potential benefit of discarding for information against the cost of losing a potentially crucial card. Discarding could provide valuable insight into our own cards but risks eliminating a key piece. Among the visible options, revealing color or rank to teammates seems less directly impactful given the current lack of known sequences in our hand that match firework requirements. Therefore, choosing an action that may indirectly benefit by preparing for future moves is essential. Since none of our cards are directly playable and giving hints requires specific knowledge which we lack about our own cards' exact colors or ranks to efficiently guide teammates, the logical step involves considering our options carefully.", 'action': '10'}</p>
+</div>
+<div class='state' id='state18'>
+<h2>State 39</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 0</p>
+<p><strong>Fireworks:</strong> R0 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: RX</li>
+<li>Card 2: B1</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: R1</li>
+<li>Card 5: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = B3 | Hint = None</li>
+<li>Card 2: Visible = Y4 | Hint = YX</li>
+<li>Card 3: Visible = R3 | Hint = RX</li>
+<li>Card 4: Visible = R1 | Hint = RX</li>
+<li>Card 5: Visible = Y1 | Hint = YX</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = R5 | Hint = RX</li>
+<li>Card 2: Visible = B3 | Hint = None</li>
+<li>Card 3: Visible = G3 | Hint = None</li>
+<li>Card 4: Visible = W4 | Hint = None</li>
+<li>Card 5: Visible = Y2 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Discard 4</li>
+<li>Action 5: Play card 1</li>
+<li>Action 6: Play card 2</li>
+<li>Action 7: Play card 3</li>
+<li>Action 8: Play card 4</li>
+<li>Action 9: Play card 5</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "The current game state indicates that there are no immediately playable cards from my hand based on the given hints. Considering the low number of info tokens available, it's crucial to either play a card safely or discard one to gain an info token. Since Card 2 has a hint suggesting it might be 'B1' and the fireworks stacks do not currently allow for a safe play without additional information, I will focus on gaining more information or creating a potential play opportunity. Given that Card 4 in my hand is hinted as possibly being 'Y1', 'G3', 'W4', or other ranks/colors not directly mentioned but could be part of the broader 'YGWB12345' hint, and there's a visible 'Y1' in Player +1's hand, I need to carefully consider how to proceed. However, the most direct approach considering our current constraints and aiming for clarity would be to utilize an action that allows us to either gain more information or set up a potential future play. Since we lack specific playable cards and are low on hints, prioritizing gaining an info token through discarding seems like a viable strategy. Discarding Card 4 ('Discard 4') could provide an Info token without immediately removing a card critical for completing any current firework stack based on the provided hints.", 'action': 4}</p>
+</div>
+<div class='state' id='state19'>
+<h2>State 41</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 1</p>
+<p><strong>Fireworks:</strong> R0 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: Unknown</li>
+<li>Card 2: YX</li>
+<li>Card 3: RX</li>
+<li>Card 4: RX</li>
+<li>Card 5: YX</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = R5 | Hint = RX</li>
+<li>Card 2: Visible = B3 | Hint = None</li>
+<li>Card 3: Visible = G3 | Hint = None</li>
+<li>Card 4: Visible = W4 | Hint = None</li>
+<li>Card 5: Visible = Y2 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = R2 | Hint = RX</li>
+<li>Card 2: Visible = B1 | Hint = B1</li>
+<li>Card 3: Visible = W3 | Hint = None</li>
+<li>Card 4: Visible = R1 | Hint = R1</li>
+<li>Card 5: Visible = G1 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Discard 4</li>
+<li>Action 5: Play card 1</li>
+<li>Action 6: Play card 2</li>
+<li>Action 7: Play card 3</li>
+<li>Action 8: Play card 4</li>
+<li>Action 9: Play card 5</li>
+<li>Action 10: Reveal player +1 color R</li>
+<li>Action 11: Reveal player +1 color Y</li>
+<li>Action 12: Reveal player +1 color G</li>
+<li>Action 13: Reveal player +1 color W</li>
+<li>Action 14: Reveal player +1 color B</li>
+<li>Action 15: Reveal player +2 color R</li>
+<li>Action 17: Reveal player +2 color G</li>
+<li>Action 18: Reveal player +2 color W</li>
+<li>Action 19: Reveal player +2 color B</li>
+<li>Action 21: Reveal player +1 rank 2</li>
+<li>Action 22: Reveal player +1 rank 3</li>
+<li>Action 23: Reveal player +1 rank 4</li>
+<li>Action 24: Reveal player +1 rank 5</li>
+<li>Action 25: Reveal player +2 rank 1</li>
+<li>Action 26: Reveal player +2 rank 2</li>
+<li>Action 27: Reveal player +2 rank 3</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Since there are no immediate playable cards and considering the limited info tokens, it's crucial to gain more information or help teammates with their plays. Noticing Player +1 has a 'Y2' which could potentially be played if they had more information about its color being yellow (given as a hint already), and seeing we have cards that might match in color but lack specificity, giving a hint seems beneficial. However, given our current hand composition and the visible cards of our teammates, discarding to gain an info token seems like the most universally beneficial move without risking a misplay or not utilizing a potential play from our teammates' hands directly.", 'action': '4'}</p>
+</div>
+<div class='state' id='state20'>
+<h2>State 43</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 2</p>
+<p><strong>Fireworks:</strong> R0 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: RX</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: Unknown</li>
+<li>Card 5: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = R2 | Hint = RX</li>
+<li>Card 2: Visible = B1 | Hint = B1</li>
+<li>Card 3: Visible = W3 | Hint = None</li>
+<li>Card 4: Visible = R1 | Hint = R1</li>
+<li>Card 5: Visible = G1 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = B3 | Hint = None</li>
+<li>Card 2: Visible = Y4 | Hint = YX</li>
+<li>Card 3: Visible = R3 | Hint = RX</li>
+<li>Card 4: Visible = R1 | Hint = RX</li>
+<li>Card 5: Visible = G2 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Discard 4</li>
+<li>Action 5: Play card 1</li>
+<li>Action 6: Play card 2</li>
+<li>Action 7: Play card 3</li>
+<li>Action 8: Play card 4</li>
+<li>Action 9: Play card 5</li>
+<li>Action 10: Reveal player +1 color R</li>
+<li>Action 12: Reveal player +1 color G</li>
+<li>Action 13: Reveal player +1 color W</li>
+<li>Action 14: Reveal player +1 color B</li>
+<li>Action 15: Reveal player +2 color R</li>
+<li>Action 16: Reveal player +2 color Y</li>
+<li>Action 17: Reveal player +2 color G</li>
+<li>Action 19: Reveal player +2 color B</li>
+<li>Action 20: Reveal player +1 rank 1</li>
+<li>Action 21: Reveal player +1 rank 2</li>
+<li>Action 22: Reveal player +1 rank 3</li>
+<li>Action 25: Reveal player +2 rank 1</li>
+<li>Action 26: Reveal player +2 rank 2</li>
+<li>Action 27: Reveal player +2 rank 3</li>
+<li>Action 28: Reveal player +2 rank 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "The current game state shows no immediately playable cards from my hand based on the firework stacks. Considering the visible cards in teammates' hands, there's an opportunity to give a hint that could lead to a playable card. Since Player +1 has a card 'R2' and another 'R1', and given that I have a card with possible identity 'R12345', giving a hint about color R to Player +1 might help them play one of their red cards or provide more insight into my hand. This action utilizes one of the two remaining info tokens effectively, aiming to advance the game by playing cards from teammates' hands.", 'action': 10}</p>
+</div>
+<div class='state' id='state21'>
+<h2>State 44</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 1</p>
+<p><strong>Fireworks:</strong> R0 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: RX</li>
+<li>Card 2: B1</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: R1</li>
+<li>Card 5: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = B3 | Hint = None</li>
+<li>Card 2: Visible = Y4 | Hint = YX</li>
+<li>Card 3: Visible = R3 | Hint = RX</li>
+<li>Card 4: Visible = R1 | Hint = RX</li>
+<li>Card 5: Visible = G2 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = R5 | Hint = RX</li>
+<li>Card 2: Visible = B3 | Hint = None</li>
+<li>Card 3: Visible = G3 | Hint = None</li>
+<li>Card 4: Visible = W4 | Hint = None</li>
+<li>Card 5: Visible = Y2 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Discard 4</li>
+<li>Action 5: Play card 1</li>
+<li>Action 6: Play card 2</li>
+<li>Action 7: Play card 3</li>
+<li>Action 8: Play card 4</li>
+<li>Action 9: Play card 5</li>
+<li>Action 10: Reveal player +1 color R</li>
+<li>Action 11: Reveal player +1 color Y</li>
+<li>Action 12: Reveal player +1 color G</li>
+<li>Action 14: Reveal player +1 color B</li>
+<li>Action 15: Reveal player +2 color R</li>
+<li>Action 16: Reveal player +2 color Y</li>
+<li>Action 17: Reveal player +2 color G</li>
+<li>Action 18: Reveal player +2 color W</li>
+<li>Action 19: Reveal player +2 color B</li>
+<li>Action 20: Reveal player +1 rank 1</li>
+<li>Action 21: Reveal player +1 rank 2</li>
+<li>Action 22: Reveal player +1 rank 3</li>
+<li>Action 23: Reveal player +1 rank 4</li>
+<li>Action 26: Reveal player +2 rank 2</li>
+<li>Action 27: Reveal player +2 rank 3</li>
+<li>Action 28: Reveal player +2 rank 4</li>
+<li>Action 29: Reveal player +2 rank 5</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Given the current state of the game, the best course of action is to try and give a hint that could lead to a playable card being identified. Since there are no immediately playable cards in our hand based on the information provided and considering the goal of maximizing the score by playing cards in the correct sequence, we should focus on helping our teammates make a play. Noticing that Player +1 has a 'R1' which is also present as a possible card in our own hand (Card 4), giving a hint about rank 1 to Player +1 could be beneficial as it directly corresponds with a potential playable card or helps them understand their hand better in relation to the game's progress. Therefore, revealing player +1 rank 1 seems like an optimal choice for maximizing the chance of a correct play without risking playing an incorrect card ourselves.", 'action': 20}</p>
+</div>
+<div class='state' id='state22'>
+<h2>State 45</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 0</p>
+<p><strong>Fireworks:</strong> R0 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: Unknown</li>
+<li>Card 2: YX</li>
+<li>Card 3: RX</li>
+<li>Card 4: R1</li>
+<li>Card 5: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = R5 | Hint = RX</li>
+<li>Card 2: Visible = B3 | Hint = None</li>
+<li>Card 3: Visible = G3 | Hint = None</li>
+<li>Card 4: Visible = W4 | Hint = None</li>
+<li>Card 5: Visible = Y2 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = R2 | Hint = RX</li>
+<li>Card 2: Visible = B1 | Hint = B1</li>
+<li>Card 3: Visible = W3 | Hint = None</li>
+<li>Card 4: Visible = R1 | Hint = R1</li>
+<li>Card 5: Visible = G1 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Discard 4</li>
+<li>Action 5: Play card 1</li>
+<li>Action 6: Play card 2</li>
+<li>Action 7: Play card 3</li>
+<li>Action 8: Play card 4</li>
+<li>Action 9: Play card 5</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Given the current state of the game, with no info tokens available, it's crucial to make a move that either utilizes the knowledge we have about our cards or gains us an information token without losing a potentially valuable card. Looking at our hand and teammates' hands, there isn't a clear playable card based on the current firework stacks. Since we cannot play any card without more information due to the risk of drawing a card that could complete a sequence, and given that we have no info tokens to hint about specific colors or ranks, our best move is to discard a card from our hand to gain an info token. Considering the options and the cards in our hand, discarding Card 0 seems like a strategic choice because it does not immediately appear essential based on the provided hints and game state. This action allows us to gain an info token, which can be critical for future moves, especially when trying to understand which cards are safe to play or when deciding which hint to give to teammates.", 'action': 0}</p>
+</div>
+<div class='state' id='state23'>
+<h2>State 47</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 1</p>
+<p><strong>Fireworks:</strong> R0 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: RX</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: Unknown</li>
+<li>Card 5: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = R2 | Hint = RX</li>
+<li>Card 2: Visible = B1 | Hint = B1</li>
+<li>Card 3: Visible = W3 | Hint = None</li>
+<li>Card 4: Visible = R1 | Hint = R1</li>
+<li>Card 5: Visible = G1 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = Y4 | Hint = YX</li>
+<li>Card 2: Visible = R3 | Hint = RX</li>
+<li>Card 3: Visible = R1 | Hint = R1</li>
+<li>Card 4: Visible = G2 | Hint = None</li>
+<li>Card 5: Visible = W2 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Discard 4</li>
+<li>Action 5: Play card 1</li>
+<li>Action 6: Play card 2</li>
+<li>Action 7: Play card 3</li>
+<li>Action 8: Play card 4</li>
+<li>Action 9: Play card 5</li>
+<li>Action 10: Reveal player +1 color R</li>
+<li>Action 12: Reveal player +1 color G</li>
+<li>Action 13: Reveal player +1 color W</li>
+<li>Action 14: Reveal player +1 color B</li>
+<li>Action 15: Reveal player +2 color R</li>
+<li>Action 16: Reveal player +2 color Y</li>
+<li>Action 17: Reveal player +2 color G</li>
+<li>Action 18: Reveal player +2 color W</li>
+<li>Action 20: Reveal player +1 rank 1</li>
+<li>Action 21: Reveal player +1 rank 2</li>
+<li>Action 22: Reveal player +1 rank 3</li>
+<li>Action 25: Reveal player +2 rank 1</li>
+<li>Action 26: Reveal player +2 rank 2</li>
+<li>Action 27: Reveal player +2 rank 3</li>
+<li>Action 28: Reveal player +2 rank 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': 'Since there are no immediately playable cards and limited information about our hand, we should focus on giving hints to teammates or discarding a card for an Info token. However, with only 1 Info token available, using it wisely is crucial. The best strategy here seems to be giving a hint that could potentially allow a teammate to play a card, thus advancing the game state and possibly revealing more information about our own hand indirectly.', 'action': '10'}</p>
+</div>
+<div class='state' id='state24'>
+<h2>State 48</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 0</p>
+<p><strong>Fireworks:</strong> R0 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: RX</li>
+<li>Card 2: B1</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: R1</li>
+<li>Card 5: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = Y4 | Hint = YX</li>
+<li>Card 2: Visible = R3 | Hint = RX</li>
+<li>Card 3: Visible = R1 | Hint = R1</li>
+<li>Card 4: Visible = G2 | Hint = None</li>
+<li>Card 5: Visible = W2 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = R5 | Hint = RX</li>
+<li>Card 2: Visible = B3 | Hint = None</li>
+<li>Card 3: Visible = G3 | Hint = None</li>
+<li>Card 4: Visible = W4 | Hint = None</li>
+<li>Card 5: Visible = Y2 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Discard 4</li>
+<li>Action 5: Play card 1</li>
+<li>Action 6: Play card 2</li>
+<li>Action 7: Play card 3</li>
+<li>Action 8: Play card 4</li>
+<li>Action 9: Play card 5</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Considering the current game state and the cards in my hand, I see that Card 2 has a hint suggesting it might be blue color, rank 1 ('B1'). Since the blue firework stack is at 0, I should try to play this card. However, without confirmation of its exact identity through additional hints or information, playing it directly might not be the best move due to the risk of it being a different card. Instead, looking for opportunities to hint my teammates about their playable cards could increase our chances of scoring points safely. Given the lack of immediate playable cards in my hand and the limited information tokens available, I decide to focus on optimizing future moves by potentially gaining more information or setting up for safer plays later. Since no card in my hand can be immediately played without risk based on the given hints, and considering the need to conserve hint tokens while also trying to make progress, I evaluate the option of discarding a card that seems less likely to contribute to immediate scoring opportunities. Card 4, with its vague possibility of being any color or rank ('YGWB12345'), appears less directly useful in the context of current hints and firework stack statuses. However, it's crucial to note that discarding cards should be done thoughtfully to avoid removing critical pieces. Given these considerations and aiming for a strategic move that balances risk with potential benefit, I choose to discard Card 4, as it currently seems to offer the least clear pathway to contributing to our score based on available information.", 'action': 4}</p>
+</div>
+<div class='state' id='state25'>
+<h2>State 50</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 1</p>
+<p><strong>Fireworks:</strong> R0 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: YX</li>
+<li>Card 2: RX</li>
+<li>Card 3: R1</li>
+<li>Card 4: Unknown</li>
+<li>Card 5: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = R5 | Hint = RX</li>
+<li>Card 2: Visible = B3 | Hint = None</li>
+<li>Card 3: Visible = G3 | Hint = None</li>
+<li>Card 4: Visible = W4 | Hint = None</li>
+<li>Card 5: Visible = Y2 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = R2 | Hint = RX</li>
+<li>Card 2: Visible = B1 | Hint = B1</li>
+<li>Card 3: Visible = W3 | Hint = None</li>
+<li>Card 4: Visible = R1 | Hint = R1</li>
+<li>Card 5: Visible = B4 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Discard 4</li>
+<li>Action 5: Play card 1</li>
+<li>Action 6: Play card 2</li>
+<li>Action 7: Play card 3</li>
+<li>Action 8: Play card 4</li>
+<li>Action 9: Play card 5</li>
+<li>Action 10: Reveal player +1 color R</li>
+<li>Action 11: Reveal player +1 color Y</li>
+<li>Action 12: Reveal player +1 color G</li>
+<li>Action 13: Reveal player +1 color W</li>
+<li>Action 14: Reveal player +1 color B</li>
+<li>Action 15: Reveal player +2 color R</li>
+<li>Action 18: Reveal player +2 color W</li>
+<li>Action 19: Reveal player +2 color B</li>
+<li>Action 21: Reveal player +1 rank 2</li>
+<li>Action 22: Reveal player +1 rank 3</li>
+<li>Action 23: Reveal player +1 rank 4</li>
+<li>Action 24: Reveal player +1 rank 5</li>
+<li>Action 25: Reveal player +2 rank 1</li>
+<li>Action 26: Reveal player +2 rank 2</li>
+<li>Action 27: Reveal player +2 rank 3</li>
+<li>Action 28: Reveal player +2 rank 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "There are no immediately playable cards in my hand based on the current firework stacks, and giving a hint about color or rank to teammates could be risky without more information. Since I have a card with known info 'R1' which is quite specific but cannot be played yet due to lack of progress in the red stack, and another card with possible identities including yellow, considering the state of the game and the need for more information, discarding a less useful card to gain an Info token seems like the safest move. Card 4, with its broad range of possible colors and ranks, is not immediately playable or specifically hinted at for current stacks, making it a candidate for discard to gain more info.", 'action': '4'}</p>
+</div>
+<div class='state' id='state26'>
+<h2>State 52</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 2</p>
+<p><strong>Fireworks:</strong> R0 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: RX</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: Unknown</li>
+<li>Card 5: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = R2 | Hint = RX</li>
+<li>Card 2: Visible = B1 | Hint = B1</li>
+<li>Card 3: Visible = W3 | Hint = None</li>
+<li>Card 4: Visible = R1 | Hint = R1</li>
+<li>Card 5: Visible = B4 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = Y4 | Hint = YX</li>
+<li>Card 2: Visible = R3 | Hint = RX</li>
+<li>Card 3: Visible = R1 | Hint = R1</li>
+<li>Card 4: Visible = G2 | Hint = None</li>
+<li>Card 5: Visible = W2 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Discard 4</li>
+<li>Action 5: Play card 1</li>
+<li>Action 6: Play card 2</li>
+<li>Action 7: Play card 3</li>
+<li>Action 8: Play card 4</li>
+<li>Action 9: Play card 5</li>
+<li>Action 10: Reveal player +1 color R</li>
+<li>Action 13: Reveal player +1 color W</li>
+<li>Action 14: Reveal player +1 color B</li>
+<li>Action 15: Reveal player +2 color R</li>
+<li>Action 16: Reveal player +2 color Y</li>
+<li>Action 17: Reveal player +2 color G</li>
+<li>Action 18: Reveal player +2 color W</li>
+<li>Action 20: Reveal player +1 rank 1</li>
+<li>Action 21: Reveal player +1 rank 2</li>
+<li>Action 22: Reveal player +1 rank 3</li>
+<li>Action 23: Reveal player +1 rank 4</li>
+<li>Action 25: Reveal player +2 rank 1</li>
+<li>Action 26: Reveal player +2 rank 2</li>
+<li>Action 27: Reveal player +2 rank 3</li>
+<li>Action 28: Reveal player +2 rank 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "The current state of the game shows that no immediate playable cards are available in my hand based on the firework stacks. Given that there are 3 life tokens remaining, we have some flexibility to take risks or provide hints to teammates. Looking at Player +1's hand, they have a 'R2' which could be hinted about for its color since it's already known to potentially be red, but no action directly relates to giving a hint about something already partially known. Since there are no obvious plays and the goal is to maximize score while preserving life tokens, providing useful hints to teammates becomes a priority. However, given the legal actions provided, none directly relate to hinting about cards that are immediately playable or obviously beneficial without more specific color/rank information from my hand. Considering the discard pile and remaining deck composition might help in deciding which card to discard for an Info token if no other beneficial action is available. Discarding a card could be strategic if it's clearly not useful, but with limited information on my hand's cards' specifics (colors/ranks), this decision leans towards avoiding potential future plays. Among the legal actions provided, revealing color or rank hints to teammates might not directly apply since we'd ideally want to hint at something actionable for them. Therefore, considering a balance between preserving life tokens and attempting to glean more information or create playable opportunities, the best immediate action given the current constraints would be to focus on potential future plays or reducing unknowns.", 'action': '10'}</p>
+</div>
+<div class='state' id='state27'>
+<h2>State 53</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 1</p>
+<p><strong>Fireworks:</strong> R0 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: RX</li>
+<li>Card 2: B1</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: R1</li>
+<li>Card 5: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = Y4 | Hint = YX</li>
+<li>Card 2: Visible = R3 | Hint = RX</li>
+<li>Card 3: Visible = R1 | Hint = R1</li>
+<li>Card 4: Visible = G2 | Hint = None</li>
+<li>Card 5: Visible = W2 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = R5 | Hint = RX</li>
+<li>Card 2: Visible = B3 | Hint = None</li>
+<li>Card 3: Visible = G3 | Hint = None</li>
+<li>Card 4: Visible = W4 | Hint = None</li>
+<li>Card 5: Visible = Y2 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Discard 4</li>
+<li>Action 5: Play card 1</li>
+<li>Action 6: Play card 2</li>
+<li>Action 7: Play card 3</li>
+<li>Action 8: Play card 4</li>
+<li>Action 9: Play card 5</li>
+<li>Action 10: Reveal player +1 color R</li>
+<li>Action 11: Reveal player +1 color Y</li>
+<li>Action 12: Reveal player +1 color G</li>
+<li>Action 13: Reveal player +1 color W</li>
+<li>Action 15: Reveal player +2 color R</li>
+<li>Action 16: Reveal player +2 color Y</li>
+<li>Action 17: Reveal player +2 color G</li>
+<li>Action 18: Reveal player +2 color W</li>
+<li>Action 19: Reveal player +2 color B</li>
+<li>Action 20: Reveal player +1 rank 1</li>
+<li>Action 21: Reveal player +1 rank 2</li>
+<li>Action 22: Reveal player +1 rank 3</li>
+<li>Action 23: Reveal player +1 rank 4</li>
+<li>Action 26: Reveal player +2 rank 2</li>
+<li>Action 27: Reveal player +2 rank 3</li>
+<li>Action 28: Reveal player +2 rank 4</li>
+<li>Action 29: Reveal player +2 rank 5</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': 'Given the current game state, the best action is to give a hint about color R to player +1, as this could help them play one of their red cards and advance the firework stack. Player +1 has multiple red cards that they are aware of, increasing the likelihood of a successful play after the hint.', 'action': 10}</p>
+</div>
+<div class='state' id='state28'>
+<h2>State 54</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 0</p>
+<p><strong>Fireworks:</strong> R0 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: YX</li>
+<li>Card 2: RX</li>
+<li>Card 3: R1</li>
+<li>Card 4: Unknown</li>
+<li>Card 5: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = R5 | Hint = RX</li>
+<li>Card 2: Visible = B3 | Hint = None</li>
+<li>Card 3: Visible = G3 | Hint = None</li>
+<li>Card 4: Visible = W4 | Hint = None</li>
+<li>Card 5: Visible = Y2 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = R2 | Hint = RX</li>
+<li>Card 2: Visible = B1 | Hint = B1</li>
+<li>Card 3: Visible = W3 | Hint = None</li>
+<li>Card 4: Visible = R1 | Hint = R1</li>
+<li>Card 5: Visible = B4 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Discard 4</li>
+<li>Action 5: Play card 1</li>
+<li>Action 6: Play card 2</li>
+<li>Action 7: Play card 3</li>
+<li>Action 8: Play card 4</li>
+<li>Action 9: Play card 5</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "There are no immediately playable cards based on the current firework stacks and hints received. To proceed effectively with the least amount of risk, it's crucial to gain more information about the cards in hand or to help teammates recognize playable cards they might have. Given that there are 0 info tokens remaining, our first priority should be to acquire an info token by discarding a card that seems least likely to be immediately necessary for progressing the game state. Card 3 is noted with 'Known rank' but lacks further specification within the provided details; however, focusing on conserving potential progress in firework stacks and ensuring we're maximizing information gain without jeopardizing critical plays, we should consider which cards are less directly implicated in immediate future moves based on what's visible. Since there's no clear immediately playable card from our hand without additional hints and considering the balance between preserving options for future turns and leveraging existing knowledge about teammates' hands, a strategic decision involves weighing the potential loss of a critical piece against the gain of insight. Without explicit detail on the 'Known rank' implication in action choices directly, opting to gain an info token by safely discarding appears prudent. Thus, choosing a card that's less directly tied to an immediate or hinted play from our hand, considering all cards have some level of uncertainty except for the clear need to acquire more information to act decisively.", 'action': '3'}</p>
+</div>
+<div class='state' id='state29'>
+<h2>State 56</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 1</p>
+<p><strong>Fireworks:</strong> R0 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: RX</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: Unknown</li>
+<li>Card 5: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = R2 | Hint = RX</li>
+<li>Card 2: Visible = B1 | Hint = B1</li>
+<li>Card 3: Visible = W3 | Hint = None</li>
+<li>Card 4: Visible = R1 | Hint = R1</li>
+<li>Card 5: Visible = B4 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = Y4 | Hint = YX</li>
+<li>Card 2: Visible = R3 | Hint = RX</li>
+<li>Card 3: Visible = R1 | Hint = R1</li>
+<li>Card 4: Visible = W2 | Hint = None</li>
+<li>Card 5: Visible = Y1 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Discard 4</li>
+<li>Action 5: Play card 1</li>
+<li>Action 6: Play card 2</li>
+<li>Action 7: Play card 3</li>
+<li>Action 8: Play card 4</li>
+<li>Action 9: Play card 5</li>
+<li>Action 10: Reveal player +1 color R</li>
+<li>Action 13: Reveal player +1 color W</li>
+<li>Action 14: Reveal player +1 color B</li>
+<li>Action 15: Reveal player +2 color R</li>
+<li>Action 16: Reveal player +2 color Y</li>
+<li>Action 18: Reveal player +2 color W</li>
+<li>Action 20: Reveal player +1 rank 1</li>
+<li>Action 21: Reveal player +1 rank 2</li>
+<li>Action 22: Reveal player +1 rank 3</li>
+<li>Action 23: Reveal player +1 rank 4</li>
+<li>Action 25: Reveal player +2 rank 1</li>
+<li>Action 26: Reveal player +2 rank 2</li>
+<li>Action 27: Reveal player +2 rank 3</li>
+<li>Action 28: Reveal player +2 rank 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Since there are no immediately playable cards from my hand based on the current firework stacks and given hints, I should consider giving hints to teammates or discarding a card for an Info token. Looking at Player +1's hand, they have a 'R2' which could be played if the first red card is in someone's hand or the discard pile, but without knowing my own cards' specifics, giving a hint seems risky. Considering the cards in Player +1 and Player +2's hands that are visible to me, none can be directly played onto the stacks based on current information. Given that there are 3 life tokens left, it might be beneficial to discard a card from my hand that is least likely to be useful in order to gain an Info token. However, without specific details about my own cards' ranks or colors beyond what's hinted ('RX' where X could be any rank and color R for one of the cards), choosing which to discard based on usefulness requires assessment of each card's potential based on visible cards and discards.", 'action': '10'}</p>
+</div>
+<div class='state' id='state30'>
+<h2>State 57</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 0</p>
+<p><strong>Fireworks:</strong> R0 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: RX</li>
+<li>Card 2: B1</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: R1</li>
+<li>Card 5: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = Y4 | Hint = YX</li>
+<li>Card 2: Visible = R3 | Hint = RX</li>
+<li>Card 3: Visible = R1 | Hint = R1</li>
+<li>Card 4: Visible = W2 | Hint = None</li>
+<li>Card 5: Visible = Y1 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = R5 | Hint = RX</li>
+<li>Card 2: Visible = B3 | Hint = None</li>
+<li>Card 3: Visible = G3 | Hint = None</li>
+<li>Card 4: Visible = W4 | Hint = None</li>
+<li>Card 5: Visible = Y2 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Discard 4</li>
+<li>Action 5: Play card 1</li>
+<li>Action 6: Play card 2</li>
+<li>Action 7: Play card 3</li>
+<li>Action 8: Play card 4</li>
+<li>Action 9: Play card 5</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Since there are no immediately playable cards and we have 0 info tokens, our priority should be to gain information or set up potential future plays without wasting critical cards. Looking at our hand and teammates' hands, none of our cards can be safely played based on current hints. Considering the teammates' hands and the need for strategic hinting is crucial but given our current lack of info tokens, we must focus on either playing or discarding a card to potentially gain an info token or make room for better cards from the deck. Given that our hand has cards with some hint information (e.g., Card 0 has a color hint), and considering the discard pile and remaining deck composition, discarding the least useful card based on current hints and firework progress seems prudent. However, without immediate playable options or sufficient info to give targeted hints, we must carefully select which action maximizes our future chances. Our best initial step appears to be preparing for potential future plays by optimizing our hand composition and aiming to gain more information about our cards or teammates' cards.", 'action': '1'}</p>
+</div>
+<div class='state' id='state31'>
+<h2>State 59</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 1</p>
+<p><strong>Fireworks:</strong> R0 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: YX</li>
+<li>Card 2: RX</li>
+<li>Card 3: R1</li>
+<li>Card 4: Unknown</li>
+<li>Card 5: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = R5 | Hint = RX</li>
+<li>Card 2: Visible = B3 | Hint = None</li>
+<li>Card 3: Visible = G3 | Hint = None</li>
+<li>Card 4: Visible = W4 | Hint = None</li>
+<li>Card 5: Visible = Y2 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = R2 | Hint = RX</li>
+<li>Card 2: Visible = W3 | Hint = None</li>
+<li>Card 3: Visible = R1 | Hint = R1</li>
+<li>Card 4: Visible = B4 | Hint = None</li>
+<li>Card 5: Visible = R4 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Discard 4</li>
+<li>Action 5: Play card 1</li>
+<li>Action 6: Play card 2</li>
+<li>Action 7: Play card 3</li>
+<li>Action 8: Play card 4</li>
+<li>Action 9: Play card 5</li>
+<li>Action 10: Reveal player +1 color R</li>
+<li>Action 11: Reveal player +1 color Y</li>
+<li>Action 12: Reveal player +1 color G</li>
+<li>Action 13: Reveal player +1 color W</li>
+<li>Action 14: Reveal player +1 color B</li>
+<li>Action 15: Reveal player +2 color R</li>
+<li>Action 18: Reveal player +2 color W</li>
+<li>Action 19: Reveal player +2 color B</li>
+<li>Action 21: Reveal player +1 rank 2</li>
+<li>Action 22: Reveal player +1 rank 3</li>
+<li>Action 23: Reveal player +1 rank 4</li>
+<li>Action 24: Reveal player +1 rank 5</li>
+<li>Action 25: Reveal player +2 rank 1</li>
+<li>Action 26: Reveal player +2 rank 2</li>
+<li>Action 27: Reveal player +2 rank 3</li>
+<li>Action 28: Reveal player +2 rank 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Given the current state of the game and the information available, it's crucial to prioritize actions that either directly contribute to completing or extending a firework stack or provide valuable hints to teammates without risking unnecessary card discards. Since none of the cards in my hand can be immediately played without more information, and considering the limited number of life tokens and the abundance of unknowns, giving a hint is the most strategic move. Player +1 has a 'Y2' which could potentially fit into a firework stack if we had more yellow cards or needed a specific rank. However, without direct playable options or clear paths for immediate discards that wouldn't jeopardize future plays, and given the legal actions provided, the best strategy involves attempting to reveal information that could help in making future decisions. Revealing color or rank information to teammates can significantly impact the game's progression. Considering Player +1's hand and the potential for yellow cards being useful, revealing a color hint seems prudent. However, since we don't have direct access to reveal yellow specifically for Player +1 based on the provided actions, the next best step would be to consider other colors or ranks that could indirectly help by process of elimination or confirming suspicions about their hand. Among the legal actions, there isn't a direct option to reveal 'color Y' to Player +1, which would have been ideal given their 'Y2'. Thus, we must select an action from the provided list that best aligns with strategic information sharing.", 'action': '10'}</p>
+</div>
+<div class='state' id='state32'>
+<h2>State 60</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 0</p>
+<p><strong>Fireworks:</strong> R0 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: RX</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: Unknown</li>
+<li>Card 5: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = R2 | Hint = RX</li>
+<li>Card 2: Visible = W3 | Hint = None</li>
+<li>Card 3: Visible = R1 | Hint = R1</li>
+<li>Card 4: Visible = B4 | Hint = None</li>
+<li>Card 5: Visible = R4 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = Y4 | Hint = YX</li>
+<li>Card 2: Visible = R3 | Hint = RX</li>
+<li>Card 3: Visible = R1 | Hint = R1</li>
+<li>Card 4: Visible = W2 | Hint = None</li>
+<li>Card 5: Visible = Y1 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Discard 4</li>
+<li>Action 5: Play card 1</li>
+<li>Action 6: Play card 2</li>
+<li>Action 7: Play card 3</li>
+<li>Action 8: Play card 4</li>
+<li>Action 9: Play card 5</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': 'Since there are no immediately playable cards in my hand and no clear hints that could significantly improve the situation without wasting hint tokens, the most strategic move is to discard a card that seems least likely to be useful based on the information available. Given all cards in my hand have similar uncertainty except for Card 1 which has a hint about possibly being red, I should avoid discarding Card 1 as it might be playable or give a valuable hint later. Thus, discarding one of the other cards that have no hints seems like the safest move to gain an Info token without losing potential gameplay value.', 'action': '1'}</p>
+</div>
+<div class='state' id='state33'>
+<h2>State 62</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 1</p>
+<p><strong>Fireworks:</strong> R0 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: RX</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: R1</li>
+<li>Card 4: Unknown</li>
+<li>Card 5: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = Y4 | Hint = YX</li>
+<li>Card 2: Visible = R3 | Hint = RX</li>
+<li>Card 3: Visible = R1 | Hint = R1</li>
+<li>Card 4: Visible = W2 | Hint = None</li>
+<li>Card 5: Visible = Y1 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = R5 | Hint = RX</li>
+<li>Card 2: Visible = G3 | Hint = None</li>
+<li>Card 3: Visible = W4 | Hint = None</li>
+<li>Card 4: Visible = Y2 | Hint = None</li>
+<li>Card 5: Visible = Y1 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Discard 4</li>
+<li>Action 5: Play card 1</li>
+<li>Action 6: Play card 2</li>
+<li>Action 7: Play card 3</li>
+<li>Action 8: Play card 4</li>
+<li>Action 9: Play card 5</li>
+<li>Action 10: Reveal player +1 color R</li>
+<li>Action 11: Reveal player +1 color Y</li>
+<li>Action 13: Reveal player +1 color W</li>
+<li>Action 15: Reveal player +2 color R</li>
+<li>Action 16: Reveal player +2 color Y</li>
+<li>Action 17: Reveal player +2 color G</li>
+<li>Action 18: Reveal player +2 color W</li>
+<li>Action 20: Reveal player +1 rank 1</li>
+<li>Action 21: Reveal player +1 rank 2</li>
+<li>Action 22: Reveal player +1 rank 3</li>
+<li>Action 23: Reveal player +1 rank 4</li>
+<li>Action 25: Reveal player +2 rank 1</li>
+<li>Action 26: Reveal player +2 rank 2</li>
+<li>Action 27: Reveal player +2 rank 3</li>
+<li>Action 28: Reveal player +2 rank 4</li>
+<li>Action 29: Reveal player +2 rank 5</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Considering the current state of the game and the information available, the best move would be to give a hint about color R to player +1, as they have a card 'R3' and 'R1' which could potentially be played to extend or complete a firework stack. This hint maximizes the chance for a correct play while considering the limited hint tokens.", 'action': 10}</p>
+</div>
+<div class='state' id='state34'>
+<h2>State 63</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 0</p>
+<p><strong>Fireworks:</strong> R0 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: YX</li>
+<li>Card 2: RX</li>
+<li>Card 3: R1</li>
+<li>Card 4: Unknown</li>
+<li>Card 5: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = R5 | Hint = RX</li>
+<li>Card 2: Visible = G3 | Hint = None</li>
+<li>Card 3: Visible = W4 | Hint = None</li>
+<li>Card 4: Visible = Y2 | Hint = None</li>
+<li>Card 5: Visible = Y1 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = R2 | Hint = RX</li>
+<li>Card 2: Visible = W3 | Hint = None</li>
+<li>Card 3: Visible = R1 | Hint = R1</li>
+<li>Card 4: Visible = B4 | Hint = None</li>
+<li>Card 5: Visible = R4 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Discard 4</li>
+<li>Action 5: Play card 1</li>
+<li>Action 6: Play card 2</li>
+<li>Action 7: Play card 3</li>
+<li>Action 8: Play card 4</li>
+<li>Action 9: Play card 5</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Given the current game state, there are no immediately playable cards in my hand based on the hints received. Since we have 0 info tokens, giving a hint is not an option at this moment. Looking at my teammates' hands, Player +1 has a 'Y1' which could potentially be played soon if they receive the right hint, but without info tokens, we cannot communicate that yet. Player +2 also holds some potential plays but again, lacks the necessary hints. Considering our hand and the need to gain an info token for future moves or to provide critical hints, discarding a card seems like the best course of action. Card 3 in my hand has a hint about being possibly red ('R') with no clear rank information that matches any current needs. Given the cards already played and discarded, and the lack of clear utility in my own hand for immediate play or future plays based on visible teammates' hands, I choose to discard card 3 as it seems less immediately useful than others based on received hints and does not match any urgent need observed in teammates' hands.", 'action': 3}</p>
+</div>
+<div class='state' id='state35'>
+<h2>State 65</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 1</p>
+<p><strong>Fireworks:</strong> R0 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: RX</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: Unknown</li>
+<li>Card 5: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = R2 | Hint = RX</li>
+<li>Card 2: Visible = W3 | Hint = None</li>
+<li>Card 3: Visible = R1 | Hint = R1</li>
+<li>Card 4: Visible = B4 | Hint = None</li>
+<li>Card 5: Visible = R4 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = Y4 | Hint = YX</li>
+<li>Card 2: Visible = R3 | Hint = RX</li>
+<li>Card 3: Visible = R1 | Hint = R1</li>
+<li>Card 4: Visible = Y1 | Hint = None</li>
+<li>Card 5: Visible = R4 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Discard 4</li>
+<li>Action 5: Play card 1</li>
+<li>Action 6: Play card 2</li>
+<li>Action 7: Play card 3</li>
+<li>Action 8: Play card 4</li>
+<li>Action 9: Play card 5</li>
+<li>Action 10: Reveal player +1 color R</li>
+<li>Action 13: Reveal player +1 color W</li>
+<li>Action 14: Reveal player +1 color B</li>
+<li>Action 15: Reveal player +2 color R</li>
+<li>Action 16: Reveal player +2 color Y</li>
+<li>Action 20: Reveal player +1 rank 1</li>
+<li>Action 21: Reveal player +1 rank 2</li>
+<li>Action 22: Reveal player +1 rank 3</li>
+<li>Action 23: Reveal player +1 rank 4</li>
+<li>Action 25: Reveal player +2 rank 1</li>
+<li>Action 27: Reveal player +2 rank 3</li>
+<li>Action 28: Reveal player +2 rank 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Since there are no immediately playable cards and limited information about the cards in my hand, the best strategy is to give a hint to one of my teammates to help them make a move. Noticing that Player +1 has a 'R2' card which could be helpful for starting or extending the red firework stack but lacks confirmation on its color, providing a color hint to this player seems like the most beneficial action given the current state and available hints.", 'action': 10}</p>
+</div>
+<div class='state' id='state36'>
+<h2>State 66</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 0</p>
+<p><strong>Fireworks:</strong> R0 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: RX</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: R1</li>
+<li>Card 4: Unknown</li>
+<li>Card 5: RX</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = Y4 | Hint = YX</li>
+<li>Card 2: Visible = R3 | Hint = RX</li>
+<li>Card 3: Visible = R1 | Hint = R1</li>
+<li>Card 4: Visible = Y1 | Hint = None</li>
+<li>Card 5: Visible = R4 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = R5 | Hint = RX</li>
+<li>Card 2: Visible = G3 | Hint = None</li>
+<li>Card 3: Visible = W4 | Hint = None</li>
+<li>Card 4: Visible = Y2 | Hint = None</li>
+<li>Card 5: Visible = Y1 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Discard 4</li>
+<li>Action 5: Play card 1</li>
+<li>Action 6: Play card 2</li>
+<li>Action 7: Play card 3</li>
+<li>Action 8: Play card 4</li>
+<li>Action 9: Play card 5</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Since there are no immediate playable cards in my hand and considering the low number of info tokens available, it's crucial to gain an info token to potentially reveal critical information about my or my teammates' hands. Given that Card 3 has the broadest possibilities (YGWB12345) and is least likely to be immediately useful based on current hints and game state, discarding this card seems like the safest option to gain an Info token without risking the loss of a potentially playable card.", 'action': '3'}</p>
+</div>
+<div class='state' id='state37'>
+<h2>State 68</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 1</p>
+<p><strong>Fireworks:</strong> R0 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: YX</li>
+<li>Card 2: RX</li>
+<li>Card 3: R1</li>
+<li>Card 4: Unknown</li>
+<li>Card 5: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = R5 | Hint = RX</li>
+<li>Card 2: Visible = G3 | Hint = None</li>
+<li>Card 3: Visible = W4 | Hint = None</li>
+<li>Card 4: Visible = Y2 | Hint = None</li>
+<li>Card 5: Visible = Y1 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = R2 | Hint = RX</li>
+<li>Card 2: Visible = W3 | Hint = None</li>
+<li>Card 3: Visible = R1 | Hint = R1</li>
+<li>Card 4: Visible = R4 | Hint = RX</li>
+<li>Card 5: Visible = G2 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Discard 4</li>
+<li>Action 5: Play card 1</li>
+<li>Action 6: Play card 2</li>
+<li>Action 7: Play card 3</li>
+<li>Action 8: Play card 4</li>
+<li>Action 9: Play card 5</li>
+<li>Action 10: Reveal player +1 color R</li>
+<li>Action 11: Reveal player +1 color Y</li>
+<li>Action 12: Reveal player +1 color G</li>
+<li>Action 13: Reveal player +1 color W</li>
+<li>Action 15: Reveal player +2 color R</li>
+<li>Action 17: Reveal player +2 color G</li>
+<li>Action 18: Reveal player +2 color W</li>
+<li>Action 20: Reveal player +1 rank 1</li>
+<li>Action 21: Reveal player +1 rank 2</li>
+<li>Action 22: Reveal player +1 rank 3</li>
+<li>Action 23: Reveal player +1 rank 4</li>
+<li>Action 24: Reveal player +1 rank 5</li>
+<li>Action 25: Reveal player +2 rank 1</li>
+<li>Action 26: Reveal player +2 rank 2</li>
+<li>Action 27: Reveal player +2 rank 3</li>
+<li>Action 28: Reveal player +2 rank 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Since there are no immediately playable cards in my hand and considering the visible cards in teammates' hands, I should focus on giving hints to maximize the chance of a correct play. Player +1 has a 'Y2' card which could potentially be played if they had more information about its color or rank, but without direct knowledge of my own cards' specifics, giving a hint about a specific rank or color that could match their visible cards seems like the safest move to encourage progress. However, given the constraint of only having one Info token and the legal actions provided, I must choose an action that aligns with these options. Since none of my cards can be directly played based on the current firework stacks, and considering the importance of information sharing in this game, revealing a rank or color to a teammate could be beneficial but I need to pick an action from the given list that best suits the situation.", 'action': '20'}</p>
+</div>
+<div class='state' id='state38'>
+<h2>State 69</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 0</p>
+<p><strong>Fireworks:</strong> R0 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: RX</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: Unknown</li>
+<li>Card 5: X1</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = R2 | Hint = RX</li>
+<li>Card 2: Visible = W3 | Hint = None</li>
+<li>Card 3: Visible = R1 | Hint = R1</li>
+<li>Card 4: Visible = R4 | Hint = RX</li>
+<li>Card 5: Visible = G2 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = Y4 | Hint = YX</li>
+<li>Card 2: Visible = R3 | Hint = RX</li>
+<li>Card 3: Visible = R1 | Hint = R1</li>
+<li>Card 4: Visible = Y1 | Hint = None</li>
+<li>Card 5: Visible = R4 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Discard 4</li>
+<li>Action 5: Play card 1</li>
+<li>Action 6: Play card 2</li>
+<li>Action 7: Play card 3</li>
+<li>Action 8: Play card 4</li>
+<li>Action 9: Play card 5</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Since there are no immediate playable cards and considering the limited information about our hand, the best strategy is to give a hint or discard a less useful card to gain an Info token. Given that we have 3 life tokens remaining, it's crucial to optimize each move carefully. However, with no clear hints on what to play and given the constraint of not having any explicit hints for cards in our hand except for Card 1 possibly being red and Card 5 possibly being rank 1, the most logical step without revealing too much about our hand or before knowing more is to analyze teammates' hands. Yet, since we can't directly act on their behalf, we must utilize the information given. Looking at Player +1's hand, 'R2', 'W3', 'R1', 'R4', and 'G2' are visible. For Player +2: 'Y4', 'R3', 'R1', 'Y1', and 'R4'. Given these, a strategic hint could guide them towards playing or keeping the right cards but requires precise deduction which isn't clearly outlined with given info. Therefore, considering our direct options without over-speculating on teammates' potential moves, we turn towards managing our hand directly through discarding or attempting to play based on known probabilities.", 'action': '1'}</p>
+</div>
+<div class='state' id='state39'>
+<h2>State 71</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 1</p>
+<p><strong>Fireworks:</strong> R0 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: RX</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: R1</li>
+<li>Card 4: RX</li>
+<li>Card 5: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = Y4 | Hint = YX</li>
+<li>Card 2: Visible = R3 | Hint = RX</li>
+<li>Card 3: Visible = R1 | Hint = R1</li>
+<li>Card 4: Visible = Y1 | Hint = None</li>
+<li>Card 5: Visible = R4 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = R5 | Hint = RX</li>
+<li>Card 2: Visible = W4 | Hint = None</li>
+<li>Card 3: Visible = Y2 | Hint = None</li>
+<li>Card 4: Visible = Y1 | Hint = None</li>
+<li>Card 5: Visible = W5 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Discard 4</li>
+<li>Action 5: Play card 1</li>
+<li>Action 6: Play card 2</li>
+<li>Action 7: Play card 3</li>
+<li>Action 8: Play card 4</li>
+<li>Action 9: Play card 5</li>
+<li>Action 10: Reveal player +1 color R</li>
+<li>Action 11: Reveal player +1 color Y</li>
+<li>Action 15: Reveal player +2 color R</li>
+<li>Action 16: Reveal player +2 color Y</li>
+<li>Action 18: Reveal player +2 color W</li>
+<li>Action 20: Reveal player +1 rank 1</li>
+<li>Action 22: Reveal player +1 rank 3</li>
+<li>Action 23: Reveal player +1 rank 4</li>
+<li>Action 25: Reveal player +2 rank 1</li>
+<li>Action 26: Reveal player +2 rank 2</li>
+<li>Action 28: Reveal player +2 rank 4</li>
+<li>Action 29: Reveal player +2 rank 5</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Since there are no immediately playable cards and considering the hints provided, it's crucial to give a hint that maximizes the chance for a correct play. Noticing Player +1 has a card 'R1' which is known to be red and rank 1, giving a hint about color R to Player +1 could help in making a safe play but since the action '(Reveal player +1 color R)' is already implied by the cards they hold, we should look for other opportunities. However, revealing rank or color information to teammates without specific known cards doesn't directly apply here as we need to act based on current hand knowledge and firework progress. Considering our own hand and the need to gain more info or play a card safely, discarding a card to gain an Info token seems like a viable strategy especially since none of our cards can be played with certainty without more information.", 'action': '4'}</p>
+</div>
+<div class='state' id='state40'>
+<h2>State 73</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 2</p>
+<p><strong>Fireworks:</strong> R0 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: YX</li>
+<li>Card 2: RX</li>
+<li>Card 3: R1</li>
+<li>Card 4: Unknown</li>
+<li>Card 5: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = R5 | Hint = RX</li>
+<li>Card 2: Visible = W4 | Hint = None</li>
+<li>Card 3: Visible = Y2 | Hint = None</li>
+<li>Card 4: Visible = Y1 | Hint = None</li>
+<li>Card 5: Visible = W5 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = R2 | Hint = RX</li>
+<li>Card 2: Visible = W3 | Hint = None</li>
+<li>Card 3: Visible = R1 | Hint = R1</li>
+<li>Card 4: Visible = R4 | Hint = RX</li>
+<li>Card 5: Visible = W1 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Discard 4</li>
+<li>Action 5: Play card 1</li>
+<li>Action 6: Play card 2</li>
+<li>Action 7: Play card 3</li>
+<li>Action 8: Play card 4</li>
+<li>Action 9: Play card 5</li>
+<li>Action 10: Reveal player +1 color R</li>
+<li>Action 11: Reveal player +1 color Y</li>
+<li>Action 13: Reveal player +1 color W</li>
+<li>Action 15: Reveal player +2 color R</li>
+<li>Action 18: Reveal player +2 color W</li>
+<li>Action 20: Reveal player +1 rank 1</li>
+<li>Action 21: Reveal player +1 rank 2</li>
+<li>Action 23: Reveal player +1 rank 4</li>
+<li>Action 24: Reveal player +1 rank 5</li>
+<li>Action 25: Reveal player +2 rank 1</li>
+<li>Action 26: Reveal player +2 rank 2</li>
+<li>Action 27: Reveal player +2 rank 3</li>
+<li>Action 28: Reveal player +2 rank 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Considering the current game state and the goal to maximize the score by playing cards in the correct sequence, the most appropriate move involves analyzing the hand for playable cards and evaluating hint opportunities. Given that no immediate playable cards are apparent without more information and considering the limited number of info tokens, using a hint to reveal critical information is crucial. However, with only 2 info tokens remaining, it's essential to prioritize actions that directly contribute to playing cards or gaining more information efficiently. Since none of the cards in my hand can be safely played based on the provided hints, and given the absence of direct clues for my cards, the best strategy would involve either discarding a less useful card to gain an info token or providing a hint that could facilitate a play. Among the visible actions, revealing player +1's color R (action 10) is an attractive option because it potentially unlocks a playable card in their hand, given they have several cards that could match this criterion based on the game's state and the cards already played. This action could prompt them to play a card, advancing the game state positively.", 'action': '10'}</p>
+</div>
+<div class='state' id='state41'>
+<h2>State 74</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 1</p>
+<p><strong>Fireworks:</strong> R0 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: RX</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: X1</li>
+<li>Card 5: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = R2 | Hint = RX</li>
+<li>Card 2: Visible = W3 | Hint = None</li>
+<li>Card 3: Visible = R1 | Hint = R1</li>
+<li>Card 4: Visible = R4 | Hint = RX</li>
+<li>Card 5: Visible = W1 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = Y4 | Hint = YX</li>
+<li>Card 2: Visible = R3 | Hint = RX</li>
+<li>Card 3: Visible = R1 | Hint = R1</li>
+<li>Card 4: Visible = Y1 | Hint = None</li>
+<li>Card 5: Visible = R4 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Discard 4</li>
+<li>Action 5: Play card 1</li>
+<li>Action 6: Play card 2</li>
+<li>Action 7: Play card 3</li>
+<li>Action 8: Play card 4</li>
+<li>Action 9: Play card 5</li>
+<li>Action 10: Reveal player +1 color R</li>
+<li>Action 13: Reveal player +1 color W</li>
+<li>Action 15: Reveal player +2 color R</li>
+<li>Action 16: Reveal player +2 color Y</li>
+<li>Action 20: Reveal player +1 rank 1</li>
+<li>Action 21: Reveal player +1 rank 2</li>
+<li>Action 22: Reveal player +1 rank 3</li>
+<li>Action 23: Reveal player +1 rank 4</li>
+<li>Action 25: Reveal player +2 rank 1</li>
+<li>Action 27: Reveal player +2 rank 3</li>
+<li>Action 28: Reveal player +2 rank 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Based on the current game state, there are no immediately playable cards in my hand. Considering the visible cards in teammates' hands, I see an opportunity to give a hint. Player +1 has a card 'R2' which they know might be red color and could be one of R2345. However, since I don't have direct information about colors or ranks for most of my cards except hints, I will consider giving a hint that maximizes the chance for a correct play. Given the current firework stacks are all at 0, and there's limited information, giving a color hint to player +1 could be beneficial if it helps them identify a playable card. The action '(Reveal player +1 color R)' seems like a strategic choice as it directly addresses a card they hold and might help them make a correct play, potentially extending the red firework stack.", 'action': 10}</p>
+</div>
+<div class='state' id='state42'>
+<h2>State 75</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 0</p>
+<p><strong>Fireworks:</strong> R0 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: RX</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: R1</li>
+<li>Card 4: RX</li>
+<li>Card 5: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = Y4 | Hint = YX</li>
+<li>Card 2: Visible = R3 | Hint = RX</li>
+<li>Card 3: Visible = R1 | Hint = R1</li>
+<li>Card 4: Visible = Y1 | Hint = None</li>
+<li>Card 5: Visible = R4 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = R5 | Hint = RX</li>
+<li>Card 2: Visible = W4 | Hint = None</li>
+<li>Card 3: Visible = Y2 | Hint = None</li>
+<li>Card 4: Visible = Y1 | Hint = None</li>
+<li>Card 5: Visible = W5 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Discard 4</li>
+<li>Action 5: Play card 1</li>
+<li>Action 6: Play card 2</li>
+<li>Action 7: Play card 3</li>
+<li>Action 8: Play card 4</li>
+<li>Action 9: Play card 5</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Given the current state, there are no immediate playable cards in my hand based on the hints received. Since we have 0 info tokens remaining, it's crucial to use our turns wisely. Looking at teammates' hands, Player +1 has a 'R5' which could be potentially playable if they had more information about their other cards or if the red stack is advanced. However, without info tokens, we cannot give hints directly about specific ranks or colors to guide them towards playing their 'R5' or other potentially playable cards. Considering our hand and the need for an info token to possibly hint later, discarding a card that seems least likely to be immediately useful or part of a crucial firework sequence is the next best step. Card 0 has hints about being red but no specific rank information, making it a potential candidate for discard if it doesn't match any current playable sequences and considering we lack info tokens to clarify its usability.", 'action': '0'}</p>
+</div>
+<div class='state' id='state43'>
+<h2>State 77</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 1</p>
+<p><strong>Fireworks:</strong> R0 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: YX</li>
+<li>Card 2: RX</li>
+<li>Card 3: R1</li>
+<li>Card 4: Unknown</li>
+<li>Card 5: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = R5 | Hint = RX</li>
+<li>Card 2: Visible = W4 | Hint = None</li>
+<li>Card 3: Visible = Y2 | Hint = None</li>
+<li>Card 4: Visible = Y1 | Hint = None</li>
+<li>Card 5: Visible = W5 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = W3 | Hint = None</li>
+<li>Card 2: Visible = R1 | Hint = R1</li>
+<li>Card 3: Visible = R4 | Hint = RX</li>
+<li>Card 4: Visible = W1 | Hint = None</li>
+<li>Card 5: Visible = G1 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Discard 4</li>
+<li>Action 5: Play card 1</li>
+<li>Action 6: Play card 2</li>
+<li>Action 7: Play card 3</li>
+<li>Action 8: Play card 4</li>
+<li>Action 9: Play card 5</li>
+<li>Action 10: Reveal player +1 color R</li>
+<li>Action 11: Reveal player +1 color Y</li>
+<li>Action 13: Reveal player +1 color W</li>
+<li>Action 15: Reveal player +2 color R</li>
+<li>Action 17: Reveal player +2 color G</li>
+<li>Action 18: Reveal player +2 color W</li>
+<li>Action 20: Reveal player +1 rank 1</li>
+<li>Action 21: Reveal player +1 rank 2</li>
+<li>Action 23: Reveal player +1 rank 4</li>
+<li>Action 24: Reveal player +1 rank 5</li>
+<li>Action 25: Reveal player +2 rank 1</li>
+<li>Action 27: Reveal player +2 rank 3</li>
+<li>Action 28: Reveal player +2 rank 4</li>
+</ul>
+<h3>Player Response:</h3>
+<p>{'reason': "Given the current state of the game, it's crucial to prioritize plays that either directly contribute to completing a firework stack or provide valuable information to teammates without risking life tokens. Since none of my cards can be safely played based on the provided hints and given that I have no clear indication of which card could lead to an immediate play, I must focus on giving hints to maximize our chances of making progress. Noticing Player +1 has 'Y2' and 'Y1', giving them a hint about color Y (which aligns with the possible identities of my Card 1) seems beneficial but isn't directly available as an option based on the provided mappings. However, since 'Reveal player +1 color R' is an option, it implies I should consider providing rank or color hints that are directly available and relevant. Among the teammates' visible cards, Player +1's 'Y1' stands out because if they have a 'Y2', knowing their 'Y1' could be part of a sequence, but the action to reveal 'color Y' isn't listed for player +1 directly in my options. Thus, focusing on rank hints that are available becomes a priority. Considering Player +1 has cards that could potentially align with low ranks and given the direct hint options available, giving a hint about a specific rank they might find useful (like rank 1) seems like a viable strategy to encourage them to play if they have it. Therefore, choosing an action that could help them understand their hand better in relation to potential sequences is key.", 'action': '20'}</p>
+</div>
+<div class='state' id='state44'>
+<h2>State 78</h2>
+<p><strong>Tokens:</strong> Life tokens = 3, Info tokens = 0</p>
+<p><strong>Fireworks:</strong> R0 Y0 G0 W0 B0</p>
+<h3>Your Hand:</h3>
+<ul>
+<li>Card 1: RX</li>
+<li>Card 2: Unknown</li>
+<li>Card 3: Unknown</li>
+<li>Card 4: X1</li>
+<li>Card 5: Unknown</li>
+</ul>
+<h3>Other Players' Hands:</h3>
+<p><strong>Player +1:</strong></p>
+<ul>
+<li>Card 1: Visible = W3 | Hint = None</li>
+<li>Card 2: Visible = R1 | Hint = R1</li>
+<li>Card 3: Visible = R4 | Hint = RX</li>
+<li>Card 4: Visible = W1 | Hint = None</li>
+<li>Card 5: Visible = G1 | Hint = None</li>
+</ul>
+<p><strong>Player +2:</strong></p>
+<ul>
+<li>Card 1: Visible = Y4 | Hint = YX</li>
+<li>Card 2: Visible = R3 | Hint = RX</li>
+<li>Card 3: Visible = R1 | Hint = R1</li>
+<li>Card 4: Visible = Y1 | Hint = None</li>
+<li>Card 5: Visible = R4 | Hint = None</li>
+</ul>
+<h3>Legal Actions:</h3>
+<ul>
+<li>Action 0: Discard 0</li>
+<li>Action 1: Discard 1</li>
+<li>Action 2: Discard 2</li>
+<li>Action 3: Discard 3</li>
+<li>Action 4: Discard 4</li>
+<li>Action 5: Play card 1</li>
+<li>Action 6: Play card 2</li>
+<li>Action 7: Play card 3</li>
+<li>Action 8: Play card 4</li>
+<li>Action 9: Play card 5</li>
+</ul>
+<h3>Player Response:</h3>
+<p></p>
+</div>
+<div class='navigation'>
+<button onclick='prevState()'>Previous</button>
+<button onclick='nextState()'>Next</button>
+</div>
+
+<script>
+var currentStateIndex = 0;
+var totalStates = 45;
+function showState(index) {
+		for (var i = 0; i < totalStates; i++) {
+				document.getElementById("state" + i).style.display = "none";
+		}
+		document.getElementById("state" + index).style.display = "block";
+}
+function nextState() {
+		if (currentStateIndex < totalStates - 1) {
+				currentStateIndex++;
+				showState(currentStateIndex);
+		}
+}
+function prevState() {
+		if (currentStateIndex > 0) {
+				currentStateIndex--;
+				showState(currentStateIndex);
+		}
+}
+showState(currentStateIndex);
+</script>
+		
+</body>
+</html>

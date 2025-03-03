@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Connect Four Trajectory Viewer</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="../../static/css/bulma.min.css">
+  <link rel="stylesheet" href="../../static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="../../static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="../../static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="../../static/css/index.css">
+
+  <style>
+    .select-container {
+      margin-bottom: 1rem;
+    }
+    #trajectoryImage {
+        display: block;
+        margin: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-2">Connect Four Trajectory Viewer</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="trajectory-selection">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Trajectory Selection</h2>
+      <div class="columns">
+        <div class="column is-half">
+            <div class="field">
+              <label class="label">Choose the first player: </label>
+              <div class="control">
+                <div class="select">
+                    <select id="model1Select">
+                        <option value="Claude-3.5-Sonnet">Claude-3.5-Sonnet</option>
+                        <option value="Qwen2.5:72b">Qwen2.5:72b</option>
+                        <option value="Llama3:70b">Llama3:70b</option>
+                        <option value="GPT-4o">GPT-4o</option>
+                        <option value="GPT-4o-mini">GPT-4o-mini</option>
+                        <option value="Mistral:7b">Mistral:7b</option>
+                        <option value="Llama3.3:70b">Llama3.3:70b</option>
+                        <option value="o1-preview">o1-preview</option>
+                        <option value="o1-mini">o1-mini</option>
+                        <option value="Claude-3.5-Haiku">Claude-3.5-Haiku</option>
+                        <option value="GPT-4-turbo">GPT-4-turbo</option>
+                        <option value="GPT-3.5-turbo">GPT-3.5-turbo</option>
+                        <option value="Llama3.2:3b">Llama3.2:3b</option>
+                        <option value="Llama3.1:70b">Llama3.1:70b</option>
+                    </select>
+                    <!-- <select id="model1Select"> chess game
+                        <option value="GPT-4o">GPT-4o</option>
+                        <option value="GPT-3.5-turbo">GPT-3.5-turbo</option>
+                        <option value="Claude-3.5-Sonnet">Claude-3.5-Sonnet</option>
+                        <option value="Qwen2.5:72b">Qwen2.5:72b</option>
+                        <option value="Llama3.3:70b">Llama3.3:70b</option>
+                        <option value="Claude-3.5-Haiku">Claude-3.5-Haiku</option>
+                        <option value="GPT-4o-mini">GPT-4o-mini</option>
+                        <option value="o1-mini">o1-mini</option>
+                        <option value="GPT-4-turbo">GPT-4-turbo</option>
+                        <option value="Llama3:70b">Llama3:70b</option>
+                        <option value="Llama3.1:70b">Llama3.1:70b</option>
+                        <option value="o1-preview">o1-preview</option>
+                    </select> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column is-half">
+            <div class="field">
+              <label class="label">Choose the second player: </label>
+              <div class="control">
+                <div class="select">
+                    <select id="model2Select">
+                        <option value="Claude-3.5-Sonnet">Claude-3.5-Sonnet</option>
+                        <option value="Qwen2.5:72b">Qwen2.5:72b</option>
+                        <option value="Llama3:70b">Llama3:70b</option>
+                        <option value="GPT-4o">GPT-4o</option>
+                        <option value="GPT-4o-mini">GPT-4o-mini</option>
+                        <option value="Mistral:7b">Mistral:7b</option>
+                        <option value="Llama3.3:70b">Llama3.3:70b</option>
+                        <option value="o1-preview">o1-preview</option>
+                        <option value="o1-mini">o1-mini</option>
+                        <option value="Claude-3.5-Haiku">Claude-3.5-Haiku</option>
+                        <option value="GPT-4-turbo">GPT-4-turbo</option>
+                        <option value="GPT-3.5-turbo">GPT-3.5-turbo</option>
+                        <option value="Llama3.2:3b">Llama3.2:3b</option>
+                        <option value="Llama3.1:70b">Llama3.1:70b</option>
+                    </select>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="columns">
+        <div class="column has-text-centered">
+          <button class="button is-primary" id="loadTrajectoryButton">Load Trajectory</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- status of the trajectory -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="box">
+        <!-- Navigation -->
+        <div class="buttons is-centered">
+            <button class="button" id="prevButton" onclick="prevState()">Previous Step</button>
+            <button class="button" id="nextButton" onclick="nextState()">Next Step</button>
+          </div>
+        <!-- Image -->
+        <figure class="image">
+          <img id="trajectoryImage" src="initial.png" alt="Trajectory State" style="width: 50%; height: 50%;">
+        </figure>
+        <!-- Trajectory -->
+        <div class="content trajectory-details" id="trajectoryDetails">
+          <p id="trajectoryPlayer"><strong>Player:</strong> </p>
+          <p id="trajectoryReason"><strong>Reasoning:</strong> </p>
+          <p id="trajectoryAction"><strong>Action:</strong> </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>Connect Four Trajectory Viewer - Part of the <span style="color: var(--color-octo-red);"><b>SPIN-Bench</b></span><span style="color: var(--color-tools-blue);"></span> Benchmark</p>
+    </div>
+  </footer>
+
+  <script>
+    let trajectoryData = [];
+    let currentIndex = 0;
+    let base_path = null;
+
+    function loadTrajectory(path) {
+      fetch(path)
+        .then(response => response.json())
+        .then(data => {
+          trajectoryData = data;
+          currentIndex = 0;
+          if (trajectoryData.length > 0) {
+            let model1 = trajectoryData[1] ? trajectoryData[1].turn : "Unknown";
+            let model2 = trajectoryData[2] ? trajectoryData[2].turn : "Unknown";
+            showState(currentIndex);
+          }
+        })
+        .catch(error => {
+          console.error('Error loading trajectory:', error);
+          alert("Trajectory load failed, please choose another trajectory.");
+        });
+    }
+
+    function showState(index) {
+      if (index < 0 || index >= trajectoryData.length) return;
+      const state = trajectoryData[index];
+      document.getElementById('trajectoryImage').src = base_path +state.image_path;
+      document.getElementById('trajectoryPlayer').innerHTML = "<strong>Player:</strong> " + state.turn;
+      document.getElementById('trajectoryAction').innerHTML = "<strong>Action:</strong> " + state.action;
+      document.getElementById('trajectoryReason').innerHTML = "<strong>Reasoning:</strong> " + state.reason;
+
+      document.getElementById('prevButton').disabled = (index === 0);
+      document.getElementById('nextButton').disabled = (index === trajectoryData.length - 1);
+    }
+
+    function prevState() {
+      if (currentIndex > 0) {
+        currentIndex--;
+        showState(currentIndex);
+      }
+    }
+
+    function nextState() {
+      if (currentIndex < trajectoryData.length - 1) {
+        currentIndex++;
+        showState(currentIndex);
+      }
+    }
+
+    document.getElementById('loadTrajectoryButton').addEventListener('click', function () {
+      const model1 = document.getElementById('model1Select').value;
+      const model2 = document.getElementById('model2Select').value;
+      if (model1 == model2) {
+        alert("Please choose different models for two players.");
+        return;
+      }
+      const trajectoryPath = "../../trajectories/llmllm/cf/"+model1+"_"+model2+"/trajectory.json";
+      console.log('Loading trajectory:', trajectoryPath);
+      base_path = "../../trajectories/llmllm/cf/"+model1+"_"+model2+"/";
+      loadTrajectory(trajectoryPath);
+    });
+  </script>
+</body>
+
+</html>

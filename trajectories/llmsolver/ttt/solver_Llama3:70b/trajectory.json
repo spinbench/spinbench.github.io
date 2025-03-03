@@ -1,0 +1,50 @@
+[
+    {
+        "index": 0,
+        "turn": "None",
+        "turn_index": 0,
+        "reason": "None",
+        "action": "None",
+        "image_path": "0.png"
+    },
+    {
+        "index": 1,
+        "turn": "our_solver",
+        "turn_index": 0,
+        "reason": "solver/human",
+        "action": 6,
+        "image_path": "1.png"
+    },
+    {
+        "index": 2,
+        "turn": "Llama3:70b",
+        "turn_index": 1,
+        "reason": "I'm placing my 'O' in position 4 to control the center of the board and create possibilities for winning lines while also limiting my opponent's options.",
+        "action": 4,
+        "image_path": "2.png"
+    },
+    {
+        "index": 3,
+        "turn": "our_solver",
+        "turn_index": 0,
+        "reason": "solver/human",
+        "action": 7,
+        "image_path": "3.png"
+    },
+    {
+        "index": 4,
+        "turn": "Llama3:70b",
+        "turn_index": 1,
+        "reason": "I'm placing my 'O' in position 0 to control the top-left corner and set up a potential two-way opportunity for myself, while also putting pressure on the opponent's diagonal plan.",
+        "action": 0,
+        "image_path": "4.png"
+    },
+    {
+        "index": 5,
+        "turn": "our_solver",
+        "turn_index": 0,
+        "reason": "solver/human",
+        "action": 8,
+        "image_path": "5.png"
+    }
+]

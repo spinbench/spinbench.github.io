@@ -1,0 +1,82 @@
+[
+    {
+        "index": 0,
+        "turn": "None",
+        "turn_index": 0,
+        "reason": "None",
+        "action": "None",
+        "image_path": "0.png"
+    },
+    {
+        "index": 1,
+        "turn": "our_solver",
+        "turn_index": 0,
+        "reason": "solver/human",
+        "action": 6,
+        "image_path": "1.png"
+    },
+    {
+        "index": 2,
+        "turn": "Llama3.2:3b",
+        "turn_index": 1,
+        "reason": "Claim central space and prepare for future turns by blocking potential two-in-a-row by X while also preparing to create a diagonal opportunity in the center.",
+        "action": 4,
+        "image_path": "2.png"
+    },
+    {
+        "index": 3,
+        "turn": "our_solver",
+        "turn_index": 0,
+        "reason": "solver/human",
+        "action": 5,
+        "image_path": "3.png"
+    },
+    {
+        "index": 4,
+        "turn": "Llama3.2:3b",
+        "turn_index": 1,
+        "reason": "Winning Strategy: Playing at position 7 to gain control of the middle column and prepare for a potential corner play, also blocking an opponent's possible two-row win",
+        "action": 7,
+        "image_path": "4.png"
+    },
+    {
+        "index": 5,
+        "turn": "our_solver",
+        "turn_index": 0,
+        "reason": "solver/human",
+        "action": 1,
+        "image_path": "5.png"
+    },
+    {
+        "index": 6,
+        "turn": "Llama3.2:3b",
+        "turn_index": 1,
+        "reason": "Block X's potential win by placing O in cell 3.",
+        "action": 3,
+        "image_path": "6.png"
+    },
+    {
+        "index": 7,
+        "turn": "our_solver",
+        "turn_index": 0,
+        "reason": "solver/human",
+        "action": 2,
+        "image_path": "7.png"
+    },
+    {
+        "index": 8,
+        "turn": "Llama3.2:3b",
+        "turn_index": 1,
+        "reason": "Blocking potential X win with a future O win",
+        "action": 8,
+        "image_path": "8.png"
+    },
+    {
+        "index": 9,
+        "turn": "our_solver",
+        "turn_index": 0,
+        "reason": "solver/human",
+        "action": 0,
+        "image_path": "9.png"
+    }
+]

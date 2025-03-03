@@ -1,0 +1,82 @@
+[
+    {
+        "index": 0,
+        "turn": "None",
+        "turn_index": 0,
+        "reason": "None",
+        "action": "None",
+        "image_path": "0.png"
+    },
+    {
+        "index": 1,
+        "turn": "our_solver",
+        "turn_index": 0,
+        "reason": "solver/human",
+        "action": 4,
+        "image_path": "1.png"
+    },
+    {
+        "index": 2,
+        "turn": "o1",
+        "turn_index": 1,
+        "reason": "I am choosing a corner to maximize my chances of winning",
+        "action": 0,
+        "image_path": "2.png"
+    },
+    {
+        "index": 3,
+        "turn": "our_solver",
+        "turn_index": 0,
+        "reason": "solver/human",
+        "action": 5,
+        "image_path": "3.png"
+    },
+    {
+        "index": 4,
+        "turn": "o1",
+        "turn_index": 1,
+        "reason": "I must block X from winning at (3,4,5) on the next turn by placing O at cell 3.",
+        "action": 3,
+        "image_path": "4.png"
+    },
+    {
+        "index": 5,
+        "turn": "our_solver",
+        "turn_index": 0,
+        "reason": "solver/human",
+        "action": 6,
+        "image_path": "5.png"
+    },
+    {
+        "index": 6,
+        "turn": "o1",
+        "turn_index": 1,
+        "reason": "I must block X from winning on the diagonal (cells 6,4,2). Placing O in cell 2 prevents X from completing three in a row.",
+        "action": 2,
+        "image_path": "6.png"
+    },
+    {
+        "index": 7,
+        "turn": "our_solver",
+        "turn_index": 0,
+        "reason": "solver/human",
+        "action": 1,
+        "image_path": "7.png"
+    },
+    {
+        "index": 8,
+        "turn": "o1",
+        "turn_index": 1,
+        "reason": "No immediate winning move is available, so I will play at cell 7 to avoid losing and aim for the best outcome.",
+        "action": 7,
+        "image_path": "8.png"
+    },
+    {
+        "index": 9,
+        "turn": "our_solver",
+        "turn_index": 0,
+        "reason": "solver/human",
+        "action": 8,
+        "image_path": "9.png"
+    }
+]

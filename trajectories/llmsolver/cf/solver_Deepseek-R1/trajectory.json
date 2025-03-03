@@ -1,0 +1,114 @@
+[
+    {
+        "index": 0,
+        "turn": "None",
+        "turn_index": 0,
+        "reason": "None",
+        "action": "None",
+        "image_path": "0.png"
+    },
+    {
+        "index": 1,
+        "turn": "our_solver",
+        "turn_index": 0,
+        "reason": "solver/human",
+        "action": 3,
+        "image_path": "1.png"
+    },
+    {
+        "index": 2,
+        "turn": "Deepseek-R1",
+        "turn_index": 1,
+        "reason": "Placing in column 3 (center) allows me to stack above the opponent's X, securing a central position which offers multiple future connection opportunities in all directions. This strategic spot maximizes flexibility for building vertical, horizontal, or diagonal lines while challenging the opponent's control of the board.",
+        "action": 3,
+        "image_path": "2.png"
+    },
+    {
+        "index": 3,
+        "turn": "our_solver",
+        "turn_index": 0,
+        "reason": "solver/human",
+        "action": 3,
+        "image_path": "3.png"
+    },
+    {
+        "index": 4,
+        "turn": "Deepseek-R1",
+        "turn_index": 1,
+        "reason": "Placing in column 4 allows me to start building a horizontal or diagonal line from my existing O at (4,3). By positioning another O at (5,4), I create potential future opportunities to connect four, such as extending rightward in row 5 or forming a diagonal upwards. This move also takes a central position, maximizing flexibility for subsequent plays.",
+        "action": 4,
+        "image_path": "4.png"
+    },
+    {
+        "index": 5,
+        "turn": "our_solver",
+        "turn_index": 0,
+        "reason": "solver/human",
+        "action": 3,
+        "image_path": "5.png"
+    },
+    {
+        "index": 6,
+        "turn": "Deepseek-R1",
+        "turn_index": 1,
+        "reason": "Placing in column4 (action 4) creates a horizontal pair with the existing O at (4,3) and a vertical pair with O at (5,4), setting up potential future opportunities to form a line of four either horizontally or vertically while not leaving immediate threats for the opponent.",
+        "action": 4,
+        "image_path": "6.png"
+    },
+    {
+        "index": 7,
+        "turn": "our_solver",
+        "turn_index": 0,
+        "reason": "solver/human",
+        "action": 0,
+        "image_path": "7.png"
+    },
+    {
+        "index": 8,
+        "turn": "Deepseek-R1",
+        "turn_index": 1,
+        "reason": "Placing in column 2 (c2) starts building a potential horizontal line in row 4 by setting up future moves to complete a four-in-a-row with existing O tokens at (4,3) and (4,4). This creates a strategic advantage and sets up multiple winning possibilities.",
+        "action": 2,
+        "image_path": "8.png"
+    },
+    {
+        "index": 9,
+        "turn": "our_solver",
+        "turn_index": 0,
+        "reason": "solver/human",
+        "action": 2,
+        "image_path": "9.png"
+    },
+    {
+        "index": 10,
+        "turn": "Deepseek-R1",
+        "turn_index": 1,
+        "reason": "Placing in column 4 creates a vertical threat of three 'O's (rows 3,4,5) and a diagonal threat (positions (3,4), (4,3), (5,2)). This forces the opponent to block both, increasing chances of a win.",
+        "action": 4,
+        "image_path": "10.png"
+    },
+    {
+        "index": 11,
+        "turn": "our_solver",
+        "turn_index": 0,
+        "reason": "solver/human",
+        "action": 4,
+        "image_path": "11.png"
+    },
+    {
+        "index": 12,
+        "turn": "Deepseek-R1",
+        "turn_index": 1,
+        "reason": "Placing in column 2 creates a potential diagonal from (3,2) to (4,3) to (5,4), setting up a future win opportunity. Additionally, it blocks any potential diagonal threats from the opponent and builds upon existing 'O' tokens in the area.",
+        "action": 2,
+        "image_path": "12.png"
+    },
+    {
+        "index": 13,
+        "turn": "our_solver",
+        "turn_index": 0,
+        "reason": "solver/human",
+        "action": 1,
+        "image_path": "13.png"
+    }
+]

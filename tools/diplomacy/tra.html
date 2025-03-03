@@ -1,0 +1,1383 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Diplomacy Trajectory Viewer</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+	<style>
+		.game-state {
+			margin-bottom: 2rem;
+			padding: 1rem;
+			border: 1px solid #dbdbdb;
+			border-radius: 4px;
+		}
+
+		.select-container {
+			margin-bottom: 1rem;
+		}
+
+		.message-box {
+			border: 1px solid #dbdbdb;
+			border-radius: 4px;
+			padding: 1rem;
+			margin-bottom: 1rem;
+		}
+
+		.trust-high {
+			background-color: rgba(72, 199, 116, 0.2);
+			border-left: 4px solid #48c774;
+		}
+
+		.trust-medium {
+			background-color: rgba(255, 221, 87, 0.2);
+			border-left: 4px solid #ffdd57;
+		}
+
+		.trust-low {
+			background-color: rgba(241, 70, 104, 0.2);
+			border-left: 4px solid #f14668;
+		}
+
+		.tabs-wrapper {
+			overflow-x: auto;
+		}
+
+		.country-AUSTRIA {
+			color: #FF5555;
+		}
+
+		.country-ENGLAND {
+			color: #5555FF;
+		}
+
+		.country-FRANCE {
+			color: #55AAFF;
+		}
+
+		.country-GERMANY {
+			color: #555555;
+		}
+
+		.country-ITALY {
+			color: #4dbe4d;
+		}
+
+		.country-RUSSIA {
+			color: #FFFFFF;
+			background-color: #884444;
+		}
+
+		.country-TURKEY {
+			color: #aaa707;
+		}
+
+		.country-badge {
+			display: inline-block;
+			padding: 0.25em 0.4em;
+			font-weight: 700;
+			line-height: 1;
+			text-align: center;
+			white-space: nowrap;
+			border-radius: 0.25rem;
+		}
+
+		.badge-AUSTRIA {
+			background-color: #FF5555;
+			color: white;
+		}
+
+		.badge-ENGLAND {
+			background-color: #5555FF;
+			color: white;
+		}
+
+		.badge-FRANCE {
+			background-color: #55AAFF;
+			color: white;
+		}
+
+		.badge-GERMANY {
+			background-color: #555555;
+			color: white;
+		}
+
+		.badge-ITALY {
+			background-color: #55FF55;
+			color: black;
+		}
+
+		.badge-RUSSIA {
+			background-color: #884444;
+			color: white;
+		}
+
+		.badge-TURKEY {
+			background-color: #FFFF55;
+			color: black;
+		}
+
+		.order-list {
+			font-family: monospace;
+			max-height: none;
+			overflow-y: visible;
+		}
+
+		.phase-selector {
+			max-width: 100%;
+			overflow-x: auto;
+		}
+
+		.model-selector {
+			max-width: 100%;
+			overflow-x: auto;
+		}
+
+		#trajectoryImage {
+			display: block;
+			margin: auto;
+		}
+
+		/* Styles for nested tabs */
+		.phase-tabs {
+			margin-top: 1rem;
+			margin-bottom: 1rem;
+			font-size: 0.9rem;
+		}
+
+		.phase-tab-content {
+			padding: 1rem;
+			border: 1px solid #dbdbdb;
+			border-radius: 0 0 4px 4px;
+			margin-top: -1px;
+		}
+
+		.super-tab-content {
+			padding: 1rem 0;
+		}
+
+		.negotiation-phase-section {
+			margin-bottom: 2rem;
+			border-bottom: 1px solid #dbdbdb;
+			padding-bottom: 1rem;
+		}
+
+		.negotiation-phase-section:last-child {
+			border-bottom: none;
+		}
+
+		.section-title {
+			margin-bottom: 1rem;
+			font-weight: 600;
+			color: #363636;
+			padding-bottom: 0.5rem;
+			border-bottom: 1px solid #eee;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- Hero Section -->
+	<section class="hero is-primary">
+		<div class="hero-body">
+			<div class="container">
+				<h1 class="title is-2">Diplomacy Trajectory Viewer</h1>
+				<h2 class="subtitle">Visualize AI-driven Diplomacy games</h2>
+			</div>
+		</div>
+	</section>
+
+	<!-- Game Selection -->
+	<section class="section" id="game-selection">
+		<div class="container">
+			<h2 class="title is-3">Game Selection</h2>
+			<div class="columns is-multiline">
+				<div class="column is-half">
+					<div class="field">
+						<label class="label">Negotiation:</label>
+						<div class="control">
+							<div class="select is-fullwidth">
+								<select id="NegSelect">
+									<option value="On">On</option>
+									<option value="Off">Off</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="columns">
+				<div class="column has-text-centered">
+					<button class="button is-primary" id="loadGameButton">Load Game Data</button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Game Navigation and Phase Display -->
+	<section class="section">
+		<div class="container">
+			<div class="columns is-multiline">
+				<div class="column is-half">
+					<!-- Phase Selection -->
+					<div class="field phase-selector">
+						<label class="label">Game Phase:</label>
+						<div class="control">
+							<div class="select">
+								<select id="phaseSelect">
+									<option value="S1901M">S1901M</option>
+									<option value="F1901M">F1901M</option>
+									<option value="F1901R">F1901R</option>
+									<option value="W1901A">W1901A</option>
+									<option value="S1902M">S1902M</option>
+									<!-- More phases will be dynamically added based on game data -->
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="column is-half">
+					<!-- Model Selection -->
+					<div class="field model-selector">
+						<label class="label">Inspect Model:</label>
+						<div class="control">
+							<div class="select">
+								<select id="modelSelect">
+									<option value="gpt-4o_1">GPT-4o</option>
+									<option value="o1-preview_1">o1-preview</option>
+									<option value="o1_1">o1</option>
+									<option value="claude-3-5-haiku-20241022_1">Claude-3.5-Haiku</option>
+									<option value="gpt-4-turbo_1">GPT-4-turbo</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<!-- Navigation Buttons -->
+			<div class="buttons is-centered" style="margin-bottom: 1rem;">
+				<button class="button" id="prevPhaseButton"><i class="fas fa-chevron-left"></i> Previous Phase</button>
+				<button class="button" id="nextPhaseButton">Next Phase <i class="fas fa-chevron-right"></i></button>
+			</div>
+
+			<!-- Game State Display -->
+			<div id="gameStateDisplay" class="game-state">
+				<div class="notification is-light">
+					Please load a game to view its state and progression.
+				</div>
+			</div>
+
+			<!-- Map Display -->
+			<div id="mapDisplay" class="has-text-centered mt-4">
+				<div class="notification is-light">
+					Map will be displayed here after loading game data.
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Game Content Section -->
+	<!-- Configuration Display -->
+	<section class="section">
+		<div class="container">
+			<div class="card">
+				<header class="card-header">
+					<p class="card-header-title">Configuration</p>
+				</header>
+				<div class="card-content">
+					<div id="configDisplay">
+						<p class="has-text-grey">No configuration data available yet.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="container">
+			<div class="card mb-4">
+				<header class="card-header">
+					<p class="card-header-title">
+						Negotiation Process
+					</p>
+				</header>
+				<div class="card-content">
+					<!-- Negotiation Phase Tabs -->
+					<div class="tabs is-boxed phase-tabs">
+						<ul id="negotiationSuperTabs">
+							<li class="is-active"><a data-super-phase="negotiation_phase0">Negotiation Phase 0</a></li>
+							<li class=""><a data-super-phase="negotiation_phase1">Negotiation Phase 1</a></li>
+							<li class=""><a data-super-phase="negotiation_phase2">Negotiation Phase 2</a></li>
+						</ul>
+					</div>
+
+					<!-- Super Phase Content -->
+					<div id="negotiationSuperContent">
+						<div id="super-negotiation_phase0" class="super-tab-content" style="display: none;">
+							<h3 class="title is-4">Negotiation Phase 0</h3>
+
+							<!-- Trust Analysis -->
+							<div id="trust-analysis-negotiation_phase0">
+								<h4 class="section-title">Trust Analysis</h4>
+								<p class="has-text-grey">Empty.</p>
+							</div>
+
+							<!-- Negotiation Strategy -->
+							<div id="strategy-negotiation_phase0">
+								<h4 class="section-title">Negotiation Strategy</h4>
+								<p class="has-text-grey">Empty.</p>
+							</div>
+
+							<!-- Messages -->
+							<div id="messages-negotiation_phase0">
+								<h4 class="section-title">Messages</h4>
+								<div class="tabs-wrapper">
+									<div class="tabs">
+										<ul id="messageTabs-negotiation_phase0">
+											<li class="is-active"><a data-tab="negotiations">This Model's Negotiation
+													Messages</a>
+											</li>
+											<li><a data-tab="austria">AUSTRIA</a></li>
+											<li><a data-tab="england">ENGLAND</a></li>
+											<li><a data-tab="france">FRANCE</a></li>
+											<li><a data-tab="germany">GERMANY</a></li>
+											<li><a data-tab="italy">ITALY</a></li>
+											<li><a data-tab="russia">RUSSIA</a></li>
+											<li><a data-tab="turkey">TURKEY</a></li>
+											<li><a data-tab="global">GLOBAL CHANNEL</a></li>
+										</ul>
+									</div>
+								</div>
+								<div id="messageContent-negotiation_phase0">
+									<div id="negotiations-negotiation_phase0" class="tab-content is-hidden">
+										<p class="has-text-grey">No messages for this phase.</p>
+									</div>
+									<div id="austria-negotiation_phase0" class="tab-content is-hidden">
+										<p class="has-text-grey">No messages to/from AUSTRIA for this phase.</p>
+									</div>
+
+									<div id="england-negotiation_phase0" class="tab-content is-hidden">
+										<p class="has-text-grey">No messages to/from ENGLAND for this phase.</p>
+									</div>
+
+									<div id="france-negotiation_phase0" class="tab-content is-hidden">
+										<p class="has-text-grey">No messages to/from FRANCE for this phase.</p>
+									</div>
+
+									<div id="germany-negotiation_phase0" class="tab-content is-hidden">
+										<p class="has-text-grey">No messages to/from GERMANY for this phase.</p>
+									</div>
+
+									<div id="italy-negotiation_phase0" class="tab-content is-hidden">
+										<p class="has-text-grey">No messages to/from ITALY for this phase.</p>
+									</div>
+
+									<div id="russia-negotiation_phase0" class="tab-content is-hidden">
+										<p class="has-text-grey">No messages to/from RUSSIA for this phase.</p>
+									</div>
+
+									<div id="turkey-negotiation_phase0" class="tab-content is-hidden">
+										<p class="has-text-grey">No messages to/from TURKEY for this phase.</p>
+									</div>
+
+									<div id="global-negotiation_phase0" class="tab-content is-hidden">
+										<p class="has-text-grey">No global messages for this phase.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div id="super-negotiation_phase1" class="super-tab-content" style="display: none;">
+							<h3 class="title is-4">Negotiation Phase 1</h3>
+
+							<!-- Trust Analysis -->
+							<div id="trust-analysis-negotiation_phase1">
+								<h4 class="section-title">Trust Analysis</h4>
+								<p class="has-text-grey">Empty.</p>
+							</div>
+
+							<!-- Negotiation Strategy -->
+							<div id="strategy-negotiation_phase1">
+								<h4 class="section-title">Negotiation Strategy</h4>
+								<p class="has-text-grey">Empty.</p>
+							</div>
+
+							<!-- Messages -->
+							<div id="messages-negotiation_phase1">
+								<h4 class="section-title">Messages</h4>
+								<div class="tabs-wrapper">
+									<div class="tabs">
+										<ul id="messageTabs-negotiation_phase1">
+											<li class="is-active"><a data-tab="negotiations">This Model's Negotiation
+													Messages</a>
+											</li>
+											<li><a data-tab="austria">AUSTRIA</a></li>
+											<li><a data-tab="england">ENGLAND</a></li>
+											<li><a data-tab="france">FRANCE</a></li>
+											<li><a data-tab="germany">GERMANY</a></li>
+											<li><a data-tab="italy">ITALY</a></li>
+											<li><a data-tab="russia">RUSSIA</a></li>
+											<li><a data-tab="turkey">TURKEY</a></li>
+											<li><a data-tab="global">GLOBAL CHANNEL</a></li>
+										</ul>
+									</div>
+								</div>
+								<div id="messageContent-negotiation_phase1">
+									<div id="negotiations-negotiation_phase1" class="tab-content is-hidden">
+										<p class="has-text-grey">No messages for this phase.</p>
+									</div>
+									<div id="austria-negotiation_phase1" class="tab-content is-hidden">
+										<p class="has-text-grey">No messages to/from AUSTRIA for this phase.</p>
+									</div>
+
+									<div id="england-negotiation_phase1" class="tab-content is-hidden">
+										<p class="has-text-grey">No messages to/from ENGLAND for this phase.</p>
+									</div>
+
+									<div id="france-negotiation_phase1" class="tab-content is-hidden">
+										<p class="has-text-grey">No messages to/from FRANCE for this phase.</p>
+									</div>
+
+									<div id="germany-negotiation_phase1" class="tab-content is-hidden">
+										<p class="has-text-grey">No messages to/from GERMANY for this phase.</p>
+									</div>
+
+									<div id="italy-negotiation_phase1" class="tab-content is-hidden">
+										<p class="has-text-grey">No messages to/from ITALY for this phase.</p>
+									</div>
+
+									<div id="russia-negotiation_phase1" class="tab-content is-hidden">
+										<p class="has-text-grey">No messages to/from RUSSIA for this phase.</p>
+									</div>
+
+									<div id="turkey-negotiation_phase1" class="tab-content is-hidden">
+										<p class="has-text-grey">No messages to/from TURKEY for this phase.</p>
+									</div>
+
+									<div id="global-negotiation_phase1" class="tab-content is-hidden">
+										<p class="has-text-grey">No global messages for this phase.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div id="super-negotiation_phase2" class="super-tab-content" style="display: none;">
+							<h3 class="title is-4">Negotiation Phase 0</h3>
+
+							<!-- Trust Analysis -->
+							<div id="trust-analysis-negotiation_phase2">
+								<h4 class="section-title">Trust Analysis</h4>
+								<p class="has-text-grey">Empty.</p>
+							</div>
+
+							<!-- Negotiation Strategy -->
+							<div id="strategy-negotiation_phase2">
+								<h4 class="section-title">Negotiation Strategy</h4>
+								<p class="has-text-grey">Empty.</p>
+							</div>
+
+							<!-- Messages -->
+							<div id="messages-negotiation_phase2">
+								<h4 class="section-title">Messages</h4>
+								<div class="tabs-wrapper">
+									<div class="tabs">
+										<ul id="messageTabs-negotiation_phase2">
+											<li class="is-active"><a data-tab="negotiations">This Model's Negotiation
+													Messages</a>
+											</li>
+											<li><a data-tab="austria">AUSTRIA</a></li>
+											<li><a data-tab="england">ENGLAND</a></li>
+											<li><a data-tab="france">FRANCE</a></li>
+											<li><a data-tab="germany">GERMANY</a></li>
+											<li><a data-tab="italy">ITALY</a></li>
+											<li><a data-tab="russia">RUSSIA</a></li>
+											<li><a data-tab="turkey">TURKEY</a></li>
+											<li><a data-tab="global">GLOBAL CHANNEL</a></li>
+										</ul>
+									</div>
+								</div>
+								<div id="messageContent-negotiation_phase2">
+									<div id="negotiations-negotiation_phase2" class="tab-content is-hidden">
+										<p class="has-text-grey">No messages for this phase.</p>
+									</div>
+									<div id="austria-negotiation_phase2" class="tab-content is-hidden">
+										<p class="has-text-grey">No messages to/from AUSTRIA for this phase.</p>
+									</div>
+
+									<div id="england-negotiation_phase2" class="tab-content is-hidden">
+										<p class="has-text-grey">No messages to/from ENGLAND for this phase.</p>
+									</div>
+
+									<div id="france-negotiation_phase2" class="tab-content is-hidden">
+										<p class="has-text-grey">No messages to/from FRANCE for this phase.</p>
+									</div>
+
+									<div id="germany-negotiation_phase2" class="tab-content is-hidden">
+										<p class="has-text-grey">No messages to/from GERMANY for this phase.</p>
+									</div>
+
+									<div id="italy-negotiation_phase2" class="tab-content is-hidden">
+										<p class="has-text-grey">No messages to/from ITALY for this phase.</p>
+									</div>
+
+									<div id="russia-negotiation_phase2" class="tab-content is-hidden">
+										<p class="has-text-grey">No messages to/from RUSSIA for this phase.</p>
+									</div>
+
+									<div id="turkey-negotiation_phase2" class="tab-content is-hidden">
+										<p class="has-text-grey">No messages to/from TURKEY for this phase.</p>
+									</div>
+
+									<div id="global-negotiation_phase2" class="tab-content is-hidden">
+										<p class="has-text-grey">No global messages for this phase.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+			<!-- Orders Tab - Keep this as is -->
+			<div class="card mb-4">
+				<header class="card-header">
+					<p class="card-header-title">
+						Orders
+					</p>
+				</header>
+				<div class="card-content">
+					<div id="ordersDisplay" class="order-list">
+						<p class="has-text-grey">No orders available for this phase.</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Final Agreements - Keep this as is -->
+			<div class="card">
+				<header class="card-header">
+					<p class="card-header-title">
+						Post-Negotiation Agreements & Reflection
+					</p>
+				</header>
+				<div class="card-content">
+					<div id="finalAgreements">
+						<p class="has-text-grey">No agreements available for this phase.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer class="footer">
+		<div class="content has-text-centered">
+			<p>Diplomacy Trajectory Viewer - Part of the SPIN-Benchmark</p>
+		</div>
+	</footer>
+
+	<!-- JavaScript -->
+	<script>
+		// Global variables
+		let gameData = null;
+		let configData = null;
+		let currentPhase = "";
+		let currentModel = "";
+		let imageDir = "";
+		let NegSelect = "";
+		let modelKeyList = ["gpt-4o_1", "o1-preview_1", "o1_1", "claude-3-5-haiku-20241022_1", "gpt-4-turbo_1"];
+		let currentNegotiationPhase = "negotiation_phase0";
+
+
+		// Initialize when page loads
+		document.addEventListener('DOMContentLoaded', function () {
+			// Set up main tab switching
+			let negPhaseList = ["negotiation_phase0", "negotiation_phase1", "negotiation_phase2"];
+			for (let i = 0; i < negPhaseList.length; i++) {
+				let negPhase = negPhaseList[i];
+				let tabLinks = document.querySelectorAll('#messageTabs-' + negPhase + ' li a');
+				tabLinks.forEach(link => {
+					link.addEventListener('click', function () {
+						// Remove active class from all tabs
+						document.querySelectorAll('#messageTabs-' + negPhase + ' li').forEach(tab => {
+							tab.classList.remove('is-active');
+						});
+
+						// Hide all tab content
+						document.querySelectorAll('.tab-content').forEach(content => {
+							content.classList.add('is-hidden');
+						});
+
+						// Add active class to clicked tab
+						this.parentElement.classList.add('is-active');
+
+						// Show corresponding tab content
+						const tabId = this.getAttribute('data-tab');
+						document.getElementById(tabId + '-' + negPhase).classList.remove('is-hidden');
+					});
+				});
+			}
+
+			const superTabLinks = document.querySelectorAll('#negotiationSuperTabs li a');
+			superTabLinks.forEach(link => {
+				link.addEventListener('click', function () {
+					// Remove active class from all tabs
+					document.querySelectorAll('#negotiationSuperTabs li').forEach(tab => {
+						tab.classList.remove('is-active');
+					});
+
+					// Hide all tab content
+					document.querySelectorAll('.super-tab-content').forEach(content => {
+						content.style.display = 'none';
+					});
+
+					// Show corresponding tab content
+					const superTabId = this.getAttribute('data-super-phase');
+					switchSuperPhase(superTabId);
+				});
+			});
+
+			// Set up navigation buttons
+			document.getElementById('prevPhaseButton').addEventListener('click', navigateToPreviousPhase);
+			document.getElementById('nextPhaseButton').addEventListener('click', navigateToNextPhase);
+
+			// Set up phase selection
+			document.getElementById('phaseSelect').addEventListener('change', function () {
+				currentPhase = this.value;
+				displayGameState();
+			});
+
+			// Set up model selection
+			document.getElementById('modelSelect').addEventListener('change', function () {
+				currentModel = this.value;
+				displayGameState();
+			});
+
+			// Set up load game button
+			document.getElementById('loadGameButton').addEventListener('click', loadGameData);
+		});
+
+		// Load game data
+		function loadGameData() {
+			NegSelect = document.getElementById('NegSelect').value;
+
+			let gamePath = "../../trajectories/diplomacy/";
+			if (NegSelect == "On") {
+				gamePath += "neg/";
+			} else {
+				gamePath += "no-neg/";
+			}
+			console.log(`Loading game data from path: ${gamePath}`);
+			imageDir = gamePath + "maps/";
+
+			// Set loading states
+			document.getElementById('gameStateDisplay').innerHTML = `
+		<div class="notification is-info">
+		  <span class="icon"><i class="fas fa-spinner fa-spin"></i></span>
+		  Loading game data...
+		</div>
+	  `;
+
+			document.getElementById('mapDisplay').innerHTML = `
+		<div class="notification is-info">
+		  <span class="icon"><i class="fas fa-spinner fa-spin"></i></span>
+		  Loading map data...
+		</div>
+	  `;
+
+			document.getElementById('configDisplay').innerHTML = `
+		<div class="notification is-info">
+		  <span class="icon"><i class="fas fa-spinner fa-spin"></i></span>
+		  Loading configuration...
+		</div>
+	  `;
+
+			// Fetch game state data
+			fetch(gamePath + 'diplomacy_game_state.json')
+				.then(response => {
+					if (!response.ok) {
+						throw new Error('Load failed');
+					}
+					return response.json();
+				})
+				.then(data => {
+					gameData = data;
+					console.log('Game data loaded:', gameData);
+
+					// Extract phases from the game data
+					// This assumes the phases are available in the loaded data
+					// You may need to adjust based on the actual structure
+					const phases = gameData.phase_list;
+
+					// Update the phases dropdown
+					const phaseSelect = document.getElementById('phaseSelect');
+					phaseSelect.innerHTML = '';
+					phases.forEach(phase => {
+						const option = document.createElement('option');
+						option.value = phase;
+						option.textContent = phase;
+						phaseSelect.appendChild(option);
+					});
+
+					// Set initial phase
+					if (phases.length > 0) {
+						currentPhase = phases[0];
+						phaseSelect.value = currentPhase;
+					}
+
+					// Set initial model
+					currentModel = document.getElementById('modelSelect').value;
+
+					// Load configuration data
+					return fetch(gamePath + 'config.json');
+				})
+				.then(response => {
+					if (!response.ok) {
+						throw new Error('Config file not found');
+					}
+					return response.json();
+				})
+				.then(configJson => {
+					configData = configJson;
+
+					// Display all the data
+					displayGameState();
+					displayMap();
+					displayConfig();
+				})
+				.catch(error => {
+					console.error('Error loading game data:', error);
+					document.getElementById('gameStateDisplay').innerHTML = `
+			<div class="notification is-danger">
+			  Error loading game data: ${error.message}
+			</div>
+		  `;
+
+					document.getElementById('mapDisplay').innerHTML = `
+			<div class="notification is-danger">
+			  Unable to load map.
+			</div>
+		  `;
+
+					document.getElementById('configDisplay').innerHTML = `
+			<div class="notification is-danger">
+			  Unable to load configuration.
+			</div>
+		  `;
+				});
+		}
+
+		// Display map for current phase
+		function displayMap() {
+			const mapDisplay = document.getElementById('mapDisplay');
+
+			// Try to load the SVG for the current phase
+			const mapUrl = `${imageDir}${currentPhase}.svg`;
+
+			// Create an img element to display the map
+			mapDisplay.innerHTML = `
+		  <img id="trajectoryImage" src="${mapUrl}" alt="Map for phase ${currentPhase}" onerror="this.onerror=null; this.src=''; document.getElementById('mapDisplay').innerHTML='<div class=\\'notification is-warning\\'>Map not available for this phase.</div>';">
+	  `;
+		}
+
+		// Display configuration data
+		function displayConfig() {
+			const configDisplay = document.getElementById('configDisplay');
+
+			if (!configData) {
+				configDisplay.innerHTML = '<p class="has-text-grey">No configuration data available.</p>';
+				return;
+			}
+
+			// Format the configuration nicely
+			let configHtml = '<div class="content">';
+
+			// Add the important configuration details
+			if (configData.game_id) {
+				configHtml += `<p><strong>Game ID:</strong> ${configData.game_id}</p>`;
+			}
+
+			if (configData.tournament_id) {
+				configHtml += `<p><strong>Tournament ID:</strong> ${configData.tournament_id}</p>`;
+			}
+
+			if (configData.models) {
+				configHtml += '<p><strong>Models:</strong></p><ul>';
+				Object.entries(configData.models).forEach(([power, model]) => {
+					configHtml += `<li><span class="country-${power}">${power}</span>: ${model}</li>`;
+				});
+				configHtml += '</ul>';
+			}
+
+			if (configData.version) {
+				configHtml += `<p><strong>Version:</strong> ${configData.version}</p>`;
+			}
+
+			// Add more configuration details as needed
+			configHtml += '</div>';
+
+			configDisplay.innerHTML = configHtml;
+		}
+
+		// Display the current game state
+		function displayGameState() {
+			if (!gameData) {
+				return;
+			}
+
+			// Update game state display
+			const gameStateDisplay = document.getElementById('gameStateDisplay');
+
+			// Find the model/power data based on the selected power
+			let modelData = gameData.model_power_dict[currentModel];
+
+			// Get model name
+			let modelName = modelData.model;
+
+			let powerList = modelData.power_names;
+
+			gameStateDisplay.innerHTML = `
+				<div class="columns">
+				<div class="column">
+					<h3 class="title is-4">
+					Phase: ${currentPhase}
+					</h3>
+					<p><strong>Model:</strong> ${modelName}</p>
+					<p><strong>Controlling Powers:</strong> ${powerList}</p>
+				</div>
+				</div>
+			`;
+
+			// If map is available, update it
+			displayMap();
+
+			// Display orders
+			displayOrders();
+
+			// displayMessages();
+
+			displayNegotiationByPhases();
+			displayOrders();
+			displayFinalAgreements();
+
+			// Update navigation buttons
+			updateNavigationButtons();
+			// ADDED: Make sure negotiation_phase0 is displayed by default
+			switchSuperPhase('negotiation_phase0');
+		}
+
+		// Display orders for the current phase
+		function displayOrders() {
+			const ordersDisplay = document.getElementById('ordersDisplay');
+			const orderData = gameData.model_power_dict[currentModel].sta.orders[currentPhase];
+			if (orderData && orderData.length > 0) {
+				let orderHtml = "";
+				let lastMessage = gameData.model_power_dict[currentModel].sta.message_dict[currentPhase];
+				let reasoning = lastMessage[lastMessage.length - 1].step_by_step_reasoning;
+				if (reasoning) {
+					orderHtml += `<p><strong>Reasoning:</strong> ${reasoning}</p><hr>`;
+				}
+				orderHtml += '<p><strong>Actions:</strong></p>';
+				orderHtml += '<ul>';
+				orderData.forEach(order => {
+					orderHtml += `<li>${order}</li>`;
+				});
+				orderHtml += '</ul>';
+				ordersDisplay.innerHTML = orderHtml;
+			} else {
+				ordersDisplay.innerHTML = '<p class="has-text-grey">No orders available for this phase.</p>';
+			}
+		}
+
+		// Switch super negotiation phase
+		function switchSuperPhase(phase) {
+			currentNegotiationPhase = phase;
+			// Update active tab
+			const tabs = document.querySelectorAll('#negotiationSuperTabs li');
+			tabs.forEach(tab => {
+				const link = tab.querySelector('a');
+				if (link && link.getAttribute('data-super-phase') === phase) {
+					tab.classList.add('is-active');
+				} else {
+					tab.classList.remove('is-active');
+				}
+			});
+
+			// Hide all phase content
+			const contents = document.querySelectorAll('#negotiationSuperContent > div');
+			contents.forEach(content => {
+				content.style.display = 'none';
+			});
+
+			// Show selected phase content
+			const selectedContent = document.getElementById('super-' + phase);
+			if (selectedContent) {
+				selectedContent.style.display = 'block';
+				const messageTabsContainer = selectedContent.querySelector('.tabs-wrapper .tabs ul');
+				if (messageTabsContainer) {
+					// Remove is-active from all tabs
+					messageTabsContainer.querySelectorAll('li').forEach(item => {
+						item.classList.remove('is-active');
+					});
+
+					// Add is-active to the first tab (This Model's Negotiation Messages)
+					const firstTab = messageTabsContainer.querySelector('li');
+					if (firstTab) {
+						firstTab.classList.add('is-active');
+					}
+				}
+				const tabContents = selectedContent.querySelectorAll('.tab-content');
+				tabContents.forEach(content => {
+					content.classList.add('is-hidden');
+				});
+
+				const negotiationsContent = selectedContent.querySelector('#negotiations' + '-' + phase);
+				if (negotiationsContent) {
+					negotiationsContent.classList.remove('is-hidden');
+				}
+			}
+
+		}
+
+		// Update super tabs
+		function updateSuperTabs(phases) {
+			const tabsContainer = document.getElementById('negotiationSuperTabs');
+			// Set up tab click events
+			tabsContainer.querySelectorAll('a').forEach(a => {
+				a.addEventListener('click', function (event) {
+					const phase = this.getAttribute('data-super-phase');
+					switchSuperPhase(phase);
+					event.preventDefault();
+				});
+			});
+		}
+
+		// Display all negotiation data (strategy, messages, trust) by phases
+		function displayNegotiationByPhases() {
+			// clear all negotiation data
+			for (let i = 0; i < 3; i++) {
+				const phaseId = 'negotiation_phase' + i;
+				let trustAnalysisDiv = document.getElementById("trust-analysis-" + phaseId);
+				trustAnalysisDiv.innerHTML = `<h4 class="section-title">Trust Analysis</h4>
+								<p class="has-text-grey">Empty.</p>`;
+				let strategyDiv = document.getElementById("strategy-" + phaseId);
+				strategyDiv.innerHTML = `<h4 class="section-title">Negotiation Strategy</h4>
+								<p class="has-text-grey">Empty.</p>`;
+				let tagList = ["negotiations", "austria", "england", "france", "germany", "italy", "russia", "turkey", "global"];
+				tagList.forEach(tag => {
+					let messageDiv = document.getElementById(tag + "-" + phaseId);
+					messageDiv.innerHTML = `<p class="has-text-grey">No messages for this phase.</p>`;
+				});
+			}
+
+
+			// Skip if current phase is a Winter or Retreat phase, or if no data exists
+			if (currentPhase.includes("W") || currentPhase.includes("R")) {
+				// Switch to the default tab view
+				switchSuperPhase('negotiation_phase0');
+				return;
+			}
+
+			// Get message data for the current model and phase
+			const currentModelData = gameData.model_power_dict[currentModel].sta.message_dict[currentPhase];
+			if (!currentModelData || currentModelData.length === 0) {
+				return;
+			}
+
+			const currentModelPowers = gameData.model_power_dict[currentModel].power_names;
+			console.log('Current model powers:', currentModelPowers);
+
+			// Extract all negotiation phases
+			const negotiationPhases = [];
+			currentModelData.forEach(phase => {
+				if (phase.phase.includes('negotiation')) {
+					negotiationPhases.push(phase.phase);
+				}
+			});
+
+			// Update super tabs
+			updateSuperTabs(negotiationPhases);
+
+			// Create content for "All" tab
+			let allPhasesHtml = '';
+			// Process individual power messages from ALL models
+			// We'll gather outgoing and incoming messages separately for each power, organized by phase
+			const powerMessages = {};
+
+			// Iterate through all models
+			modelKeyList.forEach(modelKey => {
+				// Skip if the model doesn't exist in the data or doesn't have message data for this phase
+				if (!gameData.model_power_dict[modelKey] ||
+					!gameData.model_power_dict[modelKey].sta ||
+					!gameData.model_power_dict[modelKey].sta.message_dict ||
+					!gameData.model_power_dict[modelKey].sta.message_dict[currentPhase]) {
+					return;
+				}
+
+				const modelMessageData = gameData.model_power_dict[modelKey].sta.message_dict[currentPhase];
+
+				// Get the power controlled by this model
+				const modelPower = gameData.model_power_dict[modelKey].power_names[0];
+
+				modelMessageData.forEach(phase => {
+					if (phase.phase.includes('negotiation') && phase.messages) {
+						const phaseTitle = formatPhaseTitle(phase.phase);
+
+						// Process messages for each power in this phase
+						for (const [sender, messageObj] of Object.entries(phase.messages)) {
+							if (messageObj.recipients && messageObj.messages) {
+								// Make sure this is a message from the power controlled by this model
+								if (sender === modelPower) {
+									// Process outgoing messages
+									for (let i = 0; i < messageObj.recipients.length; i++) {
+										const recipient = messageObj.recipients[i];
+										const message = messageObj.messages[i] || "No message content";
+
+										// Add to sender's outgoing messages
+										if (!powerMessages[sender]) {
+											powerMessages[sender] = {};
+										}
+										if (!powerMessages[sender][phase.phase]) {
+											powerMessages[sender][phase.phase] = {
+												outgoing: [],
+												incoming: []
+											};
+										}
+
+										powerMessages[sender][phase.phase].outgoing.push({
+											recipient: recipient,
+											message: message
+										});
+
+										// Add to recipient's incoming messages
+										if (!powerMessages[recipient]) {
+											powerMessages[recipient] = {};
+										}
+										if (!powerMessages[recipient][phase.phase]) {
+											powerMessages[recipient][phase.phase] = {
+												outgoing: [],
+												incoming: []
+											};
+										}
+
+										powerMessages[recipient][phase.phase].incoming.push({
+											sender: sender,
+											message: message
+										});
+									}
+								}
+							}
+						}
+					}
+				});
+			});
+
+			// Create separate content divs for each negotiation phase
+			negotiationPhases.forEach(negPhase => {
+				const phaseId = 'super-' + negPhase;
+				let phaseContentDiv = document.getElementById(phaseId);
+
+				// Find the phase data
+				const phaseData = currentModelData.find(pd => pd.phase === negPhase);
+				if (!phaseData) {
+					phaseContentDiv.innerHTML = `<p class="has-text-grey">No data available for ${formatPhaseTitle(negPhase)}.</p>`;
+					return;
+				}
+				console.log("phaseData", phaseData);
+
+				// 1. Trust Analysis
+				if (phaseData.trust_analysis && phaseData.trust_analysis.length > 0) {
+					const trustAnalysisDiv = document.getElementById("trust-analysis-" + negPhase);
+					let trustAnalysisHtml = '';
+					trustAnalysisHtml += '<h4 class="section-title">Trust Analysis</h4>';
+
+					phaseData.trust_analysis.forEach(analysis => {
+						const trustClass = `trust-${analysis.trust_level}`;
+						trustAnalysisHtml += `
+							<div class="message-box ${trustClass} mb-3">
+							<p><strong><span class="country-${analysis.power}">${analysis.power}</span></strong> - Trust Level: <strong>${analysis.trust_level.toUpperCase()}</strong></p>
+							<p>${analysis.analysis}</p>
+							</div>
+						`;
+					});
+
+					trustAnalysisHtml += `</div>`;
+					trustAnalysisDiv.innerHTML = trustAnalysisHtml;
+				}
+
+				// 2. Negotiation Strategy
+				if (phaseData.negotiation_strategy) {
+					const strategyDiv = document.getElementById("strategy-" + negPhase);
+					let strategyHtml = '';
+					strategyHtml += '<h4 class="section-title">Negotiation Strategy</h4>';
+					strategyHtml += `<div class="content"><p>${phaseData.negotiation_strategy}</p></div>`;
+					strategyDiv.innerHTML = strategyHtml;
+				}
+
+				// 3. Messages
+				if (phaseData.messages && Object.keys(phaseData.messages).length > 0) {
+					const container = document.getElementById("messages-" + negPhase);
+					// remove all is-active classes
+					const activeElements = container.querySelectorAll('.is-active');
+					activeElements.forEach(el => {
+						el.classList.remove('is-active');
+					});
+
+					// update its messages
+					const messageTab = container.querySelector(`#negotiations-${negPhase}`);
+					let fullHtml = '';
+					fullHtml += `
+						<div class="message-box">
+					`;
+
+					currentModelPowers.forEach(currentModelPower => {
+						// check if negPhase is in powerMessages[currentModelPower]
+						if (!powerMessages[currentModelPower] || !powerMessages[currentModelPower][negPhase]) {
+							return;
+						}
+						fullHtml += `
+							<div class="box">
+							<p><strong><span class="country-${currentModelPower}">${currentModelPower}</span></strong></p><hr>
+							`;
+						// add From messages
+						const thisPowerMsg = powerMessages[currentModelPower][negPhase];
+
+						if (thisPowerMsg.outgoing.length > 0) {
+							fullHtml += `
+								<h5 class="title is-6">Messages Sent</h5>
+							`;
+							thisPowerMsg.outgoing.forEach(msg => {
+								fullHtml += `
+									<p><strong>To: <span class="country-${msg.recipient}">${msg.recipient}</span></strong></p>
+									<p>${msg.message}</p>
+								`;
+							});
+							fullHtml += `<hr>`;
+						}
+						if (thisPowerMsg.incoming.length > 0) {
+							fullHtml += `
+								<h5 class="title is-6">Messages Received</h5>
+							`;
+							thisPowerMsg.incoming.forEach(msg => {
+								fullHtml += `
+									<p><strong>From: <span class="country-${msg.sender}">${msg.sender}</span></strong></p>
+									<p>${msg.message}</p>
+								`;
+							});
+						}
+						fullHtml += `</div>`;
+					})
+					fullHtml += `</div>`;
+					messageTab.innerHTML = fullHtml;
+					fullHtml = '';
+
+					// update messages by powers
+					for (const power in powerMessages) {
+						const powerLower = power.toLowerCase();
+						if (powerLower === "global") {
+							continue;
+						}
+						const messageTab = container.querySelector(`#${powerLower}-${negPhase}`);
+						// check if negPhase is in powerMessages[power]
+						if (!powerMessages[power][negPhase]) {
+							continue;
+						}
+						const thisPowerPhaseData = powerMessages[power][negPhase];
+						if (messageTab) {
+							let fullHtml = '';
+							fullHtml += `
+								<div class="message-box">
+									<div class="box">
+							`;
+							if (thisPowerPhaseData.outgoing.length > 0) {
+								fullHtml += `
+									<h5 class="title is-6">Messages Sent</h5>
+								`;
+								thisPowerPhaseData.outgoing.forEach(msg => {
+									fullHtml += `
+										<p><strong>To: <span class="country-${msg.recipient}">${msg.recipient}</span></strong></p>
+										<p>${msg.message}</p>
+									`;
+								});
+								fullHtml += `<hr>`;
+							}
+							if (thisPowerPhaseData.incoming.length > 0) {
+								fullHtml += `
+									<h5 class="title is-6">Messages Received</h5>
+								`;
+								thisPowerPhaseData.incoming.forEach(msg => {
+									fullHtml += `
+										<p><strong>From: <span class="country-${msg.sender}">${msg.sender}</span></strong></p>
+										<p>${msg.message}</p>
+									`;
+								});
+							}
+							fullHtml += `</div></div>`;
+							if (fullHtml) {
+								messageTab.innerHTML = fullHtml;
+							}
+						}
+					}
+
+					// update global messages (only has from)
+					const globalMessageTab = container.querySelector(`#global-${negPhase}`);
+					fullHtml = '';
+					let has = false;
+					for (const power in powerMessages) {
+						const powerLower = power.toLowerCase();
+						if (powerLower === "global") {
+							continue;
+						}
+						// check if negPhase is in powerMessages[power]
+						if (!powerMessages[power][negPhase]) {
+							continue;
+						}
+						let outgoing = powerMessages[power][negPhase].outgoing;
+						if (outgoing.length > 0) {
+							outgoing.forEach(msg => {
+								if (msg.recipient === "GLOBAL") {
+									has = true;
+									fullHtml += `
+										<div class="box">
+										<p><strong>From: <span class="country-${power}">${power}</span></strong></p>
+										<p>${msg.message}</p>
+										</div>
+									`;
+								}
+							});
+						}
+					}
+					if (has) {
+						fullHtml = `
+							<div class="message-box">
+						` + fullHtml + `</div>`;
+						globalMessageTab.innerHTML = fullHtml;
+					}
+				}
+			});
+
+			// Switch to the default tab view
+			switchSuperPhase('negotiation_phase0');
+		}
+
+		// Display only final agreements (post-negotiation reflection)
+		function displayFinalAgreements() {
+			const agreementsDiv = document.getElementById('finalAgreements');
+			agreementsDiv.innerHTML = '<p class="has-text-grey">No agreements available for this phase.</p>';
+
+			const messageData = gameData.model_power_dict[currentModel].sta.message_dict[currentPhase];
+			if (!messageData || messageData.length === 0) {
+				return;
+			}
+
+			// Process agreements and reflections
+			messageData.forEach(phase => {
+				if (phase.phase === "post_negotiation_reflection") {
+					let agreementsHtml = '';
+
+					if (phase.final_agreements && phase.final_agreements.length > 0) {
+						agreementsHtml += '<h4 class="title is-5">Final Agreements</h4><div class="content"><ul>';
+						phase.final_agreements.forEach(agreement => {
+							agreementsHtml += `
+			  <li><strong><span class="country-${agreement.power}">${agreement.power}</span></strong>: ${agreement.agreement}</li>
+			`;
+						});
+						agreementsHtml += '</ul></div>';
+					}
+
+					if (phase.alliances_betrayals && phase.alliances_betrayals.length > 0) {
+						agreementsHtml += '<h4 class="title is-5">Alliances & Betrayals</h4><div class="content"><ul>';
+						phase.alliances_betrayals.forEach(relationship => {
+							const relationshipType = relationship.relationship === "ally" ?
+								'<span class="has-text-success">ALLY</span>' :
+								'<span class="has-text-danger">BETRAY</span>';
+
+							agreementsHtml += `
+			  <li><strong><span class="country-${relationship.power}">${relationship.power}</span></strong>: 
+			  ${relationshipType} - ${relationship.explanation}</li>
+			`;
+						});
+						agreementsHtml += '</ul></div>';
+					}
+
+					if (phase.next_phase_plans) {
+						agreementsHtml += `
+			<h4 class="title is-5">Next Phase Plans</h4>
+			<div class="content">
+			  <p>${phase.next_phase_plans}</p>
+			</div>
+		  `;
+					}
+
+					if (phase.reflection_notes) {
+						agreementsHtml += `
+			<h4 class="title is-5">Reflection Notes</h4>
+			<div class="content">
+			  <p>${phase.reflection_notes}</p>
+			</div>
+		  `;
+					}
+
+					if (agreementsHtml) {
+						agreementsDiv.innerHTML = agreementsHtml;
+					}
+				}
+			});
+		}
+
+		// Helper function to format phase titles
+		function formatPhaseTitle(phase) {
+			// Replace underscores with spaces and capitalize words
+			return phase.replace(/_/g, ' ')
+				.split(' ')
+				.map(word => word.charAt(0).toUpperCase() + word.slice(1))
+				.join(' ');
+		}
+
+		// Navigate to previous phase
+		function navigateToPreviousPhase() {
+			if (!gameData) return;
+
+			const phases = gameData.phase_list;
+			const currentIndex = phases.indexOf(currentPhase);
+
+			if (currentIndex > 0) {
+				currentPhase = phases[currentIndex - 1];
+				document.getElementById('phaseSelect').value = currentPhase;
+				displayGameState();
+			}
+		}
+
+		// Navigate to next phase
+		function navigateToNextPhase() {
+			if (!gameData) return;
+
+			const phases = gameData.phase_list;
+			const currentIndex = phases.indexOf(currentPhase);
+
+			if (currentIndex < phases.length - 1) {
+				currentPhase = phases[currentIndex + 1];
+				document.getElementById('phaseSelect').value = currentPhase;
+				displayGameState();
+			}
+		}
+
+		// Update navigation buttons based on current phase
+		function updateNavigationButtons() {
+			if (!gameData) return;
+
+			const phases = gameData.phase_list;
+			const currentIndex = phases.indexOf(currentPhase);
+
+			document.getElementById('prevPhaseButton').disabled = currentIndex === 0;
+			document.getElementById('nextPhaseButton').disabled = currentIndex === phases.length - 1;
+		}
+	</script>
+</body>
+
+</html>

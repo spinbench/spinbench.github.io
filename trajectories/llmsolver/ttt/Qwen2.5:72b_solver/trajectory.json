@@ -1,0 +1,58 @@
+[
+    {
+        "index": 0,
+        "turn": "None",
+        "turn_index": 0,
+        "reason": "None",
+        "action": "None",
+        "image_path": "0.png"
+    },
+    {
+        "index": 1,
+        "turn": "Qwen2.5:72b",
+        "turn_index": 0,
+        "reason": "Taking the center cell (4) is generally considered the best first move in Tic-Tac-Toe because it provides the most opportunities for creating lines of three and forces the opponent to react defensively.",
+        "action": 4,
+        "image_path": "1.png"
+    },
+    {
+        "index": 2,
+        "turn": "our_solver",
+        "turn_index": 1,
+        "reason": "solver/human",
+        "action": 8,
+        "image_path": "2.png"
+    },
+    {
+        "index": 3,
+        "turn": "Qwen2.5:72b",
+        "turn_index": 0,
+        "reason": "Placing an 'X' in the top-center (3) sets up a potential diagonal win from top-center to bottom-right. This move also gives me the option to block any immediate threats while setting up a strong position for future moves.",
+        "action": 3,
+        "image_path": "3.png"
+    },
+    {
+        "index": 4,
+        "turn": "our_solver",
+        "turn_index": 1,
+        "reason": "solver/human",
+        "action": 5,
+        "image_path": "4.png"
+    },
+    {
+        "index": 5,
+        "turn": "Qwen2.5:72b",
+        "turn_index": 0,
+        "reason": "Placing X in position 8 is critical to block the opponent's immediate win. However, since position 8 is not a legal move, I will place X in position 0 to block a potential vertical win and create a strong defensive position.",
+        "action": 0,
+        "image_path": "5.png"
+    },
+    {
+        "index": 6,
+        "turn": "our_solver",
+        "turn_index": 1,
+        "reason": "solver/human",
+        "action": 2,
+        "image_path": "6.png"
+    }
+]

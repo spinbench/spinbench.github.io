@@ -1,0 +1,122 @@
+[
+    {
+        "index": 0,
+        "turn": "None",
+        "turn_index": 0,
+        "reason": "None",
+        "action": "None",
+        "image_path": "0.png"
+    },
+    {
+        "index": 1,
+        "turn": "Deepseek-R1",
+        "turn_index": 0,
+        "reason": "Choosing the center column (3) provides the most strategic advantage in Connect Four, allowing for maximum potential connections in vertical, horizontal, and diagonal directions from the middle position.",
+        "action": 3,
+        "image_path": "1.png"
+    },
+    {
+        "index": 2,
+        "turn": "our_solver",
+        "turn_index": 1,
+        "reason": "solver/human",
+        "action": 3,
+        "image_path": "2.png"
+    },
+    {
+        "index": 3,
+        "turn": "Deepseek-R1",
+        "turn_index": 0,
+        "reason": "Starting a horizontal line from column 2 to potentially connect four in the future. Placing in column 2 creates a pair (columns 2 and 3) on the bottom row, setting up opportunities to expand left or right.",
+        "action": 2,
+        "image_path": "3.png"
+    },
+    {
+        "index": 4,
+        "turn": "our_solver",
+        "turn_index": 1,
+        "reason": "solver/human",
+        "action": 1,
+        "image_path": "4.png"
+    },
+    {
+        "index": 5,
+        "turn": "Deepseek-R1",
+        "turn_index": 0,
+        "reason": "Placing in column 4 creates a horizontal three in a row (columns 2, 3, 4) in row 5, setting up a potential win on the next move if the opponent doesn't block. This move also takes advantage of the existing X tokens at (5,2) and (5,3) to maximize immediate threat.",
+        "action": 4,
+        "image_path": "5.png"
+    },
+    {
+        "index": 6,
+        "turn": "our_solver",
+        "turn_index": 1,
+        "reason": "solver/human",
+        "action": 5,
+        "image_path": "6.png"
+    },
+    {
+        "index": 7,
+        "turn": "Deepseek-R1",
+        "turn_index": 0,
+        "reason": "Placing in column 1 (row 4) sets up a potential diagonal from (4,1) to (5,2) which is already X. This move creates a future opportunity to connect four diagonally by adding tokens in subsequent moves. Additionally, it starts building a presence in column 1, which is currently controlled by the opponent's O at (5,1).",
+        "action": 1,
+        "image_path": "7.png"
+    },
+    {
+        "index": 8,
+        "turn": "our_solver",
+        "turn_index": 1,
+        "reason": "solver/human",
+        "action": 3,
+        "image_path": "8.png"
+    },
+    {
+        "index": 9,
+        "turn": "Deepseek-R1",
+        "turn_index": 0,
+        "reason": "Placing in column 0 starts a new potential diagonal from (5,0) to (4,1) and allows future expansion. Although no immediate win, it creates a strategic position while keeping all options open.",
+        "action": 0,
+        "image_path": "9.png"
+    },
+    {
+        "index": 10,
+        "turn": "our_solver",
+        "turn_index": 1,
+        "reason": "solver/human",
+        "action": 2,
+        "image_path": "10.png"
+    },
+    {
+        "index": 11,
+        "turn": "Deepseek-R1",
+        "turn_index": 0,
+        "reason": "Placing in column 2 creates a diagonal threat with existing X's at (5,0) and (4,1). This sets up a potential four-in-a-row if followed by a move in column 3 next turn, which the opponent cannot block immediately.",
+        "action": 2,
+        "image_path": "11.png"
+    },
+    {
+        "index": 12,
+        "turn": "our_solver",
+        "turn_index": 1,
+        "reason": "solver/human",
+        "action": 3,
+        "image_path": "12.png"
+    },
+    {
+        "index": 13,
+        "turn": "Deepseek-R1",
+        "turn_index": 0,
+        "reason": "Placing in column 6 (c6) allows me to start building a potential diagonal or vertical connection. The column is currently empty, so this move secures a new position without immediate threats from the opponent. It also avoids leaving an open column for the opponent to exploit.",
+        "action": 6,
+        "image_path": "13.png"
+    },
+    {
+        "index": 14,
+        "turn": "our_solver",
+        "turn_index": 1,
+        "reason": "solver/human",
+        "action": 3,
+        "image_path": "14.png"
+    }
+]

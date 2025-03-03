@@ -1,0 +1,6781 @@
+[
+    {
+        "cnt": "16",
+        "tokens": "Life tokens = 3, Info tokens = 8",
+        "fireworks": "R0 Y0 G0 W0 B0",
+        "your_hand": [
+            {
+                "card": "1",
+                "known": "Unknown"
+            },
+            {
+                "card": "2",
+                "known": "Unknown"
+            },
+            {
+                "card": "3",
+                "known": "Unknown"
+            },
+            {
+                "card": "4",
+                "known": "Unknown"
+            },
+            {
+                "card": "5",
+                "known": "Unknown"
+            }
+        ],
+        "other_players": {
+            "+1": [
+                {
+                    "visible": "Y1",
+                    "hint": "None"
+                },
+                {
+                    "visible": "G2",
+                    "hint": "None"
+                },
+                {
+                    "visible": "G4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "G4",
+                    "hint": "None"
+                }
+            ],
+            "+2": [
+                {
+                    "visible": "G5",
+                    "hint": "None"
+                },
+                {
+                    "visible": "W3",
+                    "hint": "None"
+                },
+                {
+                    "visible": "G1",
+                    "hint": "None"
+                },
+                {
+                    "visible": "B3",
+                    "hint": "None"
+                },
+                {
+                    "visible": "W4",
+                    "hint": "None"
+                }
+            ]
+        },
+        "legal_actions": [
+            {
+                "index": 5,
+                "action": "Play card 1"
+            },
+            {
+                "index": 6,
+                "action": "Play card 2"
+            },
+            {
+                "index": 7,
+                "action": "Play card 3"
+            },
+            {
+                "index": 8,
+                "action": "Play card 4"
+            },
+            {
+                "index": 9,
+                "action": "Play card 5"
+            },
+            {
+                "index": 11,
+                "action": "Reveal player +1 color Y"
+            },
+            {
+                "index": 12,
+                "action": "Reveal player +1 color G"
+            },
+            {
+                "index": 17,
+                "action": "Reveal player +2 color G"
+            },
+            {
+                "index": 18,
+                "action": "Reveal player +2 color W"
+            },
+            {
+                "index": 19,
+                "action": "Reveal player +2 color B"
+            },
+            {
+                "index": 20,
+                "action": "Reveal player +1 rank 1"
+            },
+            {
+                "index": 21,
+                "action": "Reveal player +1 rank 2"
+            },
+            {
+                "index": 23,
+                "action": "Reveal player +1 rank 4"
+            },
+            {
+                "index": 25,
+                "action": "Reveal player +2 rank 1"
+            },
+            {
+                "index": 27,
+                "action": "Reveal player +2 rank 3"
+            },
+            {
+                "index": 28,
+                "action": "Reveal player +2 rank 4"
+            },
+            {
+                "index": 29,
+                "action": "Reveal player +2 rank 5"
+            }
+        ],
+        "player_response": {
+            "reason": "Hint Yellow to Player +1 to help start Yellow firework stack",
+            "action": 11
+        }
+    },
+    {
+        "cnt": "17",
+        "tokens": "Life tokens = 3, Info tokens = 7",
+        "fireworks": "R0 Y0 G0 W0 B0",
+        "your_hand": [
+            {
+                "card": "1",
+                "known": "YX"
+            },
+            {
+                "card": "2",
+                "known": "Unknown"
+            },
+            {
+                "card": "3",
+                "known": "Unknown"
+            },
+            {
+                "card": "4",
+                "known": "YX"
+            },
+            {
+                "card": "5",
+                "known": "Unknown"
+            }
+        ],
+        "other_players": {
+            "+1": [
+                {
+                    "visible": "G5",
+                    "hint": "None"
+                },
+                {
+                    "visible": "W3",
+                    "hint": "None"
+                },
+                {
+                    "visible": "G1",
+                    "hint": "None"
+                },
+                {
+                    "visible": "B3",
+                    "hint": "None"
+                },
+                {
+                    "visible": "W4",
+                    "hint": "None"
+                }
+            ],
+            "+2": [
+                {
+                    "visible": "W5",
+                    "hint": "None"
+                },
+                {
+                    "visible": "R2",
+                    "hint": "None"
+                },
+                {
+                    "visible": "W1",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y3",
+                    "hint": "None"
+                },
+                {
+                    "visible": "R2",
+                    "hint": "None"
+                }
+            ]
+        },
+        "legal_actions": [
+            {
+                "index": 0,
+                "action": "Discard 0"
+            },
+            {
+                "index": 1,
+                "action": "Discard 1"
+            },
+            {
+                "index": 2,
+                "action": "Discard 2"
+            },
+            {
+                "index": 3,
+                "action": "Discard 3"
+            },
+            {
+                "index": 4,
+                "action": "Discard 4"
+            },
+            {
+                "index": 5,
+                "action": "Play card 1"
+            },
+            {
+                "index": 6,
+                "action": "Play card 2"
+            },
+            {
+                "index": 7,
+                "action": "Play card 3"
+            },
+            {
+                "index": 8,
+                "action": "Play card 4"
+            },
+            {
+                "index": 9,
+                "action": "Play card 5"
+            },
+            {
+                "index": 12,
+                "action": "Reveal player +1 color G"
+            },
+            {
+                "index": 13,
+                "action": "Reveal player +1 color W"
+            },
+            {
+                "index": 14,
+                "action": "Reveal player +1 color B"
+            },
+            {
+                "index": 15,
+                "action": "Reveal player +2 color R"
+            },
+            {
+                "index": 16,
+                "action": "Reveal player +2 color Y"
+            },
+            {
+                "index": 18,
+                "action": "Reveal player +2 color W"
+            },
+            {
+                "index": 20,
+                "action": "Reveal player +1 rank 1"
+            },
+            {
+                "index": 22,
+                "action": "Reveal player +1 rank 3"
+            },
+            {
+                "index": 23,
+                "action": "Reveal player +1 rank 4"
+            },
+            {
+                "index": 24,
+                "action": "Reveal player +1 rank 5"
+            },
+            {
+                "index": 25,
+                "action": "Reveal player +2 rank 1"
+            },
+            {
+                "index": 26,
+                "action": "Reveal player +2 rank 2"
+            },
+            {
+                "index": 27,
+                "action": "Reveal player +2 rank 3"
+            },
+            {
+                "index": 29,
+                "action": "Reveal player +2 rank 5"
+            }
+        ],
+        "player_response": {
+            "reason": "Hint player +1 about the Green 1 card to start the Green fireworks stack",
+            "action": 12
+        }
+    },
+    {
+        "cnt": "18",
+        "tokens": "Life tokens = 3, Info tokens = 6",
+        "fireworks": "R0 Y0 G0 W0 B0",
+        "your_hand": [
+            {
+                "card": "1",
+                "known": "GX"
+            },
+            {
+                "card": "2",
+                "known": "Unknown"
+            },
+            {
+                "card": "3",
+                "known": "GX"
+            },
+            {
+                "card": "4",
+                "known": "Unknown"
+            },
+            {
+                "card": "5",
+                "known": "Unknown"
+            }
+        ],
+        "other_players": {
+            "+1": [
+                {
+                    "visible": "W5",
+                    "hint": "None"
+                },
+                {
+                    "visible": "R2",
+                    "hint": "None"
+                },
+                {
+                    "visible": "W1",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y3",
+                    "hint": "None"
+                },
+                {
+                    "visible": "R2",
+                    "hint": "None"
+                }
+            ],
+            "+2": [
+                {
+                    "visible": "Y1",
+                    "hint": "YX"
+                },
+                {
+                    "visible": "G2",
+                    "hint": "None"
+                },
+                {
+                    "visible": "G4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y4",
+                    "hint": "YX"
+                },
+                {
+                    "visible": "G4",
+                    "hint": "None"
+                }
+            ]
+        },
+        "legal_actions": [
+            {
+                "index": 0,
+                "action": "Discard 0"
+            },
+            {
+                "index": 1,
+                "action": "Discard 1"
+            },
+            {
+                "index": 2,
+                "action": "Discard 2"
+            },
+            {
+                "index": 3,
+                "action": "Discard 3"
+            },
+            {
+                "index": 4,
+                "action": "Discard 4"
+            },
+            {
+                "index": 5,
+                "action": "Play card 1"
+            },
+            {
+                "index": 6,
+                "action": "Play card 2"
+            },
+            {
+                "index": 7,
+                "action": "Play card 3"
+            },
+            {
+                "index": 8,
+                "action": "Play card 4"
+            },
+            {
+                "index": 9,
+                "action": "Play card 5"
+            },
+            {
+                "index": 10,
+                "action": "Reveal player +1 color R"
+            },
+            {
+                "index": 11,
+                "action": "Reveal player +1 color Y"
+            },
+            {
+                "index": 13,
+                "action": "Reveal player +1 color W"
+            },
+            {
+                "index": 16,
+                "action": "Reveal player +2 color Y"
+            },
+            {
+                "index": 17,
+                "action": "Reveal player +2 color G"
+            },
+            {
+                "index": 20,
+                "action": "Reveal player +1 rank 1"
+            },
+            {
+                "index": 21,
+                "action": "Reveal player +1 rank 2"
+            },
+            {
+                "index": 22,
+                "action": "Reveal player +1 rank 3"
+            },
+            {
+                "index": 24,
+                "action": "Reveal player +1 rank 5"
+            },
+            {
+                "index": 25,
+                "action": "Reveal player +2 rank 1"
+            },
+            {
+                "index": 26,
+                "action": "Reveal player +2 rank 2"
+            },
+            {
+                "index": 28,
+                "action": "Reveal player +2 rank 4"
+            }
+        ],
+        "player_response": {
+            "reason": "Discard an unknown card to gain an info token and potentially help teammates identify useful plays",
+            "action": 1
+        }
+    },
+    {
+        "cnt": "20",
+        "tokens": "Life tokens = 3, Info tokens = 7",
+        "fireworks": "R0 Y0 G0 W0 B0",
+        "your_hand": [
+            {
+                "card": "1",
+                "known": "Unknown"
+            },
+            {
+                "card": "2",
+                "known": "Unknown"
+            },
+            {
+                "card": "3",
+                "known": "Unknown"
+            },
+            {
+                "card": "4",
+                "known": "Unknown"
+            },
+            {
+                "card": "5",
+                "known": "Unknown"
+            }
+        ],
+        "other_players": {
+            "+1": [
+                {
+                    "visible": "Y1",
+                    "hint": "YX"
+                },
+                {
+                    "visible": "G2",
+                    "hint": "None"
+                },
+                {
+                    "visible": "G4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y4",
+                    "hint": "YX"
+                },
+                {
+                    "visible": "G4",
+                    "hint": "None"
+                }
+            ],
+            "+2": [
+                {
+                    "visible": "G5",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "G1",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "B3",
+                    "hint": "None"
+                },
+                {
+                    "visible": "W4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "G3",
+                    "hint": "None"
+                }
+            ]
+        },
+        "legal_actions": [
+            {
+                "index": 0,
+                "action": "Discard 0"
+            },
+            {
+                "index": 1,
+                "action": "Discard 1"
+            },
+            {
+                "index": 2,
+                "action": "Discard 2"
+            },
+            {
+                "index": 3,
+                "action": "Discard 3"
+            },
+            {
+                "index": 4,
+                "action": "Discard 4"
+            },
+            {
+                "index": 5,
+                "action": "Play card 1"
+            },
+            {
+                "index": 6,
+                "action": "Play card 2"
+            },
+            {
+                "index": 7,
+                "action": "Play card 3"
+            },
+            {
+                "index": 8,
+                "action": "Play card 4"
+            },
+            {
+                "index": 9,
+                "action": "Play card 5"
+            },
+            {
+                "index": 11,
+                "action": "Reveal player +1 color Y"
+            },
+            {
+                "index": 12,
+                "action": "Reveal player +1 color G"
+            },
+            {
+                "index": 17,
+                "action": "Reveal player +2 color G"
+            },
+            {
+                "index": 18,
+                "action": "Reveal player +2 color W"
+            },
+            {
+                "index": 19,
+                "action": "Reveal player +2 color B"
+            },
+            {
+                "index": 20,
+                "action": "Reveal player +1 rank 1"
+            },
+            {
+                "index": 21,
+                "action": "Reveal player +1 rank 2"
+            },
+            {
+                "index": 23,
+                "action": "Reveal player +1 rank 4"
+            },
+            {
+                "index": 25,
+                "action": "Reveal player +2 rank 1"
+            },
+            {
+                "index": 27,
+                "action": "Reveal player +2 rank 3"
+            },
+            {
+                "index": 28,
+                "action": "Reveal player +2 rank 4"
+            },
+            {
+                "index": 29,
+                "action": "Reveal player +2 rank 5"
+            }
+        ],
+        "player_response": {
+            "reason": "Hint Yellow to Player +1 to help play the Y1 card and start the Yellow firework stack",
+            "action": 11
+        }
+    },
+    {
+        "cnt": "21",
+        "tokens": "Life tokens = 3, Info tokens = 6",
+        "fireworks": "R0 Y0 G0 W0 B0",
+        "your_hand": [
+            {
+                "card": "1",
+                "known": "YX"
+            },
+            {
+                "card": "2",
+                "known": "Unknown"
+            },
+            {
+                "card": "3",
+                "known": "Unknown"
+            },
+            {
+                "card": "4",
+                "known": "YX"
+            },
+            {
+                "card": "5",
+                "known": "Unknown"
+            }
+        ],
+        "other_players": {
+            "+1": [
+                {
+                    "visible": "G5",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "G1",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "B3",
+                    "hint": "None"
+                },
+                {
+                    "visible": "W4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "G3",
+                    "hint": "None"
+                }
+            ],
+            "+2": [
+                {
+                    "visible": "W5",
+                    "hint": "None"
+                },
+                {
+                    "visible": "R2",
+                    "hint": "None"
+                },
+                {
+                    "visible": "W1",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y3",
+                    "hint": "None"
+                },
+                {
+                    "visible": "R2",
+                    "hint": "None"
+                }
+            ]
+        },
+        "legal_actions": [
+            {
+                "index": 0,
+                "action": "Discard 0"
+            },
+            {
+                "index": 1,
+                "action": "Discard 1"
+            },
+            {
+                "index": 2,
+                "action": "Discard 2"
+            },
+            {
+                "index": 3,
+                "action": "Discard 3"
+            },
+            {
+                "index": 4,
+                "action": "Discard 4"
+            },
+            {
+                "index": 5,
+                "action": "Play card 1"
+            },
+            {
+                "index": 6,
+                "action": "Play card 2"
+            },
+            {
+                "index": 7,
+                "action": "Play card 3"
+            },
+            {
+                "index": 8,
+                "action": "Play card 4"
+            },
+            {
+                "index": 9,
+                "action": "Play card 5"
+            },
+            {
+                "index": 12,
+                "action": "Reveal player +1 color G"
+            },
+            {
+                "index": 13,
+                "action": "Reveal player +1 color W"
+            },
+            {
+                "index": 14,
+                "action": "Reveal player +1 color B"
+            },
+            {
+                "index": 15,
+                "action": "Reveal player +2 color R"
+            },
+            {
+                "index": 16,
+                "action": "Reveal player +2 color Y"
+            },
+            {
+                "index": 18,
+                "action": "Reveal player +2 color W"
+            },
+            {
+                "index": 20,
+                "action": "Reveal player +1 rank 1"
+            },
+            {
+                "index": 22,
+                "action": "Reveal player +1 rank 3"
+            },
+            {
+                "index": 23,
+                "action": "Reveal player +1 rank 4"
+            },
+            {
+                "index": 24,
+                "action": "Reveal player +1 rank 5"
+            },
+            {
+                "index": 25,
+                "action": "Reveal player +2 rank 1"
+            },
+            {
+                "index": 26,
+                "action": "Reveal player +2 rank 2"
+            },
+            {
+                "index": 27,
+                "action": "Reveal player +2 rank 3"
+            },
+            {
+                "index": 29,
+                "action": "Reveal player +2 rank 5"
+            }
+        ],
+        "player_response": {
+            "reason": "Hint Green to Player +1 to help them understand they have both G1 and G5, which could start the Green firework stack",
+            "action": 12
+        }
+    },
+    {
+        "cnt": "22",
+        "tokens": "Life tokens = 3, Info tokens = 5",
+        "fireworks": "R0 Y0 G0 W0 B0",
+        "your_hand": [
+            {
+                "card": "1",
+                "known": "GX"
+            },
+            {
+                "card": "2",
+                "known": "GX"
+            },
+            {
+                "card": "3",
+                "known": "Unknown"
+            },
+            {
+                "card": "4",
+                "known": "Unknown"
+            },
+            {
+                "card": "5",
+                "known": "GX"
+            }
+        ],
+        "other_players": {
+            "+1": [
+                {
+                    "visible": "W5",
+                    "hint": "None"
+                },
+                {
+                    "visible": "R2",
+                    "hint": "None"
+                },
+                {
+                    "visible": "W1",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y3",
+                    "hint": "None"
+                },
+                {
+                    "visible": "R2",
+                    "hint": "None"
+                }
+            ],
+            "+2": [
+                {
+                    "visible": "Y1",
+                    "hint": "YX"
+                },
+                {
+                    "visible": "G2",
+                    "hint": "None"
+                },
+                {
+                    "visible": "G4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y4",
+                    "hint": "YX"
+                },
+                {
+                    "visible": "G4",
+                    "hint": "None"
+                }
+            ]
+        },
+        "legal_actions": [
+            {
+                "index": 0,
+                "action": "Discard 0"
+            },
+            {
+                "index": 1,
+                "action": "Discard 1"
+            },
+            {
+                "index": 2,
+                "action": "Discard 2"
+            },
+            {
+                "index": 3,
+                "action": "Discard 3"
+            },
+            {
+                "index": 4,
+                "action": "Discard 4"
+            },
+            {
+                "index": 5,
+                "action": "Play card 1"
+            },
+            {
+                "index": 6,
+                "action": "Play card 2"
+            },
+            {
+                "index": 7,
+                "action": "Play card 3"
+            },
+            {
+                "index": 8,
+                "action": "Play card 4"
+            },
+            {
+                "index": 9,
+                "action": "Play card 5"
+            },
+            {
+                "index": 10,
+                "action": "Reveal player +1 color R"
+            },
+            {
+                "index": 11,
+                "action": "Reveal player +1 color Y"
+            },
+            {
+                "index": 13,
+                "action": "Reveal player +1 color W"
+            },
+            {
+                "index": 16,
+                "action": "Reveal player +2 color Y"
+            },
+            {
+                "index": 17,
+                "action": "Reveal player +2 color G"
+            },
+            {
+                "index": 20,
+                "action": "Reveal player +1 rank 1"
+            },
+            {
+                "index": 21,
+                "action": "Reveal player +1 rank 2"
+            },
+            {
+                "index": 22,
+                "action": "Reveal player +1 rank 3"
+            },
+            {
+                "index": 24,
+                "action": "Reveal player +1 rank 5"
+            },
+            {
+                "index": 25,
+                "action": "Reveal player +2 rank 1"
+            },
+            {
+                "index": 26,
+                "action": "Reveal player +2 rank 2"
+            },
+            {
+                "index": 28,
+                "action": "Reveal player +2 rank 4"
+            }
+        ],
+        "player_response": {
+            "reason": "Hint player +2 about the yellow 1 card to encourage playing Y1 and start the yellow fireworks stack",
+            "action": 16
+        }
+    },
+    {
+        "cnt": "23",
+        "tokens": "Life tokens = 3, Info tokens = 4",
+        "fireworks": "R0 Y0 G0 W0 B0",
+        "your_hand": [
+            {
+                "card": "1",
+                "known": "Unknown"
+            },
+            {
+                "card": "2",
+                "known": "Unknown"
+            },
+            {
+                "card": "3",
+                "known": "Unknown"
+            },
+            {
+                "card": "4",
+                "known": "Unknown"
+            },
+            {
+                "card": "5",
+                "known": "Unknown"
+            }
+        ],
+        "other_players": {
+            "+1": [
+                {
+                    "visible": "Y1",
+                    "hint": "YX"
+                },
+                {
+                    "visible": "G2",
+                    "hint": "None"
+                },
+                {
+                    "visible": "G4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y4",
+                    "hint": "YX"
+                },
+                {
+                    "visible": "G4",
+                    "hint": "None"
+                }
+            ],
+            "+2": [
+                {
+                    "visible": "G5",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "G1",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "B3",
+                    "hint": "None"
+                },
+                {
+                    "visible": "W4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "G3",
+                    "hint": "GX"
+                }
+            ]
+        },
+        "legal_actions": [
+            {
+                "index": 0,
+                "action": "Discard 0"
+            },
+            {
+                "index": 1,
+                "action": "Discard 1"
+            },
+            {
+                "index": 2,
+                "action": "Discard 2"
+            },
+            {
+                "index": 3,
+                "action": "Discard 3"
+            },
+            {
+                "index": 4,
+                "action": "Discard 4"
+            },
+            {
+                "index": 5,
+                "action": "Play card 1"
+            },
+            {
+                "index": 6,
+                "action": "Play card 2"
+            },
+            {
+                "index": 7,
+                "action": "Play card 3"
+            },
+            {
+                "index": 8,
+                "action": "Play card 4"
+            },
+            {
+                "index": 9,
+                "action": "Play card 5"
+            },
+            {
+                "index": 11,
+                "action": "Reveal player +1 color Y"
+            },
+            {
+                "index": 12,
+                "action": "Reveal player +1 color G"
+            },
+            {
+                "index": 17,
+                "action": "Reveal player +2 color G"
+            },
+            {
+                "index": 18,
+                "action": "Reveal player +2 color W"
+            },
+            {
+                "index": 19,
+                "action": "Reveal player +2 color B"
+            },
+            {
+                "index": 20,
+                "action": "Reveal player +1 rank 1"
+            },
+            {
+                "index": 21,
+                "action": "Reveal player +1 rank 2"
+            },
+            {
+                "index": 23,
+                "action": "Reveal player +1 rank 4"
+            },
+            {
+                "index": 25,
+                "action": "Reveal player +2 rank 1"
+            },
+            {
+                "index": 27,
+                "action": "Reveal player +2 rank 3"
+            },
+            {
+                "index": 28,
+                "action": "Reveal player +2 rank 4"
+            },
+            {
+                "index": 29,
+                "action": "Reveal player +2 rank 5"
+            }
+        ],
+        "player_response": {
+            "reason": "Hint Player +2 about their Green cards to help sequence and play G1",
+            "action": 17
+        }
+    },
+    {
+        "cnt": "24",
+        "tokens": "Life tokens = 3, Info tokens = 3",
+        "fireworks": "R0 Y0 G0 W0 B0",
+        "your_hand": [
+            {
+                "card": "1",
+                "known": "YX"
+            },
+            {
+                "card": "2",
+                "known": "Unknown"
+            },
+            {
+                "card": "3",
+                "known": "Unknown"
+            },
+            {
+                "card": "4",
+                "known": "YX"
+            },
+            {
+                "card": "5",
+                "known": "Unknown"
+            }
+        ],
+        "other_players": {
+            "+1": [
+                {
+                    "visible": "G5",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "G1",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "B3",
+                    "hint": "None"
+                },
+                {
+                    "visible": "W4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "G3",
+                    "hint": "GX"
+                }
+            ],
+            "+2": [
+                {
+                    "visible": "W5",
+                    "hint": "None"
+                },
+                {
+                    "visible": "R2",
+                    "hint": "None"
+                },
+                {
+                    "visible": "W1",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y3",
+                    "hint": "None"
+                },
+                {
+                    "visible": "R2",
+                    "hint": "None"
+                }
+            ]
+        },
+        "legal_actions": [
+            {
+                "index": 0,
+                "action": "Discard 0"
+            },
+            {
+                "index": 1,
+                "action": "Discard 1"
+            },
+            {
+                "index": 2,
+                "action": "Discard 2"
+            },
+            {
+                "index": 3,
+                "action": "Discard 3"
+            },
+            {
+                "index": 4,
+                "action": "Discard 4"
+            },
+            {
+                "index": 5,
+                "action": "Play card 1"
+            },
+            {
+                "index": 6,
+                "action": "Play card 2"
+            },
+            {
+                "index": 7,
+                "action": "Play card 3"
+            },
+            {
+                "index": 8,
+                "action": "Play card 4"
+            },
+            {
+                "index": 9,
+                "action": "Play card 5"
+            },
+            {
+                "index": 12,
+                "action": "Reveal player +1 color G"
+            },
+            {
+                "index": 13,
+                "action": "Reveal player +1 color W"
+            },
+            {
+                "index": 14,
+                "action": "Reveal player +1 color B"
+            },
+            {
+                "index": 15,
+                "action": "Reveal player +2 color R"
+            },
+            {
+                "index": 16,
+                "action": "Reveal player +2 color Y"
+            },
+            {
+                "index": 18,
+                "action": "Reveal player +2 color W"
+            },
+            {
+                "index": 20,
+                "action": "Reveal player +1 rank 1"
+            },
+            {
+                "index": 22,
+                "action": "Reveal player +1 rank 3"
+            },
+            {
+                "index": 23,
+                "action": "Reveal player +1 rank 4"
+            },
+            {
+                "index": 24,
+                "action": "Reveal player +1 rank 5"
+            },
+            {
+                "index": 25,
+                "action": "Reveal player +2 rank 1"
+            },
+            {
+                "index": 26,
+                "action": "Reveal player +2 rank 2"
+            },
+            {
+                "index": 27,
+                "action": "Reveal player +2 rank 3"
+            },
+            {
+                "index": 29,
+                "action": "Reveal player +2 rank 5"
+            }
+        ],
+        "player_response": {
+            "reason": "Hint rank 1 to Player +2 to help identify potential safe plays and gain team information",
+            "action": 25
+        }
+    },
+    {
+        "cnt": "25",
+        "tokens": "Life tokens = 3, Info tokens = 2",
+        "fireworks": "R0 Y0 G0 W0 B0",
+        "your_hand": [
+            {
+                "card": "1",
+                "known": "GX"
+            },
+            {
+                "card": "2",
+                "known": "GX"
+            },
+            {
+                "card": "3",
+                "known": "Unknown"
+            },
+            {
+                "card": "4",
+                "known": "Unknown"
+            },
+            {
+                "card": "5",
+                "known": "GX"
+            }
+        ],
+        "other_players": {
+            "+1": [
+                {
+                    "visible": "W5",
+                    "hint": "None"
+                },
+                {
+                    "visible": "R2",
+                    "hint": "None"
+                },
+                {
+                    "visible": "W1",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y3",
+                    "hint": "None"
+                },
+                {
+                    "visible": "R2",
+                    "hint": "None"
+                }
+            ],
+            "+2": [
+                {
+                    "visible": "Y1",
+                    "hint": "YX"
+                },
+                {
+                    "visible": "G2",
+                    "hint": "None"
+                },
+                {
+                    "visible": "G4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y4",
+                    "hint": "YX"
+                },
+                {
+                    "visible": "G4",
+                    "hint": "None"
+                }
+            ]
+        },
+        "legal_actions": [
+            {
+                "index": 0,
+                "action": "Discard 0"
+            },
+            {
+                "index": 1,
+                "action": "Discard 1"
+            },
+            {
+                "index": 2,
+                "action": "Discard 2"
+            },
+            {
+                "index": 3,
+                "action": "Discard 3"
+            },
+            {
+                "index": 4,
+                "action": "Discard 4"
+            },
+            {
+                "index": 5,
+                "action": "Play card 1"
+            },
+            {
+                "index": 6,
+                "action": "Play card 2"
+            },
+            {
+                "index": 7,
+                "action": "Play card 3"
+            },
+            {
+                "index": 8,
+                "action": "Play card 4"
+            },
+            {
+                "index": 9,
+                "action": "Play card 5"
+            },
+            {
+                "index": 10,
+                "action": "Reveal player +1 color R"
+            },
+            {
+                "index": 11,
+                "action": "Reveal player +1 color Y"
+            },
+            {
+                "index": 13,
+                "action": "Reveal player +1 color W"
+            },
+            {
+                "index": 16,
+                "action": "Reveal player +2 color Y"
+            },
+            {
+                "index": 17,
+                "action": "Reveal player +2 color G"
+            },
+            {
+                "index": 20,
+                "action": "Reveal player +1 rank 1"
+            },
+            {
+                "index": 21,
+                "action": "Reveal player +1 rank 2"
+            },
+            {
+                "index": 22,
+                "action": "Reveal player +1 rank 3"
+            },
+            {
+                "index": 24,
+                "action": "Reveal player +1 rank 5"
+            },
+            {
+                "index": 25,
+                "action": "Reveal player +2 rank 1"
+            },
+            {
+                "index": 26,
+                "action": "Reveal player +2 rank 2"
+            },
+            {
+                "index": 28,
+                "action": "Reveal player +2 rank 4"
+            }
+        ],
+        "player_response": {
+            "reason": "Hint Player +2 about rank 1 to help them play the Yellow 1 card and start the Yellow firework stack",
+            "action": 25
+        }
+    },
+    {
+        "cnt": "26",
+        "tokens": "Life tokens = 3, Info tokens = 1",
+        "fireworks": "R0 Y0 G0 W0 B0",
+        "your_hand": [
+            {
+                "card": "1",
+                "known": "Unknown"
+            },
+            {
+                "card": "2",
+                "known": "Unknown"
+            },
+            {
+                "card": "3",
+                "known": "X1"
+            },
+            {
+                "card": "4",
+                "known": "Unknown"
+            },
+            {
+                "card": "5",
+                "known": "Unknown"
+            }
+        ],
+        "other_players": {
+            "+1": [
+                {
+                    "visible": "Y1",
+                    "hint": "Y1"
+                },
+                {
+                    "visible": "G2",
+                    "hint": "None"
+                },
+                {
+                    "visible": "G4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y4",
+                    "hint": "YX"
+                },
+                {
+                    "visible": "G4",
+                    "hint": "None"
+                }
+            ],
+            "+2": [
+                {
+                    "visible": "G5",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "G1",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "B3",
+                    "hint": "None"
+                },
+                {
+                    "visible": "W4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "G3",
+                    "hint": "GX"
+                }
+            ]
+        },
+        "legal_actions": [
+            {
+                "index": 0,
+                "action": "Discard 0"
+            },
+            {
+                "index": 1,
+                "action": "Discard 1"
+            },
+            {
+                "index": 2,
+                "action": "Discard 2"
+            },
+            {
+                "index": 3,
+                "action": "Discard 3"
+            },
+            {
+                "index": 4,
+                "action": "Discard 4"
+            },
+            {
+                "index": 5,
+                "action": "Play card 1"
+            },
+            {
+                "index": 6,
+                "action": "Play card 2"
+            },
+            {
+                "index": 7,
+                "action": "Play card 3"
+            },
+            {
+                "index": 8,
+                "action": "Play card 4"
+            },
+            {
+                "index": 9,
+                "action": "Play card 5"
+            },
+            {
+                "index": 11,
+                "action": "Reveal player +1 color Y"
+            },
+            {
+                "index": 12,
+                "action": "Reveal player +1 color G"
+            },
+            {
+                "index": 17,
+                "action": "Reveal player +2 color G"
+            },
+            {
+                "index": 18,
+                "action": "Reveal player +2 color W"
+            },
+            {
+                "index": 19,
+                "action": "Reveal player +2 color B"
+            },
+            {
+                "index": 20,
+                "action": "Reveal player +1 rank 1"
+            },
+            {
+                "index": 21,
+                "action": "Reveal player +1 rank 2"
+            },
+            {
+                "index": 23,
+                "action": "Reveal player +1 rank 4"
+            },
+            {
+                "index": 25,
+                "action": "Reveal player +2 rank 1"
+            },
+            {
+                "index": 27,
+                "action": "Reveal player +2 rank 3"
+            },
+            {
+                "index": 28,
+                "action": "Reveal player +2 rank 4"
+            },
+            {
+                "index": 29,
+                "action": "Reveal player +2 rank 5"
+            }
+        ],
+        "player_response": {
+            "reason": "Confirm Y1 card can be played on Yellow stack",
+            "action": 11
+        }
+    },
+    {
+        "cnt": "27",
+        "tokens": "Life tokens = 3, Info tokens = 0",
+        "fireworks": "R0 Y0 G0 W0 B0",
+        "your_hand": [
+            {
+                "card": "1",
+                "known": "Y1"
+            },
+            {
+                "card": "2",
+                "known": "Unknown"
+            },
+            {
+                "card": "3",
+                "known": "Unknown"
+            },
+            {
+                "card": "4",
+                "known": "YX"
+            },
+            {
+                "card": "5",
+                "known": "Unknown"
+            }
+        ],
+        "other_players": {
+            "+1": [
+                {
+                    "visible": "G5",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "G1",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "B3",
+                    "hint": "None"
+                },
+                {
+                    "visible": "W4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "G3",
+                    "hint": "GX"
+                }
+            ],
+            "+2": [
+                {
+                    "visible": "W5",
+                    "hint": "None"
+                },
+                {
+                    "visible": "R2",
+                    "hint": "None"
+                },
+                {
+                    "visible": "W1",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y3",
+                    "hint": "None"
+                },
+                {
+                    "visible": "R2",
+                    "hint": "None"
+                }
+            ]
+        },
+        "legal_actions": [
+            {
+                "index": 0,
+                "action": "Discard 0"
+            },
+            {
+                "index": 1,
+                "action": "Discard 1"
+            },
+            {
+                "index": 2,
+                "action": "Discard 2"
+            },
+            {
+                "index": 3,
+                "action": "Discard 3"
+            },
+            {
+                "index": 4,
+                "action": "Discard 4"
+            },
+            {
+                "index": 5,
+                "action": "Play card 1"
+            },
+            {
+                "index": 6,
+                "action": "Play card 2"
+            },
+            {
+                "index": 7,
+                "action": "Play card 3"
+            },
+            {
+                "index": 8,
+                "action": "Play card 4"
+            },
+            {
+                "index": 9,
+                "action": "Play card 5"
+            }
+        ],
+        "player_response": {
+            "reason": "Play the known yellow 1 card to start the yellow fireworks stack",
+            "action": 5
+        }
+    },
+    {
+        "cnt": "29",
+        "tokens": "Life tokens = 3, Info tokens = 0",
+        "fireworks": "R0 Y1 G0 W0 B0",
+        "your_hand": [
+            {
+                "card": "1",
+                "known": "GX"
+            },
+            {
+                "card": "2",
+                "known": "GX"
+            },
+            {
+                "card": "3",
+                "known": "Unknown"
+            },
+            {
+                "card": "4",
+                "known": "Unknown"
+            },
+            {
+                "card": "5",
+                "known": "GX"
+            }
+        ],
+        "other_players": {
+            "+1": [
+                {
+                    "visible": "W5",
+                    "hint": "None"
+                },
+                {
+                    "visible": "R2",
+                    "hint": "None"
+                },
+                {
+                    "visible": "W1",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y3",
+                    "hint": "None"
+                },
+                {
+                    "visible": "R2",
+                    "hint": "None"
+                }
+            ],
+            "+2": [
+                {
+                    "visible": "G2",
+                    "hint": "None"
+                },
+                {
+                    "visible": "G4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y4",
+                    "hint": "YX"
+                },
+                {
+                    "visible": "G4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y1",
+                    "hint": "None"
+                }
+            ]
+        },
+        "legal_actions": [
+            {
+                "index": 0,
+                "action": "Discard 0"
+            },
+            {
+                "index": 1,
+                "action": "Discard 1"
+            },
+            {
+                "index": 2,
+                "action": "Discard 2"
+            },
+            {
+                "index": 3,
+                "action": "Discard 3"
+            },
+            {
+                "index": 4,
+                "action": "Discard 4"
+            },
+            {
+                "index": 5,
+                "action": "Play card 1"
+            },
+            {
+                "index": 6,
+                "action": "Play card 2"
+            },
+            {
+                "index": 7,
+                "action": "Play card 3"
+            },
+            {
+                "index": 8,
+                "action": "Play card 4"
+            },
+            {
+                "index": 9,
+                "action": "Play card 5"
+            }
+        ],
+        "player_response": {
+            "reason": "Discard an unknown card to gain an info token",
+            "action": 2
+        }
+    },
+    {
+        "cnt": "31",
+        "tokens": "Life tokens = 3, Info tokens = 1",
+        "fireworks": "R0 Y1 G0 W0 B0",
+        "your_hand": [
+            {
+                "card": "1",
+                "known": "Unknown"
+            },
+            {
+                "card": "2",
+                "known": "Unknown"
+            },
+            {
+                "card": "3",
+                "known": "X1"
+            },
+            {
+                "card": "4",
+                "known": "Unknown"
+            },
+            {
+                "card": "5",
+                "known": "Unknown"
+            }
+        ],
+        "other_players": {
+            "+1": [
+                {
+                    "visible": "G2",
+                    "hint": "None"
+                },
+                {
+                    "visible": "G4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y4",
+                    "hint": "YX"
+                },
+                {
+                    "visible": "G4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y1",
+                    "hint": "None"
+                }
+            ],
+            "+2": [
+                {
+                    "visible": "G5",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "G1",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "W4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "G3",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "B1",
+                    "hint": "None"
+                }
+            ]
+        },
+        "legal_actions": [
+            {
+                "index": 0,
+                "action": "Discard 0"
+            },
+            {
+                "index": 1,
+                "action": "Discard 1"
+            },
+            {
+                "index": 2,
+                "action": "Discard 2"
+            },
+            {
+                "index": 3,
+                "action": "Discard 3"
+            },
+            {
+                "index": 4,
+                "action": "Discard 4"
+            },
+            {
+                "index": 5,
+                "action": "Play card 1"
+            },
+            {
+                "index": 6,
+                "action": "Play card 2"
+            },
+            {
+                "index": 7,
+                "action": "Play card 3"
+            },
+            {
+                "index": 8,
+                "action": "Play card 4"
+            },
+            {
+                "index": 9,
+                "action": "Play card 5"
+            },
+            {
+                "index": 11,
+                "action": "Reveal player +1 color Y"
+            },
+            {
+                "index": 12,
+                "action": "Reveal player +1 color G"
+            },
+            {
+                "index": 17,
+                "action": "Reveal player +2 color G"
+            },
+            {
+                "index": 18,
+                "action": "Reveal player +2 color W"
+            },
+            {
+                "index": 19,
+                "action": "Reveal player +2 color B"
+            },
+            {
+                "index": 20,
+                "action": "Reveal player +1 rank 1"
+            },
+            {
+                "index": 21,
+                "action": "Reveal player +1 rank 2"
+            },
+            {
+                "index": 23,
+                "action": "Reveal player +1 rank 4"
+            },
+            {
+                "index": 25,
+                "action": "Reveal player +2 rank 1"
+            },
+            {
+                "index": 27,
+                "action": "Reveal player +2 rank 3"
+            },
+            {
+                "index": 28,
+                "action": "Reveal player +2 rank 4"
+            },
+            {
+                "index": 29,
+                "action": "Reveal player +2 rank 5"
+            }
+        ],
+        "player_response": {
+            "reason": "Hint green cards to Player +2 to help identify playable G1",
+            "action": 17
+        }
+    },
+    {
+        "cnt": "32",
+        "tokens": "Life tokens = 3, Info tokens = 0",
+        "fireworks": "R0 Y1 G0 W0 B0",
+        "your_hand": [
+            {
+                "card": "1",
+                "known": "Unknown"
+            },
+            {
+                "card": "2",
+                "known": "Unknown"
+            },
+            {
+                "card": "3",
+                "known": "YX"
+            },
+            {
+                "card": "4",
+                "known": "Unknown"
+            },
+            {
+                "card": "5",
+                "known": "Unknown"
+            }
+        ],
+        "other_players": {
+            "+1": [
+                {
+                    "visible": "G5",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "G1",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "W4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "G3",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "B1",
+                    "hint": "None"
+                }
+            ],
+            "+2": [
+                {
+                    "visible": "W5",
+                    "hint": "None"
+                },
+                {
+                    "visible": "R2",
+                    "hint": "None"
+                },
+                {
+                    "visible": "W1",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y3",
+                    "hint": "None"
+                },
+                {
+                    "visible": "R2",
+                    "hint": "None"
+                }
+            ]
+        },
+        "legal_actions": [
+            {
+                "index": 0,
+                "action": "Discard 0"
+            },
+            {
+                "index": 1,
+                "action": "Discard 1"
+            },
+            {
+                "index": 2,
+                "action": "Discard 2"
+            },
+            {
+                "index": 3,
+                "action": "Discard 3"
+            },
+            {
+                "index": 4,
+                "action": "Discard 4"
+            },
+            {
+                "index": 5,
+                "action": "Play card 1"
+            },
+            {
+                "index": 6,
+                "action": "Play card 2"
+            },
+            {
+                "index": 7,
+                "action": "Play card 3"
+            },
+            {
+                "index": 8,
+                "action": "Play card 4"
+            },
+            {
+                "index": 9,
+                "action": "Play card 5"
+            }
+        ],
+        "player_response": {
+            "reason": "Discard an unknown card to potentially gain an info token and create space for better information",
+            "action": 0
+        }
+    },
+    {
+        "cnt": "34",
+        "tokens": "Life tokens = 3, Info tokens = 1",
+        "fireworks": "R0 Y1 G0 W0 B0",
+        "your_hand": [
+            {
+                "card": "1",
+                "known": "GX"
+            },
+            {
+                "card": "2",
+                "known": "GX"
+            },
+            {
+                "card": "3",
+                "known": "Unknown"
+            },
+            {
+                "card": "4",
+                "known": "GX"
+            },
+            {
+                "card": "5",
+                "known": "Unknown"
+            }
+        ],
+        "other_players": {
+            "+1": [
+                {
+                    "visible": "W5",
+                    "hint": "None"
+                },
+                {
+                    "visible": "R2",
+                    "hint": "None"
+                },
+                {
+                    "visible": "W1",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y3",
+                    "hint": "None"
+                },
+                {
+                    "visible": "R2",
+                    "hint": "None"
+                }
+            ],
+            "+2": [
+                {
+                    "visible": "G4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y4",
+                    "hint": "YX"
+                },
+                {
+                    "visible": "G4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y1",
+                    "hint": "None"
+                },
+                {
+                    "visible": "W1",
+                    "hint": "None"
+                }
+            ]
+        },
+        "legal_actions": [
+            {
+                "index": 0,
+                "action": "Discard 0"
+            },
+            {
+                "index": 1,
+                "action": "Discard 1"
+            },
+            {
+                "index": 2,
+                "action": "Discard 2"
+            },
+            {
+                "index": 3,
+                "action": "Discard 3"
+            },
+            {
+                "index": 4,
+                "action": "Discard 4"
+            },
+            {
+                "index": 5,
+                "action": "Play card 1"
+            },
+            {
+                "index": 6,
+                "action": "Play card 2"
+            },
+            {
+                "index": 7,
+                "action": "Play card 3"
+            },
+            {
+                "index": 8,
+                "action": "Play card 4"
+            },
+            {
+                "index": 9,
+                "action": "Play card 5"
+            },
+            {
+                "index": 10,
+                "action": "Reveal player +1 color R"
+            },
+            {
+                "index": 11,
+                "action": "Reveal player +1 color Y"
+            },
+            {
+                "index": 13,
+                "action": "Reveal player +1 color W"
+            },
+            {
+                "index": 16,
+                "action": "Reveal player +2 color Y"
+            },
+            {
+                "index": 17,
+                "action": "Reveal player +2 color G"
+            },
+            {
+                "index": 18,
+                "action": "Reveal player +2 color W"
+            },
+            {
+                "index": 20,
+                "action": "Reveal player +1 rank 1"
+            },
+            {
+                "index": 21,
+                "action": "Reveal player +1 rank 2"
+            },
+            {
+                "index": 22,
+                "action": "Reveal player +1 rank 3"
+            },
+            {
+                "index": 24,
+                "action": "Reveal player +1 rank 5"
+            },
+            {
+                "index": 25,
+                "action": "Reveal player +2 rank 1"
+            },
+            {
+                "index": 28,
+                "action": "Reveal player +2 rank 4"
+            }
+        ],
+        "player_response": {
+            "reason": "Reveal the white 1 to Player +1 to help them understand they can play their W1 card",
+            "action": 13
+        }
+    },
+    {
+        "cnt": "35",
+        "tokens": "Life tokens = 3, Info tokens = 0",
+        "fireworks": "R0 Y1 G0 W0 B0",
+        "your_hand": [
+            {
+                "card": "1",
+                "known": "WX"
+            },
+            {
+                "card": "2",
+                "known": "Unknown"
+            },
+            {
+                "card": "3",
+                "known": "W1"
+            },
+            {
+                "card": "4",
+                "known": "Unknown"
+            },
+            {
+                "card": "5",
+                "known": "Unknown"
+            }
+        ],
+        "other_players": {
+            "+1": [
+                {
+                    "visible": "G4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y4",
+                    "hint": "YX"
+                },
+                {
+                    "visible": "G4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y1",
+                    "hint": "None"
+                },
+                {
+                    "visible": "W1",
+                    "hint": "None"
+                }
+            ],
+            "+2": [
+                {
+                    "visible": "G5",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "G1",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "W4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "G3",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "B1",
+                    "hint": "None"
+                }
+            ]
+        },
+        "legal_actions": [
+            {
+                "index": 0,
+                "action": "Discard 0"
+            },
+            {
+                "index": 1,
+                "action": "Discard 1"
+            },
+            {
+                "index": 2,
+                "action": "Discard 2"
+            },
+            {
+                "index": 3,
+                "action": "Discard 3"
+            },
+            {
+                "index": 4,
+                "action": "Discard 4"
+            },
+            {
+                "index": 5,
+                "action": "Play card 1"
+            },
+            {
+                "index": 6,
+                "action": "Play card 2"
+            },
+            {
+                "index": 7,
+                "action": "Play card 3"
+            },
+            {
+                "index": 8,
+                "action": "Play card 4"
+            },
+            {
+                "index": 9,
+                "action": "Play card 5"
+            }
+        ],
+        "player_response": {
+            "reason": "Play the confirmed White 1 card to start the White firework stack and score a point",
+            "action": 2
+        }
+    },
+    {
+        "cnt": "37",
+        "tokens": "Life tokens = 3, Info tokens = 1",
+        "fireworks": "R0 Y1 G0 W0 B0",
+        "your_hand": [
+            {
+                "card": "1",
+                "known": "Unknown"
+            },
+            {
+                "card": "2",
+                "known": "YX"
+            },
+            {
+                "card": "3",
+                "known": "Unknown"
+            },
+            {
+                "card": "4",
+                "known": "Unknown"
+            },
+            {
+                "card": "5",
+                "known": "Unknown"
+            }
+        ],
+        "other_players": {
+            "+1": [
+                {
+                    "visible": "G5",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "G1",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "W4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "G3",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "B1",
+                    "hint": "None"
+                }
+            ],
+            "+2": [
+                {
+                    "visible": "W5",
+                    "hint": "WX"
+                },
+                {
+                    "visible": "R2",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y3",
+                    "hint": "None"
+                },
+                {
+                    "visible": "R2",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y1",
+                    "hint": "None"
+                }
+            ]
+        },
+        "legal_actions": [
+            {
+                "index": 0,
+                "action": "Discard 0"
+            },
+            {
+                "index": 1,
+                "action": "Discard 1"
+            },
+            {
+                "index": 2,
+                "action": "Discard 2"
+            },
+            {
+                "index": 3,
+                "action": "Discard 3"
+            },
+            {
+                "index": 4,
+                "action": "Discard 4"
+            },
+            {
+                "index": 5,
+                "action": "Play card 1"
+            },
+            {
+                "index": 6,
+                "action": "Play card 2"
+            },
+            {
+                "index": 7,
+                "action": "Play card 3"
+            },
+            {
+                "index": 8,
+                "action": "Play card 4"
+            },
+            {
+                "index": 9,
+                "action": "Play card 5"
+            },
+            {
+                "index": 12,
+                "action": "Reveal player +1 color G"
+            },
+            {
+                "index": 13,
+                "action": "Reveal player +1 color W"
+            },
+            {
+                "index": 14,
+                "action": "Reveal player +1 color B"
+            },
+            {
+                "index": 15,
+                "action": "Reveal player +2 color R"
+            },
+            {
+                "index": 16,
+                "action": "Reveal player +2 color Y"
+            },
+            {
+                "index": 18,
+                "action": "Reveal player +2 color W"
+            },
+            {
+                "index": 20,
+                "action": "Reveal player +1 rank 1"
+            },
+            {
+                "index": 22,
+                "action": "Reveal player +1 rank 3"
+            },
+            {
+                "index": 23,
+                "action": "Reveal player +1 rank 4"
+            },
+            {
+                "index": 24,
+                "action": "Reveal player +1 rank 5"
+            },
+            {
+                "index": 25,
+                "action": "Reveal player +2 rank 1"
+            },
+            {
+                "index": 26,
+                "action": "Reveal player +2 rank 2"
+            },
+            {
+                "index": 27,
+                "action": "Reveal player +2 rank 3"
+            },
+            {
+                "index": 29,
+                "action": "Reveal player +2 rank 5"
+            }
+        ],
+        "player_response": {
+            "reason": "Hint Player +1 to play Green 1, which is safe and will advance the Green firework stack",
+            "action": 14
+        }
+    },
+    {
+        "cnt": "38",
+        "tokens": "Life tokens = 3, Info tokens = 0",
+        "fireworks": "R0 Y1 G0 W0 B0",
+        "your_hand": [
+            {
+                "card": "1",
+                "known": "GX"
+            },
+            {
+                "card": "2",
+                "known": "GX"
+            },
+            {
+                "card": "3",
+                "known": "Unknown"
+            },
+            {
+                "card": "4",
+                "known": "GX"
+            },
+            {
+                "card": "5",
+                "known": "BX"
+            }
+        ],
+        "other_players": {
+            "+1": [
+                {
+                    "visible": "W5",
+                    "hint": "WX"
+                },
+                {
+                    "visible": "R2",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y3",
+                    "hint": "None"
+                },
+                {
+                    "visible": "R2",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y1",
+                    "hint": "None"
+                }
+            ],
+            "+2": [
+                {
+                    "visible": "G4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y4",
+                    "hint": "YX"
+                },
+                {
+                    "visible": "G4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y1",
+                    "hint": "None"
+                },
+                {
+                    "visible": "W1",
+                    "hint": "None"
+                }
+            ]
+        },
+        "legal_actions": [
+            {
+                "index": 0,
+                "action": "Discard 0"
+            },
+            {
+                "index": 1,
+                "action": "Discard 1"
+            },
+            {
+                "index": 2,
+                "action": "Discard 2"
+            },
+            {
+                "index": 3,
+                "action": "Discard 3"
+            },
+            {
+                "index": 4,
+                "action": "Discard 4"
+            },
+            {
+                "index": 5,
+                "action": "Play card 1"
+            },
+            {
+                "index": 6,
+                "action": "Play card 2"
+            },
+            {
+                "index": 7,
+                "action": "Play card 3"
+            },
+            {
+                "index": 8,
+                "action": "Play card 4"
+            },
+            {
+                "index": 9,
+                "action": "Play card 5"
+            }
+        ],
+        "player_response": {
+            "reason": "Discard Card 3 to gain an info token, as no certain plays are available and we need to rebuild info tokens",
+            "action": 3
+        }
+    },
+    {
+        "cnt": "40",
+        "tokens": "Life tokens = 3, Info tokens = 1",
+        "fireworks": "R0 Y1 G0 W0 B0",
+        "your_hand": [
+            {
+                "card": "1",
+                "known": "WX"
+            },
+            {
+                "card": "2",
+                "known": "Unknown"
+            },
+            {
+                "card": "3",
+                "known": "Unknown"
+            },
+            {
+                "card": "4",
+                "known": "Unknown"
+            },
+            {
+                "card": "5",
+                "known": "Unknown"
+            }
+        ],
+        "other_players": {
+            "+1": [
+                {
+                    "visible": "G4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y4",
+                    "hint": "YX"
+                },
+                {
+                    "visible": "G4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y1",
+                    "hint": "None"
+                },
+                {
+                    "visible": "W1",
+                    "hint": "None"
+                }
+            ],
+            "+2": [
+                {
+                    "visible": "G5",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "G1",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "W4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "B1",
+                    "hint": "BX"
+                },
+                {
+                    "visible": "B2",
+                    "hint": "None"
+                }
+            ]
+        },
+        "legal_actions": [
+            {
+                "index": 0,
+                "action": "Discard 0"
+            },
+            {
+                "index": 1,
+                "action": "Discard 1"
+            },
+            {
+                "index": 2,
+                "action": "Discard 2"
+            },
+            {
+                "index": 3,
+                "action": "Discard 3"
+            },
+            {
+                "index": 4,
+                "action": "Discard 4"
+            },
+            {
+                "index": 5,
+                "action": "Play card 1"
+            },
+            {
+                "index": 6,
+                "action": "Play card 2"
+            },
+            {
+                "index": 7,
+                "action": "Play card 3"
+            },
+            {
+                "index": 8,
+                "action": "Play card 4"
+            },
+            {
+                "index": 9,
+                "action": "Play card 5"
+            },
+            {
+                "index": 11,
+                "action": "Reveal player +1 color Y"
+            },
+            {
+                "index": 12,
+                "action": "Reveal player +1 color G"
+            },
+            {
+                "index": 13,
+                "action": "Reveal player +1 color W"
+            },
+            {
+                "index": 17,
+                "action": "Reveal player +2 color G"
+            },
+            {
+                "index": 18,
+                "action": "Reveal player +2 color W"
+            },
+            {
+                "index": 19,
+                "action": "Reveal player +2 color B"
+            },
+            {
+                "index": 20,
+                "action": "Reveal player +1 rank 1"
+            },
+            {
+                "index": 23,
+                "action": "Reveal player +1 rank 4"
+            },
+            {
+                "index": 25,
+                "action": "Reveal player +2 rank 1"
+            },
+            {
+                "index": 26,
+                "action": "Reveal player +2 rank 2"
+            },
+            {
+                "index": 28,
+                "action": "Reveal player +2 rank 4"
+            },
+            {
+                "index": 29,
+                "action": "Reveal player +2 rank 5"
+            }
+        ],
+        "player_response": {
+            "reason": "Hint player +1 about their yellow 1 card to ensure they play it and advance the yellow firework",
+            "action": 11
+        }
+    },
+    {
+        "cnt": "41",
+        "tokens": "Life tokens = 3, Info tokens = 0",
+        "fireworks": "R0 Y1 G0 W0 B0",
+        "your_hand": [
+            {
+                "card": "1",
+                "known": "Unknown"
+            },
+            {
+                "card": "2",
+                "known": "YX"
+            },
+            {
+                "card": "3",
+                "known": "Unknown"
+            },
+            {
+                "card": "4",
+                "known": "YX"
+            },
+            {
+                "card": "5",
+                "known": "Unknown"
+            }
+        ],
+        "other_players": {
+            "+1": [
+                {
+                    "visible": "G5",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "G1",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "W4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "B1",
+                    "hint": "BX"
+                },
+                {
+                    "visible": "B2",
+                    "hint": "None"
+                }
+            ],
+            "+2": [
+                {
+                    "visible": "W5",
+                    "hint": "WX"
+                },
+                {
+                    "visible": "R2",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y3",
+                    "hint": "None"
+                },
+                {
+                    "visible": "R2",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y1",
+                    "hint": "None"
+                }
+            ]
+        },
+        "legal_actions": [
+            {
+                "index": 0,
+                "action": "Discard 0"
+            },
+            {
+                "index": 1,
+                "action": "Discard 1"
+            },
+            {
+                "index": 2,
+                "action": "Discard 2"
+            },
+            {
+                "index": 3,
+                "action": "Discard 3"
+            },
+            {
+                "index": 4,
+                "action": "Discard 4"
+            },
+            {
+                "index": 5,
+                "action": "Play card 1"
+            },
+            {
+                "index": 6,
+                "action": "Play card 2"
+            },
+            {
+                "index": 7,
+                "action": "Play card 3"
+            },
+            {
+                "index": 8,
+                "action": "Play card 4"
+            },
+            {
+                "index": 9,
+                "action": "Play card 5"
+            }
+        ],
+        "player_response": {
+            "reason": "Discard card with least known information to potentially gain an info token",
+            "action": 3
+        }
+    },
+    {
+        "cnt": "43",
+        "tokens": "Life tokens = 3, Info tokens = 1",
+        "fireworks": "R0 Y1 G0 W0 B0",
+        "your_hand": [
+            {
+                "card": "1",
+                "known": "GX"
+            },
+            {
+                "card": "2",
+                "known": "GX"
+            },
+            {
+                "card": "3",
+                "known": "Unknown"
+            },
+            {
+                "card": "4",
+                "known": "BX"
+            },
+            {
+                "card": "5",
+                "known": "Unknown"
+            }
+        ],
+        "other_players": {
+            "+1": [
+                {
+                    "visible": "W5",
+                    "hint": "WX"
+                },
+                {
+                    "visible": "R2",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y3",
+                    "hint": "None"
+                },
+                {
+                    "visible": "R2",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y1",
+                    "hint": "None"
+                }
+            ],
+            "+2": [
+                {
+                    "visible": "G4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y4",
+                    "hint": "YX"
+                },
+                {
+                    "visible": "G4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "W1",
+                    "hint": "None"
+                },
+                {
+                    "visible": "B1",
+                    "hint": "None"
+                }
+            ]
+        },
+        "legal_actions": [
+            {
+                "index": 0,
+                "action": "Discard 0"
+            },
+            {
+                "index": 1,
+                "action": "Discard 1"
+            },
+            {
+                "index": 2,
+                "action": "Discard 2"
+            },
+            {
+                "index": 3,
+                "action": "Discard 3"
+            },
+            {
+                "index": 4,
+                "action": "Discard 4"
+            },
+            {
+                "index": 5,
+                "action": "Play card 1"
+            },
+            {
+                "index": 6,
+                "action": "Play card 2"
+            },
+            {
+                "index": 7,
+                "action": "Play card 3"
+            },
+            {
+                "index": 8,
+                "action": "Play card 4"
+            },
+            {
+                "index": 9,
+                "action": "Play card 5"
+            },
+            {
+                "index": 10,
+                "action": "Reveal player +1 color R"
+            },
+            {
+                "index": 11,
+                "action": "Reveal player +1 color Y"
+            },
+            {
+                "index": 13,
+                "action": "Reveal player +1 color W"
+            },
+            {
+                "index": 16,
+                "action": "Reveal player +2 color Y"
+            },
+            {
+                "index": 17,
+                "action": "Reveal player +2 color G"
+            },
+            {
+                "index": 18,
+                "action": "Reveal player +2 color W"
+            },
+            {
+                "index": 19,
+                "action": "Reveal player +2 color B"
+            },
+            {
+                "index": 20,
+                "action": "Reveal player +1 rank 1"
+            },
+            {
+                "index": 21,
+                "action": "Reveal player +1 rank 2"
+            },
+            {
+                "index": 22,
+                "action": "Reveal player +1 rank 3"
+            },
+            {
+                "index": 24,
+                "action": "Reveal player +1 rank 5"
+            },
+            {
+                "index": 25,
+                "action": "Reveal player +2 rank 1"
+            },
+            {
+                "index": 28,
+                "action": "Reveal player +2 rank 4"
+            }
+        ],
+        "player_response": {
+            "reason": "Hint white 1 to Player +2 to potentially start White fireworks",
+            "action": 18
+        }
+    },
+    {
+        "cnt": "44",
+        "tokens": "Life tokens = 3, Info tokens = 0",
+        "fireworks": "R0 Y1 G0 W0 B0",
+        "your_hand": [
+            {
+                "card": "1",
+                "known": "WX"
+            },
+            {
+                "card": "2",
+                "known": "Unknown"
+            },
+            {
+                "card": "3",
+                "known": "Unknown"
+            },
+            {
+                "card": "4",
+                "known": "Unknown"
+            },
+            {
+                "card": "5",
+                "known": "Unknown"
+            }
+        ],
+        "other_players": {
+            "+1": [
+                {
+                    "visible": "G4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y4",
+                    "hint": "YX"
+                },
+                {
+                    "visible": "G4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "W1",
+                    "hint": "WX"
+                },
+                {
+                    "visible": "B1",
+                    "hint": "None"
+                }
+            ],
+            "+2": [
+                {
+                    "visible": "G5",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "G1",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "W4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "B1",
+                    "hint": "BX"
+                },
+                {
+                    "visible": "B2",
+                    "hint": "None"
+                }
+            ]
+        },
+        "legal_actions": [
+            {
+                "index": 0,
+                "action": "Discard 0"
+            },
+            {
+                "index": 1,
+                "action": "Discard 1"
+            },
+            {
+                "index": 2,
+                "action": "Discard 2"
+            },
+            {
+                "index": 3,
+                "action": "Discard 3"
+            },
+            {
+                "index": 4,
+                "action": "Discard 4"
+            },
+            {
+                "index": 5,
+                "action": "Play card 1"
+            },
+            {
+                "index": 6,
+                "action": "Play card 2"
+            },
+            {
+                "index": 7,
+                "action": "Play card 3"
+            },
+            {
+                "index": 8,
+                "action": "Play card 4"
+            },
+            {
+                "index": 9,
+                "action": "Play card 5"
+            }
+        ],
+        "player_response": {
+            "reason": "Discard an unknown card to gain an info token, which is critical with 0 tokens currently",
+            "action": 2
+        }
+    },
+    {
+        "cnt": "46",
+        "tokens": "Life tokens = 3, Info tokens = 1",
+        "fireworks": "R0 Y1 G0 W0 B0",
+        "your_hand": [
+            {
+                "card": "1",
+                "known": "Unknown"
+            },
+            {
+                "card": "2",
+                "known": "YX"
+            },
+            {
+                "card": "3",
+                "known": "Unknown"
+            },
+            {
+                "card": "4",
+                "known": "WX"
+            },
+            {
+                "card": "5",
+                "known": "Unknown"
+            }
+        ],
+        "other_players": {
+            "+1": [
+                {
+                    "visible": "G5",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "G1",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "W4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "B1",
+                    "hint": "BX"
+                },
+                {
+                    "visible": "B2",
+                    "hint": "None"
+                }
+            ],
+            "+2": [
+                {
+                    "visible": "W5",
+                    "hint": "WX"
+                },
+                {
+                    "visible": "R2",
+                    "hint": "None"
+                },
+                {
+                    "visible": "R2",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y1",
+                    "hint": "None"
+                },
+                {
+                    "visible": "W2",
+                    "hint": "None"
+                }
+            ]
+        },
+        "legal_actions": [
+            {
+                "index": 0,
+                "action": "Discard 0"
+            },
+            {
+                "index": 1,
+                "action": "Discard 1"
+            },
+            {
+                "index": 2,
+                "action": "Discard 2"
+            },
+            {
+                "index": 3,
+                "action": "Discard 3"
+            },
+            {
+                "index": 4,
+                "action": "Discard 4"
+            },
+            {
+                "index": 5,
+                "action": "Play card 1"
+            },
+            {
+                "index": 6,
+                "action": "Play card 2"
+            },
+            {
+                "index": 7,
+                "action": "Play card 3"
+            },
+            {
+                "index": 8,
+                "action": "Play card 4"
+            },
+            {
+                "index": 9,
+                "action": "Play card 5"
+            },
+            {
+                "index": 12,
+                "action": "Reveal player +1 color G"
+            },
+            {
+                "index": 13,
+                "action": "Reveal player +1 color W"
+            },
+            {
+                "index": 14,
+                "action": "Reveal player +1 color B"
+            },
+            {
+                "index": 15,
+                "action": "Reveal player +2 color R"
+            },
+            {
+                "index": 16,
+                "action": "Reveal player +2 color Y"
+            },
+            {
+                "index": 18,
+                "action": "Reveal player +2 color W"
+            },
+            {
+                "index": 20,
+                "action": "Reveal player +1 rank 1"
+            },
+            {
+                "index": 21,
+                "action": "Reveal player +1 rank 2"
+            },
+            {
+                "index": 23,
+                "action": "Reveal player +1 rank 4"
+            },
+            {
+                "index": 24,
+                "action": "Reveal player +1 rank 5"
+            },
+            {
+                "index": 25,
+                "action": "Reveal player +2 rank 1"
+            },
+            {
+                "index": 26,
+                "action": "Reveal player +2 rank 2"
+            },
+            {
+                "index": 29,
+                "action": "Reveal player +2 rank 5"
+            }
+        ],
+        "player_response": {
+            "reason": "Hint Player +1 about Blue 1 to enable safe play of B1 card",
+            "action": 14
+        }
+    },
+    {
+        "cnt": "47",
+        "tokens": "Life tokens = 3, Info tokens = 0",
+        "fireworks": "R0 Y1 G0 W0 B0",
+        "your_hand": [
+            {
+                "card": "1",
+                "known": "GX"
+            },
+            {
+                "card": "2",
+                "known": "GX"
+            },
+            {
+                "card": "3",
+                "known": "Unknown"
+            },
+            {
+                "card": "4",
+                "known": "BX"
+            },
+            {
+                "card": "5",
+                "known": "BX"
+            }
+        ],
+        "other_players": {
+            "+1": [
+                {
+                    "visible": "W5",
+                    "hint": "WX"
+                },
+                {
+                    "visible": "R2",
+                    "hint": "None"
+                },
+                {
+                    "visible": "R2",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y1",
+                    "hint": "None"
+                },
+                {
+                    "visible": "W2",
+                    "hint": "None"
+                }
+            ],
+            "+2": [
+                {
+                    "visible": "G4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y4",
+                    "hint": "YX"
+                },
+                {
+                    "visible": "G4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "W1",
+                    "hint": "WX"
+                },
+                {
+                    "visible": "B1",
+                    "hint": "None"
+                }
+            ]
+        },
+        "legal_actions": [
+            {
+                "index": 0,
+                "action": "Discard 0"
+            },
+            {
+                "index": 1,
+                "action": "Discard 1"
+            },
+            {
+                "index": 2,
+                "action": "Discard 2"
+            },
+            {
+                "index": 3,
+                "action": "Discard 3"
+            },
+            {
+                "index": 4,
+                "action": "Discard 4"
+            },
+            {
+                "index": 5,
+                "action": "Play card 1"
+            },
+            {
+                "index": 6,
+                "action": "Play card 2"
+            },
+            {
+                "index": 7,
+                "action": "Play card 3"
+            },
+            {
+                "index": 8,
+                "action": "Play card 4"
+            },
+            {
+                "index": 9,
+                "action": "Play card 5"
+            }
+        ],
+        "player_response": {
+            "reason": "Discard card with broadest possible identity to potentially gain an info token",
+            "action": 3
+        }
+    },
+    {
+        "cnt": "49",
+        "tokens": "Life tokens = 3, Info tokens = 1",
+        "fireworks": "R0 Y1 G0 W0 B0",
+        "your_hand": [
+            {
+                "card": "1",
+                "known": "WX"
+            },
+            {
+                "card": "2",
+                "known": "Unknown"
+            },
+            {
+                "card": "3",
+                "known": "Unknown"
+            },
+            {
+                "card": "4",
+                "known": "Unknown"
+            },
+            {
+                "card": "5",
+                "known": "Unknown"
+            }
+        ],
+        "other_players": {
+            "+1": [
+                {
+                    "visible": "G4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y4",
+                    "hint": "YX"
+                },
+                {
+                    "visible": "G4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "W1",
+                    "hint": "WX"
+                },
+                {
+                    "visible": "B1",
+                    "hint": "None"
+                }
+            ],
+            "+2": [
+                {
+                    "visible": "G5",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "G1",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "W4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "B2",
+                    "hint": "BX"
+                },
+                {
+                    "visible": "R1",
+                    "hint": "None"
+                }
+            ]
+        },
+        "legal_actions": [
+            {
+                "index": 0,
+                "action": "Discard 0"
+            },
+            {
+                "index": 1,
+                "action": "Discard 1"
+            },
+            {
+                "index": 2,
+                "action": "Discard 2"
+            },
+            {
+                "index": 3,
+                "action": "Discard 3"
+            },
+            {
+                "index": 4,
+                "action": "Discard 4"
+            },
+            {
+                "index": 5,
+                "action": "Play card 1"
+            },
+            {
+                "index": 6,
+                "action": "Play card 2"
+            },
+            {
+                "index": 7,
+                "action": "Play card 3"
+            },
+            {
+                "index": 8,
+                "action": "Play card 4"
+            },
+            {
+                "index": 9,
+                "action": "Play card 5"
+            },
+            {
+                "index": 11,
+                "action": "Reveal player +1 color Y"
+            },
+            {
+                "index": 12,
+                "action": "Reveal player +1 color G"
+            },
+            {
+                "index": 13,
+                "action": "Reveal player +1 color W"
+            },
+            {
+                "index": 14,
+                "action": "Reveal player +1 color B"
+            },
+            {
+                "index": 15,
+                "action": "Reveal player +2 color R"
+            },
+            {
+                "index": 17,
+                "action": "Reveal player +2 color G"
+            },
+            {
+                "index": 18,
+                "action": "Reveal player +2 color W"
+            },
+            {
+                "index": 19,
+                "action": "Reveal player +2 color B"
+            },
+            {
+                "index": 20,
+                "action": "Reveal player +1 rank 1"
+            },
+            {
+                "index": 23,
+                "action": "Reveal player +1 rank 4"
+            },
+            {
+                "index": 25,
+                "action": "Reveal player +2 rank 1"
+            },
+            {
+                "index": 26,
+                "action": "Reveal player +2 rank 2"
+            },
+            {
+                "index": 28,
+                "action": "Reveal player +2 rank 4"
+            },
+            {
+                "index": 29,
+                "action": "Reveal player +2 rank 5"
+            }
+        ],
+        "player_response": {
+            "reason": "Hint the yellow 4 to Player +1 to clarify its playability",
+            "action": 11
+        }
+    },
+    {
+        "cnt": "50",
+        "tokens": "Life tokens = 3, Info tokens = 0",
+        "fireworks": "R0 Y1 G0 W0 B0",
+        "your_hand": [
+            {
+                "card": "1",
+                "known": "Unknown"
+            },
+            {
+                "card": "2",
+                "known": "YX"
+            },
+            {
+                "card": "3",
+                "known": "Unknown"
+            },
+            {
+                "card": "4",
+                "known": "WX"
+            },
+            {
+                "card": "5",
+                "known": "Unknown"
+            }
+        ],
+        "other_players": {
+            "+1": [
+                {
+                    "visible": "G5",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "G1",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "W4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "B2",
+                    "hint": "BX"
+                },
+                {
+                    "visible": "R1",
+                    "hint": "None"
+                }
+            ],
+            "+2": [
+                {
+                    "visible": "W5",
+                    "hint": "WX"
+                },
+                {
+                    "visible": "R2",
+                    "hint": "None"
+                },
+                {
+                    "visible": "R2",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y1",
+                    "hint": "None"
+                },
+                {
+                    "visible": "W2",
+                    "hint": "None"
+                }
+            ]
+        },
+        "legal_actions": [
+            {
+                "index": 0,
+                "action": "Discard 0"
+            },
+            {
+                "index": 1,
+                "action": "Discard 1"
+            },
+            {
+                "index": 2,
+                "action": "Discard 2"
+            },
+            {
+                "index": 3,
+                "action": "Discard 3"
+            },
+            {
+                "index": 4,
+                "action": "Discard 4"
+            },
+            {
+                "index": 5,
+                "action": "Play card 1"
+            },
+            {
+                "index": 6,
+                "action": "Play card 2"
+            },
+            {
+                "index": 7,
+                "action": "Play card 3"
+            },
+            {
+                "index": 8,
+                "action": "Play card 4"
+            },
+            {
+                "index": 9,
+                "action": "Play card 5"
+            }
+        ],
+        "player_response": {
+            "reason": "Discard an unknown card to gain an info token, preparing to help teammate play G1 and Y1",
+            "action": 0
+        }
+    },
+    {
+        "cnt": "52",
+        "tokens": "Life tokens = 3, Info tokens = 1",
+        "fireworks": "R0 Y1 G0 W0 B0",
+        "your_hand": [
+            {
+                "card": "1",
+                "known": "GX"
+            },
+            {
+                "card": "2",
+                "known": "GX"
+            },
+            {
+                "card": "3",
+                "known": "Unknown"
+            },
+            {
+                "card": "4",
+                "known": "BX"
+            },
+            {
+                "card": "5",
+                "known": "Unknown"
+            }
+        ],
+        "other_players": {
+            "+1": [
+                {
+                    "visible": "W5",
+                    "hint": "WX"
+                },
+                {
+                    "visible": "R2",
+                    "hint": "None"
+                },
+                {
+                    "visible": "R2",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y1",
+                    "hint": "None"
+                },
+                {
+                    "visible": "W2",
+                    "hint": "None"
+                }
+            ],
+            "+2": [
+                {
+                    "visible": "Y4",
+                    "hint": "YX"
+                },
+                {
+                    "visible": "G4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "W1",
+                    "hint": "WX"
+                },
+                {
+                    "visible": "B1",
+                    "hint": "None"
+                },
+                {
+                    "visible": "B3",
+                    "hint": "None"
+                }
+            ]
+        },
+        "legal_actions": [
+            {
+                "index": 0,
+                "action": "Discard 0"
+            },
+            {
+                "index": 1,
+                "action": "Discard 1"
+            },
+            {
+                "index": 2,
+                "action": "Discard 2"
+            },
+            {
+                "index": 3,
+                "action": "Discard 3"
+            },
+            {
+                "index": 4,
+                "action": "Discard 4"
+            },
+            {
+                "index": 5,
+                "action": "Play card 1"
+            },
+            {
+                "index": 6,
+                "action": "Play card 2"
+            },
+            {
+                "index": 7,
+                "action": "Play card 3"
+            },
+            {
+                "index": 8,
+                "action": "Play card 4"
+            },
+            {
+                "index": 9,
+                "action": "Play card 5"
+            },
+            {
+                "index": 10,
+                "action": "Reveal player +1 color R"
+            },
+            {
+                "index": 11,
+                "action": "Reveal player +1 color Y"
+            },
+            {
+                "index": 13,
+                "action": "Reveal player +1 color W"
+            },
+            {
+                "index": 16,
+                "action": "Reveal player +2 color Y"
+            },
+            {
+                "index": 17,
+                "action": "Reveal player +2 color G"
+            },
+            {
+                "index": 18,
+                "action": "Reveal player +2 color W"
+            },
+            {
+                "index": 19,
+                "action": "Reveal player +2 color B"
+            },
+            {
+                "index": 20,
+                "action": "Reveal player +1 rank 1"
+            },
+            {
+                "index": 21,
+                "action": "Reveal player +1 rank 2"
+            },
+            {
+                "index": 24,
+                "action": "Reveal player +1 rank 5"
+            },
+            {
+                "index": 25,
+                "action": "Reveal player +2 rank 1"
+            },
+            {
+                "index": 27,
+                "action": "Reveal player +2 rank 3"
+            },
+            {
+                "index": 28,
+                "action": "Reveal player +2 rank 4"
+            }
+        ],
+        "player_response": {
+            "reason": "Hint Player +2 about their rank 1 cards (W1 and B1), which can potentially start white and blue stacks",
+            "action": 25
+        }
+    },
+    {
+        "cnt": "53",
+        "tokens": "Life tokens = 3, Info tokens = 0",
+        "fireworks": "R0 Y1 G0 W0 B0",
+        "your_hand": [
+            {
+                "card": "1",
+                "known": "WX"
+            },
+            {
+                "card": "2",
+                "known": "Unknown"
+            },
+            {
+                "card": "3",
+                "known": "Unknown"
+            },
+            {
+                "card": "4",
+                "known": "Unknown"
+            },
+            {
+                "card": "5",
+                "known": "Unknown"
+            }
+        ],
+        "other_players": {
+            "+1": [
+                {
+                    "visible": "Y4",
+                    "hint": "YX"
+                },
+                {
+                    "visible": "G4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "W1",
+                    "hint": "W1"
+                },
+                {
+                    "visible": "B1",
+                    "hint": "None"
+                },
+                {
+                    "visible": "B3",
+                    "hint": "None"
+                }
+            ],
+            "+2": [
+                {
+                    "visible": "G5",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "G1",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "W4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "B2",
+                    "hint": "BX"
+                },
+                {
+                    "visible": "R1",
+                    "hint": "None"
+                }
+            ]
+        },
+        "legal_actions": [
+            {
+                "index": 0,
+                "action": "Discard 0"
+            },
+            {
+                "index": 1,
+                "action": "Discard 1"
+            },
+            {
+                "index": 2,
+                "action": "Discard 2"
+            },
+            {
+                "index": 3,
+                "action": "Discard 3"
+            },
+            {
+                "index": 4,
+                "action": "Discard 4"
+            },
+            {
+                "index": 5,
+                "action": "Play card 1"
+            },
+            {
+                "index": 6,
+                "action": "Play card 2"
+            },
+            {
+                "index": 7,
+                "action": "Play card 3"
+            },
+            {
+                "index": 8,
+                "action": "Play card 4"
+            },
+            {
+                "index": 9,
+                "action": "Play card 5"
+            }
+        ],
+        "player_response": {
+            "reason": "Discard an uncertain card to gain an info token, enabling future hints to help complete firework stacks",
+            "action": 1
+        }
+    },
+    {
+        "cnt": "55",
+        "tokens": "Life tokens = 3, Info tokens = 1",
+        "fireworks": "R0 Y1 G0 W0 B0",
+        "your_hand": [
+            {
+                "card": "1",
+                "known": "YX"
+            },
+            {
+                "card": "2",
+                "known": "Unknown"
+            },
+            {
+                "card": "3",
+                "known": "W1"
+            },
+            {
+                "card": "4",
+                "known": "X1"
+            },
+            {
+                "card": "5",
+                "known": "Unknown"
+            }
+        ],
+        "other_players": {
+            "+1": [
+                {
+                    "visible": "G5",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "G1",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "W4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "B2",
+                    "hint": "BX"
+                },
+                {
+                    "visible": "R1",
+                    "hint": "None"
+                }
+            ],
+            "+2": [
+                {
+                    "visible": "W5",
+                    "hint": "WX"
+                },
+                {
+                    "visible": "R2",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y1",
+                    "hint": "None"
+                },
+                {
+                    "visible": "W2",
+                    "hint": "None"
+                },
+                {
+                    "visible": "B4",
+                    "hint": "None"
+                }
+            ]
+        },
+        "legal_actions": [
+            {
+                "index": 0,
+                "action": "Discard 0"
+            },
+            {
+                "index": 1,
+                "action": "Discard 1"
+            },
+            {
+                "index": 2,
+                "action": "Discard 2"
+            },
+            {
+                "index": 3,
+                "action": "Discard 3"
+            },
+            {
+                "index": 4,
+                "action": "Discard 4"
+            },
+            {
+                "index": 5,
+                "action": "Play card 1"
+            },
+            {
+                "index": 6,
+                "action": "Play card 2"
+            },
+            {
+                "index": 7,
+                "action": "Play card 3"
+            },
+            {
+                "index": 8,
+                "action": "Play card 4"
+            },
+            {
+                "index": 9,
+                "action": "Play card 5"
+            },
+            {
+                "index": 10,
+                "action": "Reveal player +1 color R"
+            },
+            {
+                "index": 12,
+                "action": "Reveal player +1 color G"
+            },
+            {
+                "index": 13,
+                "action": "Reveal player +1 color W"
+            },
+            {
+                "index": 14,
+                "action": "Reveal player +1 color B"
+            },
+            {
+                "index": 15,
+                "action": "Reveal player +2 color R"
+            },
+            {
+                "index": 16,
+                "action": "Reveal player +2 color Y"
+            },
+            {
+                "index": 18,
+                "action": "Reveal player +2 color W"
+            },
+            {
+                "index": 19,
+                "action": "Reveal player +2 color B"
+            },
+            {
+                "index": 20,
+                "action": "Reveal player +1 rank 1"
+            },
+            {
+                "index": 21,
+                "action": "Reveal player +1 rank 2"
+            },
+            {
+                "index": 23,
+                "action": "Reveal player +1 rank 4"
+            },
+            {
+                "index": 24,
+                "action": "Reveal player +1 rank 5"
+            },
+            {
+                "index": 25,
+                "action": "Reveal player +2 rank 1"
+            },
+            {
+                "index": 26,
+                "action": "Reveal player +2 rank 2"
+            },
+            {
+                "index": 28,
+                "action": "Reveal player +2 rank 4"
+            },
+            {
+                "index": 29,
+                "action": "Reveal player +2 rank 5"
+            }
+        ],
+        "player_response": {
+            "reason": "Play the confirmed White 1 card to start the White firework stack",
+            "action": 8
+        }
+    },
+    {
+        "cnt": "57",
+        "tokens": "Life tokens = 3, Info tokens = 1",
+        "fireworks": "R0 Y1 G0 W0 B1",
+        "your_hand": [
+            {
+                "card": "1",
+                "known": "GX"
+            },
+            {
+                "card": "2",
+                "known": "GX"
+            },
+            {
+                "card": "3",
+                "known": "Unknown"
+            },
+            {
+                "card": "4",
+                "known": "BX"
+            },
+            {
+                "card": "5",
+                "known": "Unknown"
+            }
+        ],
+        "other_players": {
+            "+1": [
+                {
+                    "visible": "W5",
+                    "hint": "WX"
+                },
+                {
+                    "visible": "R2",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y1",
+                    "hint": "None"
+                },
+                {
+                    "visible": "W2",
+                    "hint": "None"
+                },
+                {
+                    "visible": "B4",
+                    "hint": "None"
+                }
+            ],
+            "+2": [
+                {
+                    "visible": "Y4",
+                    "hint": "YX"
+                },
+                {
+                    "visible": "G4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "W1",
+                    "hint": "W1"
+                },
+                {
+                    "visible": "B3",
+                    "hint": "None"
+                },
+                {
+                    "visible": "G1",
+                    "hint": "None"
+                }
+            ]
+        },
+        "legal_actions": [
+            {
+                "index": 0,
+                "action": "Discard 0"
+            },
+            {
+                "index": 1,
+                "action": "Discard 1"
+            },
+            {
+                "index": 2,
+                "action": "Discard 2"
+            },
+            {
+                "index": 3,
+                "action": "Discard 3"
+            },
+            {
+                "index": 4,
+                "action": "Discard 4"
+            },
+            {
+                "index": 5,
+                "action": "Play card 1"
+            },
+            {
+                "index": 6,
+                "action": "Play card 2"
+            },
+            {
+                "index": 7,
+                "action": "Play card 3"
+            },
+            {
+                "index": 8,
+                "action": "Play card 4"
+            },
+            {
+                "index": 9,
+                "action": "Play card 5"
+            },
+            {
+                "index": 10,
+                "action": "Reveal player +1 color R"
+            },
+            {
+                "index": 11,
+                "action": "Reveal player +1 color Y"
+            },
+            {
+                "index": 13,
+                "action": "Reveal player +1 color W"
+            },
+            {
+                "index": 14,
+                "action": "Reveal player +1 color B"
+            },
+            {
+                "index": 16,
+                "action": "Reveal player +2 color Y"
+            },
+            {
+                "index": 17,
+                "action": "Reveal player +2 color G"
+            },
+            {
+                "index": 18,
+                "action": "Reveal player +2 color W"
+            },
+            {
+                "index": 19,
+                "action": "Reveal player +2 color B"
+            },
+            {
+                "index": 20,
+                "action": "Reveal player +1 rank 1"
+            },
+            {
+                "index": 21,
+                "action": "Reveal player +1 rank 2"
+            },
+            {
+                "index": 23,
+                "action": "Reveal player +1 rank 4"
+            },
+            {
+                "index": 24,
+                "action": "Reveal player +1 rank 5"
+            },
+            {
+                "index": 25,
+                "action": "Reveal player +2 rank 1"
+            },
+            {
+                "index": 27,
+                "action": "Reveal player +2 rank 3"
+            },
+            {
+                "index": 28,
+                "action": "Reveal player +2 rank 4"
+            }
+        ],
+        "player_response": {
+            "reason": "Hint Player +2 about the green card to potentially play G1",
+            "action": 17
+        }
+    },
+    {
+        "cnt": "58",
+        "tokens": "Life tokens = 3, Info tokens = 0",
+        "fireworks": "R0 Y1 G0 W0 B1",
+        "your_hand": [
+            {
+                "card": "1",
+                "known": "WX"
+            },
+            {
+                "card": "2",
+                "known": "Unknown"
+            },
+            {
+                "card": "3",
+                "known": "Unknown"
+            },
+            {
+                "card": "4",
+                "known": "Unknown"
+            },
+            {
+                "card": "5",
+                "known": "Unknown"
+            }
+        ],
+        "other_players": {
+            "+1": [
+                {
+                    "visible": "Y4",
+                    "hint": "YX"
+                },
+                {
+                    "visible": "G4",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "W1",
+                    "hint": "W1"
+                },
+                {
+                    "visible": "B3",
+                    "hint": "None"
+                },
+                {
+                    "visible": "G1",
+                    "hint": "GX"
+                }
+            ],
+            "+2": [
+                {
+                    "visible": "G5",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "G1",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "W4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "B2",
+                    "hint": "BX"
+                },
+                {
+                    "visible": "R1",
+                    "hint": "None"
+                }
+            ]
+        },
+        "legal_actions": [
+            {
+                "index": 0,
+                "action": "Discard 0"
+            },
+            {
+                "index": 1,
+                "action": "Discard 1"
+            },
+            {
+                "index": 2,
+                "action": "Discard 2"
+            },
+            {
+                "index": 3,
+                "action": "Discard 3"
+            },
+            {
+                "index": 4,
+                "action": "Discard 4"
+            },
+            {
+                "index": 5,
+                "action": "Play card 1"
+            },
+            {
+                "index": 6,
+                "action": "Play card 2"
+            },
+            {
+                "index": 7,
+                "action": "Play card 3"
+            },
+            {
+                "index": 8,
+                "action": "Play card 4"
+            },
+            {
+                "index": 9,
+                "action": "Play card 5"
+            }
+        ],
+        "player_response": {
+            "reason": "No safe play available, attempting to gain an info token by discarding an unknown card",
+            "action": 2
+        }
+    },
+    {
+        "cnt": "60",
+        "tokens": "Life tokens = 3, Info tokens = 1",
+        "fireworks": "R0 Y1 G0 W0 B1",
+        "your_hand": [
+            {
+                "card": "1",
+                "known": "YX"
+            },
+            {
+                "card": "2",
+                "known": "GX"
+            },
+            {
+                "card": "3",
+                "known": "W1"
+            },
+            {
+                "card": "4",
+                "known": "Unknown"
+            },
+            {
+                "card": "5",
+                "known": "GX"
+            }
+        ],
+        "other_players": {
+            "+1": [
+                {
+                    "visible": "G5",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "G1",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "W4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "B2",
+                    "hint": "BX"
+                },
+                {
+                    "visible": "R1",
+                    "hint": "None"
+                }
+            ],
+            "+2": [
+                {
+                    "visible": "W5",
+                    "hint": "WX"
+                },
+                {
+                    "visible": "R2",
+                    "hint": "None"
+                },
+                {
+                    "visible": "W2",
+                    "hint": "None"
+                },
+                {
+                    "visible": "B4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y4",
+                    "hint": "None"
+                }
+            ]
+        },
+        "legal_actions": [
+            {
+                "index": 0,
+                "action": "Discard 0"
+            },
+            {
+                "index": 1,
+                "action": "Discard 1"
+            },
+            {
+                "index": 2,
+                "action": "Discard 2"
+            },
+            {
+                "index": 3,
+                "action": "Discard 3"
+            },
+            {
+                "index": 4,
+                "action": "Discard 4"
+            },
+            {
+                "index": 5,
+                "action": "Play card 1"
+            },
+            {
+                "index": 6,
+                "action": "Play card 2"
+            },
+            {
+                "index": 7,
+                "action": "Play card 3"
+            },
+            {
+                "index": 8,
+                "action": "Play card 4"
+            },
+            {
+                "index": 9,
+                "action": "Play card 5"
+            },
+            {
+                "index": 10,
+                "action": "Reveal player +1 color R"
+            },
+            {
+                "index": 12,
+                "action": "Reveal player +1 color G"
+            },
+            {
+                "index": 13,
+                "action": "Reveal player +1 color W"
+            },
+            {
+                "index": 14,
+                "action": "Reveal player +1 color B"
+            },
+            {
+                "index": 15,
+                "action": "Reveal player +2 color R"
+            },
+            {
+                "index": 16,
+                "action": "Reveal player +2 color Y"
+            },
+            {
+                "index": 18,
+                "action": "Reveal player +2 color W"
+            },
+            {
+                "index": 19,
+                "action": "Reveal player +2 color B"
+            },
+            {
+                "index": 20,
+                "action": "Reveal player +1 rank 1"
+            },
+            {
+                "index": 21,
+                "action": "Reveal player +1 rank 2"
+            },
+            {
+                "index": 23,
+                "action": "Reveal player +1 rank 4"
+            },
+            {
+                "index": 24,
+                "action": "Reveal player +1 rank 5"
+            },
+            {
+                "index": 26,
+                "action": "Reveal player +2 rank 2"
+            },
+            {
+                "index": 28,
+                "action": "Reveal player +2 rank 4"
+            },
+            {
+                "index": 29,
+                "action": "Reveal player +2 rank 5"
+            }
+        ],
+        "player_response": {
+            "reason": "Play the certain White 1 card to safely extend the White firework stack and preserve our limited resources",
+            "action": 7
+        }
+    },
+    {
+        "cnt": "62",
+        "tokens": "Life tokens = 3, Info tokens = 1",
+        "fireworks": "R0 Y1 G0 W1 B1",
+        "your_hand": [
+            {
+                "card": "1",
+                "known": "GX"
+            },
+            {
+                "card": "2",
+                "known": "GX"
+            },
+            {
+                "card": "3",
+                "known": "Unknown"
+            },
+            {
+                "card": "4",
+                "known": "BX"
+            },
+            {
+                "card": "5",
+                "known": "Unknown"
+            }
+        ],
+        "other_players": {
+            "+1": [
+                {
+                    "visible": "W5",
+                    "hint": "WX"
+                },
+                {
+                    "visible": "R2",
+                    "hint": "None"
+                },
+                {
+                    "visible": "W2",
+                    "hint": "None"
+                },
+                {
+                    "visible": "B4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y4",
+                    "hint": "None"
+                }
+            ],
+            "+2": [
+                {
+                    "visible": "Y4",
+                    "hint": "YX"
+                },
+                {
+                    "visible": "G4",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "B3",
+                    "hint": "None"
+                },
+                {
+                    "visible": "G1",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "R1",
+                    "hint": "None"
+                }
+            ]
+        },
+        "legal_actions": [
+            {
+                "index": 0,
+                "action": "Discard 0"
+            },
+            {
+                "index": 1,
+                "action": "Discard 1"
+            },
+            {
+                "index": 2,
+                "action": "Discard 2"
+            },
+            {
+                "index": 3,
+                "action": "Discard 3"
+            },
+            {
+                "index": 4,
+                "action": "Discard 4"
+            },
+            {
+                "index": 5,
+                "action": "Play card 1"
+            },
+            {
+                "index": 6,
+                "action": "Play card 2"
+            },
+            {
+                "index": 7,
+                "action": "Play card 3"
+            },
+            {
+                "index": 8,
+                "action": "Play card 4"
+            },
+            {
+                "index": 9,
+                "action": "Play card 5"
+            },
+            {
+                "index": 10,
+                "action": "Reveal player +1 color R"
+            },
+            {
+                "index": 11,
+                "action": "Reveal player +1 color Y"
+            },
+            {
+                "index": 13,
+                "action": "Reveal player +1 color W"
+            },
+            {
+                "index": 14,
+                "action": "Reveal player +1 color B"
+            },
+            {
+                "index": 15,
+                "action": "Reveal player +2 color R"
+            },
+            {
+                "index": 16,
+                "action": "Reveal player +2 color Y"
+            },
+            {
+                "index": 17,
+                "action": "Reveal player +2 color G"
+            },
+            {
+                "index": 19,
+                "action": "Reveal player +2 color B"
+            },
+            {
+                "index": 21,
+                "action": "Reveal player +1 rank 2"
+            },
+            {
+                "index": 23,
+                "action": "Reveal player +1 rank 4"
+            },
+            {
+                "index": 24,
+                "action": "Reveal player +1 rank 5"
+            },
+            {
+                "index": 25,
+                "action": "Reveal player +2 rank 1"
+            },
+            {
+                "index": 27,
+                "action": "Reveal player +2 rank 3"
+            },
+            {
+                "index": 28,
+                "action": "Reveal player +2 rank 4"
+            }
+        ],
+        "player_response": {
+            "reason": "Hint Player +2 about their green 1 card to help start the green stack",
+            "action": 17
+        }
+    },
+    {
+        "cnt": "63",
+        "tokens": "Life tokens = 3, Info tokens = 0",
+        "fireworks": "R0 Y1 G0 W1 B1",
+        "your_hand": [
+            {
+                "card": "1",
+                "known": "WX"
+            },
+            {
+                "card": "2",
+                "known": "Unknown"
+            },
+            {
+                "card": "3",
+                "known": "Unknown"
+            },
+            {
+                "card": "4",
+                "known": "Unknown"
+            },
+            {
+                "card": "5",
+                "known": "Unknown"
+            }
+        ],
+        "other_players": {
+            "+1": [
+                {
+                    "visible": "Y4",
+                    "hint": "YX"
+                },
+                {
+                    "visible": "G4",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "B3",
+                    "hint": "None"
+                },
+                {
+                    "visible": "G1",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "R1",
+                    "hint": "None"
+                }
+            ],
+            "+2": [
+                {
+                    "visible": "G5",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "G1",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "W4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "B2",
+                    "hint": "BX"
+                },
+                {
+                    "visible": "R1",
+                    "hint": "None"
+                }
+            ]
+        },
+        "legal_actions": [
+            {
+                "index": 0,
+                "action": "Discard 0"
+            },
+            {
+                "index": 1,
+                "action": "Discard 1"
+            },
+            {
+                "index": 2,
+                "action": "Discard 2"
+            },
+            {
+                "index": 3,
+                "action": "Discard 3"
+            },
+            {
+                "index": 4,
+                "action": "Discard 4"
+            },
+            {
+                "index": 5,
+                "action": "Play card 1"
+            },
+            {
+                "index": 6,
+                "action": "Play card 2"
+            },
+            {
+                "index": 7,
+                "action": "Play card 3"
+            },
+            {
+                "index": 8,
+                "action": "Play card 4"
+            },
+            {
+                "index": 9,
+                "action": "Play card 5"
+            }
+        ],
+        "player_response": {
+            "reason": "Discard Card 2 to gain an info token, as it has the least known information and lowest risk of being a critical card",
+            "action": 1
+        }
+    },
+    {
+        "cnt": "65",
+        "tokens": "Life tokens = 3, Info tokens = 1",
+        "fireworks": "R0 Y1 G0 W1 B1",
+        "your_hand": [
+            {
+                "card": "1",
+                "known": "YX"
+            },
+            {
+                "card": "2",
+                "known": "GX"
+            },
+            {
+                "card": "3",
+                "known": "Unknown"
+            },
+            {
+                "card": "4",
+                "known": "GX"
+            },
+            {
+                "card": "5",
+                "known": "Unknown"
+            }
+        ],
+        "other_players": {
+            "+1": [
+                {
+                    "visible": "G5",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "G1",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "W4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "B2",
+                    "hint": "BX"
+                },
+                {
+                    "visible": "R1",
+                    "hint": "None"
+                }
+            ],
+            "+2": [
+                {
+                    "visible": "W5",
+                    "hint": "WX"
+                },
+                {
+                    "visible": "W2",
+                    "hint": "None"
+                },
+                {
+                    "visible": "B4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "B4",
+                    "hint": "None"
+                }
+            ]
+        },
+        "legal_actions": [
+            {
+                "index": 0,
+                "action": "Discard 0"
+            },
+            {
+                "index": 1,
+                "action": "Discard 1"
+            },
+            {
+                "index": 2,
+                "action": "Discard 2"
+            },
+            {
+                "index": 3,
+                "action": "Discard 3"
+            },
+            {
+                "index": 4,
+                "action": "Discard 4"
+            },
+            {
+                "index": 5,
+                "action": "Play card 1"
+            },
+            {
+                "index": 6,
+                "action": "Play card 2"
+            },
+            {
+                "index": 7,
+                "action": "Play card 3"
+            },
+            {
+                "index": 8,
+                "action": "Play card 4"
+            },
+            {
+                "index": 9,
+                "action": "Play card 5"
+            },
+            {
+                "index": 10,
+                "action": "Reveal player +1 color R"
+            },
+            {
+                "index": 12,
+                "action": "Reveal player +1 color G"
+            },
+            {
+                "index": 13,
+                "action": "Reveal player +1 color W"
+            },
+            {
+                "index": 14,
+                "action": "Reveal player +1 color B"
+            },
+            {
+                "index": 16,
+                "action": "Reveal player +2 color Y"
+            },
+            {
+                "index": 18,
+                "action": "Reveal player +2 color W"
+            },
+            {
+                "index": 19,
+                "action": "Reveal player +2 color B"
+            },
+            {
+                "index": 20,
+                "action": "Reveal player +1 rank 1"
+            },
+            {
+                "index": 21,
+                "action": "Reveal player +1 rank 2"
+            },
+            {
+                "index": 23,
+                "action": "Reveal player +1 rank 4"
+            },
+            {
+                "index": 24,
+                "action": "Reveal player +1 rank 5"
+            },
+            {
+                "index": 26,
+                "action": "Reveal player +2 rank 2"
+            },
+            {
+                "index": 28,
+                "action": "Reveal player +2 rank 4"
+            },
+            {
+                "index": 29,
+                "action": "Reveal player +2 rank 5"
+            }
+        ],
+        "player_response": {
+            "reason": "Discard an unknown card (Card 3) to gain an info token, which will help future turns",
+            "action": 2
+        }
+    },
+    {
+        "cnt": "67",
+        "tokens": "Life tokens = 3, Info tokens = 2",
+        "fireworks": "R0 Y1 G0 W1 B1",
+        "your_hand": [
+            {
+                "card": "1",
+                "known": "GX"
+            },
+            {
+                "card": "2",
+                "known": "GX"
+            },
+            {
+                "card": "3",
+                "known": "Unknown"
+            },
+            {
+                "card": "4",
+                "known": "BX"
+            },
+            {
+                "card": "5",
+                "known": "Unknown"
+            }
+        ],
+        "other_players": {
+            "+1": [
+                {
+                    "visible": "W5",
+                    "hint": "WX"
+                },
+                {
+                    "visible": "W2",
+                    "hint": "None"
+                },
+                {
+                    "visible": "B4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "B4",
+                    "hint": "None"
+                }
+            ],
+            "+2": [
+                {
+                    "visible": "Y4",
+                    "hint": "YX"
+                },
+                {
+                    "visible": "G4",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "G1",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "R1",
+                    "hint": "None"
+                },
+                {
+                    "visible": "R4",
+                    "hint": "None"
+                }
+            ]
+        },
+        "legal_actions": [
+            {
+                "index": 0,
+                "action": "Discard 0"
+            },
+            {
+                "index": 1,
+                "action": "Discard 1"
+            },
+            {
+                "index": 2,
+                "action": "Discard 2"
+            },
+            {
+                "index": 3,
+                "action": "Discard 3"
+            },
+            {
+                "index": 4,
+                "action": "Discard 4"
+            },
+            {
+                "index": 5,
+                "action": "Play card 1"
+            },
+            {
+                "index": 6,
+                "action": "Play card 2"
+            },
+            {
+                "index": 7,
+                "action": "Play card 3"
+            },
+            {
+                "index": 8,
+                "action": "Play card 4"
+            },
+            {
+                "index": 9,
+                "action": "Play card 5"
+            },
+            {
+                "index": 11,
+                "action": "Reveal player +1 color Y"
+            },
+            {
+                "index": 13,
+                "action": "Reveal player +1 color W"
+            },
+            {
+                "index": 14,
+                "action": "Reveal player +1 color B"
+            },
+            {
+                "index": 15,
+                "action": "Reveal player +2 color R"
+            },
+            {
+                "index": 16,
+                "action": "Reveal player +2 color Y"
+            },
+            {
+                "index": 17,
+                "action": "Reveal player +2 color G"
+            },
+            {
+                "index": 21,
+                "action": "Reveal player +1 rank 2"
+            },
+            {
+                "index": 23,
+                "action": "Reveal player +1 rank 4"
+            },
+            {
+                "index": 24,
+                "action": "Reveal player +1 rank 5"
+            },
+            {
+                "index": 25,
+                "action": "Reveal player +2 rank 1"
+            },
+            {
+                "index": 28,
+                "action": "Reveal player +2 rank 4"
+            }
+        ],
+        "player_response": {
+            "reason": "Hint Player +2 about Green color to help play G1",
+            "action": 17
+        }
+    },
+    {
+        "cnt": "68",
+        "tokens": "Life tokens = 3, Info tokens = 1",
+        "fireworks": "R0 Y1 G0 W1 B1",
+        "your_hand": [
+            {
+                "card": "1",
+                "known": "WX"
+            },
+            {
+                "card": "2",
+                "known": "Unknown"
+            },
+            {
+                "card": "3",
+                "known": "Unknown"
+            },
+            {
+                "card": "4",
+                "known": "Unknown"
+            },
+            {
+                "card": "5",
+                "known": "Unknown"
+            }
+        ],
+        "other_players": {
+            "+1": [
+                {
+                    "visible": "Y4",
+                    "hint": "YX"
+                },
+                {
+                    "visible": "G4",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "G1",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "R1",
+                    "hint": "None"
+                },
+                {
+                    "visible": "R4",
+                    "hint": "None"
+                }
+            ],
+            "+2": [
+                {
+                    "visible": "G5",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "G1",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "W4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "B2",
+                    "hint": "BX"
+                },
+                {
+                    "visible": "R1",
+                    "hint": "None"
+                }
+            ]
+        },
+        "legal_actions": [
+            {
+                "index": 0,
+                "action": "Discard 0"
+            },
+            {
+                "index": 1,
+                "action": "Discard 1"
+            },
+            {
+                "index": 2,
+                "action": "Discard 2"
+            },
+            {
+                "index": 3,
+                "action": "Discard 3"
+            },
+            {
+                "index": 4,
+                "action": "Discard 4"
+            },
+            {
+                "index": 5,
+                "action": "Play card 1"
+            },
+            {
+                "index": 6,
+                "action": "Play card 2"
+            },
+            {
+                "index": 7,
+                "action": "Play card 3"
+            },
+            {
+                "index": 8,
+                "action": "Play card 4"
+            },
+            {
+                "index": 9,
+                "action": "Play card 5"
+            },
+            {
+                "index": 10,
+                "action": "Reveal player +1 color R"
+            },
+            {
+                "index": 11,
+                "action": "Reveal player +1 color Y"
+            },
+            {
+                "index": 12,
+                "action": "Reveal player +1 color G"
+            },
+            {
+                "index": 15,
+                "action": "Reveal player +2 color R"
+            },
+            {
+                "index": 17,
+                "action": "Reveal player +2 color G"
+            },
+            {
+                "index": 18,
+                "action": "Reveal player +2 color W"
+            },
+            {
+                "index": 19,
+                "action": "Reveal player +2 color B"
+            },
+            {
+                "index": 20,
+                "action": "Reveal player +1 rank 1"
+            },
+            {
+                "index": 23,
+                "action": "Reveal player +1 rank 4"
+            },
+            {
+                "index": 25,
+                "action": "Reveal player +2 rank 1"
+            },
+            {
+                "index": 26,
+                "action": "Reveal player +2 rank 2"
+            },
+            {
+                "index": 28,
+                "action": "Reveal player +2 rank 4"
+            },
+            {
+                "index": 29,
+                "action": "Reveal player +2 rank 5"
+            }
+        ],
+        "player_response": {
+            "reason": "Hint Player +1 about the Green 1 card to encourage playing it on the Green stack",
+            "action": 12
+        }
+    },
+    {
+        "cnt": "69",
+        "tokens": "Life tokens = 3, Info tokens = 0",
+        "fireworks": "R0 Y1 G0 W1 B1",
+        "your_hand": [
+            {
+                "card": "1",
+                "known": "YX"
+            },
+            {
+                "card": "2",
+                "known": "GX"
+            },
+            {
+                "card": "3",
+                "known": "GX"
+            },
+            {
+                "card": "4",
+                "known": "Unknown"
+            },
+            {
+                "card": "5",
+                "known": "Unknown"
+            }
+        ],
+        "other_players": {
+            "+1": [
+                {
+                    "visible": "G5",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "G1",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "W4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "B2",
+                    "hint": "BX"
+                },
+                {
+                    "visible": "R1",
+                    "hint": "None"
+                }
+            ],
+            "+2": [
+                {
+                    "visible": "W5",
+                    "hint": "WX"
+                },
+                {
+                    "visible": "W2",
+                    "hint": "None"
+                },
+                {
+                    "visible": "B4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "B4",
+                    "hint": "None"
+                }
+            ]
+        },
+        "legal_actions": [
+            {
+                "index": 0,
+                "action": "Discard 0"
+            },
+            {
+                "index": 1,
+                "action": "Discard 1"
+            },
+            {
+                "index": 2,
+                "action": "Discard 2"
+            },
+            {
+                "index": 3,
+                "action": "Discard 3"
+            },
+            {
+                "index": 4,
+                "action": "Discard 4"
+            },
+            {
+                "index": 5,
+                "action": "Play card 1"
+            },
+            {
+                "index": 6,
+                "action": "Play card 2"
+            },
+            {
+                "index": 7,
+                "action": "Play card 3"
+            },
+            {
+                "index": 8,
+                "action": "Play card 4"
+            },
+            {
+                "index": 9,
+                "action": "Play card 5"
+            }
+        ],
+        "player_response": {
+            "reason": "Discard unknown Card 4 to gain an info token, potentially enabling future hints for teammates",
+            "action": 3
+        }
+    },
+    {
+        "cnt": "71",
+        "tokens": "Life tokens = 3, Info tokens = 1",
+        "fireworks": "R0 Y1 G0 W1 B1",
+        "your_hand": [
+            {
+                "card": "1",
+                "known": "GX"
+            },
+            {
+                "card": "2",
+                "known": "GX"
+            },
+            {
+                "card": "3",
+                "known": "Unknown"
+            },
+            {
+                "card": "4",
+                "known": "BX"
+            },
+            {
+                "card": "5",
+                "known": "Unknown"
+            }
+        ],
+        "other_players": {
+            "+1": [
+                {
+                    "visible": "W5",
+                    "hint": "WX"
+                },
+                {
+                    "visible": "W2",
+                    "hint": "None"
+                },
+                {
+                    "visible": "B4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "B4",
+                    "hint": "None"
+                }
+            ],
+            "+2": [
+                {
+                    "visible": "Y4",
+                    "hint": "YX"
+                },
+                {
+                    "visible": "G4",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "G1",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "R4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "R1",
+                    "hint": "None"
+                }
+            ]
+        },
+        "legal_actions": [
+            {
+                "index": 0,
+                "action": "Discard 0"
+            },
+            {
+                "index": 1,
+                "action": "Discard 1"
+            },
+            {
+                "index": 2,
+                "action": "Discard 2"
+            },
+            {
+                "index": 3,
+                "action": "Discard 3"
+            },
+            {
+                "index": 4,
+                "action": "Discard 4"
+            },
+            {
+                "index": 5,
+                "action": "Play card 1"
+            },
+            {
+                "index": 6,
+                "action": "Play card 2"
+            },
+            {
+                "index": 7,
+                "action": "Play card 3"
+            },
+            {
+                "index": 8,
+                "action": "Play card 4"
+            },
+            {
+                "index": 9,
+                "action": "Play card 5"
+            },
+            {
+                "index": 11,
+                "action": "Reveal player +1 color Y"
+            },
+            {
+                "index": 13,
+                "action": "Reveal player +1 color W"
+            },
+            {
+                "index": 14,
+                "action": "Reveal player +1 color B"
+            },
+            {
+                "index": 15,
+                "action": "Reveal player +2 color R"
+            },
+            {
+                "index": 16,
+                "action": "Reveal player +2 color Y"
+            },
+            {
+                "index": 17,
+                "action": "Reveal player +2 color G"
+            },
+            {
+                "index": 21,
+                "action": "Reveal player +1 rank 2"
+            },
+            {
+                "index": 23,
+                "action": "Reveal player +1 rank 4"
+            },
+            {
+                "index": 24,
+                "action": "Reveal player +1 rank 5"
+            },
+            {
+                "index": 25,
+                "action": "Reveal player +2 rank 1"
+            },
+            {
+                "index": 28,
+                "action": "Reveal player +2 rank 4"
+            }
+        ],
+        "player_response": {
+            "reason": "Discard an unknown card to gain an info token, preparing for a potential hint to play G1",
+            "action": 2
+        }
+    },
+    {
+        "cnt": "73",
+        "tokens": "Life tokens = 3, Info tokens = 2",
+        "fireworks": "R0 Y1 G0 W1 B1",
+        "your_hand": [
+            {
+                "card": "1",
+                "known": "WX"
+            },
+            {
+                "card": "2",
+                "known": "Unknown"
+            },
+            {
+                "card": "3",
+                "known": "Unknown"
+            },
+            {
+                "card": "4",
+                "known": "Unknown"
+            },
+            {
+                "card": "5",
+                "known": "Unknown"
+            }
+        ],
+        "other_players": {
+            "+1": [
+                {
+                    "visible": "Y4",
+                    "hint": "YX"
+                },
+                {
+                    "visible": "G4",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "G1",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "R4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "R1",
+                    "hint": "None"
+                }
+            ],
+            "+2": [
+                {
+                    "visible": "G5",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "G1",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "B2",
+                    "hint": "BX"
+                },
+                {
+                    "visible": "R1",
+                    "hint": "None"
+                },
+                {
+                    "visible": "G1",
+                    "hint": "None"
+                }
+            ]
+        },
+        "legal_actions": [
+            {
+                "index": 0,
+                "action": "Discard 0"
+            },
+            {
+                "index": 1,
+                "action": "Discard 1"
+            },
+            {
+                "index": 2,
+                "action": "Discard 2"
+            },
+            {
+                "index": 3,
+                "action": "Discard 3"
+            },
+            {
+                "index": 4,
+                "action": "Discard 4"
+            },
+            {
+                "index": 5,
+                "action": "Play card 1"
+            },
+            {
+                "index": 6,
+                "action": "Play card 2"
+            },
+            {
+                "index": 7,
+                "action": "Play card 3"
+            },
+            {
+                "index": 8,
+                "action": "Play card 4"
+            },
+            {
+                "index": 9,
+                "action": "Play card 5"
+            },
+            {
+                "index": 10,
+                "action": "Reveal player +1 color R"
+            },
+            {
+                "index": 11,
+                "action": "Reveal player +1 color Y"
+            },
+            {
+                "index": 12,
+                "action": "Reveal player +1 color G"
+            },
+            {
+                "index": 15,
+                "action": "Reveal player +2 color R"
+            },
+            {
+                "index": 17,
+                "action": "Reveal player +2 color G"
+            },
+            {
+                "index": 19,
+                "action": "Reveal player +2 color B"
+            },
+            {
+                "index": 20,
+                "action": "Reveal player +1 rank 1"
+            },
+            {
+                "index": 23,
+                "action": "Reveal player +1 rank 4"
+            },
+            {
+                "index": 25,
+                "action": "Reveal player +2 rank 1"
+            },
+            {
+                "index": 26,
+                "action": "Reveal player +2 rank 2"
+            },
+            {
+                "index": 29,
+                "action": "Reveal player +2 rank 5"
+            }
+        ],
+        "player_response": {
+            "reason": "Hint green 1 to Player +2 to help complete the green stack",
+            "action": 17
+        }
+    },
+    {
+        "cnt": "74",
+        "tokens": "Life tokens = 3, Info tokens = 1",
+        "fireworks": "R0 Y1 G0 W1 B1",
+        "your_hand": [
+            {
+                "card": "1",
+                "known": "YX"
+            },
+            {
+                "card": "2",
+                "known": "GX"
+            },
+            {
+                "card": "3",
+                "known": "GX"
+            },
+            {
+                "card": "4",
+                "known": "Unknown"
+            },
+            {
+                "card": "5",
+                "known": "Unknown"
+            }
+        ],
+        "other_players": {
+            "+1": [
+                {
+                    "visible": "G5",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "G1",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "B2",
+                    "hint": "BX"
+                },
+                {
+                    "visible": "R1",
+                    "hint": "None"
+                },
+                {
+                    "visible": "G1",
+                    "hint": "GX"
+                }
+            ],
+            "+2": [
+                {
+                    "visible": "W5",
+                    "hint": "WX"
+                },
+                {
+                    "visible": "W2",
+                    "hint": "None"
+                },
+                {
+                    "visible": "B4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "B4",
+                    "hint": "None"
+                }
+            ]
+        },
+        "legal_actions": [
+            {
+                "index": 0,
+                "action": "Discard 0"
+            },
+            {
+                "index": 1,
+                "action": "Discard 1"
+            },
+            {
+                "index": 2,
+                "action": "Discard 2"
+            },
+            {
+                "index": 3,
+                "action": "Discard 3"
+            },
+            {
+                "index": 4,
+                "action": "Discard 4"
+            },
+            {
+                "index": 5,
+                "action": "Play card 1"
+            },
+            {
+                "index": 6,
+                "action": "Play card 2"
+            },
+            {
+                "index": 7,
+                "action": "Play card 3"
+            },
+            {
+                "index": 8,
+                "action": "Play card 4"
+            },
+            {
+                "index": 9,
+                "action": "Play card 5"
+            },
+            {
+                "index": 10,
+                "action": "Reveal player +1 color R"
+            },
+            {
+                "index": 12,
+                "action": "Reveal player +1 color G"
+            },
+            {
+                "index": 14,
+                "action": "Reveal player +1 color B"
+            },
+            {
+                "index": 16,
+                "action": "Reveal player +2 color Y"
+            },
+            {
+                "index": 18,
+                "action": "Reveal player +2 color W"
+            },
+            {
+                "index": 19,
+                "action": "Reveal player +2 color B"
+            },
+            {
+                "index": 20,
+                "action": "Reveal player +1 rank 1"
+            },
+            {
+                "index": 21,
+                "action": "Reveal player +1 rank 2"
+            },
+            {
+                "index": 24,
+                "action": "Reveal player +1 rank 5"
+            },
+            {
+                "index": 26,
+                "action": "Reveal player +2 rank 2"
+            },
+            {
+                "index": 28,
+                "action": "Reveal player +2 rank 4"
+            },
+            {
+                "index": 29,
+                "action": "Reveal player +2 rank 5"
+            }
+        ],
+        "player_response": {
+            "reason": "Hint green rank 1 to Player +1 to play their definite G1 card",
+            "action": 20
+        }
+    },
+    {
+        "cnt": "75",
+        "tokens": "Life tokens = 3, Info tokens = 0",
+        "fireworks": "R0 Y1 G0 W1 B1",
+        "your_hand": [
+            {
+                "card": "1",
+                "known": "GX"
+            },
+            {
+                "card": "2",
+                "known": "G1"
+            },
+            {
+                "card": "3",
+                "known": "BX"
+            },
+            {
+                "card": "4",
+                "known": "X1"
+            },
+            {
+                "card": "5",
+                "known": "G1"
+            }
+        ],
+        "other_players": {
+            "+1": [
+                {
+                    "visible": "W5",
+                    "hint": "WX"
+                },
+                {
+                    "visible": "W2",
+                    "hint": "None"
+                },
+                {
+                    "visible": "B4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "B4",
+                    "hint": "None"
+                }
+            ],
+            "+2": [
+                {
+                    "visible": "Y4",
+                    "hint": "YX"
+                },
+                {
+                    "visible": "G4",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "G1",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "R4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "R1",
+                    "hint": "None"
+                }
+            ]
+        },
+        "legal_actions": [
+            {
+                "index": 0,
+                "action": "Discard 0"
+            },
+            {
+                "index": 1,
+                "action": "Discard 1"
+            },
+            {
+                "index": 2,
+                "action": "Discard 2"
+            },
+            {
+                "index": 3,
+                "action": "Discard 3"
+            },
+            {
+                "index": 4,
+                "action": "Discard 4"
+            },
+            {
+                "index": 5,
+                "action": "Play card 1"
+            },
+            {
+                "index": 6,
+                "action": "Play card 2"
+            },
+            {
+                "index": 7,
+                "action": "Play card 3"
+            },
+            {
+                "index": 8,
+                "action": "Play card 4"
+            },
+            {
+                "index": 9,
+                "action": "Play card 5"
+            }
+        ],
+        "player_response": {
+            "reason": "Play the known Green 1 card to extend the Green fireworks stack",
+            "action": 6
+        }
+    },
+    {
+        "cnt": "77",
+        "tokens": "Life tokens = 3, Info tokens = 0",
+        "fireworks": "R0 Y1 G1 W1 B1",
+        "your_hand": [
+            {
+                "card": "1",
+                "known": "WX"
+            },
+            {
+                "card": "2",
+                "known": "Unknown"
+            },
+            {
+                "card": "3",
+                "known": "Unknown"
+            },
+            {
+                "card": "4",
+                "known": "Unknown"
+            },
+            {
+                "card": "5",
+                "known": "Unknown"
+            }
+        ],
+        "other_players": {
+            "+1": [
+                {
+                    "visible": "Y4",
+                    "hint": "YX"
+                },
+                {
+                    "visible": "G4",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "G1",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "R4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "R1",
+                    "hint": "None"
+                }
+            ],
+            "+2": [
+                {
+                    "visible": "G5",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "B2",
+                    "hint": "BX"
+                },
+                {
+                    "visible": "R1",
+                    "hint": "None"
+                },
+                {
+                    "visible": "G1",
+                    "hint": "G1"
+                },
+                {
+                    "visible": "Y2",
+                    "hint": "None"
+                }
+            ]
+        },
+        "legal_actions": [
+            {
+                "index": 0,
+                "action": "Discard 0"
+            },
+            {
+                "index": 1,
+                "action": "Discard 1"
+            },
+            {
+                "index": 2,
+                "action": "Discard 2"
+            },
+            {
+                "index": 3,
+                "action": "Discard 3"
+            },
+            {
+                "index": 4,
+                "action": "Discard 4"
+            },
+            {
+                "index": 5,
+                "action": "Play card 1"
+            },
+            {
+                "index": 6,
+                "action": "Play card 2"
+            },
+            {
+                "index": 7,
+                "action": "Play card 3"
+            },
+            {
+                "index": 8,
+                "action": "Play card 4"
+            },
+            {
+                "index": 9,
+                "action": "Play card 5"
+            }
+        ],
+        "player_response": {
+            "reason": "Play the white card as it's the only card with partial color information",
+            "action": 5
+        }
+    },
+    {
+        "cnt": "79",
+        "tokens": "Life tokens = 2, Info tokens = 0",
+        "fireworks": "R0 Y1 G1 W1 B1",
+        "your_hand": [
+            {
+                "card": "1",
+                "known": "YX"
+            },
+            {
+                "card": "2",
+                "known": "GX"
+            },
+            {
+                "card": "3",
+                "known": "GX"
+            },
+            {
+                "card": "4",
+                "known": "Unknown"
+            },
+            {
+                "card": "5",
+                "known": "Unknown"
+            }
+        ],
+        "other_players": {
+            "+1": [
+                {
+                    "visible": "G5",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "B2",
+                    "hint": "BX"
+                },
+                {
+                    "visible": "R1",
+                    "hint": "None"
+                },
+                {
+                    "visible": "G1",
+                    "hint": "G1"
+                },
+                {
+                    "visible": "Y2",
+                    "hint": "None"
+                }
+            ],
+            "+2": [
+                {
+                    "visible": "W2",
+                    "hint": "None"
+                },
+                {
+                    "visible": "B4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "B4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "W4",
+                    "hint": "None"
+                }
+            ]
+        },
+        "legal_actions": [
+            {
+                "index": 0,
+                "action": "Discard 0"
+            },
+            {
+                "index": 1,
+                "action": "Discard 1"
+            },
+            {
+                "index": 2,
+                "action": "Discard 2"
+            },
+            {
+                "index": 3,
+                "action": "Discard 3"
+            },
+            {
+                "index": 4,
+                "action": "Discard 4"
+            },
+            {
+                "index": 5,
+                "action": "Play card 1"
+            },
+            {
+                "index": 6,
+                "action": "Play card 2"
+            },
+            {
+                "index": 7,
+                "action": "Play card 3"
+            },
+            {
+                "index": 8,
+                "action": "Play card 4"
+            },
+            {
+                "index": 9,
+                "action": "Play card 5"
+            }
+        ],
+        "player_response": {
+            "reason": "Play the known Green card to potentially advance the Green firework stack, minimizing risk with only 2 life tokens remaining",
+            "action": 6
+        }
+    },
+    {
+        "cnt": "81",
+        "tokens": "Life tokens = 1, Info tokens = 0",
+        "fireworks": "R0 Y1 G1 W1 B1",
+        "your_hand": [
+            {
+                "card": "1",
+                "known": "GX"
+            },
+            {
+                "card": "2",
+                "known": "BX"
+            },
+            {
+                "card": "3",
+                "known": "X1"
+            },
+            {
+                "card": "4",
+                "known": "G1"
+            },
+            {
+                "card": "5",
+                "known": "Unknown"
+            }
+        ],
+        "other_players": {
+            "+1": [
+                {
+                    "visible": "W2",
+                    "hint": "None"
+                },
+                {
+                    "visible": "B4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "Y4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "B4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "W4",
+                    "hint": "None"
+                }
+            ],
+            "+2": [
+                {
+                    "visible": "Y4",
+                    "hint": "YX"
+                },
+                {
+                    "visible": "G1",
+                    "hint": "GX"
+                },
+                {
+                    "visible": "R4",
+                    "hint": "None"
+                },
+                {
+                    "visible": "R1",
+                    "hint": "None"
+                },
+                {
+                    "visible": "G3",
+                    "hint": "None"
+                }
+            ]
+        },
+        "legal_actions": [
+            {
+                "index": 0,
+                "action": "Discard 0"
+            },
+            {
+                "index": 1,
+                "action": "Discard 1"
+            },
+            {
+                "index": 2,
+                "action": "Discard 2"
+            },
+            {
+                "index": 3,
+                "action": "Discard 3"
+            },
+            {
+                "index": 4,
+                "action": "Discard 4"
+            },
+            {
+                "index": 5,
+                "action": "Play card 1"
+            },
+            {
+                "index": 6,
+                "action": "Play card 2"
+            },
+            {
+                "index": 7,
+                "action": "Play card 3"
+            },
+            {
+                "index": 8,
+                "action": "Play card 4"
+            },
+            {
+                "index": 9,
+                "action": "Play card 5"
+            }
+        ],
+        "player_response": {
+            "reason": "Play confirmed Green 1 card to extend Green fireworks stack safely",
+            "action": 8
+        }
+    }
+]
