@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Connect Four Trajectory Viewer</title>
+  <title>Tic Tac Toe Trajectory Viewer</title>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
   <link rel="stylesheet" href="../../static/css/bulma.min.css">
@@ -30,7 +30,7 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-2">Connect Four Trajectory Viewer</h1>
+            <h1 class="title is-2">Tic Tac Toe Trajectory Viewer</h1>
           </div>
         </div>
       </div>
@@ -122,7 +122,7 @@
         <div class="buttons is-centered">
             <button class="button" id="prevButton" onclick="prevState()">Previous Step</button>
             <button class="button" id="nextButton" onclick="nextState()">Next Step</button>
-          </div>
+        </div>
         <!-- Image -->
         <figure class="image">
           <img id="trajectoryImage" src="initial.png" alt="Trajectory State" style="width: 50%; height: 50%;">
@@ -133,17 +133,28 @@
           <p id="trajectoryReason"><strong>Reasoning:</strong> </p>
           <p id="trajectoryAction"><strong>Action:</strong> </p>
         </div>
+        <!-- Action Index -->
+        <!-- 0 | 3 | 6
+        _________
+      
+        1 | 4 | 7
+        _________
+      
+        2 | 5 | 8 -->
         <div class="content">
           <strong>Action Index:</strong>
-          <p>0 | 1 | 2 | 3 | 4 | 5 | 6</p>
+          <p>0 | 3 | 6</p>
+          <p>1 | 4 | 7</p>
+          <p>2 | 5 | 8</p>
         </div>
+
       </div>
     </div>
   </section>
 
   <footer class="footer">
     <div class="content has-text-centered">
-      <p>Connect Four Trajectory Viewer - Part of the <span style="color: var(--color-octo-red);"><b>SPIN-Bench</b></span><span style="color: var(--color-tools-blue);"></span> Benchmark</p>
+      <p>Tic Tac Toe Trajectory Viewer - Part of the <span style="color: var(--color-octo-red);"><b>SPIN-Bench</b></span><span style="color: var(--color-tools-blue);"></span> Benchmark</p>
     </div>
   </footer>
 
@@ -203,9 +214,9 @@
         alert("Please choose different models for two players.");
         return;
       }
-      const trajectoryPath = "../../trajectories/llmllm/cf/"+model1+"_"+model2+"/trajectory.json";
+      const trajectoryPath = "../../trajectories/llmllm/ttt/"+model1+"_"+model2+"/trajectory.json";
       console.log('Loading trajectory:', trajectoryPath);
-      base_path = "../../trajectories/llmllm/cf/"+model1+"_"+model2+"/";
+      base_path = "../../trajectories/llmllm/ttt/"+model1+"_"+model2+"/";
       loadTrajectory(trajectoryPath);
     });
   </script>
