@@ -1,0 +1,50 @@
+[
+    {
+        "index": 0,
+        "turn": "None",
+        "turn_index": 0,
+        "reason": "None",
+        "action": "None",
+        "image_path": "0.png"
+    },
+    {
+        "index": 1,
+        "turn": "Llama3:70b",
+        "turn_index": 0,
+        "reason": "I'm placing my 'X' in the center of the board (position 4) to control the most flexible spot and create potential for future moves.",
+        "action": 4,
+        "image_path": "1.png"
+    },
+    {
+        "index": 2,
+        "turn": "Llama3.3:70b",
+        "turn_index": 1,
+        "reason": "I'm placing my mark in position 4 is not possible since it's already occupied by the opponent's X, so I'll place my O in position 0 to control the top-left corner and create potential lines for myself, while also preparing to respond to the opponent's next move.",
+        "action": 0,
+        "image_path": "2.png"
+    },
+    {
+        "index": 3,
+        "turn": "Llama3:70b",
+        "turn_index": 0,
+        "reason": "I'm placing my 'X' in position 3 to create a potential winning line and put pressure on the opponent's corner control, while also preparing to block their possible responses.",
+        "action": 3,
+        "image_path": "3.png"
+    },
+    {
+        "index": 4,
+        "turn": "Llama3.3:70b",
+        "turn_index": 1,
+        "reason": "I am placing my mark at index 2 because it allows me to potentially control the left side of the board and creates an opportunity for a future win, while also putting pressure on the opponent's position in the center and forcing them to respond to my move, as well as preparing to possibly block their potential winning lines",
+        "action": 2,
+        "image_path": "4.png"
+    },
+    {
+        "index": 5,
+        "turn": "Llama3:70b",
+        "turn_index": 0,
+        "reason": "I'll place my next 'X' in position 5, as it allows me to potentially create a winning opportunity along the middle row and puts pressure on the opponent's attempt to control the corners.",
+        "action": 5,
+        "image_path": "5.png"
+    }
+]

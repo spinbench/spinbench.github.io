@@ -1,0 +1,82 @@
+[
+    {
+        "index": 0,
+        "turn": "None",
+        "turn_index": 0,
+        "reason": "None",
+        "action": "None",
+        "image_path": "0.png"
+    },
+    {
+        "index": 1,
+        "turn": "o1-mini",
+        "turn_index": 0,
+        "reason": "Choosing the center cell (4) provides maximum control over the board, allowing for the creation of multiple winning opportunities and offering flexibility in responding to the opponent's moves.",
+        "action": 4,
+        "image_path": "1.png"
+    },
+    {
+        "index": 2,
+        "turn": "Llama3.3:70b",
+        "turn_index": 1,
+        "reason": "I am placing my mark in cell 0 because it gives me control of the top-left corner and allows me to potentially create a line of three marks either horizontally or diagonally. By starting in the corner, I also put pressure on the opponent to respond and limit their options for their next move. Additionally, since the opponent has already placed their mark in the center cell (index 4), I want to create a new front and challenge their control of the board.",
+        "action": 0,
+        "image_path": "2.png"
+    },
+    {
+        "index": 3,
+        "turn": "o1-mini",
+        "turn_index": 0,
+        "reason": "I choose position 8 to take the bottom-right corner. This move allows me to create multiple potential winning lines, including the diagonal from top-left to bottom-right and the bottom row. Additionally, placing an 'X' in a corner increases the chances of creating a fork in future moves, thereby enhancing my opportunities to win the game while limiting the opponent's options.",
+        "action": 8,
+        "image_path": "3.png"
+    },
+    {
+        "index": 4,
+        "turn": "Llama3.3:70b",
+        "turn_index": 1,
+        "reason": "I will place my mark in position 2 because it gives me control of the left side of the board and potentially sets up a winning line. By placing my mark in this position, I am also putting pressure on the opponent to respond and limiting their options for their next move. Additionally, this move does not immediately block the opponent's potential winning lines, but rather forces them to consider my possible winning lines and react accordingly.",
+        "action": 2,
+        "image_path": "4.png"
+    },
+    {
+        "index": 5,
+        "turn": "o1-mini",
+        "turn_index": 0,
+        "reason": "I choose to place X in cell 5 to create a threat in the middle row and the right column. This move forces the opponent to block my potential winning opportunities, allowing me to control the flow of the game and set up future winning combinations.",
+        "action": 5,
+        "image_path": "5.png"
+    },
+    {
+        "index": 6,
+        "turn": "Llama3.3:70b",
+        "turn_index": 1,
+        "reason": "I choose to place my mark in position 3 because it gives me the most flexibility for my next move and potentially creates a winning line along the top row or the right column. Additionally, it puts pressure on my opponent to respond to this new development, which could lead to them making a mistake and giving me an opportunity to win.",
+        "action": 3,
+        "image_path": "6.png"
+    },
+    {
+        "index": 7,
+        "turn": "o1-mini",
+        "turn_index": 0,
+        "reason": "Placing X at position 6 blocks O's immediate threat of completing the top row (positions 0, 3, 6) and simultaneously creates a potential winning opportunity for X along the diagonal (positions 6, 4, 2). This move forces O to respond defensively, preventing them from winning in their next turn and setting up X for a strategic advantage.",
+        "action": 6,
+        "image_path": "7.png"
+    },
+    {
+        "index": 8,
+        "turn": "Llama3.3:70b",
+        "turn_index": 1,
+        "reason": "I choose to place my mark in position 7 because it gives me the highest chance of winning by potentially creating a fork or putting pressure on my opponent, and it is one of the legal moves available",
+        "action": 7,
+        "image_path": "8.png"
+    },
+    {
+        "index": 9,
+        "turn": "o1-mini",
+        "turn_index": 0,
+        "reason": "There is only one legal move available, which is cell 1. Placing 'X' in cell 1 blocks any potential threats from 'O' and ensures the game results in a draw, as no winning moves are possible at this stage.",
+        "action": 1,
+        "image_path": "9.png"
+    }
+]

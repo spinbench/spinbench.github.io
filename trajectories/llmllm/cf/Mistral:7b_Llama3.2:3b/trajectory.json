@@ -1,0 +1,146 @@
+[
+    {
+        "index": 0,
+        "turn": "None",
+        "turn_index": 0,
+        "reason": "None",
+        "action": "None",
+        "image_path": "0.png"
+    },
+    {
+        "index": 1,
+        "turn": "Mistral:7b",
+        "turn_index": 0,
+        "reason": "To establish a strong position for vertical/horizontal connections and potential diagonal connections, I will place my token in the central column c3 to maintain flexibility for the future. Additionally, this moves opens up possibilities for connecting four tokens in multiple rows as the board fills up.",
+        "action": 3,
+        "image_path": "1.png"
+    },
+    {
+        "index": 2,
+        "turn": "Llama3.2:3b",
+        "turn_index": 1,
+        "reason": "Starting by placing my token in column 2 to build up at the top row and create potential sequences",
+        "action": 2,
+        "image_path": "2.png"
+    },
+    {
+        "index": 3,
+        "turn": "Mistral:7b",
+        "turn_index": 0,
+        "reason": "To maintain my chances of winning horizontally or diagonally while blocking a potential horizontal win for the opponent, I will choose column 1 to minimize the number of opponent's tokens nearby. Additionally, this column provides opportunities for vertical and diagonal wins with future moves.",
+        "action": 1,
+        "image_path": "3.png"
+    },
+    {
+        "index": 4,
+        "turn": "Llama3.2:3b",
+        "turn_index": 1,
+        "reason": "To create a future possible 4-token chain by extending my existing token vertically.",
+        "action": 0,
+        "image_path": "4.png"
+    },
+    {
+        "index": 5,
+        "turn": "Mistral:7b",
+        "turn_index": 0,
+        "reason": "Placing a token in column 1 increases the probability of creating a winning sequence horizontally or diagonally, given that my opponent's O tokens are grouped together in one column. It also prevents them from extending their horizontal line further, as there is only one available empty spot left between our X and O tokens in column 5.",
+        "action": 1,
+        "image_path": "5.png"
+    },
+    {
+        "index": 6,
+        "turn": "Llama3.2:3b",
+        "turn_index": 1,
+        "reason": "Blocking opponent's potential four-in-a-row by placing an O token in column 2, preventing them from completing two separate lines of four tokens.\nAdditionally, this move also prepares for a possible future capture opportunity along row 3 and c0 by securing the leftmost position.",
+        "action": 2,
+        "image_path": "6.png"
+    },
+    {
+        "index": 7,
+        "turn": "Mistral:7b",
+        "turn_index": 0,
+        "reason": "Placing the token in column 0 will prevent any potential horizontal or vertical lines from the opponent while also creating new opportunities for a winning sequence on rows 2-6 (in future turns).",
+        "action": 0,
+        "image_path": "7.png"
+    },
+    {
+        "index": 8,
+        "turn": "Llama3.2:3b",
+        "turn_index": 1,
+        "reason": "Trying to create a potential sequence for an O win by placing an O token in column 4 of row 4 or row 3. This move may not be sufficient but it's my best guess at this point.",
+        "action": 4,
+        "image_path": "8.png"
+    },
+    {
+        "index": 9,
+        "turn": "Mistral:7b",
+        "turn_index": 0,
+        "reason": "Placing a token on column 5 now offers more opportunities for me to win and puts pressure on my opponent to make a mistake.",
+        "action": 5,
+        "image_path": "9.png"
+    },
+    {
+        "index": 10,
+        "turn": "Llama3.2:3b",
+        "turn_index": 1,
+        "reason": "Analyzing board state to determine optimal next move for winning sequence.\nConsidering opponent's recent four 'X' tokens vertically across rows 4 and 5,\napponent may block my potential sequences with future moves.\nMy own positions aim to build on available spots in the middle of column c2,\ncontrol c1's lower layer, and establish a foothold there.",
+        "action": 3,
+        "image_path": "10.png"
+    },
+    {
+        "index": 11,
+        "turn": "Mistral:7b",
+        "turn_index": 0,
+        "reason": "Targeting c1 to extend a horizontal or diagonal line with an X token on rows 3, 4, or 5; blocking potential opponent's moves on those rows and forcing them to focus on other columns.",
+        "action": 1,
+        "image_path": "11.png"
+    },
+    {
+        "index": 12,
+        "turn": "Llama3.2:3b",
+        "turn_index": 1,
+        "reason": "Responding to opponent's lines by expanding on row 5 and using column 4",
+        "action": 4,
+        "image_path": "12.png"
+    },
+    {
+        "index": 13,
+        "turn": "Mistral:7b",
+        "turn_index": 0,
+        "reason": "Placing a token at column 3 opens up the most opportunities for creating a winning sequence while also minimizing my opponent's options to block me. Column 3 has the largest number of open rows available (5), allowing me to potentially create horizontal, vertical, or diagonal lines. Additionally, this move may force my opponent to make suboptimal moves in order to prevent me from completing a line first.",
+        "action": 3,
+        "image_path": "13.png"
+    },
+    {
+        "index": 14,
+        "turn": "Llama3.2:3b",
+        "turn_index": 1,
+        "reason": "Trying to challenge opponent's lines, focus on column 4 where X is at position (3, 1) and another X at (5, 3), blocking would create a stronger chance for me to win. Blocking X line 2-7 - Column 4",
+        "action": 4,
+        "image_path": "14.png"
+    },
+    {
+        "index": 15,
+        "turn": "Mistral:7b",
+        "turn_index": 0,
+        "reason": "Maintaining our connected line and creating opportunities to connect four tokens, I will place an X token in column 3.",
+        "action": 3,
+        "image_path": "15.png"
+    },
+    {
+        "index": 16,
+        "turn": "Llama3.2:3b",
+        "turn_index": 1,
+        "reason": "Attempting to place 'O' token at column 6, which could limit my opponent's ability to add more X tokens below our first two row overlaps.",
+        "action": 6,
+        "image_path": "16.png"
+    },
+    {
+        "index": 17,
+        "turn": "Mistral:7b",
+        "turn_index": 0,
+        "reason": "Placing an X token in column c2 offers the most promising opportunities for diagonal and vertical connections while also denying my opponent any further improvements on their victories. It allows me to potentially continue creating a new diagonal line while also blocking any future O tokens from being added to rows with 4 or more O tokens.",
+        "action": 1,
+        "image_path": "17.png"
+    }
+]

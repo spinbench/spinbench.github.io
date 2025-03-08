@@ -1,0 +1,74 @@
+[
+    {
+        "index": 0,
+        "turn": "None",
+        "turn_index": 0,
+        "reason": "None",
+        "action": "None",
+        "image_path": "0.png"
+    },
+    {
+        "index": 1,
+        "turn": "Llama3:70b",
+        "turn_index": 0,
+        "reason": "I am placing my X mark in the center of the board (cell 4) as it provides the most flexibility for my next moves and limits my opponent's options.",
+        "action": 4,
+        "image_path": "1.png"
+    },
+    {
+        "index": 2,
+        "turn": "Llama3.2:3b",
+        "turn_index": 1,
+        "reason": "to create a potential line of three O's in the middle column and block opponent's winning lines by mirroring their corner move with my own corner move",
+        "action": 2,
+        "image_path": "2.png"
+    },
+    {
+        "index": 3,
+        "turn": "Llama3:70b",
+        "turn_index": 0,
+        "reason": "I'm placing my X in position 6 to control the top-right corner, potentially creating opportunities for a diagonal or horizontal win, while also putting pressure on my opponent's bottom-left corner.",
+        "action": 6,
+        "image_path": "3.png"
+    },
+    {
+        "index": 4,
+        "turn": "Llama3.2:3b",
+        "turn_index": 1,
+        "reason": "Challenging an initial assumption of the opponent's strategic plans.",
+        "action": 1,
+        "image_path": "4.png"
+    },
+    {
+        "index": 5,
+        "turn": "Llama3:70b",
+        "turn_index": 0,
+        "reason": "I'm placing my next 'X' in position 3, as it allows me to potentially create two different winning lines (horizontal and diagonal) while also pressuring my opponent's control of the top row.",
+        "action": 3,
+        "image_path": "5.png"
+    },
+    {
+        "index": 6,
+        "turn": "Llama3.2:3b",
+        "turn_index": 1,
+        "reason": "Blocking the opponent's potential three-in-a-row and preparing for my potential winning line",
+        "action": 5,
+        "image_path": "6.png"
+    },
+    {
+        "index": 7,
+        "turn": "Llama3:70b",
+        "turn_index": 0,
+        "reason": "I'm choosing action 7 because it blocks my opponent's potential win in the left column and creates a new opportunity for me to win diagonally from top-right to bottom-left.",
+        "action": 7,
+        "image_path": "7.png"
+    },
+    {
+        "index": 8,
+        "turn": "Llama3.2:3b",
+        "turn_index": 1,
+        "reason": "Trying to control the center and prevent opponent's win, placing O in position 0.",
+        "action": 0,
+        "image_path": "8.png"
+    }
+]

@@ -1,0 +1,146 @@
+[
+    {
+        "index": 0,
+        "turn": "None",
+        "turn_index": 0,
+        "reason": "None",
+        "action": "None",
+        "image_path": "0.png"
+    },
+    {
+        "index": 1,
+        "turn": "Qwen2.5:72b",
+        "turn_index": 0,
+        "reason": "Playing in the center column (c3) provides the most strategic flexibility and sets a strong foundation for future moves.",
+        "action": 3,
+        "image_path": "1.png"
+    },
+    {
+        "index": 2,
+        "turn": "Llama3.2:3b",
+        "turn_index": 1,
+        "reason": "Placing token in c6 to potentially control the right side of the board and limit X's expansion.",
+        "action": 6,
+        "image_path": "2.png"
+    },
+    {
+        "index": 3,
+        "turn": "Qwen2.5:72b",
+        "turn_index": 0,
+        "reason": "Placing a token in column 2 will create a strong horizontal threat from columns 1 to 4 and could potentially set up diagonal connections. It also keeps the center of the board well-utilized, giving me multiple options for future moves.",
+        "action": 2,
+        "image_path": "3.png"
+    },
+    {
+        "index": 4,
+        "turn": "Llama3.2:3b",
+        "turn_index": 1,
+        "reason": "Placing a token in column 4 will create two possible winning lines: one horizontal and one vertical, giving me leverage to respond to my opponent's next move. By placing it there, I'm also limiting their potential for creating a diagonal win.",
+        "action": 4,
+        "image_path": "4.png"
+    },
+    {
+        "index": 5,
+        "turn": "Qwen2.5:72b",
+        "turn_index": 0,
+        "reason": "Placing an 'X' in column 1 will create a three-token horizontal connection, which is a strong position and puts pressure on the opponent to block it. This move also keeps the board open for potential vertical or diagonal connections.",
+        "action": 1,
+        "image_path": "5.png"
+    },
+    {
+        "index": 6,
+        "turn": "Llama3.2:3b",
+        "turn_index": 1,
+        "reason": "I'll place my O token in column 0 to start defending against opponent's potential sequences and make it harder for them to create a line by controlling more space in the center of the board.",
+        "action": 0,
+        "image_path": "6.png"
+    },
+    {
+        "index": 7,
+        "turn": "Qwen2.5:72b",
+        "turn_index": 0,
+        "reason": "Placing an X in column 5 will complete the horizontal sequence of four X tokens, thus winning the game.",
+        "action": 5,
+        "image_path": "7.png"
+    },
+    {
+        "index": 8,
+        "turn": "Llama3.2:3b",
+        "turn_index": 1,
+        "reason": "attempting to create a blockading line in column 2 while limiting opponent's diagonal progression",
+        "action": 2,
+        "image_path": "8.png"
+    },
+    {
+        "index": 9,
+        "turn": "Qwen2.5:72b",
+        "turn_index": 0,
+        "reason": "Placing an X token in column 4 will complete my horizontal sequence of 3 X tokens (columns 1, 2, 3), forming a sequence of 4 X tokens and winning the game.",
+        "action": 4,
+        "image_path": "9.png"
+    },
+    {
+        "index": 10,
+        "turn": "Llama3.2:3b",
+        "turn_index": 1,
+        "reason": "Attempting to build a column with multiple potential sequences by placing my token at column 2.",
+        "action": 2,
+        "image_path": "10.png"
+    },
+    {
+        "index": 11,
+        "turn": "Qwen2.5:72b",
+        "turn_index": 0,
+        "reason": "Dropping a token in column 4 will create a vertical win with the tokens at (4, 4) and (5, 4). This move ensures I connect four 'X' tokens vertically and win the game.",
+        "action": 4,
+        "image_path": "11.png"
+    },
+    {
+        "index": 12,
+        "turn": "Llama3.2:3b",
+        "turn_index": 1,
+        "reason": "Building a strong foundation with my next move at c1, opening up 4 opportunities to create multiple threats simultaneously and potentially weakening the X tokens on the top half of the board.",
+        "action": 1,
+        "image_path": "12.png"
+    },
+    {
+        "index": 13,
+        "turn": "Qwen2.5:72b",
+        "turn_index": 0,
+        "reason": "Placing a token in column 4 will complete a vertical line of four X tokens, ensuring a win.",
+        "action": 4,
+        "image_path": "13.png"
+    },
+    {
+        "index": 14,
+        "turn": "Llama3.2:3b",
+        "turn_index": 1,
+        "reason": "I will place my O token in column 0 to control the leftmost part of the board, potentially creating a row for future connections and limiting the opponent's options.",
+        "action": 0,
+        "image_path": "14.png"
+    },
+    {
+        "index": 15,
+        "turn": "Qwen2.5:72b",
+        "turn_index": 0,
+        "reason": "Placing an 'X' in column 3 will create a potential vertical connection of four tokens if the opponent does not block it. It also disrupts the opponent's horizontal connection in row 4 and creates multiple diagonal threats.",
+        "action": 3,
+        "image_path": "15.png"
+    },
+    {
+        "index": 16,
+        "turn": "Llama3.2:3b",
+        "turn_index": 1,
+        "reason": "Building a horizontal line of 4 O's at r5 with a potential winning move by stacking my previous 'O' tokens at positions (3, 2), (4, 0), (4, 1), and (4, 2). Making an illegal position at row 1 c3 would force me to play in a lower-scoring position",
+        "action": 5,
+        "image_path": "16.png"
+    },
+    {
+        "index": 17,
+        "turn": "Qwen2.5:72b",
+        "turn_index": 0,
+        "reason": "Placing a token in column 4 will complete a vertical stack of four tokens, resulting in an immediate win.",
+        "action": 4,
+        "image_path": "17.png"
+    }
+]

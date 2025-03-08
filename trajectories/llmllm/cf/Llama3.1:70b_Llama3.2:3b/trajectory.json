@@ -1,0 +1,138 @@
+[
+    {
+        "index": 0,
+        "turn": "None",
+        "turn_index": 0,
+        "reason": "None",
+        "action": "None",
+        "image_path": "0.png"
+    },
+    {
+        "index": 1,
+        "turn": "Llama3.1:70b",
+        "turn_index": 0,
+        "reason": "I'm starting by placing my token in the center column to maximize control over the board and create possibilities for future moves.",
+        "action": 3,
+        "image_path": "1.png"
+    },
+    {
+        "index": 2,
+        "turn": "Llama3.2:3b",
+        "turn_index": 1,
+        "reason": "To block potential sequences and control key columns, I am placing an O token in column 4.",
+        "action": 4,
+        "image_path": "2.png"
+    },
+    {
+        "index": 3,
+        "turn": "Llama3.1:70b",
+        "turn_index": 0,
+        "reason": "I'm placing my token in column 2 to create a potential diagonal line and challenge the opponent's control of the center. This move also prepares for a possible horizontal expansion.",
+        "action": 2,
+        "image_path": "3.png"
+    },
+    {
+        "index": 4,
+        "turn": "Llama3.2:3b",
+        "turn_index": 1,
+        "reason": "Placing token at column 4 to create a potential sequence of O tokens and block X tokens from dominating row 5.",
+        "action": 4,
+        "image_path": "4.png"
+    },
+    {
+        "index": 5,
+        "turn": "Llama3.1:70b",
+        "turn_index": 0,
+        "reason": "I want to place my token on top of one of my existing tokens to create a potential two-way winning sequence, while also putting pressure on my opponent's single O in the center. Additionally, this move will limit their flexibility to respond effectively.",
+        "action": 3,
+        "image_path": "5.png"
+    },
+    {
+        "index": 6,
+        "turn": "Llama3.2:3b",
+        "turn_index": 1,
+        "reason": "Attempting to challenge opponent's control over the center of the board by creating a potential row of four O tokens, and limiting their options for future moves.",
+        "action": 3,
+        "image_path": "6.png"
+    },
+    {
+        "index": 7,
+        "turn": "Llama3.1:70b",
+        "turn_index": 0,
+        "reason": "I'm placing my token in column 2 to start building a potential horizontal sequence on the left side of the board, while also putting pressure on the opponent's central presence and preparing for possible future conflicts.",
+        "action": 2,
+        "image_path": "7.png"
+    },
+    {
+        "index": 8,
+        "turn": "Llama3.2:3b",
+        "turn_index": 1,
+        "reason": "Place token at a position that puts pressure on opponent's sequence, while also maintaining a presence in column c3 to limit their options.",
+        "action": 1,
+        "image_path": "8.png"
+    },
+    {
+        "index": 9,
+        "turn": "Llama3.1:70b",
+        "turn_index": 0,
+        "reason": "I'm choosing column 6 to play my next 'X' token because it will allow me to create a potential winning line while also putting pressure on the opponent's position. By playing in column 6, I'll be able to potentially create a four 'X's in a row diagonally or horizontally, depending on the opponent's response. Additionally, this move will make it harder for the opponent to create a floating four 'O's in a row. This move is also safe from being blocked by the opponent, as they don't have an 'O' token in column 6.",
+        "action": 6,
+        "image_path": "9.png"
+    },
+    {
+        "index": 10,
+        "turn": "Llama3.2:3b",
+        "turn_index": 1,
+        "reason": "I'm placing an O token to challenge the opponent's control of column 2",
+        "action": 5,
+        "image_path": "10.png"
+    },
+    {
+        "index": 11,
+        "turn": "Llama3.1:70b",
+        "turn_index": 0,
+        "reason": "I'm placing my token in column 0 to create a potential connection on the left side of the board and put pressure on the opponent's position in row 5, column 1. This move also opens up possibilities for future connections and challenges the opponent's control over the center.",
+        "action": 0,
+        "image_path": "11.png"
+    },
+    {
+        "index": 12,
+        "turn": "Llama3.2:3b",
+        "turn_index": 1,
+        "reason": "I'm choosing column 5 to place my token and block the opponent's potential winning line, while trying to create a new connection for myself.",
+        "action": 5,
+        "image_path": "12.png"
+    },
+    {
+        "index": 13,
+        "turn": "Llama3.1:70b",
+        "turn_index": 0,
+        "reason": "I've decided to place my token in column 4 because it's currently blocked by two of my opponent's tokens, but playing here would put pressure on their potential connection and also create a possibility for me to connect four tokens horizontally or diagonally. Additionally, this move would force my opponent to respond to the threat, potentially opening up new opportunities for me.",
+        "action": 4,
+        "image_path": "13.png"
+    },
+    {
+        "index": 14,
+        "turn": "Llama3.2:3b",
+        "turn_index": 1,
+        "reason": "Trying to create a possible line for four O's horizontally by trying out column 2 while taking into consideration to prevent X tokens from blocking me",
+        "action": 2,
+        "image_path": "14.png"
+    },
+    {
+        "index": 15,
+        "turn": "Llama3.1:70b",
+        "turn_index": 0,
+        "reason": "I'm trying to block my opponent's potential sequence on the bottom row and create a possibility for a diagonal win by placing my token in column c1. This move also puts pressure on my opponent's position and limits their future options.",
+        "action": 0,
+        "image_path": "15.png"
+    },
+    {
+        "index": 16,
+        "turn": "Llama3.2:3b",
+        "turn_index": 1,
+        "reason": "I want to place my token in column 2, as it was not blocked by opponent's X and gives me more chances of creating sequences for myself.",
+        "action": 2,
+        "image_path": "16.png"
+    }
+]

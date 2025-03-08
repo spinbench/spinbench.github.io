@@ -1,0 +1,66 @@
+[
+    {
+        "index": 0,
+        "turn": "None",
+        "turn_index": 0,
+        "reason": "None",
+        "action": "None",
+        "image_path": "0.png"
+    },
+    {
+        "index": 1,
+        "turn": "o1-mini",
+        "turn_index": 0,
+        "reason": "In Connect Four, the center column (column 3) is generally considered the most advantageous opening move. Placing a token in the center allows for the highest number of potential connections in all directions\u2014vertical, horizontal, and both diagonals. This strategic positioning maximizes flexibility for future moves and increases the chances of creating multiple threats that the opponent must respond to, thereby enhancing the likelihood of securing a win.",
+        "action": 3,
+        "image_path": "1.png"
+    },
+    {
+        "index": 2,
+        "turn": "Llama3.2:3b",
+        "turn_index": 1,
+        "reason": "I will place my O token in column 2, as it provides a good opportunity to create a potential four-in-a-row while also putting pressure on the opponent's existing X token in column 5.",
+        "action": 2,
+        "image_path": "2.png"
+    },
+    {
+        "index": 3,
+        "turn": "o1-mini",
+        "turn_index": 0,
+        "reason": "I choose to place my token in column 3 (c3) to maintain and strengthen control over the central column. Central columns are strategically advantageous in Connect Four as they offer the most opportunities for creating vertical, horizontal, and diagonal connections. By stacking in the center, I maximize my chances of forming multiple threats simultaneously, forcing the opponent to respond defensively and limiting their options for creating their own connect fours. Additionally, maintaining a strong presence in the center enhances flexibility for future moves, allowing me to adapt my strategy based on the evolving game state.",
+        "action": 3,
+        "image_path": "3.png"
+    },
+    {
+        "index": 4,
+        "turn": "Llama3.2:3b",
+        "turn_index": 1,
+        "reason": "To counter the opponent's row, I need to create a new possibility for myself by placing an O in column 1. This will also open up more options for future moves and make it harder for the opponent to block my rows.",
+        "action": 1,
+        "image_path": "4.png"
+    },
+    {
+        "index": 5,
+        "turn": "o1-mini",
+        "turn_index": 0,
+        "reason": "Analyzing the current game state, as 'X', you have two tokens stacked in Column 3 (positions (5,3) and (4,3)). Building vertically in the same column increases the threat of achieving a vertical connect four, forcing your opponent to respond defensively. Additionally, placing another 'X' in Column 3 strengthens your position and creates multiple winning opportunities in subsequent moves. This move also limits your opponent's ability to easily build their own horizontal or diagonal connections without addressing your vertical threat.",
+        "action": 3,
+        "image_path": "5.png"
+    },
+    {
+        "index": 6,
+        "turn": "Llama3.2:3b",
+        "turn_index": 1,
+        "reason": "The opponent has two rows of X's with three tokens each, and a single token in row 5. Given this information, my goal is to cut off as much space as possible below our current O's so the opponent can't create another line while also putting pressure on the opponent's left side to take away one 'X' token",
+        "action": 5,
+        "image_path": "6.png"
+    },
+    {
+        "index": 7,
+        "turn": "o1-mini",
+        "turn_index": 0,
+        "reason": "Placing an 'X' in column 3 will complete a vertical Connect Four by stacking four 'X' tokens in that column (positions (2,3), (3,3), (4,3), and (5,3)). This move ensures an immediate win.",
+        "action": 3,
+        "image_path": "7.png"
+    }
+]

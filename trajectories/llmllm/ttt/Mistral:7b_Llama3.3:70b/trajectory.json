@@ -1,0 +1,82 @@
+[
+    {
+        "index": 0,
+        "turn": "None",
+        "turn_index": 0,
+        "reason": "None",
+        "action": "None",
+        "image_path": "0.png"
+    },
+    {
+        "index": 1,
+        "turn": "Mistral:7b",
+        "turn_index": 0,
+        "reason": "To get three in a row immediately and control the game",
+        "action": 0,
+        "image_path": "1.png"
+    },
+    {
+        "index": 2,
+        "turn": "Llama3.3:70b",
+        "turn_index": 1,
+        "reason": "I am placing my mark in the center of the board (index 4) to gain control of the board and create flexibility for my next moves. This position allows me to potentially create horizontal, vertical, or diagonal lines, while also putting pressure on the opponent's position in the top-left corner. By occupying the center, I am forcing the opponent to respond and limiting their options for creating a strong line.",
+        "action": 4,
+        "image_path": "2.png"
+    },
+    {
+        "index": 3,
+        "turn": "Mistral:7b",
+        "turn_index": 0,
+        "reason": "Blocking O's potential winning diagonal downwards and focusing on creating opportunities for myself.",
+        "action": 1,
+        "image_path": "3.png"
+    },
+    {
+        "index": 4,
+        "turn": "Llama3.3:70b",
+        "turn_index": 1,
+        "reason": "I'm placing my 'O' in position 2 (bottom-left) to block the opponent's potential line of 'X's and create an opportunity for myself to build a line of 'O's. By controlling the bottom-left corner, I can also potentially create a diagonal line or challenge the opponent's control of key spaces on the board.",
+        "action": 2,
+        "image_path": "4.png"
+    },
+    {
+        "index": 5,
+        "turn": "Mistral:7b",
+        "turn_index": 0,
+        "reason": "The ideal move is one that leads to an immediate win or forces the opponent to make a defensive move; placing 'X' at position 5 completes a horizontal line and gives an immediate win.",
+        "action": 5,
+        "image_path": "5.png"
+    },
+    {
+        "index": 6,
+        "turn": "Llama3.3:70b",
+        "turn_index": 1,
+        "reason": "I choose to place my mark in position 2 because it provides the best opportunity for me to potentially create a win condition along the bottom row or challenge the opponent's control of the board, however since 2 is not an option I am choosing position 8 as this allows me to potentially create a win condition and put pressure on the opponent to respond",
+        "action": 8,
+        "image_path": "6.png"
+    },
+    {
+        "index": 7,
+        "turn": "Mistral:7b",
+        "turn_index": 0,
+        "reason": "Blocking opponent's diagonal winning opportunity",
+        "action": 7,
+        "image_path": "7.png"
+    },
+    {
+        "index": 8,
+        "turn": "Llama3.3:70b",
+        "turn_index": 1,
+        "reason": "I am choosing position 3 because it gives me control of the middle row and potentially creates a winning line for me, while also putting pressure on my opponent's position. By placing my mark in position 3, I am forcing my opponent to respond in a way that will limit their options and increase my chances of winning.",
+        "action": 3,
+        "image_path": "8.png"
+    },
+    {
+        "index": 9,
+        "turn": "Mistral:7b",
+        "turn_index": 0,
+        "reason": "Placing the mark at position 6 helps delay my opponent's victory while not creating any additional threats or risks for my side.",
+        "action": 6,
+        "image_path": "9.png"
+    }
+]

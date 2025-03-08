@@ -1,0 +1,66 @@
+[
+    {
+        "index": 0,
+        "turn": "None",
+        "turn_index": 0,
+        "reason": "None",
+        "action": "None",
+        "image_path": "0.png"
+    },
+    {
+        "index": 1,
+        "turn": "Llama3.2:3b",
+        "turn_index": 0,
+        "reason": "Control the center of the board and establish a strong foundation for further development",
+        "action": 4,
+        "image_path": "1.png"
+    },
+    {
+        "index": 2,
+        "turn": "GPT-3.5-turbo",
+        "turn_index": 1,
+        "reason": "To win the game, I need to place my mark in cell 2 to create a horizontal line in the top row.",
+        "action": 2,
+        "image_path": "2.png"
+    },
+    {
+        "index": 3,
+        "turn": "Llama3.2:3b",
+        "turn_index": 0,
+        "reason": "Preventing opponent's control of the center while preparing for potential corner threats",
+        "action": 5,
+        "image_path": "3.png"
+    },
+    {
+        "index": 4,
+        "turn": "GPT-3.5-turbo",
+        "turn_index": 1,
+        "reason": "To win the game, I will place my mark in cell 3 to complete a horizontal line.",
+        "action": 3,
+        "image_path": "4.png"
+    },
+    {
+        "index": 5,
+        "turn": "Llama3.2:3b",
+        "turn_index": 0,
+        "reason": "Attempting to create a potential line on the left side of the board while balancing against opponent's lines",
+        "action": 7,
+        "image_path": "5.png"
+    },
+    {
+        "index": 6,
+        "turn": "GPT-3.5-turbo",
+        "turn_index": 1,
+        "reason": "To win the game, I will place my mark on cell 8 to complete a vertical line of 'O's on the right column, ensuring my victory.",
+        "action": 8,
+        "image_path": "6.png"
+    },
+    {
+        "index": 7,
+        "turn": "Llama3.2:3b",
+        "turn_index": 0,
+        "reason": "to block opponent's potential diagonal line and create space for my own winning line.",
+        "action": 1,
+        "image_path": "7.png"
+    }
+]

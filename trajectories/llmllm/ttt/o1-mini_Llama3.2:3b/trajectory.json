@@ -1,0 +1,50 @@
+[
+    {
+        "index": 0,
+        "turn": "None",
+        "turn_index": 0,
+        "reason": "None",
+        "action": "None",
+        "image_path": "0.png"
+    },
+    {
+        "index": 1,
+        "turn": "o1-mini",
+        "turn_index": 0,
+        "reason": "I choose cell 4 because taking the center provides maximum control over the board, allowing multiple opportunities to create winning lines in various directions.",
+        "action": 4,
+        "image_path": "1.png"
+    },
+    {
+        "index": 2,
+        "turn": "Llama3.2:3b",
+        "turn_index": 1,
+        "reason": "Control the Center and create multiple options",
+        "action": 5,
+        "image_path": "2.png"
+    },
+    {
+        "index": 3,
+        "turn": "o1-mini",
+        "turn_index": 0,
+        "reason": "Choosing cell 0 allows X to take the top-left corner, providing multiple opportunities for creating winning combinations and putting pressure on the opponent.",
+        "action": 0,
+        "image_path": "3.png"
+    },
+    {
+        "index": 4,
+        "turn": "Llama3.2:3b",
+        "turn_index": 1,
+        "reason": "Blocking opponent's central placement with a corner piece",
+        "action": 3,
+        "image_path": "4.png"
+    },
+    {
+        "index": 5,
+        "turn": "o1-mini",
+        "turn_index": 0,
+        "reason": "I place X in cell 8 to complete the diagonal from cell 0 to cell 4 to cell 8. This forms a straight line of three X's diagonally across the board, securing an immediate win.",
+        "action": 8,
+        "image_path": "5.png"
+    }
+]

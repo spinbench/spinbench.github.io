@@ -1,0 +1,74 @@
+[
+    {
+        "index": 0,
+        "turn": "None",
+        "turn_index": 0,
+        "reason": "None",
+        "action": "None",
+        "image_path": "0.png"
+    },
+    {
+        "index": 1,
+        "turn": "Mistral:7b",
+        "turn_index": 0,
+        "reason": "Taking the center square (location 4) allows all possible winning lines and maximizes chances of winning in a single turn. Blocking any of the four corners would prevent diagonal or vertical winning combinations, increasing the likelihood of a future victory.",
+        "action": 4,
+        "image_path": "1.png"
+    },
+    {
+        "index": 2,
+        "turn": "o1-mini",
+        "turn_index": 1,
+        "reason": "Selecting cell 0 (top-left corner) allows O to occupy a strategic corner position, which is essential for maximizing winning opportunities. By taking a corner, O can create multiple potential lines of victory (horizontal, vertical, and diagonal) while simultaneously forcing X to respond defensively. This move also helps in setting up a fork, where O can create two threats at once, increasing the chances of winning the game.",
+        "action": 0,
+        "image_path": "2.png"
+    },
+    {
+        "index": 3,
+        "turn": "Mistral:7b",
+        "turn_index": 0,
+        "reason": "Placing an 'X' at position 1 (first open spot in the first row) blocks any potential horizontal or diagonal wins by the opponent and opens up opportunities for me to create a horizontal or vertical win. This maximizes my chances of winning, prevents my opponent from winning, and is optimal strategy.",
+        "action": 1,
+        "image_path": "3.png"
+    },
+    {
+        "index": 4,
+        "turn": "o1-mini",
+        "turn_index": 1,
+        "reason": "I chose to place my mark at cell 7 to block the opponent's potential vertical win in the middle column. The opponent currently has marks in cells 1 and 4, and placing an 'X' in cell 7 would complete their vertical line (cells 1, 4, 7), allowing them to win the game on their next move. By occupying cell 7, I prevent this immediate threat and maintain control of the board.",
+        "action": 7,
+        "image_path": "4.png"
+    },
+    {
+        "index": 5,
+        "turn": "Mistral:7b",
+        "turn_index": 0,
+        "reason": "Placing an 'X' at position 5 completes a row and gives me a winning position while simultaneously forcing the opponent to make a defensive move on their next turn.",
+        "action": 5,
+        "image_path": "5.png"
+    },
+    {
+        "index": 6,
+        "turn": "o1-mini",
+        "turn_index": 1,
+        "reason": "Analyzing the current board state, the opponent 'X' has two marks in the middle row (cells 1 and 4) with cell 5 also occupied by 'X'. Although 'X' does not have an immediate winning opportunity, placing an 'O' in cell 3 is crucial to block any potential threats. By placing at cell 3, 'O' prevents 'X' from establishing a strong position in the middle row, thereby maintaining defensive control and setting up 'O' for future strategic moves.",
+        "action": 3,
+        "image_path": "6.png"
+    },
+    {
+        "index": 7,
+        "turn": "Mistral:7b",
+        "turn_index": 0,
+        "reason": "Completes a row immediately securing victory.",
+        "action": 2,
+        "image_path": "7.png"
+    },
+    {
+        "index": 8,
+        "turn": "o1-mini",
+        "turn_index": 1,
+        "reason": "Placing 'O' in cell 6 completes the top row by occupying cells 0, 3, and 6. This forms a horizontal line of three 'O's, resulting in an immediate win. Additionally, this move prevents 'X' from gaining any further strategic advantage on the board.",
+        "action": 6,
+        "image_path": "8.png"
+    }
+]

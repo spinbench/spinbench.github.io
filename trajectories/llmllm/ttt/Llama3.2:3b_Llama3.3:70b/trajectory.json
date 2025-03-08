@@ -1,0 +1,82 @@
+[
+    {
+        "index": 0,
+        "turn": "None",
+        "turn_index": 0,
+        "reason": "None",
+        "action": "None",
+        "image_path": "0.png"
+    },
+    {
+        "index": 1,
+        "turn": "Llama3.2:3b",
+        "turn_index": 0,
+        "reason": "Control the center, preparing for potential wins in any direction",
+        "action": 4,
+        "image_path": "1.png"
+    },
+    {
+        "index": 2,
+        "turn": "Llama3.3:70b",
+        "turn_index": 1,
+        "reason": "I am placing my mark in position 4 is occupied by the opponent, so I will place my O in position 0 to control the top left corner and create potential lines, also to avoid giving the opponent a chance to place their X in the corner and get an advantage. By doing this, I'm putting pressure on the opponent to respond to my move and limiting their possible next moves.",
+        "action": 0,
+        "image_path": "2.png"
+    },
+    {
+        "index": 3,
+        "turn": "Llama3.2:3b",
+        "turn_index": 0,
+        "reason": "I will place my mark (X) in position 5 to gain more control over the center of the board and create potential future opportunities for winning.",
+        "action": 5,
+        "image_path": "3.png"
+    },
+    {
+        "index": 4,
+        "turn": "Llama3.3:70b",
+        "turn_index": 1,
+        "reason": "I am placing my mark at position 3 because it allows me to control the top row and potentially create a line of attack, while also putting pressure on X to respond and limiting their options for creating lines of attack on the right side or middle of the board. By choosing this spot, I am trying to gain an advantage and set myself up for a potential win.",
+        "action": 3,
+        "image_path": "4.png"
+    },
+    {
+        "index": 5,
+        "turn": "Llama3.2:3b",
+        "turn_index": 0,
+        "reason": "Prevent opponent from cornering me with X in position 8",
+        "action": 6,
+        "image_path": "5.png"
+    },
+    {
+        "index": 6,
+        "turn": "Llama3.3:70b",
+        "turn_index": 1,
+        "reason": "I am choosing position 8 because it gives me the opportunity to potentially create a line of three 'O's in the future, while also putting pressure on the opponent to respond. By placing my mark at position 8, I am challenging the opponent's control of the bottom row and preparing for a potential expansion into the middle row. This move also gives me flexibility to adapt to the opponent's next move, as I can potentially create lines in multiple directions.",
+        "action": 8,
+        "image_path": "6.png"
+    },
+    {
+        "index": 7,
+        "turn": "Llama3.2:3b",
+        "turn_index": 0,
+        "reason": "Choosing to block the corner and gaining space for further moves.",
+        "action": 7,
+        "image_path": "7.png"
+    },
+    {
+        "index": 8,
+        "turn": "Llama3.3:70b",
+        "turn_index": 1,
+        "reason": "I am choosing cell index 1 because it gives me more flexibility for my next moves and allows me to potentially block the opponent's winning lines while also creating an opportunity for a horizontal or diagonal win.",
+        "action": 1,
+        "image_path": "8.png"
+    },
+    {
+        "index": 9,
+        "turn": "Llama3.2:3b",
+        "turn_index": 0,
+        "reason": "Winning focus: Challenge for center control with a strong defensive stance",
+        "action": 2,
+        "image_path": "9.png"
+    }
+]

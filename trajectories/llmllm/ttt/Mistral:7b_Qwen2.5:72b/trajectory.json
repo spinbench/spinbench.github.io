@@ -1,0 +1,82 @@
+[
+    {
+        "index": 0,
+        "turn": "None",
+        "turn_index": 0,
+        "reason": "None",
+        "action": "None",
+        "image_path": "0.png"
+    },
+    {
+        "index": 1,
+        "turn": "Mistral:7b",
+        "turn_index": 0,
+        "reason": "The chosen move allows me to potentially win or create a threat towards winning by controlling the center of the board and limiting opponent's opportunities for future wins.",
+        "action": 4,
+        "image_path": "1.png"
+    },
+    {
+        "index": 2,
+        "turn": "Qwen2.5:72b",
+        "turn_index": 1,
+        "reason": "Placing my 'O' in the top-left corner (index 0) is a strong strategic move. It allows me to control one of the corners and sets up potential winning lines both diagonally and horizontally. This move also forces the opponent to react defensively, potentially limiting their options for future moves.",
+        "action": 0,
+        "image_path": "2.png"
+    },
+    {
+        "index": 3,
+        "turn": "Mistral:7b",
+        "turn_index": 0,
+        "reason": "Taking bottom row early helps control the game and prevents opponent from easily winning. It also opens up opportunities for me to complete a row or column with three X's on my next turn.",
+        "action": 8,
+        "image_path": "3.png"
+    },
+    {
+        "index": 4,
+        "turn": "Qwen2.5:72b",
+        "turn_index": 1,
+        "reason": "Placing an 'O' in cell 2 (bottom-left) blocks the opponent's diagonal threat from winning and sets up a potential win for me if I can place another 'O' in cell 4 or cell 6. This move is critical to prevent the opponent from winning immediately.",
+        "action": 2,
+        "image_path": "4.png"
+    },
+    {
+        "index": 5,
+        "turn": "Mistral:7b",
+        "turn_index": 0,
+        "reason": "Placing an X at position 5 (center-middle) secures a quick win and blocks any potential winning moves by the opponent on their next turn.",
+        "action": 5,
+        "image_path": "5.png"
+    },
+    {
+        "index": 6,
+        "turn": "Qwen2.5:72b",
+        "turn_index": 1,
+        "reason": "The opponent has created a winning threat by placing three Xs in the bottom row (cells 6, 7, and 8). To prevent them from winning on their next turn, I must block cell 7 with my O.",
+        "action": 7,
+        "image_path": "6.png"
+    },
+    {
+        "index": 7,
+        "turn": "Mistral:7b",
+        "turn_index": 0,
+        "reason": "To block the center cell (position 5) to prevent my opponent from winning on their next turn.",
+        "action": 1,
+        "image_path": "7.png"
+    },
+    {
+        "index": 8,
+        "turn": "Qwen2.5:72b",
+        "turn_index": 1,
+        "reason": "The only legal moves available are 3 (middle center) and 6 (middle left). Since the middle left (6) is already occupied by an O, the only remaining legal move is to place an O at position 3 (middle center). This move does not immediately win the game, but it is the only valid move left.",
+        "action": 3,
+        "image_path": "8.png"
+    },
+    {
+        "index": 9,
+        "turn": "Mistral:7b",
+        "turn_index": 0,
+        "reason": "Playing on cell 6 as it forms a possible triplet horizontally with X marks on cells 4 and 2, which could force the opponent to block or risk losing the game.",
+        "action": 6,
+        "image_path": "9.png"
+    }
+]

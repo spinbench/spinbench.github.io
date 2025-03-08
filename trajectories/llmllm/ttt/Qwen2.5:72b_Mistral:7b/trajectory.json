@@ -1,0 +1,50 @@
+[
+    {
+        "index": 0,
+        "turn": "None",
+        "turn_index": 0,
+        "reason": "None",
+        "action": "None",
+        "image_path": "0.png"
+    },
+    {
+        "index": 1,
+        "turn": "Qwen2.5:72b",
+        "turn_index": 0,
+        "reason": "Placing 'X' in the center (index 4) is the optimal first move in Tic-Tac-Toe. It provides the most flexibility for future moves and forces the opponent to react, giving me a strong position and the best chance to win.",
+        "action": 4,
+        "image_path": "1.png"
+    },
+    {
+        "index": 2,
+        "turn": "Mistral:7b",
+        "turn_index": 1,
+        "reason": "Blocking horizontal and vertical wins for my opponent, while aiming to control the center of the board for a potential winning maneuver.",
+        "action": 1,
+        "image_path": "2.png"
+    },
+    {
+        "index": 3,
+        "turn": "Qwen2.5:72b",
+        "turn_index": 0,
+        "reason": "Placing 'X' in the top-right corner (position 6) secures one of the diagonals and blocks the opponent's potential win in that diagonal. This move also sets up multiple winning combinations for future turns, giving me a strong positional advantage.",
+        "action": 6,
+        "image_path": "3.png"
+    },
+    {
+        "index": 4,
+        "turn": "Mistral:7b",
+        "turn_index": 1,
+        "reason": "Taking control of the top-left corner (index 0) will threaten both diagonal and vertical victories simultaneously, forcing X to play defensively while setting up future moves that could potentially lead to a win. Blocking X's victory opportunities is crucial at this stage.",
+        "action": 0,
+        "image_path": "4.png"
+    },
+    {
+        "index": 5,
+        "turn": "Qwen2.5:72b",
+        "turn_index": 0,
+        "reason": "Placing my mark in position 2 will block the opponent's potential diagonal win (0, 4, 8) and also create a winning threat for me on the top row (0, 1, 2). This move is crucial to maintain control and ensure I have a path to victory.",
+        "action": 2,
+        "image_path": "5.png"
+    }
+]

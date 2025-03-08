@@ -1,0 +1,66 @@
+[
+    {
+        "index": 0,
+        "turn": "None",
+        "turn_index": 0,
+        "reason": "None",
+        "action": "None",
+        "image_path": "0.png"
+    },
+    {
+        "index": 1,
+        "turn": "GPT-4o-mini",
+        "turn_index": 0,
+        "reason": "Placing my token in column 3 gives me the opportunity to either create a vertical stack of tokens or build towards potential horizontal and diagonal connections. Additionally, it allows me to preemptively counter any move that my opponent might make in the central columns, which are crucial for creating winning sequences in Connect Four.",
+        "action": 3,
+        "image_path": "1.png"
+    },
+    {
+        "index": 2,
+        "turn": "Llama3.2:3b",
+        "turn_index": 1,
+        "reason": "Occupying column 6 with an 'O' token to create a potential chain in row 5 and put pressure on opponent's position.",
+        "action": 6,
+        "image_path": "2.png"
+    },
+    {
+        "index": 3,
+        "turn": "GPT-4o-mini",
+        "turn_index": 0,
+        "reason": "I will place my token in column 4 (c4) to create a potential horizontal connection with my existing 'X' token in column 3 (c3). This move also allows me to prepare for vertical and diagonal connections. Additionally, it puts me in a position where I can threaten the opponent's potential moves and maintain control of the central columns for future plays.",
+        "action": 4,
+        "image_path": "3.png"
+    },
+    {
+        "index": 4,
+        "turn": "Llama3.2:3b",
+        "turn_index": 1,
+        "reason": "Attempting to create a 'V' shape in column 5 with an existing token while putting pressure on opponent's defensive lines in columns 3 and 4. Placing token at position (1, 0) to potentially open up a new winning line or disrupt opponent's strategy.",
+        "action": 0,
+        "image_path": "4.png"
+    },
+    {
+        "index": 5,
+        "turn": "GPT-4o-mini",
+        "turn_index": 0,
+        "reason": "I will place my token in column 2 to build towards creating a potential horizontal connection with my existing tokens in columns 3 and 4. This also helps to threaten the opponent's potential moves while preparing for future connections. Additionally, this move prevents the opponent from easily establishing a strong position in the middle columns, as they might need to respond defensively next turn.",
+        "action": 2,
+        "image_path": "5.png"
+    },
+    {
+        "index": 6,
+        "turn": "Llama3.2:3b",
+        "turn_index": 1,
+        "reason": "I'm going to place my token at column 2 to challenge the opponent's control of the center and prepare for a potential diagonal sequence. Additionally, it puts pressure on their existing X tokens.",
+        "action": 2,
+        "image_path": "6.png"
+    },
+    {
+        "index": 7,
+        "turn": "GPT-4o-mini",
+        "turn_index": 0,
+        "reason": "I will place my token in column 5. This move enables me to create a horizontal connection of four tokens in my next turn if the opponent does not block me. Currently, I have three consecutive X tokens in row 5 at columns 2, 3, and 4. Placing in column 5 will give me a winning opportunity next turn, while the opponent has no immediate winning threats on this move.",
+        "action": 5,
+        "image_path": "7.png"
+    }
+]

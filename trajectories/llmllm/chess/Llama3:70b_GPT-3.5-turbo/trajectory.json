@@ -1,0 +1,47 @@
+[
+    {
+        "image": "chess/chess_2_ollama-llama3:70b-instruct-forced-reasoning_gpt-3.5-turbo-forced-reasoning/0.png",
+        "index": 0,
+        "turn": "None",
+        "turn_index": 0,
+        "reason": "None",
+        "action": "None",
+        "image_path": "0.png"
+    },
+    {
+        "image": "chess/chess_2_ollama-llama3:70b-instruct-forced-reasoning_gpt-3.5-turbo-forced-reasoning/1.png",
+        "index": 1,
+        "turn": "ollama-llama3:70b-instruct",
+        "turn_index": 0,
+        "reason": "Controlling the center with a classic move to create space for piece development",
+        "action": "e2e4",
+        "image_path": "1.png"
+    },
+    {
+        "image": "chess/chess_2_ollama-llama3:70b-instruct-forced-reasoning_gpt-3.5-turbo-forced-reasoning/2.png",
+        "index": 2,
+        "turn": "gpt-3.5-turbo",
+        "turn_index": 1,
+        "reason": "I will move my Queen's Knight to f6 to attack the opponent's pawn on e4 and threaten further advancement.",
+        "action": "g8f6",
+        "image_path": "2.png"
+    },
+    {
+        "image": "chess/chess_2_ollama-llama3:70b-instruct-forced-reasoning_gpt-3.5-turbo-forced-reasoning/3.png",
+        "index": 3,
+        "turn": "ollama-llama3:70b-instruct",
+        "turn_index": 0,
+        "reason": "Developing my dark-squared bishop to put pressure on the opponent's position and preparing to push d2-d3 or c2-c3 to support my pawn on e4.",
+        "action": "b1c3",
+        "image_path": "3.png"
+    },
+    {
+        "image": "chess/chess_2_ollama-llama3:70b-instruct-forced-reasoning_gpt-3.5-turbo-forced-reasoning/4.png",
+        "index": 4,
+        "turn": "gpt-3.5-turbo",
+        "turn_index": 1,
+        "reason": "Black has moved the knight to f6, putting pressure on the e4 pawn. To counter this threat and maintain control over the center, I will move my pawn from g2 to g3, preparing to fianchetto my bishop and strengthen my kingside.",
+        "action": "g2g3",
+        "image_path": "4.png"
+    }
+]

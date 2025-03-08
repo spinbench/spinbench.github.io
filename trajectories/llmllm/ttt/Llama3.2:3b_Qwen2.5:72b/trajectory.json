@@ -1,0 +1,82 @@
+[
+    {
+        "index": 0,
+        "turn": "None",
+        "turn_index": 0,
+        "reason": "None",
+        "action": "None",
+        "image_path": "0.png"
+    },
+    {
+        "index": 1,
+        "turn": "Llama3.2:3b",
+        "turn_index": 0,
+        "reason": "Starting with the center space (4) provides symmetry and more strategic movement options for future X moves.",
+        "action": 4,
+        "image_path": "1.png"
+    },
+    {
+        "index": 2,
+        "turn": "Qwen2.5:72b",
+        "turn_index": 1,
+        "reason": "Placing my 'O' in the top-left corner (cell 0) sets up potential lines both horizontally and diagonally. This move forces the opponent to react and gives me more strategic options for future moves.",
+        "action": 0,
+        "image_path": "2.png"
+    },
+    {
+        "index": 3,
+        "turn": "Llama3.2:3b",
+        "turn_index": 0,
+        "reason": "Trying to control the center while protecting my row/column and creating possibilities for three-in-a-row in the second column of the board",
+        "action": 3,
+        "image_path": "3.png"
+    },
+    {
+        "index": 4,
+        "turn": "Qwen2.5:72b",
+        "turn_index": 1,
+        "reason": "Placing 'O' in position 5 blocks the opponent's middle row threat and keeps the game balanced, giving me more options for creating multiple threats in my next turn.",
+        "action": 5,
+        "image_path": "4.png"
+    },
+    {
+        "index": 5,
+        "turn": "Llama3.2:3b",
+        "turn_index": 0,
+        "reason": "Controlling key areas by positioning a mark that could pave the path to get a three marks line in either row or columns if possible",
+        "action": 2,
+        "image_path": "5.png"
+    },
+    {
+        "index": 6,
+        "turn": "Qwen2.5:72b",
+        "turn_index": 1,
+        "reason": "The opponent has a potential winning move in position 6 (bottom-left) which would complete the diagonal from top-left to bottom-right. Blocking this move is critical to prevent an immediate loss and maintain a chance to win.",
+        "action": 6,
+        "image_path": "6.png"
+    },
+    {
+        "index": 7,
+        "turn": "Llama3.2:3b",
+        "turn_index": 0,
+        "reason": "To counter the opponent's potential winning line, I will place my X in position 7 to block their diagonal and create a possibility for myself.",
+        "action": 7,
+        "image_path": "7.png"
+    },
+    {
+        "index": 8,
+        "turn": "Qwen2.5:72b",
+        "turn_index": 1,
+        "reason": "The only legal moves available are positions 1 and 8. Placing an 'O' in position 1 will block the opponent's potential horizontal line (1, 4, 7) and also form a vertical line (0, 3, 6) with my existing marks at positions 0 and 6, securing a win.",
+        "action": 1,
+        "image_path": "8.png"
+    },
+    {
+        "index": 9,
+        "turn": "Llama3.2:3b",
+        "turn_index": 0,
+        "reason": "Prioritizing winning condition by placing X in cell 8 to create a diagonal line and secure victory.",
+        "action": 8,
+        "image_path": "9.png"
+    }
+]

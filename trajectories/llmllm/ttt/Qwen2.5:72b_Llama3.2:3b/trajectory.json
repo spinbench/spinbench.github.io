@@ -1,0 +1,50 @@
+[
+    {
+        "index": 0,
+        "turn": "None",
+        "turn_index": 0,
+        "reason": "None",
+        "action": "None",
+        "image_path": "0.png"
+    },
+    {
+        "index": 1,
+        "turn": "Qwen2.5:72b",
+        "turn_index": 0,
+        "reason": "Taking the center cell (4) is generally the best first move in Tic-Tac-Toe as it maximizes the number of potential winning lines and forces the opponent to react. This move provides flexibility and control over the board.",
+        "action": 4,
+        "image_path": "1.png"
+    },
+    {
+        "index": 2,
+        "turn": "Llama3.2:3b",
+        "turn_index": 1,
+        "reason": "Opponent has controlled the center (position 4), so I'll place my mark in a corner to gain more control and create possibilities for future moves.",
+        "action": 0,
+        "image_path": "2.png"
+    },
+    {
+        "index": 3,
+        "turn": "Qwen2.5:72b",
+        "turn_index": 0,
+        "reason": "Placing an 'X' in cell 3 blocks the opponent's potential horizontal win (0-3-6) and sets up multiple potential lines for me (1-4-7 and 3-5-7). This move maximizes my chances of winning or at least securing a draw.",
+        "action": 3,
+        "image_path": "3.png"
+    },
+    {
+        "index": 4,
+        "turn": "Llama3.2:3b",
+        "turn_index": 1,
+        "reason": "Considering the existing X in space 1 and my own X in space 0, placing an O in space 2 would help to create a potential horizontal line across the top row",
+        "action": 2,
+        "image_path": "4.png"
+    },
+    {
+        "index": 5,
+        "turn": "Qwen2.5:72b",
+        "turn_index": 0,
+        "reason": "Placing an 'X' in position 5 (bottom middle) will complete the middle column with three 'X's, securing an immediate win.",
+        "action": 5,
+        "image_path": "5.png"
+    }
+]

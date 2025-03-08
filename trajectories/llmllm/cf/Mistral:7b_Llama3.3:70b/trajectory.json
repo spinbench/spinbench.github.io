@@ -1,0 +1,106 @@
+[
+    {
+        "index": 0,
+        "turn": "None",
+        "turn_index": 0,
+        "reason": "None",
+        "action": "None",
+        "image_path": "0.png"
+    },
+    {
+        "index": 1,
+        "turn": "Mistral:7b",
+        "turn_index": 0,
+        "reason": "Beginning by capturing control of one of the central columns while preparing for potential diagonal wins or horizontal line connections, I will place my token in column 3.",
+        "action": 3,
+        "image_path": "1.png"
+    },
+    {
+        "index": 2,
+        "turn": "Llama3.3:70b",
+        "turn_index": 1,
+        "reason": "I am placing my token in column 3 to block the opponent's potential vertical sequence and gain control of the center column, which will give me more flexibility for my next move and potentially create a fork to win the game",
+        "action": 3,
+        "image_path": "2.png"
+    },
+    {
+        "index": 3,
+        "turn": "Mistral:7b",
+        "turn_index": 0,
+        "reason": "Blocking opponent's potential diagonal win while preserving the threat of horizontal and diagonal opportunities for my win. Closest column to opponent's move that is not already filled.",
+        "action": 1,
+        "image_path": "3.png"
+    },
+    {
+        "index": 4,
+        "turn": "Llama3.3:70b",
+        "turn_index": 1,
+        "reason": "I am placing my token in column 2 because it allows me to potentially create a diagonal connection and also puts pressure on my opponent's position. By choosing this column, I am trying to take control of the center and prepare for a possible win. This move also forces my opponent to respond and defend against my potential connections, rather than focusing solely on their own.",
+        "action": 2,
+        "image_path": "4.png"
+    },
+    {
+        "index": 5,
+        "turn": "Mistral:7b",
+        "turn_index": 0,
+        "reason": "Placing a token in column 3 helps to control the center of the board for future moves while also preventing my opponent from creating any immediate horizontal or diagonal winning opportunities on their next turn.",
+        "action": 3,
+        "image_path": "5.png"
+    },
+    {
+        "index": 6,
+        "turn": "Llama3.3:70b",
+        "turn_index": 1,
+        "reason": "I am placing my token in column 3 to challenge my opponent's control of the center column and create a potential opportunity for myself to win. By placing my token on top of the existing 'O' token, I can potentially create a vertical line of tokens and put pressure on my opponent's position.",
+        "action": 2,
+        "image_path": "6.png"
+    },
+    {
+        "index": 7,
+        "turn": "Mistral:7b",
+        "turn_index": 0,
+        "reason": "Placing a token in column 0 secures this column for my X tokens and also allows me to potentially create a diagonal sequence if I place an X in row 5 or 6 later on. It also denies my opponent the opportunity to win by connecting four in that column.",
+        "action": 0,
+        "image_path": "7.png"
+    },
+    {
+        "index": 8,
+        "turn": "Llama3.3:70b",
+        "turn_index": 1,
+        "reason": "I am choosing column 3 because it allows me to create a potential horizontal connection with my existing tokens at positions (4, 2) and (4, 3), while also putting pressure on the opponent's central token at position (3, 3). By placing my token in this column, I can potentially limit the opponent's options and create an opportunity for myself to win. Additionally, column 3 is a strategic location that gives me flexibility for future moves.",
+        "action": 3,
+        "image_path": "8.png"
+    },
+    {
+        "index": 9,
+        "turn": "Mistral:7b",
+        "turn_index": 0,
+        "reason": "Since my opponent is trying to secure a diagonal win by placing an O token on the second row of column 2, I'll focus on preventing that by using the openness of column 1. If I fill this column with an X token, it potentially creates opportunities for a diagonal or horizontal win across columns 0-3. With an eye toward maintaining multiple winning possibilities, I will also use column 0 to strengthen my position.",
+        "action": 1,
+        "image_path": "9.png"
+    },
+    {
+        "index": 10,
+        "turn": "Llama3.3:70b",
+        "turn_index": 1,
+        "reason": "I'm trying to block the opponent's potential diagonal line and create a new opportunity for myself. By placing my token in column 3, I can potentially connect with my existing tokens and put pressure on the opponent's future moves. Additionally, this move will give me more options for my next turn and make it harder for the opponent to create a winning line.",
+        "action": 2,
+        "image_path": "10.png"
+    },
+    {
+        "index": 11,
+        "turn": "Mistral:7b",
+        "turn_index": 0,
+        "reason": "Targets an open column to build a new diagonal connection and blocks the opponent's potential diagonal win, while restricting their options",
+        "action": 6,
+        "image_path": "11.png"
+    },
+    {
+        "index": 12,
+        "turn": "Llama3.3:70b",
+        "turn_index": 1,
+        "reason": "I am choosing column 2 because it allows me to potentially create a diagonal connection with my existing tokens and also challenges the opponent's control of the center. By placing my token in this column, I can put pressure on the opponent's position and limit their future moves.",
+        "action": 2,
+        "image_path": "12.png"
+    }
+]
