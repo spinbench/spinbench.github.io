@@ -1,13 +1,13 @@
 {
   "num_agents": 7,
   "winning_centers": 18,
-  "max_tokens": 10000000,
+  "max_tokens": 20000000,
   "max_years": 1920,
-  "model_names": "gpt-4o_1,gpt-4o_1,o1-preview_1,o1_1,claude-3-5-haiku-20241022_1,gpt-4-turbo_1,claude-3-5-haiku-20241022_1",
+  "model_names": "gpt-4o_1,gpt-4o_1,o1-preview_1,o1,claude-3-5-haiku-20241022_1,gpt-4-turbo_1,claude-3-5-haiku-20241022_1",
   "temperature": 0.9,
   "top_p": 1.0,
   "state_file": "diplomacy_game_state.json",
   "enable_negotiation": 1,
   "negotiation_rounds": 3,
-  "store_folder": "multi-22111-talk"
+  "store_folder": "multi-22111-talk-fix"
 }

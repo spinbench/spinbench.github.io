@@ -102,6 +102,10 @@
         "player_response": {
             "reason": "Hint rank 1 to help player play the Yellow 1 card, which can start a firework stack",
             "action": 15
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 8
         }
     },
     {
@@ -231,6 +235,10 @@
         "player_response": {
             "reason": "Hint player about Yellow 1 card to potentially start Yellow fireworks stack",
             "action": 11
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 7
         }
     },
     {
@@ -356,6 +364,10 @@
         "player_response": {
             "reason": "Confirm Y1 card is safe to play and start the Yellow firework stack",
             "action": 15
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 6
         }
     },
     {
@@ -485,6 +497,10 @@
         "player_response": {
             "reason": "Hint teammate about Yellow color to highlight the playable Y1 card",
             "action": 11
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 5
         }
     },
     {
@@ -610,6 +626,10 @@
         "player_response": {
             "reason": "Hint about the Yellow 1 card to help start the Yellow firework stack",
             "action": 15
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 4
         }
     },
     {
@@ -739,6 +759,10 @@
         "player_response": {
             "reason": "Hint yellow card to help teammate potentially play the first yellow card",
             "action": 11
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 3
         }
     },
     {
@@ -864,6 +888,10 @@
         "player_response": {
             "reason": "Hint the yellow 1 card to help start the yellow firework stack",
             "action": 15
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 2
         }
     },
     {
@@ -993,6 +1021,10 @@
         "player_response": {
             "reason": "Hint about yellow rank 1 to help player confidently play the Y1 card",
             "action": 15
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 1
         }
     },
     {
@@ -1090,6 +1122,10 @@
         "player_response": {
             "reason": "Play the known Yellow 1 card to start the Yellow firework stack",
             "action": 7
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 0
         }
     },
     {
@@ -1187,6 +1223,10 @@
         "player_response": {
             "reason": "Discard an unknown card to potentially gain an info token, preserving the rank 1 card",
             "action": 0
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 0
         }
     },
     {
@@ -1308,6 +1348,10 @@
         "player_response": {
             "reason": "Hint teammate about Yellow cards to play Y1 and advance fireworks",
             "action": 11
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 1
         }
     },
     {
@@ -1405,6 +1449,10 @@
         "player_response": {
             "reason": "Play the known Yellow 1 card to extend the Yellow fireworks stack and score a point",
             "action": 6
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 0
         }
     },
     {
@@ -1502,6 +1550,10 @@
         "player_response": {
             "reason": "No info tokens, cannot give hints. Discard last card to potentially gain an info token and preserve life tokens",
             "action": 4
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 0
         }
     },
     {
@@ -1623,6 +1675,10 @@
         "player_response": {
             "reason": "Hint rank 2 to help Player +1 understand potential playable cards",
             "action": 16
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 1
         }
     },
     {
@@ -1720,6 +1776,10 @@
         "player_response": {
             "reason": "Discard an uncertain card to gain an info token, given no clear playable options and zero info tokens",
             "action": 0
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 0
         }
     },
     {
@@ -1841,6 +1901,10 @@
         "player_response": {
             "reason": "Hint about rank 2 to highlight potentially playable cards G2 and R2, which could help progress the fireworks",
             "action": 16
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 1
         }
     },
     {
@@ -1938,6 +2002,10 @@
         "player_response": {
             "reason": "Hint player about Green to play the G1 card, extending the Green fireworks stack and avoiding potential mistakes",
             "action": 5
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 0
         }
     },
     {
@@ -2035,6 +2103,10 @@
         "player_response": {
             "reason": "Hint teammate about Red color to enable safe play of R1 card, preserving our last life token",
             "action": 10
+        },
+        "token_dict": {
+            "life": 1,
+            "info": 0
         }
     },
     {
@@ -2156,6 +2228,10 @@
         "player_response": {
             "reason": "Hint teammate about green 1 cards to help progress green stack",
             "action": 12
+        },
+        "token_dict": {
+            "life": 1,
+            "info": 1
         }
     },
     {
@@ -2253,6 +2329,10 @@
         "player_response": {
             "reason": "Discard unknown card to potentially gain an info token, minimizing risk with our last life token",
             "action": 0
+        },
+        "token_dict": {
+            "life": 1,
+            "info": 0
         }
     },
     {
@@ -2370,6 +2450,10 @@
         "player_response": {
             "reason": "Provide Green color hint to help play the Green 1 cards and start the Green fireworks stack",
             "action": 12
+        },
+        "token_dict": {
+            "life": 1,
+            "info": 1
         }
     },
     {
@@ -2467,6 +2551,10 @@
         "player_response": {
             "reason": "Play the Yellow card (Card 2) which might be a Y2, extending the Yellow firework stack and avoiding potential game-ending risk",
             "action": 6
+        },
+        "token_dict": {
+            "life": 1,
+            "info": 0
         }
     }
 ]

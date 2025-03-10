@@ -14,14 +14,154 @@
   <link rel="stylesheet" href="../../static/css/index.css">
 
   <style>
+    /* Custom styling */
+    body {
+      font-family: 'Noto Sans', sans-serif;
+      background-color: #f5f7fa;
+    }
+    
+    .hero {
+      background: linear-gradient(135deg, #4a66ac 0%, #667eea 100%);
+      color: white;
+      padding: 2rem 0;
+      margin-bottom: 2rem;
+    }
+    
+    .hero .title {
+      font-family: 'Google Sans', sans-serif;
+      font-weight: 700;
+    }
+    
+    .section {
+      padding: 2rem 1.5rem;
+    }
+    
+    .container {
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      background-color: white;
+      border-radius: 8px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    
     .state {
       margin-bottom: 2rem;
-      padding: 1rem;
-      border: 1px solid #dbdbdb;
-      border-radius: 4px;
+      padding: 1.5rem;
+      border: 1px solid #eaeaea;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      background-color: white;
+      transition: all 0.3s ease;
     }
+    
+    .state:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    
     .select-container {
+      margin-bottom: 1.5rem;
+    }
+    
+    .button.is-primary {
+      background-color: #4a66ac;
+      transition: background-color 0.3s ease;
+    }
+    
+    .button.is-primary:hover {
+      background-color: #3a5499;
+    }
+    
+    .navigation-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    
+    .card-header {
+      background-color: #f5f7fa;
+      border-bottom: 1px solid #eaeaea;
+    }
+    
+    .card-header-title {
+      font-size: 1.1rem;
+    }
+    
+    .player-hand {
+      background-color: #f9f9f9;
+      border-radius: 6px;
+      padding: 1rem;
       margin-bottom: 1rem;
+    }
+    
+    .card-info {
+      display: inline-block;
+      padding: 0.4rem 0.8rem;
+      margin: 0.2rem;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+    
+    .color-R { background-color: #ffebee; color: #d32f2f; }
+    .color-Y { background-color: #fffde7; color: #fbc02d; }
+    .color-G { background-color: #e8f5e9; color: #388e3c; }
+    .color-W { background-color: #f5f5f5; color: #616161; }
+    .color-B { background-color: #e3f2fd; color: #1976d2; }
+    .color-X { background-color: #eeeeee; color: #757575; }
+    
+    
+    .fireworks-display {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    
+    .firework-stack {
+      padding: 0.5rem;
+      border-radius: 4px;
+      min-width: 60px;
+      text-align: center;
+      font-weight: bold;
+    }
+    
+    .footer {
+      background-color: #f5f7fa;
+      padding: 2rem;
+    }
+    
+    /* Action section styling */
+    .action-box {
+      border-left: 4px solid #4a66ac;
+      background-color: #f8f9fa;
+    }
+    
+    .reason-block {
+      white-space: pre-line;
+      background-color: #f8f9fa;
+      padding: 1rem;
+      border-radius: 6px;
+      font-style: italic;
+    }
+    
+    .loading-state {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 150px;
+    }
+    
+    /* Step indicator */
+    .step-indicator {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    
+    .step-count {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #4a66ac;
     }
   </style>
 </head>
@@ -30,27 +170,29 @@
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <h1 class="title is-2">Hanabi Trajectory Viewer</h1>
-          </div>
-        </div>
+      <div class="container is-max-desktop has-text-centered">
+        <h1 class="title is-2">
+          Hanabi Trajectory Viewer
+        </h1>
+        <p class="subtitle is-5">Visualize and analyze Hanabi game states from SPIN-Bench</p>
       </div>
     </div>
-
   </section>
 
   <!-- Trajectory Selection -->
   <section class="section" id="trajectory-selection">
     <div class="container">
-      <h2 class="title is-3">Trajectory Selection</h2>
+      <h2 class="title is-4">
+        Trajectory Selection
+      </h2>
       <div class="columns is-multiline">
         <div class="column is-half">
           <div class="field">
-            <label class="label">Choose the model:</label>
+            <label class="label">
+              Select Model:
+            </label>
             <div class="control">
-              <div class="select">
+              <div class="select is-medium is-fullwidth">
                 <select id="modelSelect">
                   <option value="deepseek-r1">Deepseek-R1</option>
                   <option value="gpt-4-turbo">GPT-4-turbo</option>
@@ -63,28 +205,35 @@
                   <option value="sonnet">Claude-3.5-Sonnet</option>
                 </select>
               </div>
+
             </div>
           </div>
         </div>
         <div class="column is-half">
           <div class="field">
-            <label class="label">Select number of players:</label>
+            <label class="label">
+              Number of Players:
+            </label>
             <div class="control">
-              <div class="select">
+              <div class="select is-medium is-fullwidth">
                 <select id="playerCountSelect">
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
+                  <option value="2">2 Players</option>
+                  <option value="3">3 Players</option>
+                  <option value="4">4 Players</option>
+                  <option value="5">5 Players</option>
                 </select>
               </div>
+
             </div>
           </div>
         </div>
       </div>
       <div class="columns">
         <div class="column has-text-centered">
-          <button class="button is-primary" id="loadTrajectoryButton">Load Trajectory</button>
+          <button class="button is-primary is-medium" id="loadTrajectoryButton">
+
+            <span>Load Trajectory</span>
+          </button>
         </div>
       </div>
     </div>
@@ -93,26 +242,115 @@
   <!-- Trajectory Navigation and State Display -->
   <section class="section">
     <div class="container">
-      <!-- Navigation Buttons -->
-      <div class="buttons is-centered" style="margin-bottom: 1rem;">
-        <button class="button" id="prevButton" onclick="prevState()">Previous State</button>
-        <button class="button" id="nextButton" onclick="nextState()">Next State</button>
+      <!-- Step indicator -->
+      <div class="step-indicator is-hidden" id="stepIndicator">
+        <div class="step-count">
+          State <span id="currentStep">0</span> of <span id="totalSteps">0</span>
+        </div>
+        <div class="field has-addons">
+          <p class="control">
+            <button class="button" id="firstButton" onclick="goToFirst()">
+First
+            </button>
+          </p>
+          <p class="control">
+            <button class="button" id="prevButton" onclick="prevState()">
+Prev
+            </button>
+          </p>
+          <p class="control">
+            <button class="button" id="nextButton" onclick="nextState()">
+Next
+            </button>
+          </p>
+          <p class="control">
+            <button class="button" id="lastButton" onclick="goToLast()">
+Last
+            </button>
+          </p>
+        </div>
       </div>
+
       <!-- State Display -->
       <div id="stateDisplay" class="state">
-        <!-- Dynamic state details will be inserted here -->
-        <p>Please load a trajectory to view game states.</p>
-      </div>
-      <div class="content">
-        <p><strong>Note:</strong>There are five colors: R is Red, Y is yellow, G is green, W is white, B is blue. Each card is displayed by [color][number], like B0. If color or number is unknown, that part is displayed as X.</p>
+        <div class="loading-state">
+          <p class="has-text-centered">
+
+            Please load a trajectory to view game states.
+          </p>
         </div>
+      </div>
+
+       <!-- Card Legend -->
+       <div class="content">
+        <div class="notification is-light py-3">
+          <p class="has-text-weight-bold mb-2">Card Legend:</p>
+          <div class="columns is-mobile is-multiline is-variable is-1">
+            <div class="column is-narrow" style="width: 90px; padding: 0.25rem;">
+              <div class="box has-text-centered p-1 m-0" style="background-color: #ffebee; color: #d32f2f; border: 1px solid #d32f2f; height: 100%;">
+                <div class="is-size-7 has-text-weight-bold">R1</div>
+                <div class="is-size-7 my-0">Red One</div>
+              </div>
+            </div>
+            
+            <div class="column is-narrow" style="width: 90px; padding: 0.25rem;">
+              <div class="box has-text-centered p-1 m-0" style="background-color: #fffde7; color: #fbc02d; border: 1px solid #fbc02d; height: 100%;">
+                <div class="is-size-7 has-text-weight-bold">Y2</div>
+                <div class="is-size-7 my-0">Yellow Two</div>
+              </div>
+            </div>
+            
+            <div class="column is-narrow" style="width: 90px; padding: 0.25rem;">
+              <div class="box has-text-centered p-1 m-0" style="background-color: #e8f5e9; color: #388e3c; border: 1px solid #388e3c; height: 100%;">
+                <div class="is-size-7 has-text-weight-bold">G3</div>
+                <div class="is-size-7 my-0">Green Three</div>
+              </div>
+            </div>
+            
+            <div class="column is-narrow" style="width: 90px; padding: 0.25rem;">
+              <div class="box has-text-centered p-1 m-0" style="background-color: #f5f5f5; color: #616161; border: 1px solid #616161; height: 100%;">
+                <div class="is-size-7 has-text-weight-bold">W4</div>
+                <div class="is-size-7 my-0">White Four</div>
+              </div>
+            </div>
+            
+            <div class="column is-narrow" style="width: 90px; padding: 0.25rem;">
+              <div class="box has-text-centered p-1 m-0" style="background-color: #e3f2fd; color: #1976d2; border: 1px solid #1976d2; height: 100%;">
+                <div class="is-size-7 has-text-weight-bold">B5</div>
+                <div class="is-size-7 my-0">Blue Five</div>
+              </div>
+            </div>
+            
+            <div class="column is-narrow" style="width: 120px; padding: 0.25rem;">
+              <div class="box has-text-centered p-1 m-0" style="background-color: #eeeeee; color: #757575; border: 1px solid #757575; height: 100%;">
+                <div class="is-size-7 has-text-weight-bold">X2</div>
+                <div class="is-size-7 my-0">Unknown Color</div>
+              </div>
+            </div>
+
+            <div class="column is-narrow" style="width: 120px; padding: 0.25rem;">
+              <div class="box has-text-centered p-1 m-0" style="background-color: #eeeeee; color: #757575; border: 1px solid #757575; height: 100%;">
+                <div class="is-size-7 has-text-weight-bold">YX</div>
+                <div class="is-size-7 my-0">Unknown Number</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="footer">
     <div class="content has-text-centered">
-      <p>Hanabi Trajectory Viewer - Part of the SPIN-Bench Benchmark</p>
+      <p>
+        <strong>Hanabi Trajectory Viewer</strong> - Part of the SPIN-Bench Benchmark
+      </p>
+      <div class="tags is-centered">
+        <span class="tag is-light">AI Benchmarking</span>
+        <span class="tag is-light">Cooperative Games</span>
+        <span class="tag is-light">Hanabi</span>
+      </div>
     </div>
   </footer>
 
@@ -123,107 +361,278 @@
 
     // Load trajectory JSON based on selected model and player count
     function loadTrajectory(path) {
+      // Show loading indicator
+      document.getElementById('stateDisplay').innerHTML = `
+        <div class="loading-state">
+          <div class="has-text-centered">
+            Loading...
+            <p class="mt-3">Loading trajectory data...</p>
+          </div>
+        </div>
+      `;
+      
       fetch(path)
-        .then(response => response.json())
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+          return response.json();
+        })
         .then(data => {
           trajectoryData = data;
           currentIndex = 0;
+          
+          document.getElementById('stepIndicator').classList.remove('is-hidden');
+          document.getElementById('currentStep').textContent = currentIndex + 1;
+          document.getElementById('totalSteps').textContent = trajectoryData.length;
+          
           if (trajectoryData.length > 0) {
             showState(currentIndex);
           } else {
-            document.getElementById('stateDisplay').innerHTML = "<p>No state data found in trajectory.</p>";
+            document.getElementById('stateDisplay').innerHTML = `
+              <div class="notification is-warning">
+                <p class="has-text-centered">No state data found in trajectory.</p>
+              </div>
+            `;
           }
         })
         .catch(error => {
           console.error('Error loading trajectory:', error);
-          alert("Trajectory load failed, please choose another trajectory.");
+          document.getElementById('stateDisplay').innerHTML = `
+            <div class="notification is-danger">
+              <p class="has-text-centered">
+
+                Failed to load trajectory. Please try another model or player count.
+              </p>
+              <p class="has-text-centered is-size-7 mt-2">Error: ${error.message}</p>
+            </div>
+          `;
         });
     }
 
-    // Display a single state using the template provided
-    function showState(index) {
-        if (index < 0 || index >= trajectoryData.length) return;
-        const state = trajectoryData[index];
-        const model = document.getElementById('modelSelect').value;
-        const playerCount = document.getElementById('playerCountSelect').value;
+    // Format card with color coding
+    function formatCard(cardStr) {
+      if (!cardStr || cardStr.length < 2) return '<span class="tag" style="background-color: #eeeeee; color: #757575;">XX</span>';
       
-        let html = `
-        <div class="card">
-          <header class="card-header">
-            <p class="card-header-title">Model: ${model}, Player Count: ${playerCount}, Current Step: ${currentIndex}</p>
-          </header>
-          <div class="card-content">
-            <div class="content">
-                  <p><strong>Tokens:</strong> ${state.tokens}</p>
-                  <p><strong>Fireworks:</strong> ${state.fireworks}</p>
-              <hr>
-              <h3 class="title is-5">Current Player's Hand</h3>
-              <ul>
-        `;
+      const color = cardStr.charAt(0);
+      const number = cardStr.charAt(1);
       
-        state.your_hand.forEach((card, idx) => {
-          html += `<li>Card ${idx + 1}: ${card.known}</li>`;
-        });
-        
-        html += `
-              </ul>
-              <hr>
-              <h3 class="title is-5">Other Players' Hands</h3>
-        `;
+      let bgColor = '#eeeeee';
+      let textColor = '#757575';
       
-        for (const [player, cards] of Object.entries(state.other_players)) {
-          html += `
-              <div class="box">
-                <p class="has-text-weight-semibold">Player ${player}:</p>
-                <ul>
-          `;
-          cards.forEach((card, idx) => {
-            html += `<li>Card ${idx + 1}: <strong>Visible to current player:</strong> ${card.visible} | <strong>Hint:</strong> ${card.hint}</li>`;
-          });
-          html += `
-                </ul>
-              </div>
-          `;
-        }
-        
-        let this_action = null;
-        for (const action of state.legal_actions) {
-          if (action.index === state.player_response.action) {
-            this_action = action;
-            break;
-          }
-        }
-        
-        html += `
-  </ul>
-  <hr>
-  <h3 class="title is-5">Player Response</h3>
-  <div class="box">
-    <div class="content">
-      <div class="columns">
-        <div class="column">
-          <p class="has-text-weight-semibold">Reasoning:</p>
-          <p>${state.player_response.reason}</p>
-        </div>
-        <div class="column">
-          <p class="has-text-weight-semibold">Action:</p>
-          <p>${this_action ? this_action.action : "Unknown"}</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-</div>
-</div>
-`;
-
-      
-        document.getElementById('stateDisplay').innerHTML = html;
-        document.getElementById('prevButton').disabled = (currentIndex === 0);
-        document.getElementById('nextButton').disabled = (currentIndex === trajectoryData.length - 1);
+      // Set colors based on card color
+      switch(color) {
+        case 'R': bgColor = '#ffebee'; textColor = '#d32f2f'; break;
+        case 'Y': bgColor = '#fffde7'; textColor = '#fbc02d'; break;
+        case 'G': bgColor = '#e8f5e9'; textColor = '#388e3c'; break;
+        case 'W': bgColor = '#f5f5f5'; textColor = '#616161'; break;
+        case 'B': bgColor = '#e3f2fd'; textColor = '#1976d2'; break;
       }
       
+      return `<span class="tag" style="background-color: ${bgColor}; color: ${textColor};">${cardStr}</span>`;
+    }
+    
+    // Create a visual representation of fireworks
+    function renderFireworks(fireworks) {
+      if (!fireworks || Object.keys(fireworks).length === 0) {
+        return '<div class="notification is-light">No fireworks data available</div>';
+      }
+      
+      // Define color information with names and CSS color values
+      const colorMap = {
+        'R': { name: 'Red', color: '#d32f2f', bgColor: '#ffebee' },
+        'Y': { name: 'Yellow', color: '#fbc02d', bgColor: '#fffde7' },
+        'G': { name: 'Green', color: '#388e3c', bgColor: '#e8f5e9' },
+        'W': { name: 'White', color: '#616161', bgColor: '#f5f5f5' },
+        'B': { name: 'Blue', color: '#1976d2', bgColor: '#e3f2fd' }
+      };
+      
+      // Sort colors in standard order
+      const sortOrder = ['R', 'Y', 'G', 'W', 'B'];
+      
+      // Create a more compact and attractive display
+      let html = '<div class="columns is-mobile is-multiline">';
+      
+      // Ensure all colors are displayed even if not in the data
+      sortOrder.forEach(color => {
+        const level = fireworks[color] || 0;
+        const colorInfo = colorMap[color];
+        
+        html += `
+          <div class="column is-2-desktop is-4-mobile">
+            <div class="box has-text-centered p-2" style="background-color: ${colorInfo.bgColor}; color: ${colorInfo.color}; border: 1px solid ${colorInfo.color};">
+              <div class="is-size-6 has-text-weight-bold">${colorInfo.name}</div>
+              <div class="is-size-3 my-2">${level}</div>
+            </div>
+          </div>
+        `;
+      });
+      
+      html += '</div>';
+      return html;
+    }
+
+
+    // Display a single state using the enhanced template
+    function showState(index) {
+      if (index < 0 || index >= trajectoryData.length) return;
+      
+      const state = trajectoryData[index];
+      const model = document.getElementById('modelSelect').value;
+      const playerCount = document.getElementById('playerCountSelect').value;
+      
+      document.getElementById('currentStep').textContent = index + 1;
+      
+      let this_action = null;
+      for (const action of state.legal_actions || []) {
+        if (action.index === state.player_response.action) {
+          this_action = action;
+          break;
+        }
+      }
+      
+      let html = `
+      <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">
+
+            Game State ${index + 1}/${trajectoryData.length}
+          </p>
+          <div class="card-header-icon">
+            <span class="tag is-primary is-medium">${model}</span>
+            <span class="tag is-info is-medium ml-2">${playerCount} Players</span>
+          </div>
+        </header>
+        <div class="card-content">
+          <!-- Game Info -->
+          <div class="columns">
+            <div class="column is-half">
+              <div class="notification is-light">
+                <p>
+
+                  <strong>Information Tokens:</strong> 
+                  <span class="tag is-info is-medium ml-2">${state.token_dict.info || 0}</span>
+                </p>
+              </div>
+            </div>
+            <div class="column is-half">
+              <div class="notification is-light">
+                <p>
+                  <strong>Life Tokens:</strong> 
+                  <span class="tag is-danger is-medium ml-2">${state.token_dict.life || 0}</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Fireworks -->
+          <div class="box">
+            <h3 class="title is-5">
+              Fireworks
+            </h3>
+            ${renderFireworks(state.fireworks)}
+          </div>
+          
+          <!-- Current Player's Hand -->
+          <div class="box">
+            <h3 class="title is-5">
+              Current Player's Hand
+            </h3>
+            <div class="player-hand">
+      `;
+      
+      if (state.your_hand && state.your_hand.length > 0) {
+        html += '<div class="columns is-multiline">';
+        state.your_hand.forEach((card, idx) => {
+          html += `
+            <div class="column is-2-desktop is-3-tablet is-4-mobile">
+              <div class="has-text-centered">
+                <div class="mb-2"><strong>Card ${idx + 1}</strong></div>
+                ${formatCard(card.known)}
+              </div>
+            </div>
+          `;
+        });
+        html += '</div>';
+      } else {
+        html += '<p>No cards in hand</p>';
+      }
+      
+      html += `
+            </div>
+          </div>
+          
+          <!-- Other Players' Hands -->
+          <div class="box">
+            <h3 class="title is-5">
+              Other Players' Hands
+            </h3>
+      `;
+      
+      if (state.other_players) {
+        for (const [player, cards] of Object.entries(state.other_players)) {
+          html += `
+            <div class="notification player-hand mt-3">
+              <p class="has-text-weight-semibold is-size-5 mb-3">Player ${player}</p>
+              <div class="columns is-multiline">
+          `;
+          
+          cards.forEach((card, idx) => {
+            html += `
+              <div class="column is-3-desktop is-4-tablet is-6-mobile">
+                <div class="box has-text-centered p-3">
+                  <div><strong>Card ${idx + 1}</strong></div>
+                  <div class="mt-2 mb-2">${formatCard(card.visible)}</div>
+                  <div class="is-size-7 has-text-grey">Hint: ${card.hint || 'None'}</div>
+                </div>
+              </div>
+            `;
+          });
+          
+          html += `
+              </div>
+            </div>
+          `;
+        }
+      } else {
+        html += '<p>No other players data available</p>';
+      }
+      
+      html += `
+          </div>
+          
+          <!-- Player Response -->
+          <div class="box action-box">
+            <h3 class="title is-5">
+              Player Response
+            </h3>
+            <div class="columns">
+              <div class="column is-three-quarters">
+                <p class="has-text-weight-semibold mb-2">Reasoning:</p>
+                <div class="reason-block">
+                  ${state.player_response.reason || 'No reasoning provided'}
+                </div>
+              </div>
+              <div class="column is-one-quarter">
+                <div class="notification is-primary has-text-centered">
+                  <p class="has-text-weight-semibold mb-2">Selected Action:</p>
+                  <p class="is-size-5">${this_action ? this_action.action : "Unknown"}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      `;
+      
+      document.getElementById('stateDisplay').innerHTML = html;
+      
+      // Update navigation buttons
+      document.getElementById('firstButton').disabled = (currentIndex === 0);
+      document.getElementById('prevButton').disabled = (currentIndex === 0);
+      document.getElementById('nextButton').disabled = (currentIndex === trajectoryData.length - 1);
+      document.getElementById('lastButton').disabled = (currentIndex === trajectoryData.length - 1);
+    }
 
     function prevState() {
       if (currentIndex > 0) {
@@ -238,14 +647,44 @@
         showState(currentIndex);
       }
     }
+    
+    function goToFirst() {
+      currentIndex = 0;
+      showState(currentIndex);
+    }
+    
+    function goToLast() {
+      currentIndex = trajectoryData.length - 1;
+      showState(currentIndex);
+    }
 
     document.getElementById('loadTrajectoryButton').addEventListener('click', function () {
       const model = document.getElementById('modelSelect').value;
       const playerCount = document.getElementById('playerCountSelect').value;
-      // Construct trajectory file path; adjust the path according to your directory structure.
+      // Construct trajectory file path
       const trajectoryPath = `../../trajectories/hanabi/hanabi-${playerCount}${model}/trajectory.json`;
       console.log('Loading trajectory:', trajectoryPath);
       loadTrajectory(trajectoryPath);
+    });
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', function(event) {
+      if (trajectoryData.length === 0) return;
+      
+      switch(event.key) {
+        case 'ArrowLeft':
+          prevState();
+          break;
+        case 'ArrowRight':
+          nextState();
+          break;
+        case 'Home':
+          goToFirst();
+          break;
+        case 'End':
+          goToLast();
+          break;
+      }
     });
   </script>
 </body>

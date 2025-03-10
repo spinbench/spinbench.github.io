@@ -206,6 +206,10 @@
         "player_response": {
             "reason": "Player +3 has R1 which can start the red firework stack. Since all stacks are at 0, starting with a 1 is crucial. Revealing red color to Player +3 will allow them to play this card safely on their turn.",
             "action": "20"
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 8
         }
     },
     {
@@ -427,6 +431,10 @@
         "player_response": {
             "reason": "Player +2 already knows they have a red card. By telling them it's a 1, they can safely play it to start the red firework. This is especially valuable as we need to start getting 1s played, and they already have partial information about this card.",
             "action": "30"
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 7
         }
     },
     {
@@ -652,6 +660,10 @@
         "player_response": {
             "reason": "Player +2 has a playable W1 card. Since Player +1 already knows their R1, giving a rank 1 hint to Player +2 will enable them to play their W1 card, helping to start multiple firework stacks efficiently.",
             "action": "30"
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 6
         }
     },
     {
@@ -877,6 +889,10 @@
         "player_response": {
             "reason": "I have a confirmed R1 in my hand (Card 2) which is definitely playable as all stacks are at 0. This is a guaranteed safe play that will start the red firework stack.",
             "action": "6"
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 5
         }
     },
     {
@@ -1098,6 +1114,10 @@
         "player_response": {
             "reason": "Player +1 has a Yellow 1 which is immediately playable. Giving them a rank hint about their 1 will help start the yellow firework stack. This is more efficient than risking playing my own 1 which could be a duplicate red.",
             "action": "25"
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 5
         }
     },
     {
@@ -1311,6 +1331,10 @@
         "player_response": {
             "reason": "Revealing blue color to Player +1 will identify their playable B1 card, which is crucial for early game progression. This hint also provides information about their B3 card, making it an efficient use of an info token.",
             "action": "14"
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 4
         }
     },
     {
@@ -1528,6 +1552,10 @@
         "player_response": {
             "reason": "Revealing white color to Player +2 will allow them to identify and play their W1 safely, which is crucial for starting the white firework stack. The player already knows it's a 1, so this hint completes their knowledge for a guaranteed safe play.",
             "action": "18"
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 3
         }
     },
     {
@@ -1753,6 +1781,10 @@
         "player_response": {
             "reason": "Revealing yellow color to Player +2 will confirm their Y1 card (which they only know is a 1), enabling them to play it safely on their turn and progress the yellow firework stack",
             "action": "16"
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 2
         }
     },
     {
@@ -1974,6 +2006,10 @@
         "player_response": {
             "reason": "I have a confirmed W1 in position 4 which will start the white firework stack safely. This is the most efficient move as it makes progress without using our limited info token.",
             "action": "9"
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 1
         }
     },
     {
@@ -2191,6 +2227,10 @@
         "player_response": {
             "reason": "I have a confirmed Y1 in position 4 (Card 5), and yellow stack is at 0. Playing this card is guaranteed to succeed and will progress the game without using our limited info tokens.",
             "action": "9"
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 1
         }
     },
     {
@@ -2404,6 +2444,10 @@
         "player_response": {
             "reason": "Since I know I have blue cards and no B1 has been played yet, there's a good chance one of my blue cards is B1. With 2 life tokens remaining, it's worth the risk to try playing one of them to potentially start the blue stack.",
             "action": 7
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 1
         }
     },
     {
@@ -2625,6 +2669,10 @@
         "player_response": {
             "reason": "With only 1 life token left, we should avoid risky plays. Player +1 has a known W1 ready to play. We should give a color hint about R5 to Player +1 to maintain game flow while waiting for their guaranteed W1 play.",
             "action": "10"
+        },
+        "token_dict": {
+            "life": 1,
+            "info": 1
         }
     },
     {
@@ -2766,6 +2814,10 @@
         "player_response": {
             "reason": "We have a confirmed W1 in position 3 (Card 4). With only one life token remaining, playing this guaranteed W1 is the safest and most productive move. It will start the white firework stack without any risk.",
             "action": "8"
+        },
+        "token_dict": {
+            "life": 1,
+            "info": 0
         }
     },
     {
@@ -2907,6 +2959,10 @@
         "player_response": {
             "reason": "With 0 info tokens and 1 life token, we must discard to enable future hints. We can see critical B1s in Player +1's hand that need coordination. Discarding card 0 is safest as we can see duplicate B1s.",
             "action": "0"
+        },
+        "token_dict": {
+            "life": 1,
+            "info": 0
         }
     },
     {
@@ -3116,6 +3172,10 @@
         "player_response": {
             "reason": "Player +1 has two B2s which will be critical once B1 is played. With only one life token remaining, we need to be careful and establish safe plays. Revealing blue color to Player +1 helps prepare future safe plays and might help deduce if my known blue card is B1.",
             "action": "14"
+        },
+        "token_dict": {
+            "life": 1,
+            "info": 1
         }
     },
     {
@@ -3257,6 +3317,10 @@
         "player_response": {
             "reason": "With 0 info tokens and 1 life token, we need to gain info tokens safely. Discarding an unknown card (position 0) is safest as we can see the critical cards in other players' hands.",
             "action": 0
+        },
+        "token_dict": {
+            "life": 1,
+            "info": 0
         }
     },
     {
@@ -3470,6 +3534,10 @@
         "player_response": {
             "reason": "Player +2 has two B1s. One already knows it's blue but not the rank. Revealing rank 1 will identify both B1s, allowing safe play to start blue stack with minimal token use.",
             "action": "30"
+        },
+        "token_dict": {
+            "life": 1,
+            "info": 1
         }
     },
     {
@@ -3611,6 +3679,10 @@
         "player_response": {
             "reason": "With 0 info tokens and 1 life token, must discard safely. Cards 1-3 cannot be 1s based on possibilities, making them safer to discard. Need to gain info token to give critical hints about playable cards.",
             "action": 1
+        },
+        "token_dict": {
+            "life": 1,
+            "info": 0
         }
     },
     {
@@ -3820,6 +3892,10 @@
         "player_response": {
             "reason": "We have a confirmed B1 in position 3, and the blue stack is at 0. This is a guaranteed safe play that will advance the blue firework stack without risking our last life token.",
             "action": "8"
+        },
+        "token_dict": {
+            "life": 1,
+            "info": 1
         }
     }
 ]

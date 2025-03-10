@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=0.8">
 	<title>Diplomacy Trajectory Viewer</title>
 
 	<link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
@@ -11,43 +11,126 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 	<style>
-		.game-state {
+		/* Custom styling to match Hanabi viewer */
+		body {
+			font-family: 'Noto Sans', sans-serif;
+			background-color: #f5f7fa;
+		}
+		
+		.hero {
+			background: linear-gradient(135deg, #4a66ac 0%, #667eea 100%);
+			color: white;
+			padding: 2rem 0;
 			margin-bottom: 2rem;
-			padding: 1rem;
-			border: 1px solid #dbdbdb;
-			border-radius: 4px;
+		}
+		
+		.hero .title {
+			font-family: 'Google Sans', sans-serif;
+			font-weight: 700;
+		}
+		
+		.section {
+			padding: 2rem 1.5rem;
+		}
+		
+		.container {
+			box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+			background-color: white;
+			border-radius: 8px;
+			padding: 2rem;
+		}
+		
+		.card {
+			margin-bottom: 2rem;
+			border-radius: 8px;
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+			background-color: white;
+			transition: all 0.3s ease;
+		}
+		
+		.card:hover {
+			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+		}
+		
+		.select-container {
+			margin-bottom: 1.5rem;
+		}
+		
+		.button.is-primary {
+			background-color: #4a66ac;
+			transition: background-color 0.3s ease;
+		}
+		
+		.button.is-primary:hover {
+			background-color: #3a5499;
+		}
+		
+		.card-header {
+			background-color: #f5f7fa;
+			border-bottom: 1px solid #eaeaea;
+		}
+		
+		.card-header-title {
+			font-size: 1.1rem;
+		}
+		
+		.footer {
+			background-color: #f5f7fa;
+			padding: 2rem;
 		}
 
-		.select-container {
-			margin-bottom: 1rem;
+		/* Preserve original Diplomacy styles while enhancing them */
+		.game-state {
+			margin-bottom: 2rem;
+			padding: 1.5rem;
+			border: 1px solid #eaeaea;
+			border-radius: 8px;
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 		}
 
 		.message-box {
-			border: 1px solid #dbdbdb;
-			border-radius: 4px;
+			border: 1px solid #eaeaea;
+			border-radius: 6px;
 			padding: 1rem;
 			margin-bottom: 1rem;
+			transition: all 0.3s ease;
+		}
+		
+		.message-box:hover {
+			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 		}
 
 		.trust-high {
-			background-color: rgba(72, 199, 116, 0.2);
+			background-color: rgba(72, 199, 116, 0.1);
 			border-left: 4px solid #48c774;
 		}
 
 		.trust-medium {
-			background-color: rgba(255, 221, 87, 0.2);
+			background-color: rgba(255, 221, 87, 0.1);
 			border-left: 4px solid #ffdd57;
 		}
 
 		.trust-low {
-			background-color: rgba(241, 70, 104, 0.2);
+			background-color: rgba(241, 70, 104, 0.1);
 			border-left: 4px solid #f14668;
 		}
 
 		.tabs-wrapper {
 			overflow-x: auto;
+			margin-bottom: 1rem;
+		}
+		
+		.tabs ul {
+			border-bottom-color: #eaeaea;
+		}
+		
+		.tabs.is-boxed li.is-active a {
+			border-bottom-color: #fff;
+			border-top-color: #4a66ac;
+			border-top-width: 2px;
 		}
 
+		/* Country colors - preserved */
 		.country-AUSTRIA {
 			color: #FF5555;
 		}
@@ -126,109 +209,136 @@
 			font-family: monospace;
 			max-height: none;
 			overflow-y: visible;
+			background-color: #f9f9f9;
+			padding: 1rem;
+			border-radius: 6px;
 		}
 
-		.phase-selector {
-			max-width: 100%;
-			overflow-x: auto;
+		/* New styles for two-column layout - preserved but enhanced */
+		.main-container {
+			display: flex;
+			min-height: calc(100vh - 140px);
+			background-color: white;
+			border-radius: 8px;
+			box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+			margin: 0 1.5rem 2rem 1.5rem;
 		}
 
-		.model-selector {
-			max-width: 100%;
-			overflow-x: auto;
+		.left-column {
+			width: 40%;
+			position: sticky;
+			top: 0;
+			height: calc(100vh - 140px);
+			overflow-y: auto;
+			padding: 1.5rem;
+			border-right: 1px solid #eaeaea;
 		}
 
-		#trajectoryImage {
-			display: block;
-			margin: auto;
+		.right-column {
+			width: 60%;
+			height: calc(100vh - 140px);
+			overflow-y: auto;
+			padding: 1.5rem;
 		}
 
-		/* Styles for nested tabs */
-		.phase-tabs {
+		.map-container {
+			margin-bottom: 1.5rem;
+			border: 1px solid #eaeaea;
+			border-radius: 8px;
+			padding: 1rem;
+			background-color: white;
+		}
+
+		#mapDisplay {
 			margin-top: 1rem;
 			margin-bottom: 1rem;
-			font-size: 0.9rem;
+			min-height: 300px;
+			border-radius: 6px;
+			overflow: hidden;
 		}
-
-		.phase-tab-content {
-			padding: 1rem;
-			border: 1px solid #dbdbdb;
-			border-radius: 0 0 4px 4px;
-			margin-top: -1px;
+		
+		.navigation-buttons {
+			display: flex;
+			justify-content: center;
+			gap: 1rem;
+			margin: 1.5rem 0;
 		}
-
-		.super-tab-content {
-			padding: 1rem 0;
-		}
-
-		.negotiation-phase-section {
-			margin-bottom: 2rem;
-			border-bottom: 1px solid #dbdbdb;
-			padding-bottom: 1rem;
-		}
-
-		.negotiation-phase-section:last-child {
-			border-bottom: none;
-		}
-
+		
 		.section-title {
 			margin-bottom: 1rem;
 			font-weight: 600;
 			color: #363636;
 			padding-bottom: 0.5rem;
-			border-bottom: 1px solid #eee;
+			border-bottom: 1px solid #eaeaea;
+		}
+		
+		.negotiation-phase-section {
+			margin-bottom: 2rem;
+			border-bottom: 1px solid #eaeaea;
+			padding-bottom: 1rem;
+		}
+		
+		.super-tab-content {
+			padding: 1rem 0;
+		}
+		
+		.phase-tabs {
+			margin-top: 1rem;
+			margin-bottom: 1rem;
+		}
+		
+		.phase-selector, .model-selector {
+			max-width: 100%;
+			overflow-x: auto;
+			margin-bottom: 1.5rem;
 		}
 	</style>
 </head>
 
 <body>
 	<!-- Hero Section -->
-	<section class="hero is-primary">
+	<section class="hero">
 		<div class="hero-body">
-			<div class="container">
-				<h1 class="title is-2">Diplomacy Trajectory Viewer</h1>
-				<h2 class="subtitle">Visualize AI-driven Diplomacy games</h2>
+			<div class="container is-max-desktop has-text-centered">
+				<h1 class="title is-2">
+					Diplomacy Trajectory Viewer
+				</h1>
+				<p class="subtitle is-5">Visualize and analyze <a href="https://en.wikipedia.org/wiki/Diplomacy_(game)" target="_blank" rel="noopener noreferrer" class="is-underlined">Diplomacy game</a></p> states from SPIN-Bench</p>
 			</div>
 		</div>
 	</section>
 
-	<!-- Game Selection -->
-	<section class="section" id="game-selection">
-		<div class="container">
-			<h2 class="title is-3">Game Selection</h2>
-			<div class="columns is-multiline">
-				<div class="column is-half">
-					<div class="field">
-						<label class="label">Negotiation:</label>
-						<div class="control">
-							<div class="select is-fullwidth">
-								<select id="NegSelect">
-									<option value="On">On</option>
-									<option value="Off">Off</option>
-								</select>
-							</div>
+	<!-- Two-column layout -->
+	<div class="main-container">
+		<!-- Left Column -->
+		<div class="left-column">
+			<!-- Game Selection -->
+			<div id="game-selection">
+				<h2 class="title is-4">Game Selection</h2>
+				<div class="field">
+					<label class="label">Negotiation:</label>
+					<div class="control">
+						<div class="select is-fullwidth">
+							<select id="NegSelect">
+								<option value="On">On</option>
+								<option value="Off">Off</option>
+							</select>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="columns">
-				<div class="column has-text-centered">
+				<div class="has-text-centered" style="margin: 1rem 0;">
 					<button class="button is-primary" id="loadGameButton">Load Game Data</button>
 				</div>
 			</div>
-		</div>
-	</section>
 
-	<!-- Game Navigation and Phase Display -->
-	<section class="section">
-		<div class="container">
+			<!-- Phase and Model Selection -->
 			<div class="columns is-multiline">
-				<div class="column is-half">
+				<div class="column is-full">
 					<!-- Phase Selection -->
 					<div class="field phase-selector">
 						<label class="label">Game Phase:</label>
 						<div class="control">
-							<div class="select">
+							<div class="select is-fullwidth">
 								<select id="phaseSelect">
 									<option value="S1901M">S1901M</option>
 									<option value="F1901M">F1901M</option>
@@ -241,12 +351,12 @@
 						</div>
 					</div>
 				</div>
-				<div class="column is-half">
+				<div class="column is-full">
 					<!-- Model Selection -->
 					<div class="field model-selector">
 						<label class="label">Inspect Model:</label>
 						<div class="control">
-							<div class="select">
+							<div class="select is-fullwidth">
 								<select id="modelSelect">
 									<option value="gpt-4o_1">GPT-4o</option>
 									<option value="o1-preview_1">o1-preview</option>
@@ -260,13 +370,26 @@
 				</div>
 			</div>
 
-
 			<!-- Navigation Buttons -->
-			<div class="buttons is-centered" style="margin-bottom: 1rem;">
-				<button class="button" id="prevPhaseButton"><i class="fas fa-chevron-left"></i> Previous Phase</button>
-				<button class="button" id="nextPhaseButton">Next Phase <i class="fas fa-chevron-right"></i></button>
+			<div class="navigation-buttons">
+				<button class="button is-small" id="prevPhaseButton"><i class="fas fa-chevron-left"></i> Prev Phase</button>
+				<button class="button is-small" id="nextPhaseButton">Next Phase <i class="fas fa-chevron-right"></i></button>
+			</div>
+			
+			<!-- Map Display -->
+			<div class="map-container">
+				<div id="mapDisplay" class="has-text-centered">
+					<div class="notification is-light">
+						Map will be displayed here after loading game data.
+					</div>
+				</div>
 			</div>
 
+			
+		</div>
+
+		<!-- Right Column -->
+		<div class="right-column">
 			<!-- Game State Display -->
 			<div id="gameStateDisplay" class="game-state">
 				<div class="notification is-light">
@@ -274,34 +397,7 @@
 				</div>
 			</div>
 
-			<!-- Map Display -->
-			<div id="mapDisplay" class="has-text-centered mt-4">
-				<div class="notification is-light">
-					Map will be displayed here after loading game data.
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!-- Game Content Section -->
-	<!-- Configuration Display -->
-	<section class="section">
-		<div class="container">
-			<div class="card">
-				<header class="card-header">
-					<p class="card-header-title">Configuration</p>
-				</header>
-				<div class="card-content">
-					<div id="configDisplay">
-						<p class="has-text-grey">No configuration data available yet.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="section">
-		<div class="container">
+			<!-- Negotiation Process -->
 			<div class="card mb-4">
 				<header class="card-header">
 					<p class="card-header-title">
@@ -467,7 +563,7 @@
 							</div>
 						</div>
 						<div id="super-negotiation_phase2" class="super-tab-content" style="display: none;">
-							<h3 class="title is-4">Negotiation Phase 0</h3>
+							<h3 class="title is-4">Negotiation Phase 2</h3>
 
 							<!-- Trust Analysis -->
 							<div id="trust-analysis-negotiation_phase2">
@@ -539,12 +635,11 @@
 								</div>
 							</div>
 						</div>
-
 					</div>
 				</div>
 			</div>
 
-			<!-- Orders Tab - Keep this as is -->
+			<!-- Orders Tab -->
 			<div class="card mb-4">
 				<header class="card-header">
 					<p class="card-header-title">
@@ -558,7 +653,7 @@
 				</div>
 			</div>
 
-			<!-- Final Agreements - Keep this as is -->
+			<!-- Final Agreements -->
 			<div class="card">
 				<header class="card-header">
 					<p class="card-header-title">
@@ -572,12 +667,19 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</div>
 
 	<!-- Footer -->
 	<footer class="footer">
 		<div class="content has-text-centered">
-			<p>Diplomacy Trajectory Viewer - Part of the SPIN-Benchmark</p>
+			<p>
+				<strong>Diplomacy Trajectory Viewer</strong> - Part of the SPIN-Bench Benchmark
+			</p>
+			<div class="tags is-centered">
+				<span class="tag is-light">AI Benchmarking</span>
+				<span class="tag is-light">Strategy Games</span>
+				<span class="tag is-light">Diplomacy</span>
+			</div>
 		</div>
 	</footer>
 
@@ -690,12 +792,12 @@
 		</div>
 	  `;
 
-			document.getElementById('configDisplay').innerHTML = `
-		<div class="notification is-info">
-		  <span class="icon"><i class="fas fa-spinner fa-spin"></i></span>
-		  Loading configuration...
-		</div>
-	  `;
+		// 	document.getElementById('configDisplay').innerHTML = `
+		// <div class="notification is-info">
+		//   <span class="icon"><i class="fas fa-spinner fa-spin"></i></span>
+		//   Loading configuration...
+	// 	</div>
+	 //  `;
 
 			// Fetch game state data
 			fetch(gamePath + 'diplomacy_game_state.json')
@@ -708,6 +810,7 @@
 				.then(data => {
 					gameData = data;
 					console.log('Game data loaded:', gameData);
+					console.log("game phase list", gameData.phase_list);
 
 					// Extract phases from the game data
 					// This assumes the phases are available in the loaded data
@@ -748,7 +851,7 @@
 					// Display all the data
 					displayGameState();
 					displayMap();
-					displayConfig();
+					//  displayConfig();
 				})
 				.catch(error => {
 					console.error('Error loading game data:', error);

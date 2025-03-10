@@ -102,6 +102,10 @@
         "player_response": {
             "reason": "By revealing rank 1 to Player +1, they can immediately play four foundational cards ('R1', 'G1', 'W1', 'B1'), efficiently utilizing the hint to begin all color stacks.",
             "action": 15
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 8
         }
     },
     {
@@ -227,6 +231,10 @@
         "player_response": {
             "reason": "Playing a 1-ranked card since no fireworks have been started and holding four possible 1s increases the likelihood of a correct play without specific color knowledge. High potential reward with controlled risk.",
             "action": 6
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 7
         }
     },
     {
@@ -348,6 +356,10 @@
         "player_response": {
             "reason": "Enable Player +1 to play 'G1' by confirming its color, allowing for immediate score building in the green firework stack.",
             "action": 12
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 7
         }
     },
     {
@@ -473,6 +485,10 @@
         "player_response": {
             "reason": "G1 is known and confirmed as a playable card extending the green firework stack without risking a life token.",
             "action": 6
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 6
         }
     },
     {
@@ -594,6 +610,10 @@
         "player_response": {
             "reason": "Revealing color 'B' to player +1 allows them to know that they have two 'B1' cards, enabling them to play both, starting the blue firework sequence efficiently.",
             "action": 14
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 6
         }
     },
     {
@@ -719,6 +739,10 @@
         "player_response": {
             "reason": "Playing card 3, which is confirmed as B1, starts the Blue firework sequence as it is the next needed card in the Blue stack.",
             "action": 7
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 5
         }
     },
     {
@@ -844,6 +868,10 @@
         "player_response": {
             "reason": "Providing a hint about rank 1 to Player +1 allows the immediate playing of the White 1 card onto the fireworks, increasing our score directly. The hint may also potentially identify other rank 1 cards in Player +1's hand, preparing for future plays.",
             "action": 15
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 5
         }
     },
     {
@@ -969,6 +997,10 @@
         "player_response": {
             "reason": "Card 2 is known to be a rank 1, which is needed for the Yellow and White stacks that are both currently at 0. Since playing correct cards is the immediate goal to score, I choose to play this card to potentially complete the needed sequence in either Yellow or White color.",
             "action": 6
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 4
         }
     },
     {
@@ -1090,6 +1122,10 @@
         "player_response": {
             "reason": "Playing B1 because it is known to be blue and is next in the sequence for the blue stack, thus directly contributing to our score.",
             "action": 6
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 4
         }
     },
     {
@@ -1211,6 +1247,10 @@
         "player_response": {
             "reason": "Given the current state of the fireworks, a green '2' can be correctly played by Player +1, as the green stack is currently at 1. Providing a hint about the rank '2' to Player +1 will allow them to confidently play one of the two 'G2' cards they hold in their hand.",
             "action": 16
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 4
         }
     },
     {
@@ -1332,6 +1372,10 @@
         "player_response": {
             "reason": "Reveal the color Green to Player +1 to confirm if G1 can be played, advancing the Green firework and maximizing play efficiency.",
             "action": 12
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 3
         }
     },
     {
@@ -1453,6 +1497,10 @@
         "player_response": {
             "reason": "Providing a color hint for Green to Player +1 maximizes immediate play opportunities for G2 and is a strategic use of an info token, contributing directly to scoring points by extending the Green stack.",
             "action": 12
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 2
         }
     },
     {
@@ -1574,6 +1622,10 @@
         "player_response": {
             "reason": "Playing 'G2' (Card 3) from my hand safely extends the green firework from G1 to G2 without risking a life token and uses no info tokens.",
             "action": 7
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 1
         }
     },
     {
@@ -1703,6 +1755,10 @@
         "player_response": {
             "reason": "Card 2 in my hand is identified as B1, and the current state of the blue stack is B1. Since the next required blue card is B2, and card 2 cannot be played to advance the blue firework, the best option is to discard it to gain an Info token, which will allow for more strategic hints in future turns.",
             "action": 1
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 1
         }
     },
     {
@@ -1820,6 +1876,10 @@
         "player_response": {
             "reason": "Playing G2 from position 4 is a safe and strategic move as it perfectly follows the green stack's current state (G2) and helps advance the firework without risking a mistake.",
             "action": 8
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 2
         }
     },
     {
@@ -1953,6 +2013,10 @@
         "player_response": {
             "reason": "Hinting about Rank 2 to Player +1 allows them to confidently play B2, which can be correctly placed on the board, helping us progress with the blue fireworks and utilize our info tokens effectively.",
             "action": 16
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 2
         }
     },
     {
@@ -2070,6 +2134,10 @@
         "player_response": {
             "reason": "Playing Card 3 as it's known to be '2' and it can potentially be 'Y2', which is a necessary card for the current yellow stack which is at 0.",
             "action": 7
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 1
         }
     },
     {
@@ -2195,6 +2263,10 @@
         "player_response": {
             "reason": "Hinting 'R' to ensure the correct play of 'R1' by teammate, advancing the red stack and making effective use of the available info token.",
             "action": 10
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 1
         }
     },
     {
@@ -2292,6 +2364,10 @@
         "player_response": {
             "reason": "Selected to discard Card 1 to regain an info token, minimizing risk by discarding a card with the least information and unclear utility.",
             "action": 0
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 0
         }
     },
     {
@@ -2417,6 +2493,10 @@
         "player_response": {
             "reason": "Enable teammate to immediately play R3, which is critical for advancing the Red firework stack. Providing a rank hint is optimal given our current info token limit and the immediate playability of the hinted card.",
             "action": 17
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 1
         }
     },
     {
@@ -2514,6 +2594,10 @@
         "player_response": {
             "reason": "Playing 'R3' is the safest and most strategic move as it correctly builds on the red firework stack, which is currently at 2.",
             "action": 6
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 0
         }
     },
     {
@@ -2611,6 +2695,10 @@
         "player_response": {
             "reason": "Chose to discard Card 0 to regain an info token, allowing a future hint to inform the teammate about the playability of their W3.",
             "action": 0
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 0
         }
     },
     {
@@ -2732,6 +2820,10 @@
         "player_response": {
             "reason": "Card 2 in your hand is likely R4, which is the next needed card in the Red sequence. Playing it is a direct opportunity to score without using up the last info token.",
             "action": 6
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 1
         }
     },
     {
@@ -2861,6 +2953,10 @@
         "player_response": {
             "reason": "Giving a hint about the color White to ensure the teammate knows 'W3' is playable and correct, using our limited info token to prevent a loss from an incorrect play and advance the White firework stack.",
             "action": 13
+        },
+        "token_dict": {
+            "life": 1,
+            "info": 1
         }
     },
     {
@@ -2958,6 +3054,10 @@
         "player_response": {
             "reason": "Playing Card 2 is a guaranteed correct move as it fits exactly what is currently needed for the white fireworks stack, which is at W1 needing W2 and then W3 to progress.",
             "action": 6
+        },
+        "token_dict": {
+            "life": 1,
+            "info": 0
         }
     }
 ]

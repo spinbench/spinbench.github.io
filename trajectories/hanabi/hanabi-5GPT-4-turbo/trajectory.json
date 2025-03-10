@@ -212,6 +212,10 @@
         "player_response": {
             "reason": "Reveal color to Player +4 to enable playing 'R1' safely, maximizing the use of hint by covering two cards.",
             "action": 23
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 8
         }
     },
     {
@@ -443,6 +447,10 @@
         "player_response": {
             "reason": "Revealing the color red to player +3 will confirm both 'R1' cards are red, enabling them to start the red firework stack without risking a mistake. This action uses an info token but strategically sets up key plays to boost our score early in the game.",
             "action": 18
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 7
         }
     },
     {
@@ -674,6 +682,10 @@
         "player_response": {
             "reason": "Give a hint to Player +2 about the color Y to enable them to play the card 'Y1' which is immediately playable and crucial for building the base of the yellow fireworks stack.",
             "action": 14
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 6
         }
     },
     {
@@ -901,6 +913,10 @@
         "player_response": {
             "reason": "Giving a hint to Player +1 about all rank 1 cards maximizes our chances for correct plays and immediate score boost, helping start three color stacks efficiently.",
             "action": 28
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 5
         }
     },
     {
@@ -1136,6 +1152,10 @@
         "player_response": {
             "reason": "Playing 'R1' from my hand because it matches the required next card in the red fireworks stack and is a confirmed safe play based on the hints given. This action advances the game state positively without risking a life token.",
             "action": 4
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 4
         }
     },
     {
@@ -1371,6 +1391,10 @@
         "player_response": {
             "reason": "Revealing color 'Y' to Player +2 allows them to play 'Y2' immediately, advancing our score and utilizing our hints efficiently.",
             "action": 14
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 4
         }
     },
     {
@@ -1606,6 +1630,10 @@
         "player_response": {
             "reason": "Revealing color yellow to Player +2 to identify their 'Y1' for immediate play and preparing the setup for 'Y2', efficiently progressing the yellow firework.",
             "action": 14
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 3
         }
     },
     {
@@ -1841,6 +1869,10 @@
         "player_response": {
             "reason": "Revealing rank 1 to Player +3 allows them to play 'Y1', progressing the yellow firework and effectively using the limited info tokens to set up immediate scoring opportunities.",
             "action": 38
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 2
         }
     },
     {
@@ -2072,6 +2104,10 @@
         "player_response": {
             "reason": "Confirming the identity of the playable Yellow 1 card in Player +1's hand to ensure it is played, maintaining firework progress and using the last info token effectively.",
             "action": 9
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 1
         }
     },
     {
@@ -2207,6 +2243,10 @@
         "player_response": {
             "reason": "Playing Y1 from my hand as it correctly starts the yellow fireworks with no risk of error.",
             "action": 5
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 0
         }
     },
     {
@@ -2342,6 +2382,10 @@
         "player_response": {
             "reason": "Attempting to play one of the rank 1 cards in hopes it is either G1, W1, or B1 to start a new firework stack.",
             "action": 4
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 0
         }
     },
     {
@@ -2477,6 +2521,10 @@
         "player_response": {
             "reason": "Chose to discard a card to gain an Info token, enabling future hints since no cards in my hand have been identified and risking a blind play could cost a life token.",
             "action": 0
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 0
         }
     },
     {
@@ -2716,6 +2764,10 @@
         "player_response": {
             "reason": "Enabling Player +1 to securely play 'Y1' by confirming its rank, thereby facilitating a series of correct plays for Yellow fireworks",
             "action": 28
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 1
         }
     },
     {
@@ -2851,6 +2903,10 @@
         "player_response": {
             "reason": "Discarding Card 0 to gain an info token, which is critical for giving useful hints in future turns and for avoiding playing wrong cards with only 2 life tokens remaining",
             "action": 0
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 0
         }
     },
     {
@@ -3082,6 +3138,10 @@
         "player_response": {
             "reason": "Discarding the redundant 'R1' card to gain an info token, necessary for future rounds of hints.",
             "action": 1
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 1
         }
     },
     {
@@ -3313,6 +3373,10 @@
         "player_response": {
             "reason": "This hint enables Player +1 to immediately play their Green 1, starting the Green firework, which is currently at 0. This action uses our limited info tokens strategically, ensuring a play that directly contributes to our score, preserving our life tokens.",
             "action": 10
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 2
         }
     },
     {
@@ -3544,6 +3608,10 @@
         "player_response": {
             "reason": "Revealing yellow to player +1 enables immediate playing of 'Y2', aligning with our current needs and maximizing the use of our limited info token to facilitate correct plays",
             "action": 9
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 1
         }
     },
     {
@@ -3679,6 +3747,10 @@
         "player_response": {
             "reason": "Choosing to discard a card to gain an information token, enabling strategic hints in the following rounds. Card selected for discard is chosen on the basis of having the least information and potential playability at this stage of the game.",
             "action": 1
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 0
         }
     },
     {
@@ -3910,6 +3982,10 @@
         "player_response": {
             "reason": "Discarding Card 2 as the Y1 has already been discarded. This action avoids a potential penalty and will help regain an information token for future strategic use.",
             "action": 1
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 1
         }
     },
     {
@@ -4141,6 +4217,10 @@
         "player_response": {
             "reason": "Enabling Player +1 to play 'W1' by confirming its color as white, which progresses the white fireworks without needing a discard.",
             "action": 11
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 2
         }
     },
     {
@@ -4372,6 +4452,10 @@
         "player_response": {
             "reason": "Playing W1 as it is known and will correctly initiate the White fireworks stack, safely increasing our score without risk.",
             "action": 4
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 1
         }
     },
     {
@@ -4603,6 +4687,10 @@
         "player_response": {
             "reason": "Revealing the rank of 'G1' in Player +4's hand ensures an immediate and correct play, opening up further green plays which are potential in my hand once the stack progresses.",
             "action": 43
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 1
         }
     },
     {
@@ -4738,6 +4826,10 @@
         "player_response": {
             "reason": "Discarding Card 3 as it has no known information and discarding it gains an essential info token for future rounds.",
             "action": 2
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 0
         }
     },
     {
@@ -4965,6 +5057,10 @@
         "player_response": {
             "reason": "Enable Player +2 to play G1, starting the Green stack, which is crucial as it is the only color stack not yet started. This play uses the current single info token efficiently by facilitating an immediate necessary play.",
             "action": 15
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 1
         }
     },
     {
@@ -5100,6 +5196,10 @@
         "player_response": {
             "reason": "Discarding to regain an info token because there are 0 info tokens available, and giving hints is crucial for correct plays in the subsequent rounds.",
             "action": 0
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 0
         }
     },
     {
@@ -5327,6 +5427,10 @@
         "player_response": {
             "reason": "Playing G1 from my hand is a certain move that will correctly advance the green firework stack without using the last info token, thus maintaining resources for more critical hints in future turns.",
             "action": 5
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 1
         }
     },
     {
@@ -5554,6 +5658,10 @@
         "player_response": {
             "reason": "Reveal the color Blue to Player +1 enabling them to play 'B1', thus starting the blue firework stack.",
             "action": 12
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 1
         }
     },
     {
@@ -5689,6 +5797,10 @@
         "player_response": {
             "reason": "Discarding a blue card to gain an info token while minimizing the risk of removing a potentially critical card, as B3 is already discarded and higher numbers are less immediately necessary.",
             "action": 2
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 0
         }
     },
     {
@@ -5916,6 +6028,10 @@
         "player_response": {
             "reason": "Using the hint to confirm the color of Player +4's Y2, which is currently playable and will extend the Yellow fireworks stack without risking a life token.",
             "action": 24
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 1
         }
     },
     {
@@ -6051,6 +6167,10 @@
         "player_response": {
             "reason": "Discarding card 3 to gain an information token, enabling strategic hint giving in the following turns and minimizing risk since no card information is known.",
             "action": 3
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 0
         }
     },
     {
@@ -6278,6 +6398,10 @@
         "player_response": {
             "reason": "Reinforce knowledge of the W2 card in Player +1's hand to ensure it is played next, aiding in the progress of the White stack.",
             "action": 11
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 1
         }
     },
     {
@@ -6413,6 +6537,10 @@
         "player_response": {
             "reason": "Discarding to gain an info token, considering limited hint possibilities and the need to avoid risking lives with uncertain plays. Card 0 is chosen as it seems to be one of multiple green cards and loses fewer potential fireworks advancements compared to others.",
             "action": 0
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 0
         }
     },
     {
@@ -6648,6 +6776,10 @@
         "player_response": {
             "reason": "Revealing Y2 to Player +1 enables a guaranteed correct play, increasing our score without using up the life tokens and making use of the final info token strategically.",
             "action": 9
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 1
         }
     },
     {
@@ -6783,6 +6915,10 @@
         "player_response": {
             "reason": "Choosing to discard a potentially duplicative yellow card to gain an info token for future hints, especially since Y2 is visibly playable by another player. This minimizes risk and preserves potential for correct future plays.",
             "action": 1
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 0
         }
     },
     {
@@ -7014,6 +7150,10 @@
         "player_response": {
             "reason": "Revealing the color Blue to player +1 allows them to identify and play B1, starting the blue fireworks. This is crucial as starting every color is essential for a high score, and we are currently limited on info tokens.",
             "action": 12
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 1
         }
     },
     {
@@ -7149,6 +7289,10 @@
         "player_response": {
             "reason": "W2 is a safe play to advance the white firework from 1 to 2, aligning with the known information and immediate progression needs.",
             "action": 5
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 0
         }
     },
     {
@@ -7284,6 +7428,10 @@
         "player_response": {
             "reason": "Playing W2 from position 0 is a safe move to advance the White firework stack from 1 to 2, and no info tokens are needed or risked in this play.",
             "action": 4
+        },
+        "token_dict": {
+            "life": 1,
+            "info": 0
         }
     },
     {
@@ -7419,6 +7567,10 @@
         "player_response": {
             "reason": "Discard least known card to gain an info token for future hints, as no clear and safe play is currently available without risking the game with only 1 life token left.",
             "action": 3
+        },
+        "token_dict": {
+            "life": 1,
+            "info": 0
         }
     },
     {
@@ -7646,6 +7798,10 @@
         "player_response": {
             "reason": "Hinting Player +2 about the Blue cards will allow them to play 'B1', thus starting the Blue fireworks which are currently at 0. This action leverages the only available info token to secure a certain play, maximizes the immediate impact on the game score, and avoids the risk of making an error with the last life token.",
             "action": 17
+        },
+        "token_dict": {
+            "life": 1,
+            "info": 1
         }
     },
     {
@@ -7781,6 +7937,10 @@
         "player_response": {
             "reason": "Given the lack of info tokens and uncertainty about my own cards, discarding is the safest option to gain an info token for strategic play in subsequent turns.",
             "action": 0
+        },
+        "token_dict": {
+            "life": 1,
+            "info": 0
         }
     },
     {
@@ -8004,6 +8164,10 @@
         "player_response": {
             "reason": "Reveal rank 2 to Player +2 to ensure they know they possess a playable Y2 which advances the Yellow firework safely.",
             "action": 34
+        },
+        "token_dict": {
+            "life": 1,
+            "info": 1
         }
     },
     {
@@ -8139,6 +8303,10 @@
         "player_response": {
             "reason": "Discarding Card 3 to gain an info token while minimizing risk of ending the game by playing a wrong card.",
             "action": 2
+        },
+        "token_dict": {
+            "life": 1,
+            "info": 0
         }
     },
     {
@@ -8378,6 +8546,10 @@
         "player_response": {
             "reason": "Playing Y2 from my hand as it is the next required card for the yellow stack, advancing our score without risking a life token.",
             "action": 4
+        },
+        "token_dict": {
+            "life": 1,
+            "info": 1
         }
     },
     {
@@ -8613,6 +8785,10 @@
         "player_response": {
             "reason": "Direct hint to enable a safe play of B1 in Player +2's hand, maximizing score progression without risking the game's single remaining life token.",
             "action": 17
+        },
+        "token_dict": {
+            "life": 1,
+            "info": 1
         }
     },
     {
@@ -8748,6 +8924,10 @@
         "player_response": {
             "reason": "Discard a card to gain an info token as no hints can currently be given to assist teammates and no safe play is possible without info. Chose the first card to keep options open for other potential useful cards.",
             "action": 0
+        },
+        "token_dict": {
+            "life": 1,
+            "info": 0
         }
     },
     {
@@ -8979,6 +9159,10 @@
         "player_response": {
             "reason": "Providing a hint to Player +1 about the color Green will enable them to play G1, which is immediately playable and progresses the Green fireworks without risk of error, preserving our limited life tokens.",
             "action": 10
+        },
+        "token_dict": {
+            "life": 1,
+            "info": 1
         }
     },
     {
@@ -9114,6 +9298,10 @@
         "player_response": {
             "reason": "Discarding an unidentified card to regain an Info Token for strategic hints in future turns, especially since safe plays and exact card identities are unknown due to lack of specific hints.",
             "action": 2
+        },
+        "token_dict": {
+            "life": 1,
+            "info": 0
         }
     },
     {
@@ -9353,6 +9541,10 @@
         "player_response": {
             "reason": "Player +2 has 'G1', which can be played immediately to increase the Green stack from 1 to 2, ensuring a safe play and score increment without risking the last life token.",
             "action": 6
+        },
+        "token_dict": {
+            "life": 1,
+            "info": 1
         }
     }
 ]

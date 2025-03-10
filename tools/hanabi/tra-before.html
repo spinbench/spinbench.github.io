@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hanabi Trajectory Viewer</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="../../static/css/bulma.min.css">
+  <link rel="stylesheet" href="../../static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="../../static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="../../static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="../../static/css/index.css">
+
+  <style>
+    .state {
+      margin-bottom: 2rem;
+      padding: 1rem;
+      border: 1px solid #dbdbdb;
+      border-radius: 4px;
+    }
+    .select-container {
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-2">Hanabi Trajectory Viewer</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Trajectory Selection -->
+  <section class="section" id="trajectory-selection">
+    <div class="container">
+      <h2 class="title is-3">Trajectory Selection</h2>
+      <div class="columns is-multiline">
+        <div class="column is-half">
+          <div class="field">
+            <label class="label">Choose the model:</label>
+            <div class="control">
+              <div class="select">
+                <select id="modelSelect">
+                  <option value="deepseek-r1">Deepseek-R1</option>
+                  <option value="gpt-4-turbo">GPT-4-turbo</option>
+                  <option value="gpt-4o">GPT-4o</option>
+                  <option value="haiku">Claude-3.5-Haiku</option>
+                  <option value="llama3.3">Llama3.3:70b</option>
+                  <option value="o1-mini">o1-mini</option>
+                  <option value="o3-mini">o3-mini</option>
+                  <option value="o1">o1</option>
+                  <option value="sonnet">Claude-3.5-Sonnet</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column is-half">
+          <div class="field">
+            <label class="label">Select number of players:</label>
+            <div class="control">
+              <div class="select">
+                <select id="playerCountSelect">
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column has-text-centered">
+          <button class="button is-primary" id="loadTrajectoryButton">Load Trajectory</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trajectory Navigation and State Display -->
+  <section class="section">
+    <div class="container">
+      <!-- Navigation Buttons -->
+      <div class="buttons is-centered" style="margin-bottom: 1rem;">
+        <button class="button" id="prevButton" onclick="prevState()">Previous State</button>
+        <button class="button" id="nextButton" onclick="nextState()">Next State</button>
+      </div>
+      <!-- State Display -->
+      <div id="stateDisplay" class="state">
+        <!-- Dynamic state details will be inserted here -->
+        <p>Please load a trajectory to view game states.</p>
+      </div>
+      <div class="content">
+        <p><strong>Note:</strong>There are five colors: R is Red, Y is yellow, G is green, W is white, B is blue. Each card is displayed by [color][number], like B0. If color or number is unknown, that part is displayed as X.</p>
+        </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>Hanabi Trajectory Viewer - Part of the SPIN-Bench Benchmark</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    let trajectoryData = [];
+    let currentIndex = 0;
+
+    // Load trajectory JSON based on selected model and player count
+    function loadTrajectory(path) {
+      fetch(path)
+        .then(response => response.json())
+        .then(data => {
+          trajectoryData = data;
+          currentIndex = 0;
+          if (trajectoryData.length > 0) {
+            showState(currentIndex);
+          } else {
+            document.getElementById('stateDisplay').innerHTML = "<p>No state data found in trajectory.</p>";
+          }
+        })
+        .catch(error => {
+          console.error('Error loading trajectory:', error);
+          alert("Trajectory load failed, please choose another trajectory.");
+        });
+    }
+
+    // Display a single state using the template provided
+    function showState(index) {
+        if (index < 0 || index >= trajectoryData.length) return;
+        const state = trajectoryData[index];
+        const model = document.getElementById('modelSelect').value;
+        const playerCount = document.getElementById('playerCountSelect').value;
+      
+        let html = `
+        <div class="card">
+          <header class="card-header">
+            <p class="card-header-title">Model: ${model}, Player Count: ${playerCount}, Current Step: ${currentIndex}</p>
+          </header>
+          <div class="card-content">
+            <div class="content">
+                  <p><strong>Tokens:</strong> ${state.tokens}</p>
+                  <p><strong>Fireworks:</strong> ${state.fireworks}</p>
+              <hr>
+              <h3 class="title is-5">Current Player's Hand</h3>
+              <ul>
+        `;
+      
+        state.your_hand.forEach((card, idx) => {
+          html += `<li>Card ${idx + 1}: ${card.known}</li>`;
+        });
+        
+        html += `
+              </ul>
+              <hr>
+              <h3 class="title is-5">Other Players' Hands</h3>
+        `;
+      
+        for (const [player, cards] of Object.entries(state.other_players)) {
+          html += `
+              <div class="box">
+                <p class="has-text-weight-semibold">Player ${player}:</p>
+                <ul>
+          `;
+          cards.forEach((card, idx) => {
+            html += `<li>Card ${idx + 1}: <strong>Visible to current player:</strong> ${card.visible} | <strong>Hint:</strong> ${card.hint}</li>`;
+          });
+          html += `
+                </ul>
+              </div>
+          `;
+        }
+        
+        let this_action = null;
+        for (const action of state.legal_actions) {
+          if (action.index === state.player_response.action) {
+            this_action = action;
+            break;
+          }
+        }
+        
+        html += `
+  </ul>
+  <hr>
+  <h3 class="title is-5">Player Response</h3>
+  <div class="box">
+    <div class="content">
+      <div class="columns">
+        <div class="column">
+          <p class="has-text-weight-semibold">Reasoning:</p>
+          <p>${state.player_response.reason}</p>
+        </div>
+        <div class="column">
+          <p class="has-text-weight-semibold">Action:</p>
+          <p>${this_action ? this_action.action : "Unknown"}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+`;
+
+      
+        document.getElementById('stateDisplay').innerHTML = html;
+        document.getElementById('prevButton').disabled = (currentIndex === 0);
+        document.getElementById('nextButton').disabled = (currentIndex === trajectoryData.length - 1);
+      }
+      
+
+    function prevState() {
+      if (currentIndex > 0) {
+        currentIndex--;
+        showState(currentIndex);
+      }
+    }
+
+    function nextState() {
+      if (currentIndex < trajectoryData.length - 1) {
+        currentIndex++;
+        showState(currentIndex);
+      }
+    }
+
+    document.getElementById('loadTrajectoryButton').addEventListener('click', function () {
+      const model = document.getElementById('modelSelect').value;
+      const playerCount = document.getElementById('playerCountSelect').value;
+      // Construct trajectory file path; adjust the path according to your directory structure.
+      const trajectoryPath = `../../trajectories/hanabi/hanabi-${playerCount}${model}/trajectory.json`;
+      console.log('Loading trajectory:', trajectoryPath);
+      loadTrajectory(trajectoryPath);
+    });
+  </script>
+</body>
+
+</html>

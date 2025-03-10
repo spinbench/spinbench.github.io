@@ -206,6 +206,10 @@
         "player_response": {
             "reason": "Prioritize starting fireworks by revealing rank 1 to Player +1, who has both W1 and B1. These are immediately playable to start White/Blue stacks. This uses one Info token (plentiful at 8) to enable two critical plays.",
             "action": "25"
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 8
         }
     },
     {
@@ -427,6 +431,10 @@
         "player_response": {
             "reason": "All fireworks are at 0, requiring 1s to start. Player +1 has W1 and G1 but doesn't know their rank. Revealing rank 1 to them (action 25) highlights both playable 1s, efficiently initiating two fireworks while preserving info tokens (7/8 remaining). This is safer than risking a blind play from my own hand (unknown colors) and more impactful than discarding.",
             "action": 25
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 7
         }
     },
     {
@@ -652,6 +660,10 @@
         "player_response": {
             "reason": "Prioritize starting White fireworks. Player +3 holds W1 (known rank 1) but lacks color info. Revealing 'White' to them directly identifies the playable W1, initiating the W sequence with zero risk. This uses an info token efficiently (6 remaining) to unlock maximum potential points.",
             "action": 23
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 6
         }
     },
     {
@@ -875,8 +887,12 @@
             }
         ],
         "player_response": {
-            "reason": "Player +3 has a G1 (green 1) that is known as rank 1 but needs color confirmation. By hinting green, they will recognize the G1 as playable to start the green firework. This is the most direct path to advancing a stack since all fireworks are at 0, and green’s G1 is uniquely identifiable in their hand.",
+            "reason": "Player +3 has a G1 (green 1) that is known as rank 1 but needs color confirmation. By hinting green, they will recognize the G1 as playable to start the green firework. This is the most direct path to advancing a stack since all fireworks are at 0, and green\u2019s G1 is uniquely identifiable in their hand.",
             "action": "22"
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 5
         }
     },
     {
@@ -1106,6 +1122,10 @@
         "player_response": {
             "reason": "Player +1 has a B1 (Blue 1) which is playable since the B stack is at 0. However, they only know it is a rank 1 (possible colors R/Y/G/B). Giving a color hint for Blue will identify both B1 and B2 in their hand. Highlighting Blue will let them know the B1 is playable immediately to start the Blue firework, while conserving Info tokens (4 remaining) for future critical plays.",
             "action": 14
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 4
         }
     },
     {
@@ -1327,6 +1347,10 @@
         "player_response": {
             "reason": "Card 0 (W1) is confirmed playable since white fireworks are at 0. Playing it safely starts the white stack without risk. Other critical 1s (G1 in Player +1's hand, Y1 in Player +3's hand) can be addressed by teammates via future hints, but securing an immediate play here maximizes early progress.",
             "action": 5
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 3
         }
     },
     {
@@ -1548,6 +1572,10 @@
         "player_response": {
             "reason": "Card 3 in my hand is confirmed to be G1 (green, rank 1) via hints, which is directly playable onto the G0 firework. This is a safe play that advances a firework with no risk of losing life tokens. Prioritizing this immediate play over hints or discards maximizes progress while conserving info tokens.",
             "action": 7
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 3
         }
     },
     {
@@ -1765,6 +1793,10 @@
         "player_response": {
             "reason": "Hinting Player +3 about white (W) identifies their W1 (duplicate, risky) and W2 (playable next). This prevents a potential misplay of W1 (losing a life) and directs them to play W2, advancing the white firework to 2. It also clears ambiguity around their W1, which can now be safely discarded.",
             "action": "23"
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 3
         }
     },
     {
@@ -1986,6 +2018,10 @@
         "player_response": {
             "reason": "Hinting Player +2 about rank 2 will inform them that their W2 (visible as white card with unknown rank) is playable on the W1 firework. This safely advances the white stack to 2 while using minimal info tokens. Other critical plays (like B1 in Player +1's hand) are already known and likely to be played without hints.",
             "action": 31
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 2
         }
     },
     {
@@ -2203,6 +2239,10 @@
         "player_response": {
             "reason": "Card 3 is confirmed to be B1 (blue 1), which is playable on the B0 firework. Playing it immediately starts the blue stack and is safe. Other players' hands lack immediately playable critical cards that require urgent hints, and with 1 info token remaining, securing a guaranteed play is optimal.",
             "action": "8"
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 1
         }
     },
     {
@@ -2424,6 +2464,10 @@
         "player_response": {
             "reason": "Card 2 (position 2) is confirmed W2, which is playable on the W1 firework. Playing it safely advances the white stack to W2 without risk, maintaining life tokens and conserving the info token for future critical hints.",
             "action": 7
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 1
         }
     },
     {
@@ -2641,6 +2685,10 @@
         "player_response": {
             "reason": "Player +2 has G2, which is playable on the G1 firework. Hinting 'Green' will indicate their G2, allowing them to play it next turn. This safely progresses the green stack and avoids wasting the last info token on less critical cards.",
             "action": "17"
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 1
         }
     },
     {
@@ -2782,6 +2830,10 @@
         "player_response": {
             "reason": "No info tokens available; discarding to regain an info token is critical. All cards in hand are unknown, so discarding position 0 (lowest risk) to enable future hints for crucial plays like B5 in Player +3's hand or prevent W1 misplay.",
             "action": "0"
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 0
         }
     },
     {
@@ -2999,6 +3051,10 @@
         "player_response": {
             "reason": "Card 3 (position 2) is confirmed to be B1, which is playable on the B0 firework. Playing it safely advances the fireworks with no risk, and preserves the team's limited life tokens (2 remaining). This is higher priority than hinting/discarding given the immediate value.",
             "action": "8"
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 1
         }
     },
     {
@@ -3220,6 +3276,10 @@
         "player_response": {
             "reason": "Prioritize revealing critical rank 1 cards in Player +2's hand (R1 and B1) to enable starting Red/Blue fireworks. With only 1 info token, targeting both playable 1s (R1 needed for R0 and B1 for B0) maximizes potential plays. This is safer than risking a blind play given our last life token.",
             "action": 30
+        },
+        "token_dict": {
+            "life": 1,
+            "info": 1
         }
     },
     {
@@ -3361,6 +3421,10 @@
         "player_response": {
             "reason": "With 0 info tokens, giving a hint is impossible. Playing a card blindly with only 1 life token left is extremely risky. Discarding to gain an info token is critical for future coordination. All cards in hand are unknown, so discarding the first card (position 0) is a standard conservative choice to avoid losing critical cards later.",
             "action": "0"
+        },
+        "token_dict": {
+            "life": 1,
+            "info": 0
         }
     },
     {
@@ -3586,6 +3650,10 @@
         "player_response": {
             "reason": "Hinting rank 2 to Player +1 to highlight their G2 (actual card), which is playable on the G1 firework. This secures progression on the G stack with minimal risk and uses the last info token efficiently.",
             "action": 26
+        },
+        "token_dict": {
+            "life": 1,
+            "info": 1
         }
     },
     {
@@ -3727,6 +3795,10 @@
         "player_response": {
             "reason": "Card 3 (G2) is confirmed playable as the green firework is at 1. Playing it safely progresses the green stack without risking the last life token. Prioritizing known plays over discards maximizes score.",
             "action": 8
+        },
+        "token_dict": {
+            "life": 1,
+            "info": 0
         }
     },
     {
@@ -3868,6 +3940,10 @@
         "player_response": {
             "reason": "Discarding position 1 (W1) is safe since White fireworks are already at W2, making it a duplicate. This gains an info token for future hints while avoiding risk with only 1 life remaining. Critical plays needed (B1/R1) can be addressed once hints are available.",
             "action": "1"
+        },
+        "token_dict": {
+            "life": 1,
+            "info": 0
         }
     },
     {
@@ -4077,6 +4153,10 @@
         "player_response": {
             "reason": "Hinting 'Red' to Player +1 identifies their R1 (playable for starting red fireworks) and R4. Since they already know the R1's rank from prior hints, this allows them to safely play R1 immediately. This action uses our last info token effectively to start a new firework stack rather than risking a play/discard with unknown cards.",
             "action": "10"
+        },
+        "token_dict": {
+            "life": 1,
+            "info": 1
         }
     },
     {
@@ -4218,6 +4298,10 @@
         "player_response": {
             "reason": "Card 4 is known to be R1 (red 1), which is needed to start the red firework (currently at 0). With 1 life token remaining and 0 info tokens, playing this confirmed playable card is safe and progresses the red stack without risk.",
             "action": "9"
+        },
+        "token_dict": {
+            "life": 1,
+            "info": 0
         }
     },
     {
@@ -4359,6 +4443,10 @@
         "player_response": {
             "reason": "Card 2 (position 2) has confirmed identity B1, which is playable on the B0 firework stack. With 1 life token remaining, playing this guaranteed card is safe and progresses the game. Other cards have higher risk or unknown playability.",
             "action": "7"
+        },
+        "token_dict": {
+            "life": 1,
+            "info": 0
         }
     },
     {
@@ -4500,6 +4588,10 @@
         "player_response": {
             "reason": "With 0 info tokens, discarding to regain one is critical. Card 4 has no known info and is high-risk to play. Discarding it allows future hints to direct plays like W3 in Player +1's hand (needed for W stack progression) or B1 duplicates needing removal. Prioritizing info token recovery over risky plays with 1 life remaining.",
             "action": "4"
+        },
+        "token_dict": {
+            "life": 1,
+            "info": 0
         }
     },
     {
@@ -4721,6 +4813,10 @@
         "player_response": {
             "reason": "Hinting Player +3 about red (R) will identify their R2 card (visible as R2 but they only know it's rank 2). Since the red firework is at R1, they can safely play R2 next. This advances red's progress and sets up R3 (also in their hand) for future plays. With 1 life token remaining, avoiding risky plays is critical, and this hint directly enables a safe play.",
             "action": 20
+        },
+        "token_dict": {
+            "life": 1,
+            "info": 1
         }
     },
     {
@@ -4862,6 +4958,10 @@
         "player_response": {
             "reason": "With 0 info tokens, discarding card 0 (unknown) to gain an info token is critical for future hints. Card 0's possible identities (YGWB2345) include potentially non-critical cards like B3-5 (B2 is already discarded, making B fireworks uncompletable) or Y2-5 (Y1 needed first). This balances risk while enabling future communication.",
             "action": "0"
+        },
+        "token_dict": {
+            "life": 1,
+            "info": 0
         }
     },
     {
@@ -5087,6 +5187,10 @@
         "player_response": {
             "reason": "Prioritize hinting Player +2's Y1 (needed for Y0 stack) to start yellow fireworks. Y1 is playable and critical, while other playable cards (e.g., R2 in +1's hand) are already known. With 1 life token, avoiding risky plays and using the last info token efficiently is key.",
             "action": "16"
+        },
+        "token_dict": {
+            "life": 1,
+            "info": 1
         }
     },
     {
@@ -5228,6 +5332,10 @@
         "player_response": {
             "reason": "Card 3 (position 2) is confirmed to be R2 through hints, which is exactly needed to advance the red firework from R1 to R2. With 0 info tokens and critical need to progress red (discard pile shows R5 already lost), playing this safe card maximizes score without risking life tokens. Other players' hands lack immediately playable critical cards (e.g., Y1s are known but not playable due to Y0 stack being blocked by discarded Y2, and B1s are redundant). Discarding would waste a turn when a guaranteed play exists.",
             "action": "7"
+        },
+        "token_dict": {
+            "life": 1,
+            "info": 0
         }
     },
     {
@@ -5369,6 +5477,10 @@
         "player_response": {
             "reason": "With 0 info tokens, discarding to regain a hint is critical. Card 0 has no known value and is safest to discard to avoid losing a life. This allows future hints to guide plays like Player +2's Y1 or G3, which are needed for yellow and green stacks.",
             "action": "0"
+        },
+        "token_dict": {
+            "life": 1,
+            "info": 0
         }
     },
     {
@@ -5591,6 +5703,10 @@
                 "action": "Reveal player +3 rank 5"
             }
         ],
-        "player_response": ""
+        "player_response": "",
+        "token_dict": {
+            "life": 1,
+            "info": 1
+        }
     }
 ]

@@ -202,6 +202,10 @@
         "player_response": {
             "reason": "Player +3 holds three playable 1s (B1, R1, Y1). Revealing rank 1 helps them identify all their immediate plays.",
             "action": "35"
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 8
         }
     },
     {
@@ -427,6 +431,10 @@
         "player_response": {
             "reason": "We have plenty of info tokens and want Player +1 to know they hold a playable G1, so revealing rank 1 ensures they can safely play it next turn.",
             "action": 25
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 7
         }
     },
     {
@@ -644,6 +652,10 @@
         "player_response": {
             "reason": "Card in position 2 must be a 1 (and not red, since all red 1s are visible), so it is guaranteed playable.",
             "action": "7"
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 6
         }
     },
     {
@@ -857,6 +869,10 @@
         "player_response": {
             "reason": "Each of my first three cards is known to be rank 1 but unknown color; with R, Y, W, B stacks all at 0, there is a strong (4/5) chance card 0 is a playable 1. We have enough life tokens to risk the small chance of G1. Playing it now maximizes early progress.",
             "action": "5"
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 6
         }
     },
     {
@@ -1074,6 +1090,10 @@
         "player_response": {
             "reason": "Player +3 holds two 1s (R1 and Y1), both immediately playable. Revealing rank 1 will let them safely play those cards to advance the fireworks.",
             "action": "35"
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 6
         }
     },
     {
@@ -1291,6 +1311,10 @@
         "player_response": {
             "reason": "Player +2 holds a guaranteed R1, which is immediately playable if they know it's red. Using a color hint on R lets them safely play it next turn.",
             "action": "15"
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 5
         }
     },
     {
@@ -1508,6 +1532,10 @@
         "player_response": {
             "reason": "Player +3 holds a guaranteed-playable B2, but they do not know which card it is. Revealing rank 2 highlights only R2 and B2, giving them a better chance to identify and play the correct card.",
             "action": "36"
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 4
         }
     },
     {
@@ -1721,6 +1749,10 @@
         "player_response": {
             "reason": "Card 1 is known to be R1 and will safely advance the red firework from 0 to 1.",
             "action": 5
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 3
         }
     },
     {
@@ -1938,6 +1970,10 @@
         "player_response": {
             "reason": "Revealing Y to player+3 lets them identify their Y1 (which they already know is a 1) and safely play it next turn to start the Yellow stack.",
             "action": 21
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 3
         }
     },
     {
@@ -2155,6 +2191,10 @@
         "player_response": {
             "reason": "Player +2 already knows they have Y1 and can play it soon. By giving them a rank-2 hint, they will realize their other yellow card is Y2 and can play it immediately after Y1, advancing the yellow stack quickly.",
             "action": "31"
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 2
         }
     },
     {
@@ -2370,8 +2410,12 @@
             }
         ],
         "player_response": {
-            "reason": "Player +3 holds R2, which is immediately playable (next needed card on red stack). Revealing color R to them ensures they know it’s safe to play on their next turn.",
+            "reason": "Player +3 holds R2, which is immediately playable (next needed card on red stack). Revealing color R to them ensures they know it\u2019s safe to play on their next turn.",
             "action": 20
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 1
         }
     },
     {
@@ -2513,6 +2557,10 @@
         "player_response": {
             "reason": "Card #2 is definitely Y1 and safely starts the Yellow stack, so playing it is best.",
             "action": "6"
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 0
         }
     },
     {
@@ -2654,6 +2702,10 @@
         "player_response": {
             "reason": "We have 0 info tokens and no guaranteed safe play, so discarding to gain a token is the best option.",
             "action": "0"
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 0
         }
     },
     {
@@ -2867,6 +2919,10 @@
         "player_response": {
             "reason": "Card 1 is identified as R2, which matches the next needed R card (R2). Playing it safely advances the red stack without using a hint token.",
             "action": "5"
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 1
         }
     },
     {
@@ -3082,8 +3138,12 @@
             }
         ],
         "player_response": {
-            "reason": "Revealing color B to player +3 lets them identify their second card as B2 (they already know it’s rank 2) and confidently play it next turn.",
+            "reason": "Revealing color B to player +3 lets them identify their second card as B2 (they already know it\u2019s rank 2) and confidently play it next turn.",
             "action": "24"
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 1
         }
     },
     {
@@ -3225,6 +3285,10 @@
         "player_response": {
             "reason": "Card 3 is definitely Y2, which is the next needed card on the Yellow stack. Playing it safely advances the firework.",
             "action": 7
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 0
         }
     },
     {
@@ -3366,6 +3430,10 @@
         "player_response": {
             "reason": "We have no information about our cards and no info tokens to give clues. Discarding will replenish an info token so we can hint in future turns.",
             "action": 0
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 0
         }
     },
     {
@@ -3583,6 +3651,10 @@
         "player_response": {
             "reason": "Card 2 is identified as B2, which is exactly the next needed card on the blue stack (currently at 1). Playing it safely advances the blue firework.",
             "action": "7"
+        },
+        "token_dict": {
+            "life": 3,
+            "info": 1
         }
     },
     {
@@ -3808,6 +3880,10 @@
         "player_response": {
             "reason": "Player +1 has a playable B2. Revealing color B will let them identify and safely play it.",
             "action": 14
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 1
         }
     },
     {
@@ -3947,8 +4023,12 @@
             }
         ],
         "player_response": {
-            "reason": "We have 0 info tokens and no guaranteed safe play. Card 1 (index 0) is unlikely to be immediately needed (it can’t be G2 or W1). Discarding it safely gains an info token.",
+            "reason": "We have 0 info tokens and no guaranteed safe play. Card 1 (index 0) is unlikely to be immediately needed (it can\u2019t be G2 or W1). Discarding it safely gains an info token.",
             "action": 0
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 0
         }
     },
     {
@@ -4178,6 +4258,10 @@
         "player_response": {
             "reason": "No safe play is apparent without more info, so discarding to gain an extra info token is the safest move.",
             "action": 0
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 1
         }
     },
     {
@@ -4401,8 +4485,12 @@
             }
         ],
         "player_response": {
-            "reason": "Revealing rank 1 to player +2 will let them identify and play their W1 immediately, starting the white stack and freeing up future plays (like W2 in player +1’s hand). This is a strong use of an info token to secure a guaranteed point.",
+            "reason": "Revealing rank 1 to player +2 will let them identify and play their W1 immediately, starting the white stack and freeing up future plays (like W2 in player +1\u2019s hand). This is a strong use of an info token to secure a guaranteed point.",
             "action": "30"
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 2
         }
     },
     {
@@ -4636,6 +4724,10 @@
         "player_response": {
             "reason": "Player +1 holds W1, which is immediately playable. Revealing rank 1 identifies it so they can safely play it next turn.",
             "action": "25"
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 1
         }
     },
     {
@@ -4777,6 +4869,10 @@
         "player_response": {
             "reason": "Card #1 ('GW345') cannot be the next needed card (it is definitely not G2 or W1), so discarding it is safest to gain an info token.",
             "action": 0
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 0
         }
     },
     {
@@ -5010,6 +5106,10 @@
         "player_response": {
             "reason": "No single hint guarantees an immediate safe play by a teammate, and we cannot safely play our own unknown cards. Discarding will give us an extra info token for a stronger future clue.",
             "action": "0"
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 1
         }
     },
     {
@@ -5239,6 +5339,10 @@
         "player_response": {
             "reason": "Our second card is definitively B2, which is exactly what's needed next on the Blue stack (currently at 1). Playing it is guaranteed correct and does not use an info token.",
             "action": 6
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 2
         }
     },
     {
@@ -5472,6 +5576,10 @@
         "player_response": {
             "reason": "Player +3 has two B3 cards in hand, which are both immediately playable (since B=2). Revealing rank 3 to that player confirms those cards are 3s, allowing them to confidently play them and advance the blue fireworks stack.",
             "action": 37
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 2
         }
     },
     {
@@ -5693,6 +5801,10 @@
         "player_response": {
             "reason": "Card #4 must be W1 (all other 1s are accounted for), so it is safely playable.",
             "action": "8"
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 1
         }
     },
     {
@@ -5914,6 +6026,10 @@
         "player_response": {
             "reason": "Player+1 has two cards that are actually B3, which are immediately playable since the Blue stack is at 2. Revealing color B to Player+1 ensures they know those two rank-3 cards are Blue and can safely play one on their turn.",
             "action": "14"
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 1
         }
     },
     {
@@ -6055,6 +6171,10 @@
         "player_response": {
             "reason": "We have 0 info tokens but card #4 in our hand is definitely B3, which is the next needed blue card (B2 already on the table, so B3 is correct). Playing it is a guaranteed safe move.",
             "action": "8"
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 0
         }
     },
     {
@@ -6196,6 +6316,10 @@
         "player_response": {
             "reason": "With zero info tokens, we cannot safely clue a teammate. A blind play has a high risk of losing a life. Discarding earns an info token so we can clue a clearly playable card next turn.",
             "action": 0
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 0
         }
     },
     {
@@ -6417,6 +6541,10 @@
         "player_response": {
             "reason": "Player +1 holds both G2 and W2, each of which is immediately playable (next in sequence for G and W). Revealing rank 2 to them will highlight exactly those two cards, allowing safe plays and advancing both fireworks.",
             "action": "26"
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 1
         }
     },
     {
@@ -6558,6 +6686,10 @@
         "player_response": {
             "reason": "No guaranteed safe play exists and we have 0 info tokens, so discarding our first unknown card will earn a needed info token.",
             "action": 0
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 0
         }
     },
     {
@@ -6775,6 +6907,10 @@
         "player_response": {
             "reason": "Card 4 is definitely Blue 3 (already fulfilled on the B stack), so discarding it safely frees that slot and gains an info token.",
             "action": 3
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 1
         }
     },
     {
@@ -6996,6 +7132,10 @@
         "player_response": {
             "reason": "Revealing color G to player +2 lets them see exactly which cards are green (including at least one G2), making it safe to play and advancing the green stack.",
             "action": 17
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 2
         }
     },
     {
@@ -7213,6 +7353,10 @@
         "player_response": {
             "reason": "We have one info token and see that player +1 holds a White 2 but does not know it is White. By revealing White to that card, they can safely play W2 on their next turn and extend the White stack.",
             "action": 13
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 1
         }
     },
     {
@@ -7352,8 +7496,12 @@
             }
         ],
         "player_response": {
-            "reason": "Card 0 is definitely G2, which is exactly the next needed card on the green stack (G1→G2). Playing it is safe and advances the fireworks.",
+            "reason": "Card 0 is definitely G2, which is exactly the next needed card on the green stack (G1\u2192G2). Playing it is safe and advances the fireworks.",
             "action": "5"
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 0
         }
     },
     {
@@ -7495,6 +7643,10 @@
         "player_response": {
             "reason": "We have 0 info tokens and cannot hint. Card 1 might be the crucial B4 we need, so we should not risk discarding or blind-playing it. Discarding card 0 safely earns us an info token, enabling future hints for guaranteed plays.",
             "action": 0
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 0
         }
     },
     {
@@ -7724,6 +7876,10 @@
         "player_response": {
             "reason": "Player +2 holds a G3 that is immediately playable (the G stack is at 2). By revealing rank 3 to Player +2, they will know with certainty which card is G3 and can play it next turn to advance the green firework.",
             "action": "32"
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 1
         }
     },
     {
@@ -7865,6 +8021,10 @@
         "player_response": {
             "reason": "We have 0 info tokens and cannot safely blind-play. Discarding card #3 (position 2) is likely safest (it is Blue, but only 1 in 4 chance to be the needed B4). This gains us an info token to give a crucial hint next turn.",
             "action": 2
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 0
         }
     },
     {
@@ -8082,6 +8242,10 @@
         "player_response": {
             "reason": "Card 1 is definitely W2 and W2 is the next needed card for the white stack, so it is safe to play.",
             "action": "5"
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 1
         }
     },
     {
@@ -8297,8 +8461,12 @@
             }
         ],
         "player_response": {
-            "reason": "We only have one information token, and identifying player +2’s B4 gives a strong chance for an immediate correct play. By revealing color B, they can deduce it’s likely B4 (since one B4 is already discarded and B5 is rarer), and play it safely to advance the blue stack.",
+            "reason": "We only have one information token, and identifying player +2\u2019s B4 gives a strong chance for an immediate correct play. By revealing color B, they can deduce it\u2019s likely B4 (since one B4 is already discarded and B5 is rarer), and play it safely to advance the blue stack.",
             "action": "19"
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 1
         }
     },
     {
@@ -8440,6 +8608,10 @@
         "player_response": {
             "reason": "We have no info tokens and cannot safely give clues to teammates with clearly playable cards. Playing a random card risks losing a life token. Therefore, discarding one unknown card is safest to gain an info token.",
             "action": "0"
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 0
         }
     },
     {
@@ -8657,6 +8829,10 @@
         "player_response": {
             "reason": "Card 5 is certainly B5, which cannot be played because B4 is in the discard. Discarding it safely regains an info token for future hints.",
             "action": 4
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 1
         }
     },
     {
@@ -8874,6 +9050,10 @@
         "player_response": {
             "reason": "Player +2 has three 3s (R3, R3, Y3), all of which are playable because B3 and W3 are in the discard pile. Revealing rank 3 lets them safely play any of those three cards in sequence.",
             "action": "32"
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 2
         }
     },
     {
@@ -9091,6 +9271,10 @@
         "player_response": {
             "reason": "By revealing rank 3 to Player +1, they will know those three cards are all 3s, which are all safe to play given the discard pile (B3, W3) and current fireworks (next needed 3s in R, Y, G). This ensures immediate and repeated correct plays without risking a life token.",
             "action": "27"
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 1
         }
     },
     {
@@ -9232,6 +9416,10 @@
         "player_response": {
             "reason": "Card 1 must be a 3 of R/Y/G/W (B3 is gone) and all those suits need a 3, so it is guaranteed safe to play.",
             "action": "5"
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 0
         }
     },
     {
@@ -9373,6 +9561,10 @@
         "player_response": {
             "reason": "With zero info tokens and no guaranteed safe play, the best move is to discard the card most likely to be unneeded. Card 5 has a high chance of being a useless B card or a redundant rank, so discarding it reclaims an info token with minimal risk.",
             "action": "4"
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 0
         }
     },
     {
@@ -9590,6 +9782,10 @@
         "player_response": {
             "reason": "Card #2 in our hand is confirmed G3, which perfectly extends the green stack from 2 to 3.",
             "action": "6"
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 1
         }
     },
     {
@@ -9803,6 +9999,10 @@
         "player_response": {
             "reason": "Player +1 holds a Y3, which is immediately playable (since the Y stack is at 2). Revealing color Y will let them identify and safely play that card.",
             "action": 11
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 1
         }
     },
     {
@@ -9944,6 +10144,10 @@
         "player_response": {
             "reason": "We know card 4 is definitely Y3, which is the next needed card for the yellow stack (Y is at 2 and needs a 3). Playing it safely advances the Y fireworks.",
             "action": "8"
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 0
         }
     },
     {
@@ -10085,6 +10289,10 @@
         "player_response": {
             "reason": "We have 0 info tokens, so we cannot give a hint. None of our cards are guaranteed safe to play, so discarding to regain an info token is safest. Discarding our leftmost card will let us provide a helpful clue on a future turn.",
             "action": 0
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 0
         }
     },
     {
@@ -10302,6 +10510,10 @@
         "player_response": {
             "reason": "By revealing color R to Player +2, they will deduce they hold R4 (the next needed card for the red stack) and can safely play it on their turn.",
             "action": "15"
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 1
         }
     },
     {
@@ -10443,6 +10655,10 @@
         "player_response": {
             "reason": "Card #1 can only be Blue (B1/B4/B5), none of which can advance Blue beyond 3 now that both B4s are discarded. Discarding it gains an info token for future hints.",
             "action": 0
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 0
         }
     },
     {
@@ -10652,6 +10868,10 @@
         "player_response": {
             "reason": "Player +1 holds exactly one rank-4 card (Y4), which is immediately playable since Y=3 on the table. Revealing rank 4 to them ensures they know which card to play, gaining a guaranteed point and advancing the yellow stack.",
             "action": "28"
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 1
         }
     },
     {
@@ -10789,6 +11009,10 @@
         "player_response": {
             "reason": "Card 1 is definitely rank 4 and can extend R, Y, or G (all at 3). With 2 life tokens left and no info tokens, we take the 3/4 chance that it's correct rather than discarding.",
             "action": 5
+        },
+        "token_dict": {
+            "life": 2,
+            "info": 0
         }
     }
 ]
