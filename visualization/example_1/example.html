@@ -2,87 +2,905 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>OctoTools Example Visualization</title>
+    <title>SPIN-Bench: PDDL: Planning Domain Definition Language</title>
     
-    <!-- Reuse styles from index.html -->
+    <!-- Reuse styles from template -->
     <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
     <link rel="stylesheet" href="../../static/css/bulma.min.css">
     <link rel="stylesheet" href="../../static/css/fontawesome.all.min.css">
 
     <!-- Add Prism.js for syntax highlighting -->
-    <!-- <link href="../../static/css/prism.css" rel="stylesheet" />
-    <script src="../../static/js/prism.js"></script>
-     -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css">
+    
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="../../static/css/visualization.css">
+    <style>
+        body {
+            font-family: 'Noto Sans', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f7fa;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Google Sans', sans-serif;
+            margin-top: 20px;
+            margin-bottom: 15px;
+        }
+        h1 {
+            font-size: 2.4rem;
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        h2 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 10px;
+        }
+        .top-sections-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .game-intro-section,
+        .game-setting-section {
+            flex: 1;
+            min-width: 320px;
+            padding: 0 15px;
+            margin: 0;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .game-intro-section {
+            background-color: #f0f8ff;
+        }
+        .game-setting-section {
+            background-color: #f5fffa;
+        }
+        .game-intro-badge,
+        .game-setting-badge {
+            display: inline-block;
+            padding: 8px 15px;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .game-intro-badge {
+            background-color: #3498db;
+        }
+        .game-setting-badge {
+            background-color: #2ecc71;
+        }
+        .image-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .image-container img {
+            max-width: 100%;
+            max-height: 300px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .details {
+            margin-top: 15px;
+        }
+        .details p {
+            margin-bottom: 10px;
+        }
+        .steps-badge {
+            display: inline-block;
+            background-color: #9b59b6;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+        .button-legend {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+        .legend-dot {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 5px;
+        }
+        .legend-dot.domain-types {
+            background-color: #3498db;
+        }
+        .legend-dot.spatial {
+            background-color: #e74c3c;
+        }
+        .legend-dot.factual {
+            background-color: #f39c12;
+        }
+        .legend-dot.planning {
+            background-color: #2ecc71;
+        }
+        .legend-text {
+            font-size: 0.9rem;
+            margin-right: 15px;
+        }
+        .steps-container {
+            display: flex;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .steps-buttons {
+            flex: 0 0 300px;
+            background-color: #f5f7fa;
+            padding: 20px;
+            border-right: 1px solid #eaeaea;
+        }
+        .step-button {
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #f8f9fa;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .step-button:hover {
+            background-color: #e9ecef;
+        }
+        .step-button.active {
+            background-color: #007bff;
+            color: white;
+        }
+        .step-button.domain-types {
+            border-left: 5px solid #3498db;
+        }
+        .step-button.spatial {
+            border-left: 5px solid #e74c3c;
+        }
+        .step-button.factual {
+            border-left: 5px solid #f39c12;
+        }
+        .step-button.planning {
+            border-left: 5px solid #2ecc71;
+        }
+        .step-content {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            max-height: 600px;
+        }
+        .step-content h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .step-content p {
+            margin-bottom: 15px;
+        }
+        .step-content ul, .step-content ol {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        .step-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .step-content table th, 
+        .step-content table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        .step-content table th {
+            background-color: #f8f9fa;
+        }
+        .step-content table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        .performance-chart {
+            width: 100%;
+            height: 300px;
+            background-color: #f8f9fa;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .model-comparison {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .model-card {
+            flex: 1;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+            margin: 0 10px;
+            text-align: center;
+        }
+        .model-card h4 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .model-card-highlight {
+            background-color: #e8f4fd;
+            border: 1px solid #bed6e3;
+        }
+        code {
+            background-color: #f8f9fa;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        .domain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .domain-card {
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .domain-card h4 {
+            font-size: 1.1rem;
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        .domain-card p {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        .spatial-domain {
+            background-color: #ebf5fb;
+            border-left: 4px solid #3498db;
+        }
+        .sequential-domain {
+            background-color: #fef5e7;
+            border-left: 4px solid #f39c12;
+        }
+        .resource-domain {
+            background-color: #e9f7ef;
+            border-left: 4px solid #2ecc71;
+        }
+        .accuracy-chart {
+            width: 100%;
+            max-width: 700px;
+            height: 400px;
+            margin: 30px auto;
+            position: relative;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+        }
+        .chart-title {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .chart-lines {
+            height: 300px;
+            width: 100%;
+            position: relative;
+            border-bottom: 2px solid #333;
+            border-left: 2px solid #333;
+        }
+        .chart-line {
+            position: absolute;
+            stroke-width: 2px;
+            fill: none;
+        }
+        .axis-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        .y-axis-labels {
+            position: absolute;
+            left: 0;
+            top: 40px;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .y-label {
+            font-size: 12px;
+            padding-right: 5px;
+        }
+        .error-breakdown {
+            display: flex;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .error-card {
+            flex: 1;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .error-card h4 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .error-card p {
+            margin-bottom: 10px;
+        }
+        .error-bc {
+            background-color: #f8d7da;
+            border-left: 4px solid #dc3545;
+        }
+        .error-gs {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+        }
+        .error-other {
+            background-color: #e2e3e5;
+            border-left: 4px solid #6c757d;
+        }
+        .score-bars {
+            display: flex;
+            align-items: flex-end;
+            height: 250px;
+            margin: 30px 0;
+            padding-left: 40px;
+        }
+        .score-bar-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-right: 30px;
+        }
+        .score-bar {
+            width: 40px;
+            background-color: #3498db;
+            margin-bottom: 10px;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            position: relative;
+        }
+        .score-label {
+            position: absolute;
+            top: -25px;
+            width: 100%;
+            text-align: center;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .model-label {
+            text-align: center;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+    </style>
 
     <!-- Custom JS -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script src="../../static/js/example.js"></script>
 </head>
 
 <body>
     <div class="container">
+        <h1>PDDL: Planning Domain Definition Language</h1>
+        
         <!-- Wrap sections in new container -->
         <div class="top-sections-wrapper">
-            <!-- Query Section -->
-            <div class="query-section">
-                <h3 class="query-badge">The Query</h3>
-                <div class="query-content">
-                    <div class="image-container">
-                        <img src="baseball.png" alt="Baseball image" style="width: 100%;">
-                    </div>
-                    <div class="query-details">
-                        <p><strong>Image path:</strong> baseball.png</p>
-                        <p><strong>Question:</strong> How many baseballs are there?</p>
-                        <p><strong>Ground truth:</strong> 20</p>
-                    </div>
+            <!-- Introduction Section -->
+            <div class="game-intro-section">
+                <h3 class="game-intro-badge">PDDL Introduction</h3>
+                <div class="details">
+                    <p><strong>Name:</strong> Planning Domain Definition Language (PDDL)</p>
+                    <p><strong>Type:</strong> Classical Planning Tasks</p>
+                    <p><strong>Description:</strong> A formal language used to define planning problems where an agent must find a sequence of actions to reach a goal state from an initial state.</p>
+                    <p><strong>Purpose:</strong> Tests core reasoning skills including factual retrieval, spatial reasoning, and multi-step planning with progressive complexity levels.</p>
                 </div>
             </div>
             
-            <!-- Wrong Prediction -->
-            <div class="wrong-prediction">
-                <h3 class="wrong-prediction-badge">Wrong Prediction from GPT-4o</h3>
-                <div id="wrong-prediction-content"></div>
+            <!-- Settings Section -->
+            <div class="game-setting-section">
+                <h3 class="game-setting-badge">Benchmark Settings</h3>
+                <div class="details">
+                    <p><strong>Test Categories:</strong> Three subcategories to test different aspects of reasoning:</p>
+                    <ol>
+                        1. <strong>Factual Retrieval:</strong> Tasks in domains like elevator, grid, and floortile with progressively expanding state spaces
+                        <br>
+                        2. <strong>Spatial Reasoning:</strong> Modified floortile scenario challenging models to track agent location from relative instructions
+                        <br>
+                        3. <strong>Full Classical Planning:</strong> 21 domains (1,280 tasks) involving sequential decisions, resource management, and constraint handling
+                    </ol>
+                    <br>
+                    <p><strong>Evaluation Metrics:</strong></p>
+                    <ul>
+                        1. <strong>Accuracy:</strong> Percentage of correct solutions<br>
+                        2. <strong>N-Step Look Ahead:</strong> Weighted measure highlighting performance on complex problems<br>
+                        3. <strong>Error Analysis:</strong> Breaking constraints, goal not satisfied, and other errors
+                    </ul><br>
+                    <p><strong>Models Evaluated:</strong> o1, o1-mini, o3-mini, GPT-4o, GPT-4-turbo, Claude 3.5 Sonnet, Claude 3.5 Haiku, DeepSeek-R1, Llama3.3-70b</p>
+                </div>
             </div>
-                        
         </div>
 
         <!-- Steps Section -->
-        <h3 class="steps-badge">Prediction from the OctoTool Framework</h3>
+        <h3 class="steps-badge">Domain Types and Analysis</h3>
 
         <div class="button-legend">
             <div class="legend-item">
-                <span class="legend-dot planner"></span>
-                <span class="legend-text">Planner Components</span>
-                <span class="legend-dot executor"></span>
-                <span class="legend-text">Executor Components</span>
-                <span class="legend-dot answer"></span>
-                <span class="legend-text">Final Answer</span>
+                <span class="legend-dot domain-types"></span>
+                <span class="legend-text">Domain Types</span>
+                <span class="legend-dot spatial"></span>
+                <span class="legend-text">Spatial Reasoning</span>
+                <span class="legend-dot factual"></span>
+                <span class="legend-text">Factual Retrieval</span>
+                <span class="legend-dot planning"></span>
+                <span class="legend-text">Classical Planning</span>
             </div>
         </div>
 
         <div class="steps-container">
             <div class="steps-buttons">
-                <button class="step-button planner" data-step="step0">Step 0: Initial Plan from Query Analyzer</button>
+                <button class="step-button domain-types" data-step="overview">PDDL Overview</button>
+                <button class="step-button domain-types" data-step="domain-types">Domain Types</button>
                 <br>
-                <button class="step-button planner" data-step="step1-action">Step 1: Action from Action Predictor</button>
-                <button class="step-button executor" data-step="step1-command">Step 1: Command from Command Generator</button>
-                <button class="step-button executor" data-step="step1-result">Step 1: Result from Command Executor</button>
-                <button class="step-button planner" data-step="step1-verify">Step 1: Verification from Context Verifier</button>
+                <button class="step-button spatial" data-step="spatial-reasoning">Spatial Reasoning</button>
                 <br>
-                <button class="step-button planner" data-step="step2-action">Step 2: Action from Action Predictor</button>
-                <button class="step-button executor" data-step="step2-command">Step 2: Command from Command Generator</button>
-                <button class="step-button executor" data-step="step2-result">Step 2: Result from Command Executor</button>
-                <button class="step-button planner" data-step="step2-verify">Step 2: Verification from Context Verifier</button>
+                <button class="step-button factual" data-step="factual-retrieval">Factual Retrieval</button>
                 <br>
-                <button class="step-button answer" data-step="final-context">Full Trajectory in the Context</button>
-                <button class="step-button answer" data-step="final-summary">Summary from Solution Summarizer</button>
-                <button class="step-button answer" data-step="final">Final Answer</button>
+                <button class="step-button planning" data-step="classical-planning">Classical Planning</button>
+                <button class="step-button planning" data-step="error-analysis">Error Analysis</button>
+                <button class="step-button planning" data-step="correlation">State-Action Correlation</button>
+                <button class="step-button planning" data-step="key-findings">Key Findings [template] TODO(Kevin)</button>
             </div>
-            <div class="step-content"></div>
+            <div class="step-content">
+                <!-- Default content -->
+                <h3>Select a section to view details</h3>
+                <p>Click on any button from the left panel to view detailed information about PDDL planning analysis in SPIN-Bench.</p>
+            </div>
         </div>
     </div>
 
+    <script>
+        // Step content data
+        let stepContent = {
+            'overview': `
+                <h3>PDDL in SPIN-Bench</h3>
+                <p>Planning Domain Definition Language (PDDL) tasks in SPIN-Bench provide a controlled environment to rigorously test core reasoning skills of large language models. Unlike existing benchmarks, SPIN-Bench extends coverage to include both discrete-state PDDL problems and numerical PDDL tasks with optimization goals.</p>
+                
+                <h4>Key Features</h4>
+                <ul>
+                    <li><strong>Progressive Complexity:</strong> Tasks range from simple factual retrieval to complex multi-step planning with constraints</li>
+                    <li><strong>Diverse Domains:</strong> 21 domains across spatial, sequential, and resource management categories</li>
+                    <li><strong>Numeric Extensions:</strong> Beyond discrete states to include optimization goals (e.g., accruing at least $100 in the markettrader domain)</li>
+                    <li><strong>Rigorous Validation:</strong> Problems generated via systematic randomization and validated with Fast Downward, SMTPlan, and VAL systems</li>
+                </ul>
+                
+                <h4>Benchmark Design</h4>
+                <p>SPIN-Bench-Classical is constructed by adapting established PDDL competition benchmarks and designing additional domains to target specific LLM capabilities. The benchmark is structured to progressively challenge models:</p>
+                
+                <ol>
+                    <li><strong>Factual Retrieval:</strong> Tests the ability to extract and remember key state information</li>
+                    <li><strong>Spatial Reasoning:</strong> Evaluates tracking of positions and movements in space</li>
+                    <li><strong>Full Classical Planning:</strong> Assesses complex planning with multiple constraints and goals</li>
+                </ol>
+                
+                <h4>Evaluation Format</h4>
+                <p>For classical planning tasks, each model is provided with:</p>
+                <ul>
+                    <li>Initial state (s<sub>init</sub>)</li>
+                    <li>Goal state (S<sub>G</sub>)</li>
+                    <li>Available actions (A)</li>
+                </ul>
+                
+                <p>The model must then generate a valid trajectory from the initial to the goal state. Performance is measured through:</p>
+                <ul>
+                    <li><strong>Accuracy:</strong> Percentage of correct solutions</li>
+                    <li><strong>N-Step Look Ahead:</strong> Σ(C<sub>i</sub> × S<sub>i</sub>)/N, where N is total tasks, C<sub>i</sub> is correctness, S<sub>i</sub> is required steps</li>
+                    <li><strong>Error Analysis:</strong> Breaking constraints, goal not satisfied, and other errors</li>
+                </ul>
+                
+                <p>This tiered approach helps pinpoint whether an LLM's failures arise from inadequate state tracking, partial-order reasoning, or chain-of-thought breakdowns.</p>
+            `,
+            'domain-types': `
+                <h3>PDDL Domain Types</h3>
+                <p>PDDL in SPIN-Bench encompasses a diverse range of domains, categorized into three main types based on their primary characteristics and challenges.</p>
+                
+                <h4>Domain Classification</h4>
+                
+                <div class="domain-grid">
+                    <div class="domain-card spatial-domain">
+                        <h4>Drone</h4>
+                        <p>Focuses on controlling a drone across a map, planning flight paths and possibly collecting items or information.</p>
+                    </div>
+                    
+                    <div class="domain-card spatial-domain">
+                        <h4>Floortile</h4>
+                        <p>Involves moving an agent over a grid of tiles to mark or paint them, ensuring proper coverage or pattern completion.</p>
+                    </div>
+                    
+                    <div class="domain-card spatial-domain">
+                        <h4>Grid</h4>
+                        <p>Classic grid-navigation domain where an agent moves between cells to reach designated locations or achieve tasks.</p>
+                    </div>
+                    
+                    <div class="domain-card spatial-domain">
+                        <h4>Depots</h4>
+                        <p>Combines transportation and hoist operations to move crates between trucks and warehouses, requiring both navigation and efficient resource allocation.</p>
+                    </div>
+                    
+                    <div class="domain-card spatial-domain">
+                        <h4>Logistics</h4>
+                        <p>Centers on delivering packages between locations using trucks and airplanes, emphasizing route planning and scheduling.</p>
+                    </div>
+                    
+                    <div class="domain-card spatial-domain">
+                        <h4>Rovers</h4>
+                        <p>Involves planetary rovers navigating terrain, collecting samples, and managing limited resources like fuel or battery power.</p>
+                    </div>
+                    
+                    <div class="domain-card spatial-domain">
+                        <h4>Sokoban</h4>
+                        <p>Puzzle-based domain where an agent pushes crates in a warehouse grid, aiming to position them in specific target cells.</p>
+                    </div>
+                    
+                    <div class="domain-card spatial-domain">
+                        <h4>Termes</h4>
+                        <p>Models autonomous robots constructing structures in a grid by navigating, carrying blocks, and cooperating on building tasks.</p>
+                    </div>
+                    
+                    <div class="domain-card sequential-domain">
+                        <h4>Assembly</h4>
+                        <p>Entails sequentially combining parts to form a final product, highlighting the order of assembly steps.</p>
+                    </div>
+                    
+                    <div class="domain-card sequential-domain">
+                        <h4>Blocksworld</h4>
+                        <p>Iconic stacking puzzle where blocks must be ordered and stacked under tight move constraints.</p>
+                    </div>
+                    
+                    <div class="domain-card sequential-domain">
+                        <h4>Briefcaseworld</h4>
+                        <p>Tasks an agent with moving objects via a briefcase between locations, planning the order of loading/unloading.</p>
+                    </div>
+                    
+                    <div class="domain-card sequential-domain">
+                        <h4>Multi_Agent_coordination</h4>
+                        <p>Focuses on collaboration among multiple gripper agents, they need to cooperate to achieve the goal.</p>
+                    </div>
+                    
+                    <div class="domain-card sequential-domain">
+                        <h4>Cooperate_sequential_gripper</h4>
+                        <p>Multiple agents with limited grippers must coordinate object pickups, balancing the sequence of actions with shared resources.</p>
+                    </div>
+                    
+                    <div class="domain-card sequential-domain">
+                        <h4>Elevator</h4>
+                        <p>Handles transporting passengers or goods through building floors, requiring efficient elevator movements and scheduling.</p>
+                    </div>
+                    
+                    <div class="domain-card sequential-domain">
+                        <h4>Barman</h4>
+                        <p>Bartender scenario where limited glasses and ingredients must be managed to prepare ordered drinks.</p>
+                    </div>
+                    
+                    <div class="domain-card resource-domain">
+                        <h4>Counters</h4>
+                        <p>Involves manipulating numerical counters under constraints to reach target values or states.</p>
+                    </div>
+                    
+                    <div class="domain-card resource-domain">
+                        <h4>Markettrader</h4>
+                        <p>A financial trading scenario requiring buying, selling, and resource (capital) management to achieve profit goals.</p>
+                    </div>
+                    
+                    <div class="domain-card resource-domain">
+                        <h4>Satellite</h4>
+                        <p>Space-based operations where satellites manage instruments, energy, and data storage to fulfill observation tasks.</p>
+                    </div>
+                    
+                    <div class="domain-card resource-domain">
+                        <h4>Freecell</h4>
+                        <p>Card puzzle variant with limited "free cells," each used as a temporary resource to reshuffle the card configuration.</p>
+                    </div>
+                    
+                    <div class="domain-card resource-domain">
+                        <h4>Settlersnumeric</h4>
+                        <p>Inspired by resource collection and expansion strategies, requiring numeric resource management to meet specified targets.</p>
+                    </div>
+                    
+                    <div class="domain-card resource-domain">
+                        <h4>Sugar</h4>
+                        <p>Involves transforming sugar among various states (solid, dissolved, etc.), requiring careful handling of processes and resource constraints.</p>
+                    </div>
+                </div>
+                
+                <h4>Domain Categories</h4>
+                <p>These domains are organized into three main categories:</p>
+                
+                <ul>
+                    <li><strong>Spatial Domains:</strong> Focus on navigation, movement, and spatial relationships</li>
+                    <li><strong>Sequential Domains:</strong> Emphasize the ordering and sequencing of actions</li>
+                    <li><strong>Resource Management Domains:</strong> Require balancing and allocating limited resources</li>
+                </ul>
+                
+                <p>Some domains, like Rovers, span multiple categories as they involve both spatial navigation and resource management. This diversity allows SPIN-Bench to evaluate different aspects of LLMs' planning and reasoning capabilities.</p>
+                
+                <h4>Numeric vs. Discrete PDDL</h4>
+                <p>SPIN-Bench extends beyond traditional discrete-state PDDL tasks to include numerical PDDL problems with optimization goals:</p>
+                <ul>
+                    <li><strong>Discrete PDDL:</strong> Focus on reaching a specific goal state (e.g., all blocks stacked in a particular order)</li>
+                    <li><strong>Numeric PDDL:</strong> Require achieving numeric thresholds or optimizing quantities (e.g., accruing at least $100 in the markettrader domain)</li>
+                </ul>
+            `,
+            'spatial-reasoning': `
+                <h3>Spatial Reasoning in PDDL</h3>
+                <p>To investigate whether LLMs' planning deficits stem from weaker spatial understanding, SPIN-Bench includes specially designed tasks requiring models to track positions across sequences of relative movements.</p>
+                
+                <h4>Spatial Tracking Tasks</h4>
+                <p>These tasks present a fundamental challenge:</p>
+                <ul>
+                    <li>Models are given an initial spatial coordinate (e.g., (2,2))</li>
+                    <li>A series of relative movements is provided (up, down, left, right)</li>
+                    <li>Models must determine the final coordinate after executing all movements</li>
+                </ul>
+                
+                <h4>Modified Floortile Domain</h4>
+                <p>In addition to basic spatial tracking, SPIN-Bench includes a modified version of the floortile domain that challenges models to track agent location from relative instructions.</p>
+                
+                <p>In this domain:</p>
+                <ul>
+                    <li>Agents must navigate a grid of tiles</li>
+                    <li>Movement instructions are given in relative terms (e.g., "move one tile north")</li>
+                    <li>Agents must paint tiles in specific patterns while avoiding already painted tiles</li>
+                    <li>Success requires accurately tracking position through a series of movements</li>
+                </ul>
+            `,
+            'factual-retrieval': `
+                <h3>Factual Retrieval in Classical Planning</h3>
+                <p>To investigate whether LLMs can reliably retrieve key facts from a planning trajectory, SPIN-Bench includes tasks that test the models' ability to track and report state information at specific steps.</p>
+                
+                <h4>Experimental Setup</h4>
+                <p>For each factual retrieval task, models are provided with:</p>
+                <ul>
+                    <li>Initial state (s<sub>ini</sub>)</li>
+                    <li>Goal state (S<sub>G</sub>)</li>
+                    <li>Explicit trajectories detailing actions and their corresponding state transitions</li>
+                </ul>
+                
+                <p>The models are then prompted to report the state at a specified step in the trajectory.</p>
+                
+                <h4>Controlling Complexity</h4>
+                <p>SPIN-Bench controls the complexity of factual retrieval tasks by varying:</p>
+                <ul>
+                    <li><strong>Number of Mutable Properties:</strong> The count of properties that can change during the trajectory</li>
+                    <li><strong>Trajectory Length:</strong> The number of steps in the action sequence</li>
+                    <li><strong>Query Position:</strong> The step at which the state is queried</li>
+                </ul>
+                
+                <p>A property is considered "mutable" if there exists at least one action that can change its value. For example, in a task involving moving balls, the ball location is considered mutable, whereas ball color might be immutable if no action can alter it.</p>
+                
+            `,
+            'classical-planning': `
+                <h3>Full Classical Planning</h3>
+                <p>The most comprehensive evaluation in SPIN-Bench's PDDL section involves full classical planning tasks across 21 domains, totaling 1,280 distinct planning problems.</p>
+                
+                <h4>Task Format</h4>
+                <p>In classical planning tasks, models are provided with:</p>
+                <ul>
+                    <li>Initial state (s<sub>init</sub>)</li>
+                    <li>Goal state (S<sub>G</sub>)</li>
+                    <li>Available actions (A) with their preconditions and effects</li>
+                </ul>
+                
+                <p>The model must then generate a valid trajectory (sequence of actions) from the initial state to a state that satisfies the goal conditions.</p>
+                
+                <h4>Performance Metrics</h4>
+                <p>SPIN-Bench evaluates classical planning performance using two primary metrics:</p>
+                <ul>
+                    <li><strong>Accuracy:</strong> The percentage of tasks for which the model produces a valid solution</li>
+                    <li><strong>N-Step Look Ahead:</strong> A weighted measure that accounts for both correctness and solution complexity</li>
+                </ul>
+                
+                <p>The N-Step Look Ahead metric is calculated as:</p>
+                <p style="text-align: center">N-Step Look Ahead = Σ(C<sub>i</sub> × S<sub>i</sub>)/N</p>
+                <p>Where N is the total number of tasks, C<sub>i</sub> indicates correctness (0 or 1), and S<sub>i</sub> is the required number of steps for task i. This metric highlights performance gaps on more complex problems.</p>
+                
+                <h4>Model Performance (needed revise?)</h4>
+                <div class="score-bars">
+                    <div class="score-bar-container">
+                        <div class="score-bar" style="height: 200px; background-color: #3498db;">
+                            <div class="score-label">76.4%</div>
+                        </div>
+                        <div class="model-label">o1</div>
+                    </div>
+                    <div class="score-bar-container">
+                        <div class="score-bar" style="height: 146px; background-color: #3498db;">
+                            <div class="score-label">55.8%</div>
+                        </div>
+                        <div class="model-label">o3-mini</div>
+                    </div>
+                    <div class="score-bar-container">
+                        <div class="score-bar" style="height: 130px; background-color: #3498db;">
+                            <div class="score-label">49.7%</div>
+                        </div>
+                        <div class="model-label">GPT-4o</div>
+                    </div>
+                    <div class="score-bar-container">
+                        <div class="score-bar" style="height: 116px; background-color: #3498db;">
+                            <div class="score-label">44.3%</div>
+                        </div>
+                        <div class="model-label">Claude 3.5 Sonnet</div>
+                    </div>
+                    <div class="score-bar-container">
+                        <div class="score-bar" style="height: 96px; background-color: #3498db;">
+                            <div class="score-label">36.5%</div>
+                        </div>
+                        <div class="model-label">o1-mini</div>
+                    </div>
+                    <div class="score-bar-container">
+                        <div class="score-bar" style="height: 84px; background-color: #3498db;">
+                            <div class="score-label">32.1%</div>
+                        </div>
+                        <div class="model-label">DeepSeek-R1</div>
+                    </div>
+                </div>
+                
+            `,
+            'error-analysis': `
+                <h3>Error Analysis in Classical Planning</h3>
+                <p>To understand the specific challenges LLMs face in planning tasks, SPIN-Bench conducts a detailed error analysis, categorizing failures into distinct types.</p>
+                
+                <h4>Error Categories</h4>
+                <div class="error-breakdown">
+                    <div class="error-card error-bc">
+                        <h4>Breaking Constraints (BC)</h4>
+                        <p>Includes execution failures, type mismatches, and structural issues where the model generates actions that violate domain constraints or preconditions.</p>
+                        <p>High BC rates reflect difficulty in implicitly retrieving necessary preconditions.</p>
+                    </div>
+                    
+                    <div class="error-card error-gs">
+                        <h4>Goal Not Satisfied (GS)</h4>
+                        <p>Plans that satisfy all constraints yet fail to achieve the goal state.</p>
+                        <p>High GS rates indicate challenges in reasoning toward complete goal satisfaction.</p>
+                    </div>
+                    
+                    <div class="error-card error-other">
+                        <h4>Others</h4>
+                        <p>Encompasses parsing errors, format inconsistencies, and miscellaneous validation issues.</p>
+                        <p>These errors often relate to model output formatting rather than planning capabilities.</p>
+                    </div>
+                </div>
+                
+            `,
+            'correlation': `
+                <h3>State-Action Space Correlation</h3>
+                <p>To better understand what makes planning tasks difficult for LLMs, SPIN-Bench examines how performance correlates with different complexity measures across planning domains.</p>
+                
+                <h4>Complexity Measures</h4>
+                <p>Two key measures are analyzed:</p>
+                <ul>
+                    <li><strong>Average Legal Actions:</strong> The average number of legal actions available at each step</li>
+                    <li><strong>Total State-Action Space:</strong> The complete set of possible state-action pairs given an initial state and action space</li>
+                </ul>
+                
+            `,
+            'key-findings': `
+                <h3>Key Findings from PDDL Evaluation</h3>
+                <p>The comprehensive evaluation of LLMs on PDDL planning tasks in SPIN-Bench reveals important insights about their reasoning capabilities and limitations.</p>
+                
+                <h4>Primary Findings</h4>
+                <ol>
+                    <li><strong>Model Hierarchy:</strong> o1 consistently outperforms other models across all evaluation dimensions, with o3-mini and GPT-4o forming a second tier</li>
+                    <li><strong>Spatial Reasoning:</strong> o1 demonstrates perfect tracking of spatial positions (up to 29 steps), while other models show declining accuracy with trajectory length</li>
+                    <li><strong>Factual Retrieval:</strong> Models' ability to track states correlates with execution failures in planning tasks</li>
+                    <li><strong>Domain Complexity:</strong> Performance correlates more strongly with total state-action space than with immediate branching factor</li>
+                    <li><strong>Error Patterns:</strong> Models show distinctive error profiles, with some struggling more with constraint violations and others with goal satisfaction</li>
+                </ol>
+                
+                <h4>Model-Specific Insights</h4>
+                <div class="model-comparison">
+                    <div class="model-card model-card-highlight">
+                        <h4>o1</h4>
+                        <p><strong>Strengths:</strong> Superior spatial tracking, factual retrieval, and planning</p>
+                        <p><strong>Performance:</strong> 76.4% overall accuracy, with balanced error distribution</p>
+                        <p><strong>Distinctive:</strong> Perfect spatial tracking up to 29 steps</p>
+                    </div>
+                    
+                    <div class="model-card">
+                        <h4>GPT-4o</h4>
+                        <p><strong>Strengths:</strong> Moderate planning performance</p>
+                        <p><strong>Limitations:</strong> High rate of constraint violations (81.6%)</p>
+                        <p><strong>Distinctive:</strong> Declining spatial tracking with length</p>
+                    </div>
+                    
+                    <div class="model-card">
+                        <h4>Claude 3.5 Sonnet</h4>
+                        <p><strong>Strengths:</strong> Lower constraint violations than GPT-4o</p>
+                        <p><strong>Limitations:</strong> High rate of unmet goals (26.9%)</p>
+                        <p><strong>Distinctive:</strong> Better state tracking than goal reasoning</p>
+                    </div>
+                </div>
+                
+                <h4>Domain-Specific Challenges</h4>
+                <ul>
+                    <li><strong>Numeric PDDL:</strong> All models perform worse on numeric tasks than on discrete-state tasks</li>
+                    <li><strong>Resource Management:</strong> Domains requiring resource balancing prove more challenging than purely sequential tasks</li>
+                    <li><strong>Spatial Complexity:</strong> Performance in spatial domains correlates with spatial tracking ability</li>
+                    <li><strong>State Space Size:</strong> Larger state-action spaces lead to decreased performance across all models</li>
+                </ul>
+                
+                <h4>Cognitive Limitations</h4>
+                <p>The evaluation reveals several cognitive bottlenecks in LLMs' planning capabilities:</p>
+                <ul>
+                    <li><strong>State Tracking:</strong> Difficulty maintaining accurate representations of changing states</li>
+                    <li><strong>Constraint Awareness:</strong> Challenges in implicitly retrieving and applying action preconditions</li>
+                    <li><strong>Goal-Directed Reasoning:</strong> Limitations in reasoning backward from goals to current states</li>
+                    <li><strong>Cognitive Load:</strong> Performance degradation with increasing state-action space complexity</li>
+                </ul>
+                
+                <h4>Implications for LLM Development</h4>
+                <p>These findings suggest several directions for improving LLMs' planning capabilities:</p>
+                <ol>
+                    <li>Enhancing factual retrieval and state tracking mechanisms</li>
+                    <li>Developing better techniques for managing large state-action spaces</li>
+                    <li>Improving constraint awareness and precondition checking</li>
+                    <li>Strengthening goal-directed reasoning and backward planning</li>
+                    <li>Building more robust spatial reasoning capabilities</li>
+                </ol>
+                
+                <p>The PDDL evaluation in SPIN-Bench provides a comprehensive picture of where current LLMs excel and struggle in planning tasks, highlighting that while significant progress has been made, substantial challenges remain in complex planning scenarios.</p>
+            `,
+        };
+
+        // Handle button clicks
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.step-button').forEach(button => {
+                button.addEventListener('click', () => {
+                    // Toggle active state
+                    document.querySelectorAll('.step-button').forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    button.classList.add('active');
+
+                    // Show content
+                    const stepId = button.dataset.step;
+                    const contentDiv = document.querySelector('.step-content');
+                    contentDiv.innerHTML = stepContent[stepId] || '<h3>Content coming soon...</h3><p>This section is under development. Please check back later.</p>';
+                });
+            });
+
+            // Trigger first button click automatically
+            const firstButton = document.querySelector('.step-button');
+            if (firstButton) {
+                firstButton.click();
+            }
+        });
+    </script>
 </body>
 </html>

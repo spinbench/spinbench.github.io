@@ -2,15 +2,280 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>OctoTools Example Visualization</title>
+    <title>SPIN-Bench: Chess</title>
     
-    <!-- Reuse styles from index.html -->
+    <!-- Reuse styles from template -->
     <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
     <link rel="stylesheet" href="../../static/css/bulma.min.css">
     <link rel="stylesheet" href="../../static/css/fontawesome.all.min.css">
 
+    <!-- Add Prism.js for syntax highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css">
+    
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="../../static/css/visualization.css">
+    <style>
+        body {
+            font-family: 'Noto Sans', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f7fa;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Google Sans', sans-serif;
+            margin-top: 20px;
+            margin-bottom: 15px;
+        }
+        h1 {
+            font-size: 2.4rem;
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        h2 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 10px;
+        }
+        .top-sections-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .game-intro-section,
+        .game-setting-section {
+            flex: 1;
+            min-width: 320px;
+            padding: 0 15px;
+            margin: 0;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .game-intro-section {
+            background-color: #f0f8ff;
+        }
+        .game-setting-section {
+            background-color: #f5fffa;
+        }
+        .game-intro-badge,
+        .game-setting-badge {
+            display: inline-block;
+            padding: 8px 15px;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .game-intro-badge {
+            background-color: #3498db;
+        }
+        .game-setting-badge {
+            background-color: #2ecc71;
+        }
+        .image-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .image-container img {
+            max-width: 100%;
+            max-height: 300px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .details {
+            margin-top: 15px;
+        }
+        .details p {
+            margin-bottom: 10px;
+        }
+        .steps-badge {
+            display: inline-block;
+            background-color: #9b59b6;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+        .button-legend {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+        .legend-dot {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 5px;
+        }
+        .legend-dot.llm-stockfish {
+            background-color: #3498db;
+        }
+        .legend-dot.llm-llm {
+            background-color: #e74c3c;
+        }
+        .legend-dot.metrics {
+            background-color: #f39c12;
+        }
+        .legend-text {
+            font-size: 0.9rem;
+            margin-right: 15px;
+        }
+        .steps-container {
+            display: flex;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .steps-buttons {
+            flex: 0 0 300px;
+            background-color: #f5f7fa;
+            padding: 20px;
+            border-right: 1px solid #eaeaea;
+        }
+        .step-button {
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #f8f9fa;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .step-button:hover {
+            background-color: #e9ecef;
+        }
+        .step-button.active {
+            background-color: #007bff;
+            color: white;
+        }
+        .step-button.llm-stockfish {
+            border-left: 5px solid #3498db;
+        }
+        .step-button.llm-llm {
+            border-left: 5px solid #e74c3c;
+        }
+        .step-button.metrics {
+            border-left: 5px solid #f39c12;
+        }
+        .step-content {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            max-height: 600px;
+        }
+        .step-content h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .step-content p {
+            margin-bottom: 15px;
+        }
+        .step-content ul, .step-content ol {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        .step-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .step-content table th, 
+        .step-content table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        .step-content table th {
+            background-color: #f8f9fa;
+        }
+        .step-content table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        .performance-chart {
+            width: 100%;
+            height: 300px;
+            background-color: #f8f9fa;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .chess-board {
+            display: grid;
+            grid-template-columns: repeat(8, 50px);
+            grid-template-rows: repeat(8, 50px);
+            width: 400px;
+            margin: 30px auto;
+            border: 3px solid #333;
+        }
+        .chess-cell {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 32px;
+        }
+        .cell-white {
+            background-color: #f0d9b5;
+        }
+        .cell-black {
+            background-color: #b58863;
+        }
+        .model-comparison {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .model-card {
+            flex: 1;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+            margin: 0 10px;
+            text-align: center;
+        }
+        .model-card h4 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .model-card-highlight {
+            background-color: #e8f4fd;
+            border: 1px solid #bed6e3;
+        }
+        code {
+            background-color: #f8f9fa;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+    </style>
 
     <!-- Custom JS -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
@@ -19,123 +284,337 @@
 
 <body>
     <div class="container">
+        <h1>Chess: Competitive Game</h1>
+        
         <!-- Wrap sections in new container -->
         <div class="top-sections-wrapper">
-            <!-- Query Section -->
-            <div class="query-section">
-                <h3 class="query-badge">The Query</h3>
-                <div class="query-content">
-                    <!-- <div class="image-container">
-                        <img src="baseball.png" alt="Baseball image" style="width: 100%;">
-                    </div> -->
-                    <div class="query-details" style="flex: 0 0 100%;">
-                        <p><strong>Question:</strong> 
-                            Consider the following symbols: 𒐜  𒐐𒐚
-                            <br>
-                            This is a number written using the Mesopotamian/Babylonian number system and represented with Sumerian cuneiform. Convert this number into Arabic numerals as a decimal number.
-                        </p>
-                        <p><strong>Ground truth:</strong> 536</p>
-                        <br>
-                        <p><strong>Annotated solution:</strong>
-                            <li>Look up Babylonian number system (base 60, using uniform hashmarks as counters)</li>
-                            <li>Converted the Cuniform to Arabic (𒐜: 8 𒐐𒐚: 56)</li>
-                            <li>Since Babylonian is a base 60 system, converted the 60's place to decimal (8*60=480)</li>
-                            <li>Added 56 to 480 (536)</li>
-                        </p>
-                    </div>
+            <!-- Game Introduction Section -->
+            <div class="game-intro-section">
+                <h3 class="game-intro-badge">Game Introduction</h3>
+                <div class="image-container">
+                    <img src="../../trajectories/llmllm/chess/Claude-3.5-Haiku_Claude-3.5-Sonnet/6.png" alt="Chess game board" />
+                </div>
+                <div class="details">
+                    <p><strong>Game:</strong> Chess</p>
+                    <p><strong>Complexity:</strong> High (Most complex competitive game in SPIN-Bench)</p>
+                    <p><strong>Description:</strong> A timeless two-player strategy game played on an 8x8 checkered board. Each player controls 16 pieces with unique movements, with the objective to checkmate the opponent's king.</p>
+                    <p><strong>Purpose:</strong> Evaluates LLMs' advanced planning and decision-making skills in a complex strategic environment.</p>
                 </div>
             </div>
             
-            <!-- Wrong Prediction -->
-            <div class="wrong-prediction">
-                <h3 class="wrong-prediction-badge">Wrong Prediction from GPT-4o</h3>
-                <div id="wrong-prediction-content"></div>
-            </div>
-
-            <!-- Wrong Prediction -->
-            <!-- <div class="wrong-prediction">
-                <h3 class="wrong-prediction-badge">Wrong Prediction from GPT-4o</h3>
-                <div class="wrong-prediction-content">
-                    <p>The given symbols are written in Sumerian cuneiform and follow the Babylonian number system, which is a 𒐐𒐚.</p>
-                    
-                    <p>Let's analyze the symbols:</p>
+            <!-- Game Setting Section -->
+            <div class="game-setting-section">
+                <h3 class="game-setting-badge">Game Settings</h3>
+                <div class="details">
+                    <p><strong>Settings:</strong> Two primary configurations are used to evaluate LLM performance:</p>
                     <ol>
-                        <li>𒐜 : This symbol represents 60 in the Babylonian numeral system.</li>
-                        <li>𒐐𒐚:
-                            <ul>
-                                <li>𒐐 represents 10</li>
-                                <li>𒐚 represents 2</li>
-                                <li>Together, 𒐐𒐚 represents 12</li>
-                            </ul>
-                        </li>
+                        1. <strong>LLM-vs-Stockfish:</strong> LLMs play against the Stockfish chess engine at different skill levels (0, 5, 10, 15, 20), with level 20 being the strongest.
+                        <br>
+                        2. <strong>LLM-vs-LLM:</strong> Different LLM models compete against each other (total of 91 game pairs, 4 games per pair, position switched after half).
                     </ol>
-
-                    <p>Now, interpreting the full number:</p>
+                    <br>
+                    <p><strong>Evaluation Metrics:</strong></p>
                     <ul>
-                        <li>In a positional system, the leftmost symbols represent higher powers of 60.</li>
-                        <li>𒐜 = 60 (this is in the 60¹ place)</li>
-                        <li>𒐐𒐚 = 12 (this is in the 60⁰ place)</li>
-                    </ul>
-
-                    <p>Compute the decimal equivalent:</p>
-                    <p>(60 × 1) + (12 × 1) = 60 + 12 = 72</p>
-
-                    <p><strong>Thus, the number written in Arabic numerals is 72.</strong></p>
+                        1. Internal Elo ratings (relative performance between models)<br>
+                        2. Step-wise evaluation using Stockfish level 20 for move quality assessment<br>
+                        3. Centipawn loss (measuring advantage/disadvantage, 1 centipawn = 1/100 of a pawn)<br>
+                        4. Illegal Move Lost Rate (IML %)<br>
+                        5. Illegal Moves per Total Turns (IMT %)<br>
+                    </ul><br>
+                    <p><strong>Models Evaluated:</strong> GPT-4o, Claude 3.5 Sonnet, o1, o1-preview, o1-mini, o3-mini, DeepSeek-R1, Llama3.3-70b, Claude 3.5 Haiku, Qwen2.5-72b, Llama3.1-70b, GPT-4o-mini, GPT-4-turbo, Llama3-70b, Mistral-7b, Llama3.2-3b, GPT-3.5-turbo</p>
                 </div>
-            </div> -->
-
+            </div>
         </div>
 
         <!-- Steps Section -->
-        <h3 class="steps-badge">Prediction from the OctoTool Framework</h3>
+        <h3 class="steps-badge">Game Setup and Metrics</h3>
 
         <div class="button-legend">
             <div class="legend-item">
-                <span class="legend-dot planner"></span>
-                <span class="legend-text">Planner Components</span>
-                <span class="legend-dot executor"></span>
-                <span class="legend-text">Executor Components</span>
-                <span class="legend-dot answer"></span>
-                <span class="legend-text">Final Answer</span>
+                <span class="legend-dot llm-stockfish"></span>
+                <span class="legend-text">LLM-vs-Stockfish</span>
+                <span class="legend-dot llm-llm"></span>
+                <span class="legend-text">LLM-vs-LLM</span>
+                <span class="legend-dot metrics"></span>
+                <span class="legend-text">Performance Metrics</span>
             </div>
         </div>
 
         <div class="steps-container">
             <div class="steps-buttons">
-                <button class="step-button planner" data-step="step0">Step 0: Initial Plan from Query Analyzer</button>
+                <button class="step-button llm-stockfish" data-step="game-overview">Game Overview</button>
                 <br>
-                <button class="step-button planner" data-step="step1-action">Step 1: Action from Action Predictor</button>
-                <button class="step-button executor" data-step="step1-command">Step 1: Command from Command Generator</button>
-                <button class="step-button executor" data-step="step1-result">Step 1: Result from Command Executor</button>
-                <button class="step-button planner" data-step="step1-verify">Step 1: Verification from Context Verifier</button>
+                <button class="step-button llm-stockfish" data-step="llm-stockfish-setup">LLM-vs-Stockfish Setup</button>
                 <br>
-                <button class="step-button planner" data-step="step2-action">Step 2: Action from Action Predictor</button>
-                <button class="step-button executor" data-step="step2-command">Step 2: Command from Command Generator</button>
-                <button class="step-button executor" data-step="step2-result">Step 2: Result from Command Executor</button>
-                <button class="step-button planner" data-step="step2-verify">Step 2: Verification from Context Verifier</button>
+                <button class="step-button llm-llm" data-step="llm-llm-setup">LLM-vs-LLM Setup</button>
                 <br>
-                <button class="step-button planner" data-step="step3-action">Step 3: Action from Action Predictor</button>
-                <button class="step-button executor" data-step="step3-command">Step 3: Command from Command Generator</button>
-                <button class="step-button executor" data-step="step3-result">Step 3: Result from Command Executor</button>
-                <button class="step-button planner" data-step="step3-verify">Step 3: Verification from Context Verifier</button>
-                <br>
-                <button class="step-button planner" data-step="step4-action">Step 4: Action from Action Predictor</button>
-                <button class="step-button executor" data-step="step4-command">Step 4: Command from Command Generator</button>
-                <button class="step-button executor" data-step="step4-result">Step 4: Result from Command Executor</button>
-                <button class="step-button planner" data-step="step4-verify">Step 4: Verification from Context Verifier</button>
-                <br>
-                <button class="step-button planner" data-step="step5-action">Step 5: Action from Action Predictor</button>
-                <button class="step-button executor" data-step="step5-command">Step 5: Command from Command Generator</button>
-                <button class="step-button executor" data-step="step5-result">Step 5: Result from Command Executor</button>
-                <button class="step-button planner" data-step="step5-verify">Step 5: Verification from Context Verifier</button>
-                <br>            
-                <!-- <button class="step-button answer" data-step="final-context">Full Trajectory in the Context</button>
-                <button class="step-button answer" data-step="final-summary">Summary from Solution Summarizer</button> -->
-                <button class="step-button answer" data-step="final">Final Answer</button>
+                <button class="step-button metrics" data-step="elo-ratings">Elo Ratings</button>
+                <button class="step-button metrics" data-step="illegal-moves">Illegal Move Analysis</button>
+                <button class="step-button metrics" data-step="stepwise-evaluation">Step-wise Evaluation</button>
             </div>
-            <div class="step-content"></div>
+            <div class="step-content">
+                <!-- Default content -->
+                <h3>Select a section to view details</h3>
+                <p>Click on any button from the left panel to view detailed information about Chess game analysis in SPIN-Bench.</p>
+            </div>
         </div>
     </div>
 
+    <script>
+        // Step content data
+        let stepContentChess = {
+            'game-overview': `
+                <h3>Chess Game in SPIN-Bench</h3>
+                <p>Chess serves as the most complex competitive game in SPIN-Bench, designed to evaluate advanced strategic reasoning, deep planning, and complex pattern recognition in large language models. With its rich history and complex rule set, chess provides a comprehensive test of an LLM's capacity for sophisticated decision-making.</p>
+                
+                <h4>Game Rules</h4>
+                <ul>
+                    <li>Two players control 16 pieces each on an 8×8 checkered board</li>
+                    <li>Each piece type (king, queen, rooks, bishops, knights, pawns) has unique movement rules</li>
+                    <li>Players take turns moving one piece at a time, capturing opponent pieces by moving onto their square</li>
+                    <li>Special moves include castling, en passant captures, and pawn promotion</li>
+                    <li>The goal is to checkmate the opponent's king (attack it with no legal escape)</li>
+                </ul>
+                
+                <h4>Game Complexity</h4>
+                <ul>
+                    <li><strong>State space complexity:</strong> Approximately 10^43 possible board positions</li>
+                    <li><strong>Game tree complexity:</strong> Approximately 10^120 possible games (Shannon number)</li>
+                    <li><strong>Branching factor:</strong> Average of 35 legal moves per position (varies from 0 to 218)</li>
+                    <li><strong>Solved status:</strong> Not solved, though endgames with 7 or fewer pieces have been completely solved</li>
+                </ul>
+                
+                <div class="chess-board">
+                    <div class="chess-cell cell-white">♜</div>
+                    <div class="chess-cell cell-black">♞</div>
+                    <div class="chess-cell cell-white">♝</div>
+                    <div class="chess-cell cell-black">♛</div>
+                    <div class="chess-cell cell-white">♚</div>
+                    <div class="chess-cell cell-black">♝</div>
+                    <div class="chess-cell cell-white">♞</div>
+                    <div class="chess-cell cell-black">♜</div>
+                    
+                    <div class="chess-cell cell-black">♟</div>
+                    <div class="chess-cell cell-white">♟</div>
+                    <div class="chess-cell cell-black">♟</div>
+                    <div class="chess-cell cell-white">♟</div>
+                    <div class="chess-cell cell-black">♟</div>
+                    <div class="chess-cell cell-white">♟</div>
+                    <div class="chess-cell cell-black">♟</div>
+                    <div class="chess-cell cell-white">♟</div>
+                    
+                    <div class="chess-cell cell-white"></div>
+                    <div class="chess-cell cell-black"></div>
+                    <div class="chess-cell cell-white"></div>
+                    <div class="chess-cell cell-black"></div>
+                    <div class="chess-cell cell-white"></div>
+                    <div class="chess-cell cell-black"></div>
+                    <div class="chess-cell cell-white"></div>
+                    <div class="chess-cell cell-black"></div>
+                    
+                    <div class="chess-cell cell-black"></div>
+                    <div class="chess-cell cell-white"></div>
+                    <div class="chess-cell cell-black"></div>
+                    <div class="chess-cell cell-white"></div>
+                    <div class="chess-cell cell-black"></div>
+                    <div class="chess-cell cell-white"></div>
+                    <div class="chess-cell cell-black"></div>
+                    <div class="chess-cell cell-white"></div>
+                    
+                    <div class="chess-cell cell-white"></div>
+                    <div class="chess-cell cell-black"></div>
+                    <div class="chess-cell cell-white"></div>
+                    <div class="chess-cell cell-black"></div>
+                    <div class="chess-cell cell-white"></div>
+                    <div class="chess-cell cell-black"></div>
+                    <div class="chess-cell cell-white"></div>
+                    <div class="chess-cell cell-black"></div>
+                    
+                    <div class="chess-cell cell-black"></div>
+                    <div class="chess-cell cell-white"></div>
+                    <div class="chess-cell cell-black"></div>
+                    <div class="chess-cell cell-white"></div>
+                    <div class="chess-cell cell-black"></div>
+                    <div class="chess-cell cell-white"></div>
+                    <div class="chess-cell cell-black"></div>
+                    <div class="chess-cell cell-white"></div>
+                    
+                    <div class="chess-cell cell-white">♙</div>
+                    <div class="chess-cell cell-black">♙</div>
+                    <div class="chess-cell cell-white">♙</div>
+                    <div class="chess-cell cell-black">♙</div>
+                    <div class="chess-cell cell-white">♙</div>
+                    <div class="chess-cell cell-black">♙</div>
+                    <div class="chess-cell cell-white">♙</div>
+                    <div class="chess-cell cell-black">♙</div>
+                    
+                    <div class="chess-cell cell-black">♖</div>
+                    <div class="chess-cell cell-white">♘</div>
+                    <div class="chess-cell cell-black">♗</div>
+                    <div class="chess-cell cell-white">♕</div>
+                    <div class="chess-cell cell-black">♔</div>
+                    <div class="chess-cell cell-white">♗</div>
+                    <div class="chess-cell cell-black">♘</div>
+                    <div class="chess-cell cell-white">♖</div>
+                </div>
+                
+                <p>Chess challenges LLMs to demonstrate sophisticated strategic abilities:</p>
+                <ul>
+                    <li>Deep multi-move planning and calculation</li>
+                    <li>Positional understanding and piece coordination</li>
+                    <li>Pattern recognition across a vast range of positions</li>
+                    <li>Adapting to complex and changing board states</li>
+                    <li>Understanding complex rule interactions</li>
+                    <li>Balancing multiple strategic and tactical considerations</li>
+                </ul>
+            `,
+            'llm-stockfish-setup': `
+                <h3>LLM-vs-Stockfish Setup</h3>
+                <p>In this evaluation setting, language models play against the well-known Stockfish chess engine at different skill levels. This provides a standardized benchmark to assess LLM performance against a highly skilled opponent.</p>
+                
+                <h4>Stockfish Introduction</h4>
+                <p>The Stockfish chess engine:</p>
+                <ul>
+                    <li>Is one of the strongest chess engines in the world</li>
+                    <li>Can be configured to play at different strength levels (0, 5, 10, 15, 20)</li>
+                    <li>Provides accurate evaluations of positions using "centipawns" as a measurement (1/100 of a pawn value)</li>
+                    <li>Can calculate many moves ahead with high accuracy</li>
+                </ul>
+                
+                <h4>Evaluation Protocol</h4>
+                <ul>
+                    <li>Each LLM plays against Stockfish at level 0/5/10/15/20</li>
+                    <li>LLMs alternate between playing White and Black</li>
+                    <li>Legal moves are provided to the LLM at each turn</li>
+                    <li>Game outcomes (win/loss/draw) are recorded</li>
+                    <li>Move quality is assessed using Stockfish level 20 (highest difficulty) as the rating machine</li>
+                    <li>Illegal moves are tracked and counted</li>
+                </ul>
+                
+                <h4>Models Evaluated</h4>
+                <div class="model-comparison">
+                    <div class="model-card">
+                        <h4>Open Models</h4>
+                        <ul>
+                            <li>DeepSeek-R1</li>
+                            <li>Llama3.3-70b</li>
+                        </ul>
+                    </div>
+                    <div class="model-card">
+                        <h4>OpenAI Models</h4>
+                        <ul>
+                            <li>o1</li>
+                            <li>o1-mini</li>
+                            <li>o3-mini</li>
+                            <li>GPT-4o</li>
+                            <li>GPT-4-turbo</li>
+                        </ul>
+                    </div>
+                    <div class="model-card">
+                        <h4>Anthropic Models</h4>
+                        <ul>
+                            <li>Claude 3.5 Sonnet</li>
+                            <li>Claude 3.5 Haiku</li>
+                        </ul>
+                    </div>
+                </div>
+            `,
+            'llm-llm-setup': `
+                <h3>LLM-vs-LLM Setup</h3>
+                <p>The LLM-vs-LLM evaluation setting pits different language models against each other to assess relative strategic capabilities in chess, the most complex game environment in SPIN-Bench.</p>
+                
+                <h4>Evaluation Protocol</h4>
+                <ul>
+                    <li>9 primary models tested, forming unique model pairs</li>
+                    <li>4 games played for each pair (2 with each model playing White)</li>
+                    <li>Players alternate positions (White and Black) after half of the competitions</li>
+                    <li>No external guidance or move suggestions provided</li>
+                    <li>Full game history maintained in context for each match</li>
+                    <li>Elo ratings calculated based on match outcomes</li>
+                </ul>
+                
+                <h4>Tournament Structure</h4>
+                <p>The round-robin tournament structure ensures each model faces every other model, controlling for position advantage by having each model play both as White and Black.</p>
+                
+                <h4>Analysis Focus</h4>
+                <ul>
+                    <li>Relative performance between different LLMs in a highly complex strategic environment</li>
+                    <li>Performance gap between open and closed-source models</li>
+                    <li>Ability to understand and apply complex rule sets</li>
+                    <li>Depth of planning and calculation</li>
+                    <li>Pattern recognition and positional understanding</li>
+                    <li>Handling of the high branching factor and vast state space</li>
+                </ul>
+            `,
+            'elo-ratings': `
+                <h3>Elo Ratings</h3>
+                <p>Elo ratings provide a standardized way to measure relative performance across all models in the tournament. These internal Elo ratings are calculated based on match outcomes, with ratings updated after each game.</p>
+                <p>Chess presents the most competitive environment in SPIN-Bench, with a significantly higher complexity than both Tic Tac Toe and Connect Four. The Elo ratings in this game reflect a model's ability to handle complex rule interactions, recognize patterns across vast position spaces, and plan multiple moves ahead in a high-branching environment.</p>
+                <p>In the context of chess, it's worth noting that all LLMs struggled significantly against even the lowest level of Stockfish (level 0), with most models losing every game. This highlights the substantial gap between current LLM strategic reasoning capabilities and specialized chess engines, even when the latter are operating at reduced strength.</p>
+            `,
+            'illegal-moves': `
+                <h3>Illegal Move Analysis</h3>
+                <p>An important aspect of evaluating LLMs in chess is assessing their ability to follow the complex rules consistently. This analysis tracks how often models make illegal moves despite being provided with the list of legal moves.</p>
+                
+                <h4>Illegal Move Metrics</h4>
+                <ul>
+                    <li><strong>Illegal Move Lost Rate (IML) (%):</strong> Percentage of games lost due to illegal moves</li>
+                    <li><strong>Illegal Moves per Total Turns (IMT) (%):</strong> Percentage of all turns where illegal moves were made</li>
+                </ul>
+                
+                <p>A game is considered lost if a model makes 10 consecutive illegal moves in a single turn.</p>
+                
+                <p>The complexity of chess rules presents a significant challenge for LLMs, resulting in higher rates of illegal moves compared to simpler games like Tic Tac Toe and Connect Four. This analysis provides valuable insights into LLMs' ability to understand and apply complex rule systems.</p>
+            `,
+            'stepwise-evaluation': `
+                <h3>Step-wise Evaluation</h3>
+                <p>To assess the quality of each move generated by LLMs, we use Stockfish level 20 as the rating machine for step-wise analysis on each move in the games between LLMs and Stockfish level 0.</p>
+                
+                <h4>Centipawn Evaluation</h4>
+                <p>The primary metric used is "centipawns" - a measurement of advantage where 1 centipawn equals 1/100 of a pawn's value. This allows for precise quantification of move quality:</p>
+                <ul>
+                    <li>Positive values indicate an advantage for White</li>
+                    <li>Negative values indicate an advantage for Black</li>
+                    <li>The magnitude reflects the size of the advantage</li>
+                    <li>Changes in centipawn evaluation after a move indicate the quality of that move</li>
+                </ul>
+                
+                <p>Chess provides the most demanding test of LLM strategic capabilities in SPIN-Bench, requiring models to:</p>
+                <ul>
+                    <li>Evaluate complex positions with hundreds of possible continuations</li>
+                    <li>Calculate sequences of moves and their consequences</li>
+                    <li>Apply sophisticated pattern recognition across varied positions</li>
+                    <li>Coordinate multiple pieces toward strategic goals</li>
+                    <li>Understand both tactical combinations and long-term positional concepts</li>
+                </ul>
+                
+                <p>The step-wise evaluation reveals significant challenges for even the most advanced LLMs in handling the complexity of chess, with performance substantially below that of specialized chess engines and skilled human players.</p>
+            `,
+        };
+
+        // Handle button clicks
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.step-button').forEach(button => {
+                button.addEventListener('click', () => {
+                    // Toggle active state
+                    document.querySelectorAll('.step-button').forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    button.classList.add('active');
+
+                    // Show content
+                    const stepId = button.dataset.step;
+                    const contentDiv = document.querySelector('.step-content');
+                    contentDiv.innerHTML = stepContentChess[stepId] || '<h3>Content coming soon...</h3><p>This section is under development. Please check back later.</p>';
+                });
+            });
+
+            // Trigger first button click automatically
+            const firstButton = document.querySelector('.step-button');
+            if (firstButton) {
+                firstButton.click();
+            }
+        });
+    </script>
 </body>
 </html>

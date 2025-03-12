@@ -2,83 +2,849 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>OctoTools Example Visualization</title>
+    <title>SPIN-Bench: Diplomacy</title>
     
-    <!-- Reuse styles from index.html -->
+    <!-- Reuse styles from template -->
     <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
     <link rel="stylesheet" href="../../static/css/bulma.min.css">
     <link rel="stylesheet" href="../../static/css/fontawesome.all.min.css">
 
+    <!-- Add Prism.js for syntax highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css">
+    
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="../../static/css/visualization.css">
+    <style>
+        body {
+            font-family: 'Noto Sans', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f7fa;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Google Sans', sans-serif;
+            margin-top: 20px;
+            margin-bottom: 15px;
+        }
+        h1 {
+            font-size: 2.4rem;
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        h2 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 10px;
+        }
+        .top-sections-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .game-intro-section,
+        .game-setting-section {
+            flex: 1;
+            min-width: 320px;
+            padding: 0 15px;
+            margin: 0;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .game-intro-section {
+            background-color: #f0f8ff;
+        }
+        .game-setting-section {
+            background-color: #f5fffa;
+        }
+        .game-intro-badge,
+        .game-setting-badge {
+            display: inline-block;
+            padding: 8px 15px;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .game-intro-badge {
+            background-color: #3498db;
+        }
+        .game-setting-badge {
+            background-color: #2ecc71;
+        }
+        .image-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .image-container img {
+            max-width: 100%;
+            max-height: 300px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .details {
+            margin-top: 15px;
+        }
+        .details p {
+            margin-bottom: 10px;
+        }
+        .steps-badge {
+            display: inline-block;
+            background-color: #9b59b6;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+        .button-legend {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+        .legend-dot {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 5px;
+        }
+        .legend-dot.basic-skills {
+            background-color: #3498db;
+        }
+        .legend-dot.multi-agent {
+            background-color: #e74c3c;
+        }
+        .legend-dot.negotiation {
+            background-color: #f39c12;
+        }
+        .legend-text {
+            font-size: 0.9rem;
+            margin-right: 15px;
+        }
+        .steps-container {
+            display: flex;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .steps-buttons {
+            flex: 0 0 300px;
+            background-color: #f5f7fa;
+            padding: 20px;
+            border-right: 1px solid #eaeaea;
+        }
+        .step-button {
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #f8f9fa;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .step-button:hover {
+            background-color: #e9ecef;
+        }
+        .step-button.active {
+            background-color: #007bff;
+            color: white;
+        }
+        .step-button.basic-skills {
+            border-left: 5px solid #3498db;
+        }
+        .step-button.multi-agent {
+            border-left: 5px solid #e74c3c;
+        }
+        .step-button.negotiation {
+            border-left: 5px solid #f39c12;
+        }
+        .step-content {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            max-height: 600px;
+        }
+        .step-content h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .step-content p {
+            margin-bottom: 15px;
+        }
+        .step-content ul, .step-content ol {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        .step-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .step-content table th, 
+        .step-content table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        .step-content table th {
+            background-color: #f8f9fa;
+        }
+        .step-content table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        .performance-chart {
+            width: 100%;
+            height: 300px;
+            background-color: #f8f9fa;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .diplomacy-map {
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+            margin: 20px auto;
+            border-radius: 8px;
+            border: 2px solid #34495e;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .model-comparison {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .model-card {
+            flex: 1;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+            margin: 0 10px;
+            text-align: center;
+        }
+        .model-card h4 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .model-card-highlight {
+            background-color: #e8f4fd;
+            border: 1px solid #bed6e3;
+        }
+        code {
+            background-color: #f8f9fa;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        .negotiation-metrics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .metric-card {
+            flex: 1 1 250px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            border-left: 5px solid #3498db;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .metric-card h4 {
+            margin-top: 0;
+            color: #2c3e50;
+            font-size: 1.1rem;
+        }
+        .metric-card p {
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+        .metric-example {
+            background-color: #edf2f7;
+            padding: 10px;
+            border-radius: 5px;
+            font-style: italic;
+            font-size: 0.9rem;
+            margin: 10px 0;
+        }
+        .power-name {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        .score-bars {
+            display: flex;
+            align-items: flex-end;
+            height: 250px;
+            margin: 30px 0;
+            padding-left: 40px;
+        }
+        .score-bar-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-right: 30px;
+        }
+        .score-bar {
+            width: 40px;
+            background-color: #3498db;
+            margin-bottom: 10px;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            position: relative;
+        }
+        .score-label {
+            position: absolute;
+            top: -25px;
+            width: 100%;
+            text-align: center;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .model-label {
+            text-align: center;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+        .success-chart {
+            width: 100%;
+            max-width: 700px;
+            height: 400px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .chart-title {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .bar-group {
+            display: flex;
+            height: 300px;
+            align-items: flex-end;
+            margin-bottom: 30px;
+        }
+        .bar-set {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-right: 15px;
+            flex: 1;
+        }
+        .bar-label {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .bar-container {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            gap: 5px;
+        }
+        .bar {
+            width: 15px;
+            position: relative;
+        }
+        .bar-value {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 12px;
+            white-space: nowrap;
+        }
+        .bar-bottom-label {
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            font-size: 12px;
+            margin-top: 5px;
+            height: 80px;
+            text-align: center;
+        }
+        .bar-legend {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+        .legend-color {
+            width: 15px;
+            height: 15px;
+            margin-right: 5px;
+            display: inline-block;
+        }
+        .negotiation-example {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+            background-color: #f8f9fa;
+        }
+        .message {
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            max-width: 80%;
+        }
+        .sender {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .message-left {
+            background-color: #e8f4f8;
+            align-self: flex-start;
+            margin-right: auto;
+        }
+        .message-right {
+            background-color: #e9f9eb;
+            align-self: flex-end;
+            margin-left: auto;
+            text-align: right;
+        }
+        .messages-container {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
 
     <!-- Custom JS -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script src="../../static/js/example.js"></script>
 </head>
 
 <body>
     <div class="container">
+        <h1>Diplomacy: Strategic Game</h1>
+        
         <!-- Wrap sections in new container -->
         <div class="top-sections-wrapper">
-            <!-- Query Section -->
-            <div class="query-section">
-                <h3 class="query-badge">The Query</h3>
-                <div class="query-content">
-                    <div class="image-container">
-                        <img src="slake_xmlab25.jpg" alt="image" style="width: 100%;">
-                    </div>
-                    <div class="query-details">
-                        <p><strong>Image path:</strong> source.jpg</p>
-                        <p><strong>Question:</strong> What is the organ on the left side of this image?</p>
-                        <p><strong>Ground truth:</strong> Lung</p>
-                    </div>
+            <!-- Game Introduction Section -->
+            <div class="game-intro-section">
+                <h3 class="game-intro-badge">Game Introduction</h3>
+                <div class="image-container">
+                    <img src="../../trajectories/diplomacy/neg/maps/S1901M.svg" alt="Diplomacy game map" />
+                </div>
+                <div class="details">
+                    <p><strong>Game:</strong> Diplomacy</p>
+                    <p><strong>Complexity:</strong> Very High (Most intricate strategic game in SPIN-Bench)</p>
+                    <p><strong>Description:</strong> A grand strategy game featuring seven European powers before World War I. Players issue orders to move armies and fleets, form alliances through negotiation, and compete for supply centers across Europe.</p>
+                    <p><strong>Purpose:</strong> Evaluates LLMs' complex strategic planning, spatial reasoning, negotiation skills, and social intelligence in a highly strategic multi-agent environment.</p>
                 </div>
             </div>
             
-            <!-- Wrong Prediction -->
-            <div class="wrong-prediction">
-                <h3 class="wrong-prediction-badge">Wrong Prediction from GPT-4o</h3>
-                <div id="wrong-prediction-content"></div>
+            <!-- Game Setting Section -->
+            <div class="game-setting-section">
+                <h3 class="game-setting-badge">Experiment Settings</h3>
+                <div class="details">
+                    <p><strong>Settings:</strong> Multiple experiment types to evaluate different aspects of LLM performance:</p>
+                    <ol>
+                        1. <strong>Basic Skill Evaluation:</strong> Single LLM controlling France against six neutral powers, testing fundamental game mechanics without negotiation
+                        <br>
+                        2. <strong>Multi-agent Experiments:</strong> 2-5 LLM agents controlling powers, with variations including negotiation enabled/disabled
+                        <br>
+                        3. <strong>Factual Knowledge Checks:</strong> One-hop vs. multi-hop queries to test spatial reasoning and factual understanding
+                    </ol>
+                    <br>
+                    <p><strong>Evaluation Metrics:</strong></p>
+                    <ul>
+                        1. <strong>Result-oriented:</strong> Supply centers and controlled regions<br>
+                        2. <strong>Action-wise:</strong> Success rates for Move, Attack, Support-Self, and Support-Others orders<br>
+                        3. <strong>Negotiation metrics:</strong> Strategy alignment, proposal acceptance, mutual benefit ratio, peace/conflict messaging, perspective-taking, conditional plans
+                    </ul><br>
+                    <p><strong>Models Evaluated:</strong> o1, o1-preview, o1-mini, o3-mini, GPT-4o, GPT-4-turbo, Claude 3.5 Sonnet, Claude 3.5 Haiku, DeepSeek-R1</p>
+                </div>
             </div>
-                        
         </div>
 
         <!-- Steps Section -->
-        <h3 class="steps-badge">Prediction from the OctoTool Framework</h3>
+        <h3 class="steps-badge">Game Analysis and Findings</h3>
 
         <div class="button-legend">
             <div class="legend-item">
-                <span class="legend-dot planner"></span>
-                <span class="legend-text">Planner Components</span>
-                <span class="legend-dot executor"></span>
-                <span class="legend-text">Executor Components</span>
-                <span class="legend-dot answer"></span>
-                <span class="legend-text">Final Answer</span>
+                <span class="legend-dot basic-skills"></span>
+                <span class="legend-text">Basic Skills</span>
+                <span class="legend-dot multi-agent"></span>
+                <span class="legend-text">Multi-agent Experiments</span>
+                <span class="legend-dot negotiation"></span>
+                <span class="legend-text">Negotiation Analysis</span>
             </div>
         </div>
 
         <div class="steps-container">
             <div class="steps-buttons">
-                <button class="step-button planner" data-step="step0">Step 0: Initial Plan from Query Analyzer</button>
+                <button class="step-button basic-skills" data-step="game-overview">Game Overview</button>
+                <button class="step-button basic-skills" data-step="basic-skills">Basic Skill Evaluation</button>
+                <button class="step-button basic-skills" data-step="factual-knowledge">Factual Knowledge Checks</button>
                 <br>
-                <button class="step-button planner" data-step="step1-action">Step 1: Action from Action Predictor</button>
-                <button class="step-button executor" data-step="step1-command">Step 1: Command from Command Generator</button>
-                <button class="step-button executor" data-step="step1-result">Step 1: Result from Command Executor</button>
-                <button class="step-button planner" data-step="step1-verify">Step 1: Verification from Context Verifier</button>
+                <button class="step-button multi-agent" data-step="action-metrics">Action-wise Metrics</button>
+                <button class="step-button multi-agent" data-step="multi-agent-scaling">Multi-agent Scaling</button>
                 <br>
-                <button class="step-button planner" data-step="step2-action">Step 2: Action from Action Predictor</button>
-                <button class="step-button executor" data-step="step2-command">Step 2: Command from Command Generator</button>
-                <button class="step-button executor" data-step="step2-result">Step 2: Result from Command Executor</button>
-                <button class="step-button planner" data-step="step2-verify">Step 2: Verification from Context Verifier</button>
-                <br>
-                <!-- <button class="step-button answer" data-step="final-context">Full Trajectory in the Context</button>
-                <button class="step-button answer" data-step="final-summary">Summary from Solution Summarizer</button> -->
-                <button class="step-button answer" data-step="final">Final Answer</button>
+                <button class="step-button negotiation" data-step="negotiation-impact">Negotiation Impact</button>
+                <button class="step-button negotiation" data-step="negotiation-metrics">Negotiation Metrics</button>
+                <button class="step-button negotiation" data-step="key-insights">Key Insights</button>
             </div>
-            <div class="step-content"></div>
+            <div class="step-content">
+                <!-- Default content -->
+                <h3>Select a section to view details</h3>
+                <p>Click on any button from the left panel to view detailed information about Diplomacy game analysis in SPIN-Bench.</p>
+            </div>
         </div>
     </div>
 
+    <script>
+        // Step content data
+        let stepContentDiplomacy = {
+            'game-overview': `
+                <h3>Diplomacy in SPIN-Bench</h3>
+                <p>Diplomacy represents the most complex and strategically demanding game in SPIN-Bench, requiring a sophisticated combination of spatial reasoning, strategic planning, social intelligence, and negotiation skills.</p>
+                
+                <h4>Game Concept</h4>
+                <p>Set in Europe before World War I, Diplomacy challenges players to control the seven Great Powers: England, France, Germany, Italy, Austria, Russia, and Turkey. Unlike games with chance elements, Diplomacy is purely deterministic, with outcomes decided by strategic decision-making, alliance formation, and occasional betrayal.</p>
+                
+                <h4>Key Game Mechanics</h4>
+                <ul>
+                    <li><strong>Units and Map:</strong> Each power controls armies and fleets that move across a detailed map of Europe divided into provinces</li>
+                    <li><strong>Supply Centers:</strong> Key provinces provide resources to build new units; the goal is to control 18 of the 34 supply centers</li>
+                    <li><strong>Simultaneous Orders:</strong> All players submit orders simultaneously, which are then resolved according to specific rules</li>
+                    <li><strong>Support and Convoys:</strong> Units can support other units' moves or attacks, and fleets can convoy armies across water</li>
+                    <li><strong>Negotiation Phase:</strong> Before orders are issued, players can negotiate, form alliances, or make agreements</li>
+                </ul>
+                
+                <h4>Order Types</h4>
+                <p>Players can issue different types of orders to their units:</p>
+                <ul>
+                    <li><strong>Hold:</strong> Unit stays in its current position</li>
+                    <li><strong>Move:</strong> Unit moves to an adjacent territory</li>
+                    <li><strong>Support:</strong> Unit supports another unit's move or helps defend a position</li>
+                    <li><strong>Convoy:</strong> Fleet transports an army across water</li>
+                </ul>
+                
+                <h4>Game Complexity</h4>
+                <ul>
+                    <li><strong>Spatial Complexity:</strong> 75 provinces with complex adjacency relationships</li>
+                    <li><strong>Branching Factor:</strong> Extremely high, with hundreds of possible combinations of orders each turn</li>
+                    <li><strong>Negotiation Dimension:</strong> Adds a layer of social intelligence and strategic deception</li>
+                    <li><strong>Long-horizon Planning:</strong> Games can last many rounds (years), requiring extended strategic foresight</li>
+                    <li><strong>Multi-agent Dynamics:</strong> Up to 7 players with shifting alliances and objectives</li>
+                </ul>
+                
+                <h4>Diplomacy's Value in SPIN-Bench</h4>
+                <p>Diplomacy provides several unique dimensions for evaluating LLMs:</p>
+                <ul>
+                    <li><strong>Strategic Depth:</strong> Tests ability to plan across a vast action space</li>
+                    <li><strong>Spatial Reasoning:</strong> Evaluates understanding of complex geographic constraints</li>
+                    <li><strong>Social Intelligence:</strong> Measures capability to negotiate, form alliances, and understand others' intentions</li>
+                    <li><strong>Multi-agent Coordination:</strong> Assesses interaction with multiple competing agents</li>
+                    <li><strong>Long-horizon Planning:</strong> Examines ability to maintain consistent strategic objectives over time</li>
+                </ul>
+                
+                <p>These characteristics make Diplomacy the most challenging test of both strategic reasoning and social intelligence in the SPIN-Bench framework.</p>
+            `,
+            'basic-skills': `
+                <h3>Basic Skill Evaluation</h3>
+                <p>To establish a baseline understanding of LLMs' ability to play Diplomacy, we conducted a Basic Skill Evaluation where a single LLM controls France while the other six powers remain neutral (not making moves or building units).</p>
+                
+                <h4>Experiment Setup</h4>
+                <ul>
+                    <li>LLM assigned to control France only</li>
+                    <li>England, Germany, Italy, Austria, Russia, and Turkey controlled by neutral agents</li>
+                    <li>Neutral powers adopt a passive stance (no movement or building)</li>
+                    <li>Negotiation phase disabled</li>
+                    <li>Game runs for a maximum of 20 years</li>
+                    <li>Success criterion: Ability to capture 18 supply centers</li>
+                </ul>
+                
+                <h4>Basic Skill Results</h4>
+                <div class="score-bars">
+                    <div class="score-bar-container">
+                        <div class="score-bar" style="height: 216px; background-color: #3498db;">
+                            <div class="score-label">20 SC</div>
+                        </div>
+                        <div class="model-label">o1-preview</div>
+                    </div>
+                    <div class="score-bar-container">
+                        <div class="score-bar" style="height: 216px; background-color: #3498db;">
+                            <div class="score-label">18 SC</div>
+                        </div>
+                        <div class="model-label">o1</div>
+                    </div>
+                    <div class="score-bar-container">
+                        <div class="score-bar" style="height: 216px; background-color: #3498db;">
+                            <div class="score-label">19 SC</div>
+                        </div>
+                        <div class="model-label">GPT-4o</div>
+                    </div>
+                    <div class="score-bar-container">
+                        <div class="score-bar" style="height: 108px; background-color: #e74c3c;">
+                            <div class="score-label">16 SC</div>
+                        </div>
+                        <div class="model-label">DeepSeek-R1</div>
+                    </div>
+                    <div class="score-bar-container">
+                        <div class="score-bar" style="height: 144px; background-color: #e74c3c;">
+                            <div class="score-label">14 SC</div>
+                        </div>
+                        <div class="model-label">GPT-4-turbo</div>
+                    </div>
+                    <div class="score-bar-container">
+                        <div class="score-bar" style="height: 168px; background-color: #e74c3c;">
+                            <div class="score-label">13 SC</div>
+                        </div>
+                        <div class="model-label">o3-mini</div>
+                    </div>
+                    <div class="score-bar-container">
+                        <div class="score-bar" style="height: 120px; background-color: #e74c3c;">
+                            <div class="score-label">11 SC</div>
+                        </div>
+                        <div class="model-label">Claude 3.5 Haiku</div>
+                    </div>
+                    <div class="score-bar-container">
+                        <div class="score-bar" style="height: 156px; background-color: #e74c3c;">
+                            <div class="score-label">9 SC</div>
+                        </div>
+                        <div class="model-label">Claude 3.5 Sonnet</div>
+                    </div>
+                    <div class="score-bar-container">
+                        <div class="score-bar" style="height: 132px; background-color: #e74c3c;">
+                            <div class="score-label">8 SC</div>
+                        </div>
+                        <div class="model-label">o1-mini</div>
+                    </div>
+                </div>
+                
+                <h4>Key Observations</h4>
+                <ul>
+                    <li><strong>Success threshold:</strong> Only 3 out of 9 models (o1-preview, o1, GPT-4o) successfully captured over 18 supply centers</li>
+                    <li><strong>Performance gap:</strong> Significant difference between top models and others</li>
+                    <li><strong>Time limitations:</strong> Models that didn't reach 18 supply centers timed out after 20 years</li>
+                    <li><strong>Strategic planning:</strong> Successful models demonstrated ability to plan expansion across Europe</li>
+                    <li><strong>Spatial understanding:</strong> Top models exhibited better comprehension of map geography and unit movement rules</li>
+                </ul>
+                
+                <p>This basic skill evaluation establishes that only the most advanced LLMs can successfully navigate the complex rules and strategic demands of Diplomacy, even in a simplified scenario without active opposition or negotiation requirements.</p>
+            `,
+            'factual-knowledge': `
+                <h3>Factual Knowledge Checks</h3>
+                <p>To evaluate LLMs' ability to recall and reason about the game state in Diplomacy, we designed factual knowledge tests ranging from simple location queries to complex multi-hop reasoning about potential attacks.</p>
+                
+                <h4>Query Categories</h4>
+                <p>We categorized factual queries into two main types:</p>
+                <ul>
+                    <li><strong>One-hop Queries:</strong> Direct factual retrieval about the current game state
+                        <ul>
+                            <li>Example: "Which locations does Russia control?"</li>
+                            <li>Example: "List all units controlled by Germany."</li>
+                            <li>Example: "Is Paris adjacent to Burgundy?"</li>
+                        </ul>
+                    </li>
+                    <li><strong>Multi-hop Queries:</strong> Queries requiring inference across multiple facts
+                        <ul>
+                            <li>Example: "Which territories can France attack, and how many units of support are needed at least?"</li>
+                            <li>Example: "If Italy moves from Venice to Trieste, what territories could support this attack?"</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <p>These factual knowledge checks provide insight into why some models struggle with the basic skill evaluation - they may have difficulty accurately reasoning about the game state and potential actions, particularly when multiple steps or units are involved.</p>
+            `,
+            'action-metrics': `
+                <h3>Action-wise Metrics</h3>
+                <p>To understand the specific strengths and weaknesses of LLMs in Diplomacy gameplay, we analyzed the success rates of different order types. These metrics reveal how models perform on increasingly complex action types requiring different levels of strategic and spatial reasoning.</p>
+                
+                <h4>Order Types Evaluated</h4>
+                <ol>
+                    <li><strong>Move Orders:</strong> Instructions for units to move to adjacent territories</li>
+                    <li><strong>Attack Orders:</strong> Moves targeting territories occupied by other powers' units</li>
+                    <li><strong>Support-Self Orders:</strong> Instructions for one unit to support another of your own units</li>
+                    <li><strong>Support-Others Orders:</strong> Instructions for your unit to support another power's unit</li>
+                </ol>
+                
+                <p>These metrics reveal that while LLMs can handle basic movement in Diplomacy with reasonable success, they struggle significantly with the more complex orders that require multi-step reasoning or coordination with other agents. This pattern suggests fundamental limitations in strategic depth and multi-agent coordination capabilities.</p>
+            `,
+            'multi-agent-scaling': `
+                <h3>Multi-agent Scaling</h3>
+                <p>To understand how LLMs perform as the number of interacting agents increases, we evaluated performance across different configurations where 2-5 agents control the seven powers in Diplomacy.</p>
+                
+                <h4>Experiment Setup</h4>
+                <ul>
+                    <li>Powers distributed approximately equally among agents (no neutral powers)</li>
+                    <li>Configurations with 2, 3, 4, and 5 agents controlling all 7 powers</li>
+                    <li>Each configuration tested with and without negotiation enabled</li>
+                    <li>Performance measured by action success rates and final supply center counts</li>
+                </ul>
+                
+                <h4>Agent Distribution</h4>
+                <img src="../../assets/results/multi-agent-diplomacy-setting.png" alt="Agent distribution in multi-agent experiments" />
+            `,
+            'negotiation-impact': `
+                <h3>Negotiation Impact on Strategic Play</h3>
+                <p>A distinctive feature of Diplomacy is its negotiation phase, where players can communicate, form alliances, and coordinate strategies. Our experiments compared model performance with and without negotiation to understand its impact on strategic play.</p>
+                
+                
+                <h4>Counterintuitive Impact on Strong Models</h4>
+                <p>The experimental results reveal a surprising pattern, particularly for the strongest model, o1:</p>
+                <ul>
+                    <li><strong>Supply center reduction:</strong> Final game scores (supply centers and controlled regions) decrease by a large margin with negotiation enabled</li>
+                    <li><strong>Contrasting pattern in weaker models:</strong> Some other models show minimal change or slight improvements with negotiation</li>
+                </ul>
+                
+                <h4>Cognitive Load Hypothesis</h4>
+                <p>These findings suggest a tension between strategic planning and social interaction:</p>
+                <ul>
+                    <li><strong>Planning disruption:</strong> Intense social interaction may disrupt planning coherence in otherwise capable LLMs</li>
+                    <li><strong>Cognitive overhead:</strong> Managing negotiations creates cognitive overhead that impacts strategic execution</li>
+                    <li><strong>Context consumption:</strong> Social exchanges consume context window space that might otherwise be used for planning</li>
+                    <li><strong>Competing priorities:</strong> Balancing alliance-building and tactical execution creates conflicting objectives</li>
+                </ul>
+            `,
+            'negotiation-metrics': `
+                <h3>Negotiation Metrics</h3>
+                <p>To analyze LLMs' negotiation behaviors in Diplomacy, we designed six LLM-assisted metrics and prompted o1 to annotate 1,991 messages exchanged during multi-agent games. These metrics provide insight into the negotiation styles and social intelligence capabilities of different models.</p>
+                
+                <div class="negotiation-metrics">
+                    <div class="metric-card">
+                        <h4>1. Strategy Alignment</h4>
+                        <p>Measures whether a model's messages align with its declared negotiation strategy.</p>
+                        <p>High values indicate consistent messaging that matches stated objectives.</p>
+                        <div class="metric-example">Example: If a model states "I will avoid aggression against Germany" in its strategy but then proposes attacking Germany, this would be marked as misaligned.</div>
+                    </div>
+                    
+                    <div class="metric-card">
+                        <h4>2. Proposal Acceptance Rate</h4>
+                        <p>The ratio of accepted proposals to total proposals made.</p>
+                        <p>High values suggest effective persuasion and proposal framing.</p>
+                        <div class="metric-example">Example: "Please hold in Munich; do not move south" would be counted as accepted if the recipient agrees and follows through.</div>
+                    </div>
+                    
+                    <div class="metric-card">
+                        <h4>3. Mutual Benefit Ratio</h4>
+                        <p>The ratio of mutually beneficial proposals to one-sided proposals.</p>
+                        <p>High values indicate a collaborative negotiation style.</p>
+                        <div class="metric-example">Example: "Let's swap Munich and Berlin so we both gain positions" would be labeled as mutual benefit.</div>
+                    </div>
+                    
+                    <div class="metric-card">
+                        <h4>4. Peace vs. Conflict Messaging</h4>
+                        <p>The ratio of peace-promoting to conflict-provoking messages.</p>
+                        <p>High values reflect a preference for cooperation over confrontation.</p>
+                        <div class="metric-example">Example: "Let's sign a pact of non-aggression" would be labeled as promoting peace.</div>
+                    </div>
+                    
+                    <div class="metric-card">
+                        <h4>5. Perspective Taking</h4>
+                        <p>The ratio of messages showing explicit acknowledgment of others' viewpoints.</p>
+                        <p>High values suggest advanced "theory of mind" capabilities.</p>
+                        <div class="metric-example">Example: "I understand you're concerned about Italy in the Mediterranean" demonstrates perspective taking.</div>
+                    </div>
+                    
+                    <div class="metric-card">
+                        <h4>6. Conditional Plans</h4>
+                        <p>The proportion of negotiation rounds containing if-then or conditional statements.</p>
+                        <p>High values indicate sophisticated strategic thinking.</p>
+                        <div class="metric-example">Example: "If you move to Tyrolia, I'll support you into Vienna" is a conditional plan.</div>
+                    </div>
+                </div>
+                
+                <p>These metrics reveal distinct negotiation personalities across models. However, it's important to note that despite these variations, most models lack the flexibility and adaptivity of skilled human negotiators. Rather than shifting strategies in response to betrayals or emergent alliances, models often adhere to simplistic patterns of communication.</p>
+            `,
+            'key-insights': `
+                <h3>Key Insights from Diplomacy Evaluation</h3>
+                <p>The Diplomacy component of SPIN-Bench provides the most challenging test of both strategic reasoning and social intelligence, revealing important insights about current LLMs' capabilities and limitations.</p>
+                
+                <h4>Primary Findings</h4>
+                <ol>
+                    <li><strong>Strategic planning capabilities:</strong> Top models (o1, GPT-4o) demonstrate basic competence in Diplomacy but struggle with complex multi-step planning</li>
+                    <li><strong>Spatial understanding gradient:</strong> Models show declining performance as spatial reasoning complexity increases</li>
+                    <li><strong>Multi-agent scaling limitations:</strong> Performance degrades markedly as the number of interacting agents increases</li>
+                    <li><strong>Negotiation-planning tension:</strong> Strategic performance can be disrupted by intense social interaction</li>
+                </ol>
+                
+                <h4>Current Limitations</h4>
+                <p>The Diplomacy evaluation reveals several important limitations in current LLMs:</p>
+                <ul>
+                    <li><strong>Strategic depth ceiling:</strong> Even top models struggle with multi-step planning in large state spaces</li>
+                    <li><strong>Social intelligence constraints:</strong> Limited ability to model others' knowledge and intentions</li>
+                    <li><strong>Integration challenges:</strong> Difficulty balancing strategic planning and social interaction</li>
+                    <li><strong>Coordination complexity:</strong> Struggle to coordinate multiple units toward coherent objectives</li>
+                </ul>
+                
+                <h4>Implications for SPIN-Bench</h4>
+                <p>Diplomacy provides a distinctive perspective within the SPIN-Bench framework:</p>
+                <ul>
+                    <li><strong>Highest complexity environment:</strong> Pushes the boundaries of what current LLMs can handle</li>
+                    <li><strong>Social-strategic integration:</strong> Uniquely tests both strategic reasoning and social intelligence</li>
+                    <li><strong>Multi-agent dynamics:</strong> Reveals how performance scales with increasing agent interactions</li>
+                    <li><strong>Negotiation dimension:</strong> Provides insight into models' ability to balance communication and action</li>
+                </ul>
+                
+                <h4>Future Research Directions</h4>
+                <p>The findings from Diplomacy suggest several promising research directions:</p>
+                <ol>
+                    <li>Developing training approaches that better integrate strategic and social reasoning</li>
+                    <li>Improving multi-step planning in large state spaces with partial information</li>
+                    <li>Enhancing models' ability to adapt negotiation strategies based on changing circumstances</li>
+                    <li>Building more robust theory of mind capabilities for multi-agent reasoning</li>
+                    <li>Addressing the tension between negotiation processing and strategic planning</li>
+                </ol>
+                
+                <p>These insights highlight that despite impressive progress, current LLMs still face significant challenges in complex environments that require both deep strategic reasoning and sophisticated social intelligence.</p>
+            `,
+        };
+
+        // Handle button clicks
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.step-button').forEach(button => {
+                button.addEventListener('click', () => {
+                    // Toggle active state
+                    document.querySelectorAll('.step-button').forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    button.classList.add('active');
+
+                    // Show content
+                    const stepId = button.dataset.step;
+                    const contentDiv = document.querySelector('.step-content');
+                    contentDiv.innerHTML = stepContentDiplomacy[stepId] || '<h3>Content coming soon...</h3><p>This section is under development. Please check back later.</p>';
+                });
+            });
+
+            // Trigger first button click automatically
+            const firstButton = document.querySelector('.step-button');
+            if (firstButton) {
+                firstButton.click();
+            }
+        });
+    </script>
 </body>
 </html>

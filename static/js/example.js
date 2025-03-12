@@ -52,32 +52,32 @@ async function initializeContent() {
     }
 
     // Update stepContent with parsed markdown sections
-    stepContent = {
-        'step0': marked.parse(sections['Step 0: Initial Plan from Query Analyzer'] || ''),
-        'step1-action': marked.parse(sections['Step 1: Action from Action Predictor'] || ''),
-        'step1-command': marked.parse(sections['Step 1: Command from Command Generator'] || ''),
-        'step1-result': marked.parse(sections['Step 1: Result from Command Executor'] || ''),
-        'step1-verify': marked.parse(sections['Step 1: Verification from Context Verifier'] || ''),
-        'step2-action': marked.parse(sections['Step 2: Action from Action Predictor'] || ''),
-        'step2-command': marked.parse(sections['Step 2: Command from Command Generator'] || ''),    
-        'step2-result': marked.parse(sections['Step 2: Result from Command Executor'] || ''),
-        'step2-verify': marked.parse(sections['Step 2: Verification from Context Verifier'] || ''),
-        'step3-action': marked.parse(sections['Step 3: Action from Action Predictor'] || ''),
-        'step3-command': marked.parse(sections['Step 3: Command from Command Generator'] || ''),    
-        'step3-result': marked.parse(sections['Step 3: Result from Command Executor'] || ''),
-        'step3-verify': marked.parse(sections['Step 3: Verification from Context Verifier'] || ''),
-        'step4-action': marked.parse(sections['Step 4: Action from Action Predictor'] || ''),
-        'step4-command': marked.parse(sections['Step 4: Command from Command Generator'] || ''),    
-        'step4-result': marked.parse(sections['Step 4: Result from Command Executor'] || ''),
-        'step4-verify': marked.parse(sections['Step 4: Verification from Context Verifier'] || ''),
-        'step5-action': marked.parse(sections['Step 5: Action from Action Predictor'] || ''),
-        'step5-command': marked.parse(sections['Step 5: Command from Command Generator'] || ''),    
-        'step5-result': marked.parse(sections['Step 5: Result from Command Executor'] || ''),
-        'step5-verify': marked.parse(sections['Step 5: Verification from Context Verifier'] || ''),
-        'final-context': marked.parse(sections['Full Trajectory in the Context'] || ''),
-        'final-summary': marked.parse(sections['Summary from Solution Summarizer'] || ''),
-        'final': marked.parse(sections['Final Answer'] || ''),
-    };
+    // stepContent = {
+    //     'step0': marked.parse(sections['Step 0: Initial Plan from Query Analyzer'] || ''),
+    //     'step1-action': marked.parse(sections['Step 1: Action from Action Predictor'] || ''),
+    //     'step1-command': marked.parse(sections['Step 1: Command from Command Generator'] || ''),
+    //     'step1-result': marked.parse(sections['Step 1: Result from Command Executor'] || ''),
+    //     'step1-verify': marked.parse(sections['Step 1: Verification from Context Verifier'] || ''),
+    //     'step2-action': marked.parse(sections['Step 2: Action from Action Predictor'] || ''),
+    //     'step2-command': marked.parse(sections['Step 2: Command from Command Generator'] || ''),    
+    //     'step2-result': marked.parse(sections['Step 2: Result from Command Executor'] || ''),
+    //     'step2-verify': marked.parse(sections['Step 2: Verification from Context Verifier'] || ''),
+    //     'step3-action': marked.parse(sections['Step 3: Action from Action Predictor'] || ''),
+    //     'step3-command': marked.parse(sections['Step 3: Command from Command Generator'] || ''),    
+    //     'step3-result': marked.parse(sections['Step 3: Result from Command Executor'] || ''),
+    //     'step3-verify': marked.parse(sections['Step 3: Verification from Context Verifier'] || ''),
+    //     'step4-action': marked.parse(sections['Step 4: Action from Action Predictor'] || ''),
+    //     'step4-command': marked.parse(sections['Step 4: Command from Command Generator'] || ''),    
+    //     'step4-result': marked.parse(sections['Step 4: Result from Command Executor'] || ''),
+    //     'step4-verify': marked.parse(sections['Step 4: Verification from Context Verifier'] || ''),
+    //     'step5-action': marked.parse(sections['Step 5: Action from Action Predictor'] || ''),
+    //     'step5-command': marked.parse(sections['Step 5: Command from Command Generator'] || ''),    
+    //     'step5-result': marked.parse(sections['Step 5: Result from Command Executor'] || ''),
+    //     'step5-verify': marked.parse(sections['Step 5: Verification from Context Verifier'] || ''),
+    //     'final-context': marked.parse(sections['Full Trajectory in the Context'] || ''),
+    //     'final-summary': marked.parse(sections['Summary from Solution Summarizer'] || ''),
+    //     'final': marked.parse(sections['Final Answer'] || ''),
+    // };
 
     // Trigger display of initial content
     const firstButton = document.querySelector('.step-button');

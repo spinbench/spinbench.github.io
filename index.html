@@ -342,10 +342,10 @@
     <div class="container">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h2 class="title is-3">Task Visualization Demo</h2>
+          <h2 class="title is-3">Game Trajectory Visualization</h2>
           <div class="content has-text-justified">
             <p>
-              Our benchmark includes a diverse set of games and tasks that test the strategic planning and social reasoning
+              Our benchmark includes a diverse set of games and tasks that test the strategic planning and social reasoning. Here are some examples of the game trajectories and tasks that we include in our benchmark:
             </p>
 
             <!-- Include tool cards -->
@@ -502,51 +502,51 @@
   </section>
   <!--/ Tool Cards -->
 
-<!-- Examples -->
-<section class="section" id="visualization">
-  <div class="container">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3" id="visualization">Prompt Examples</h2>
-        
-        <!-- Example Selection Buttons -->
-        <div class="buttons is-centered" style="margin-bottom: 2rem;">
-          <!-- First Row -->
-          <div class="buttons has-addons is-centered" style="width: 100%; margin-bottom: 0.5rem;">
-            <button class="button is-info is-outlined example-button" data-example="1">
-              PDDL
-            </button>
-            <button class="button is-info is-outlined example-button" data-example="2">
-              Tic Tac Toe
-            </button>
-            <button class="button is-info is-outlined example-button" data-example="3">
-              Connect Four
-            </button>
-          </div>
+  <!-- Game Settings and Evaluation Metrics -->
+  <section class="section" id="visualization">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3" id="visualization">Game Settings and Evaluation Metrics</h2>
           
-          <!-- Second Row -->
-          <div class="buttons has-addons is-centered" style="width: 100%;">
-            <button class="button is-info is-outlined example-button" data-example="4">
-              Chess
-            </button>
-            <button class="button is-info is-outlined example-button" data-example="5">
-              Hanabi
-            </button>
-            <button class="button is-info is-outlined example-button" data-example="6">
-              Diplomacy
-            </button>
+          <!-- Example Selection Buttons -->
+          <div class="buttons is-centered" style="margin-bottom: 2rem;">
+            <!-- First Row -->
+            <div class="buttons has-addons is-centered" style="width: 100%; margin-bottom: 0.5rem;">
+              <button class="button is-info is-outlined example-button" data-example="1">
+                PDDL
+              </button>
+              <button class="button is-info is-outlined example-button" data-example="2">
+                Tic Tac Toe
+              </button>
+              <button class="button is-info is-outlined example-button" data-example="3">
+                Connect Four
+              </button>
+            </div>
+            
+            <!-- Second Row -->
+            <div class="buttons has-addons is-centered" style="width: 100%;">
+              <button class="button is-info is-outlined example-button" data-example="4">
+                Chess
+              </button>
+              <button class="button is-info is-outlined example-button" data-example="5">
+                Hanabi
+              </button>
+              <button class="button is-info is-outlined example-button" data-example="6">
+                Diplomacy
+              </button>
+            </div>
           </div>
-        </div>
 
-        <!-- Example Display Container -->
-        <div id="example-container" style="width: 100%; height: 900px; margin-bottom: 200px; border: none;">
-          <!-- The iframe will be inserted here by JavaScript -->
-        </div>
+          <!-- Example Display Container -->
+          <div id="example-container" style="width: 100%; height: 1000px; margin-bottom: 100px; border: none;">
+            <!-- The iframe will be inserted here by JavaScript -->
+          </div>
 
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- Framework -->
   <section class="section" id="framework">
@@ -631,218 +631,75 @@
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">Experimental Results</h2>
-          <h3 class="title is-4">Main Results: Comparison with Baselines</h3>
           <div class="content has-text-justified">
-            <p>
-              To demonstrate the generality of our <span style="color: var(--color-octo-red);"><b>Octo</b></span><span
-                style="color: var(--color-tools-blue);"><b>Tools</b></span> framework, we conduct comprehensive
-              evaluations on <b>16 diverse benchmarks</b> spanning <b>two modalities</b>, <b>five domains</b>, and
-              <b>four reasoning types</b>. These benchmarks encompass a wide range of complex reasoning tasks, including
-              <b>visual understanding</b>, <b>numerical calculation</b>, <b>knowledge retrieval</b>, and <b>multi-step
-                reasoning</b>.
-            </p>
-
             <div id="results-carousel" class="carousel results-carousel">
               <div class="box m-5">
                 <div class="content has-text-centered">
-                  <img src="assets/results/result_table_1.png" width="90%">
-                  <!-- <p> Caption.
-                  </p> -->
+                  <img src="assets/results/main-table.png" width="90%">
+                  <p>Caption</p>
                 </div>
               </div>
-
+              
               <div class="box m-5">
                 <div class="content has-text-centered">
-                  <img src="assets/results/benchmark_gains_radar_barplot.png" width="45%">
-                  <p> Performance gains across different benchmarks from our <span
-                      style="color: var(--color-octo-red);"><b>Octo</b></span><span
-                      style="color: var(--color-tools-blue);"><b>Tools</b></span> framework over the base GPT-4o model.
-                  </p>
+                  <img src="assets/results/spatial-tracking-accuracy.png" width="90%">
+                  <p>Caption</p>
                 </div>
               </div>
-
               <div class="box m-5">
                 <div class="content has-text-centered">
-                  <img src="assets/results/result_table_2.png" width="50%">
-                  <p> Comparison with other agent frameworks using the same underlying toolbox. <span
-                      style="color: var(--color-octo-red);"><b>Octo</b></span><span
-                      style="color: var(--color-tools-blue);"><b>Tools</b></span> achieves superior performance with an
-                    average accuracy of 58.5%, outperforming the next best baseline by 7.3%. Results are averaged over
-                    three trials.
-                  </p>
+                  <img src="assets/results/factual-tracking-accuracy.png" width="90%">
+                  <p>Caption</p>
                 </div>
               </div>
-
               <div class="box m-5">
                 <div class="content has-text-centered">
-                  <img src="assets/results/agent_baselines_bar_plot.png" width="90%">
-                  <p> Performance ours vs. other agents. Our framework consistently outperforms agent baselines across
-                    all benchmarks. Bar
-                    values represent accuracy and error bars represent standard deviation.
-                  </p>
+                  <img src="assets/results/diplomacy-factual-heatmap.png" width="90%">
+                  <p>Caption</p>
                 </div>
               </div>
-
               <div class="box m-5">
                 <div class="content has-text-centered">
-                  <img src="assets/results/tool_usage_ours_baselines.png" width="90%">
-                  <p> <b>a.</b> Tool usage distribution in our <span
-                      style="color: var(--color-octo-red);"><b>Octo</b></span><span
-                      style="color: var(--color-tools-blue);"><b>Tools</b></span> framework and agent baselines by
-                    averaging results from 16 tasks. <b>b.</b> Tool usage distribution across 16 tasks in <span
-                      style="color: var(--color-octo-red);"><b>Octo</b></span><span
-                      style="color: var(--color-tools-blue);"><b>Tools</b></span>. <span
-                      style="color: var(--color-octo-red);"><b>Octo</b></span><span
-                      style="color: var(--color-tools-blue);"><b>Tools</b></span> takes advantage of different external
-                    tools to address task-specific challenges.
-                  </p>
+                  <img src="assets/results/action-state-space.png" width="90%">
+                  <p>Caption</p>
                 </div>
               </div>
-
               <div class="box m-5">
                 <div class="content has-text-centered">
-                  <img src="assets/results/tool_usage_by_16_tasks_AutoGen.png" width="70%">
-                  <p> Distribution of tools usage. Frequency of tools used by the <b>AutoGen</b> agent for each
-                    benchmark.
-                  </p>
+                  <img src="assets/results/game-leaderboard.png" width="90%">
+                  <p>Caption</p>
                 </div>
               </div>
-
               <div class="box m-5">
                 <div class="content has-text-centered">
-                  <img src="assets/results/tool_usage_by_16_tasks_LangChain.png" width="70%">
-                  <p> Distribution of tools usage. Frequency of tools used by the <b>GPT-Functions</b> agent for each
-                    benchmark.
-                  </p>
+                  <img src="assets/results/solver-win-rate.png" width="90%">
+                  <p>Caption</p>
                 </div>
               </div>
-
               <div class="box m-5">
                 <div class="content has-text-centered">
-                  <img src="assets/results/tool_usage_by_16_tasks_GPT4o-Plugin.png" width="70%">
-                  <p> Distribution of tools usage. Frequency of tools used by the <b>LangChain</b> agent for each
-                    benchmark.
-                  </p>
+                  <img src="assets/results/top-move-percentage.png" width="90%">
+                  <p>Caption</p>
                 </div>
               </div>
-
               <div class="box m-5">
                 <div class="content has-text-centered">
-                  <img src="assets/results/num_steps_hist.png" width="60%">
-                  <p> Distribution of number of steps used.
-                  </p>
+                  <img src="assets/results/multi-agent-diplomacy-setting.png" width="90%">
+                  <p>Caption</p>
                 </div>
               </div>
-
               <div class="box m-5">
                 <div class="content has-text-centered">
-                  <img src="assets/results/benchmark_distribution_x_steps_y_tools.png" width="50%">
-                  <p> Benchmark distribution across average number of steps and fraction of external tool usage (tools
-                    that exclude the base tool <b>Generalist_Solution_Generator</b>) in <span
-                      style="color: var(--color-octo-red);"><b>Octo</b></span><span
-                      style="color: var(--color-tools-blue);"><b>Tools</b></span>.
-                  </p>
+                  <img src="assets/results/multi-agent-diplomacy-result.png" width="90%">
+                  <p>Caption</p>
                 </div>
               </div>
-
               <div class="box m-5">
                 <div class="content has-text-centered">
-                  <img src="assets/results/scatterplot_decomposition_vs_tools.png" width="50%">
-                  <p> Benchmark distribution across two dimensions. Tasks that show high improvement from task
-                    decomposition likely require multi-step reasoning, while tasks that show high improvement from
-                    specialized tools likely require specialized skills.
-                  </p>
+                  <img src="assets/results/hanabi-human-performance.png" width="90%">
+                  <p>Caption</p>
                 </div>
               </div>
-
-            </div>
-          </div>
-          <h3 class="title is-4">Ablation Study: Disentangling Different Components</h3>
-          <div class="content has-text-justified">
-            <p>
-              We further explore several factors that affect <span
-                style="color: var(--color-octo-red);"><b>Octo</b></span><span
-                style="color: var(--color-tools-blue);"><b>Tools</b></span>'s performance, using a validation set of 100
-              samples.
-            </p>
-
-            <div id="results-carousel" class="carousel results-carousel">
-              <div class="box m-5">
-                <div class="content has-text-centered">
-                  <img src="assets/ablation/ours_tool_selection_category_scores_bar_chart.png" width="50%">
-                  <p> Performance under three toolset strategies in <span
-                      style="color: var(--color-octo-red);"><b>Octo</b></span><span
-                      style="color: var(--color-tools-blue);"><b>Tools</b></span> across all 16 tasks and various
-                    categories (the number in parentheses indicates the number of tasks in each category).
-                  </p>
-                </div>
-              </div>
-
-              <div class="box m-5">
-                <div class="content has-text-centered">
-                  <img src="assets/ablation/all_tools_ablation.png" width="90%">
-                  <p> Performance with vs. without tool selection. While toolset optimization increases performance over
-                    using the full toolset in most tasks, even without it, our framework achieves similar performance by
-                    naively enabling all possible tools. Bar values represent accuracy and error bars represent standard
-                    deviation.
-                  </p>
-                </div>
-              </div>
-
-              <div class="box m-5">
-                <div class="content has-text-centered">
-                  <img src="assets/ablation/gpt4omini_ours_category_scores_bar_chart.png" width="50%">
-                  <p> Performance of <span style="color: var(--color-octo-red);"><b>Octo</b></span><span
-                      style="color: var(--color-tools-blue);"><b>Tools</b></span> on 16 tasks and various categories
-                    using a weaker LLM, GPT-4o-mini, as the base engine. <span
-                      style="color: var(--color-octo-red);"><b>Octo</b></span><span
-                      style="color: var(--color-tools-blue);"><b>Tools</b></span><sub>base</sub> is the configuration in
-                    which only the base <b>Generalist_Solution_Generator</b> tool is enabled. The number in parentheses
-                    indicates the number of tasks in each category.
-                  </p>
-                </div>
-              </div>
-
-              <div class="box m-5">
-                <div class="content has-text-centered">
-                  <img src="assets/ablation/gpt4o-mini_bar_plot.png" width="90%">
-                  <p> Performance ours vs. other agents. Our framework consistently outperforms agent baselines across
-                    all benchmarks. Bar
-                    values represent accuracy and error bars represent standard deviation.
-                  </p>
-                </div>
-              </div>
-
-              <div class="box m-5">
-                <div class="content has-text-centered">
-                  <img src="assets/ablation/average_accuracy_by_max_steps_error_range.png" width="40%">
-                  <p> Average accuracy across 16 benchmarks with respect to maximum allowed reasoning steps in <span
-                      style="color: var(--color-octo-red);"><b>Octo</b></span><span
-                      style="color: var(--color-tools-blue);"><b>Tools</b></span>. Overall, performance tends to improve
-                    as the maxmum number of steps increases, highlighting the benefit of longer chains of multi-step
-                    reasoning.
-                  </p>
-                </div>
-              </div>
-
-              <div class="box m-5">
-                <div class="content has-text-centered">
-                  <img src="assets/ablation/accuracy_vs_max_steps_indiv_delta.png" width="65%">
-                  <p> Accuracy vs number of maximum steps. The change in accuracy from a maximum step of 1 is plotted.
-                    Most benchmarks improve in performance with the number of allowed steps.
-                  </p>
-                </div>
-              </div>
-
-              <div class="box m-5">
-                <div class="content has-text-centered">
-                  <img src="assets/ablation/toolset.png" width="60%">
-                  <p> Optimized tool sets for each benchmark following our Algorithm. A ✓indicates that the tool is used
-                    for that benchmark.
-                  </p>
-                </div>
-              </div>
-
             </div>
           </div>
         </div>
