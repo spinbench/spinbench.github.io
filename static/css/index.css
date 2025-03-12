@@ -92,23 +92,3 @@ body {
   }
 }
 
-.octotools::before {
-  content: "OctoTools";
-  font-weight: bold;
-}
-
-/* If you want the two-color version */
-.octotools-colored::before {
-  content: "Octo";
-  color: var(--color-octo-red);
-  font-weight: bold;
-}
-
-.octotools-colored::after {
-  content: "Tools";
-  color: var(--color-tools-blue);
-  font-weight: bold;
-}
-
-
-
