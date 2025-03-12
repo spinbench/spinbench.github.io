@@ -114,21 +114,10 @@
     </h4>
     <ul class="toc-list">
       <li><a href="#introduction">Introduction</a></li>
-      <li><a href="#tool-cards">Tool Cards</a></li>
-      <li><a href="#visualization">Visualization</a></li>
-      <li>
-        <a href="#framework">Framework</a>
-        <!-- <div class="toc-subitem">
-          <a href="#task-specific-tool-selection">Task-Specific Tool Selection</a>
-        </div> -->
-      </li>
-      <li>
-        <a href="#results">Results</a>
-        <!-- <div class="toc-subitem">
-          <a href="#main-results">Main Results</a>
-          <a href="#ablation-study">Ablation Study</a>
-        </div> -->
-      </li>
+      <li><a href="#framework">Framework</a></li>
+      <li><a href="#tool-cards">Game Trajectory Visualization</a></li>
+      <li><a href="#visualization">Game Settings and Evaluation Metrics</a></li>
+      <li><a href="#results">Results</a></li>
       <li><a href="#Share">Share</a></li>
       <li><a href="#BibTeX">BibTeX</a></li>
     </ul>
@@ -147,7 +136,8 @@
               </span> -->
             </h1>
             <h2 class="subtitle is-3 publication-subtitle">
-              SPIN-Bench: How Well Do LLMs Plan Strategically and Reason Socially?
+              <span style="color: var(--color-octo-red);"><b>SPIN</b></span>-<span
+              style="color: var(--color-tools-blue);"><b>Bench</b></span>: How Well Do LLMs Plan Strategically and Reason Socially?
             </h2>
             <!-- <div class="is-size-5 publication-authors">
               <span class="author-block">
@@ -276,23 +266,26 @@
 
   <!-- Introduction -->
   <section class="section" id="introduction">
-    <div class="container" style="margin-bottom: 2vh;">
+    <div class="container">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">Introduction</h2>
           <div class="content has-text-justified">
             <p>
-              We introduce <strong>Strategic Planning, Interaction, and Negotiation (SPIN-Bench)</strong>, a comprehensive framework
+              We introduce <strong>Strategic Planning, Interaction, and Negotiation (<span style="color: var(--color-octo-red);"><b>SPIN</b></span>-<span
+                style="color: var(--color-tools-blue);"><b>Bench</b></span>)</strong>, a comprehensive framework
               for evaluating
               <em>long-horizon strategic planning</em> and <em>social intelligence</em> in Large Language Models (LLMs).
               Unlike prior work that confines itself to narrow planning or isolated single-agent tasks,
-              <strong>SPIN-Bench</strong> combines formal PDDL challenges, competitive board games, cooperative card games,
+              <strong><span style="color: var(--color-octo-red);"><b>SPIN</b></span>-<span
+                style="color: var(--color-tools-blue);"><b>Bench</b></span></strong> combines formal PDDL challenges, competitive board games, cooperative card games,
               and multi-agent negotiation scenarios within a single evaluation.
             </p>
             
             <p>
               By systematically varying action spaces, state complexity, and the number of interacting agents,
-              <strong>SPIN-Bench</strong> tests not only <em>methodical, step-wise</em> decision-making but also
+              <strong><span style="color: var(--color-octo-red);"><b>SPIN</b></span>-<span
+                style="color: var(--color-tools-blue);"><b>Bench</b></span></strong> tests not only <em>methodical, step-wise</em> decision-making but also
               <em>conceptual inference</em> about hidden information and adversarial or cooperative strategies.
               Our experiments reveal that while contemporary LLMs handle <em>basic fact retrieval</em> and
               <em>short-range planning</em> reasonably well, they encounter significant performance bottlenecks
@@ -301,7 +294,7 @@
             </p>
             
             <p>
-              In particular, we find that strong models (e.g., <code>O1</code>) can still struggle with
+              In particular, we find that strong models (e.g., <code>o1</code>) can still struggle with
               <em>extended-horizon planning</em> when multiple agents and hidden intentions are introduced,
               and that extensive social interaction can sometimes degrade chain-of-thought coherence.
               These insights highlight persistent gaps in <em>multi-agent negotiation</em>,
@@ -312,21 +305,10 @@
             <p>
               By drawing on both human baselines and domain-specific solvers, our results shed light on the
               real-world potential and current shortcomings of LLMs for strategic, multi-agent settings.
-              We envision <strong>SPIN-Bench</strong> as a catalyst for future research on robust multi-agent planning,
+              We envision <strong><span style="color: var(--color-octo-red);"><b>SPIN</b></span>-<span
+                style="color: var(--color-tools-blue);"><b>Bench</b></span></strong> as a catalyst for future research on robust multi-agent planning,
               social reasoning, and human–AI teaming.
             </p>
-          </div>
-          <div class="container is-max-desktop">
-            <!-- <div class="content has-text-centered">
-              <img src="assets/results/main_scores_bar_chart.png" width="40%">
-              <p style="text-align: left;">
-                Performance comparison across 16 diverse tasks. <span
-                  style="color: var(--color-octo-red);"><b>Octo</b></span><span
-                  style="color: var(--color-tools-blue);"><b>Tools</b></span> achieves substantial improvements over
-                GPT-4o and other frameworks including AutoGen, GPT-Functions, and LangChain when given access to the
-                same set of tools.
-              </p>
-            </div> -->
           </div>
         </div>
       </div>
@@ -334,8 +316,64 @@
   </section>
   <!--/ Introduction -->
 
-
-
+  <!-- Framework -->
+  <section class="section" id="framework">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">The <span style="color: var(--color-octo-red);"><b>SPIN</b></span>-<span
+              style="color: var(--color-tools-blue);"><b>Bench</b></span> Framework</h2>
+          <div class="content has-text-justified">
+            <p>
+              Building on the motivations outlined in our introduction, <span style="color: var(--color-octo-red);"><b>SPIN</b></span>-<span
+              style="color: var(--color-tools-blue);"><b>Bench</b></span>9's architecture is organized around three progressively complex
+              problem settings for automated action selection: <b>Classical Planning</b> (single-agent, deterministic), 
+              <b>Multi-Agent Games</b> (cooperative or competitive), and <b>Strategic Games</b> (mixed cooperation, competition, and negotiation).
+              Each setting introduces additional layers of complexity, requiring increasingly sophisticated reasoning capabilities.
+            </p>
+            <p>
+              The framework consists of two core components: (1) the <b>Game Agent</b>, which encompasses the LLMs and their adaptive prompting,
+              and (2) the <b>Environment and Evaluation</b> subsystem, which manages game logic, tracks interactions, and quantifies performance.
+              Our flexible interface feeds models the current state description, relevant history, and legal actions, enabling standardized
+              evaluation across diverse scenarios while maintaining game-specific requirements.
+            </p>
+            <p>
+              For evaluation, we employ multiple metrics tailored to each environment type. Our <b>rule-based metrics</b> include accuracy 
+              and N-Step Look Ahead for planning tasks, move quality comparison against solvers for competitive games, and final scores 
+              for cooperative scenarios. We maintain <b>leaderboard-based comparisons</b> with internal Elo ratings to gauge relative 
+              performance across models and against human baselines. For negotiation-heavy settings, we utilize six fine-grained, 
+              <b>LLM-assisted negotiation metrics</b> that analyze message-strategy alignment, proposal acceptance, deal equity, 
+              conflict tendencies, perspective-taking, and conditional negotiation abilities.
+            </p>
+          </div>
+          <h3 class="title is-4">Task Taxonomy and Environments</h3>
+          <div class="content has-text-justified">
+            <p>
+              The <span style="color: var(--color-octo-red);"><b>SPIN</b></span>-<span
+              style="color: var(--color-tools-blue);"><b>Bench</b></span> framework integrates four distinct environment types:
+            </p>
+            <ol>
+              <li><b>PDDL Tasks:</b> Classical planning problems across 21 domains (1,280 tasks) spanning factual retrieval, 
+              spatial reasoning, and multi-step planning with increasing state spaces.</li>
+              <li><b>Competitive Games:</b> Turn-based board games of escalating complexity (Tic-tac-toe, Connect Four, Chess) 
+              that test adversarial reasoning from short-range tactics to deeper strategic thinking.</li>
+              <li><b>Cooperative Games:</b> Featuring Hanabi, a card game where players see others' cards but not their own, 
+              requiring trust-building, inference about hidden states, and coordinated actions.</li>
+              <li><b>Strategic Games:</b> Incorporating Diplomacy, where negotiation, alliance formation, and strategic betrayal 
+              are integral, testing both planning capabilities and social intelligence.</li>
+            </ol>
+            <p>
+              This structured progression allows us to systematically pinpoint where LLM reasoning breaks down—whether in state tracking, 
+              partial-order reasoning, chain-of-thought coherence, or dynamic social interaction. By combining these environments 
+              within a unified evaluation framework, <span style="color: var(--color-octo-red);"><b>SPIN</b></span>-<span style="color: var(--color-tools-blue);"><b>Bench</b></span> provides unprecedented insight into how LLMs transition from 
+              basic planning to complex multi-agent reasoning.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ Framework -->
 
   <!-- Tool Cards -->
   <section class="section" id="tool-cards">
@@ -345,42 +383,22 @@
           <h2 class="title is-3">Game Trajectory Visualization</h2>
           <div class="content has-text-justified">
             <p>
-              Our benchmark includes a diverse set of games and tasks that test the strategic planning and social reasoning. Here are some examples of the game trajectories and tasks that we include in our benchmark:
+              Our benchmark includes a diverse set of games and tasks that test strategic planning and social reasoning. Here are some examples of the game trajectories and tasks that we include in our benchmark:
             </p>
-
-            <!-- Include tool cards -->
-            <!-- <div id="tool-cards-container"></div>
-
-            <script>
-              fetch('tool_cards.html')
-                .then(response => response.text())
-                .then(html => {
-                  document.getElementById('tool-cards-container').innerHTML = html;
-                })
-                .catch(error => console.error('Error loading tool cards:', error));
-            </script> -->
-
             <div class="columns is-multiline">
-
               <div class="column is-one-third">
                 <div class="card tool-card">
                   <div class="card-content">
                     <div class="content">
                       <p class="title is-4">
-                        <span class="tool-emoji" style="font-size: 24px;">🔬</span>
+                        <span class="tool-emoji" style="font-size: 24px;">🏁</span>
                         <a href="tools/connect_four/tra.html" class="tool-name" target="_blank">PDDL</a>
                       </p>
                       <p class="tool-description">
-                        <!-- answering multiple choice questions about H&E microscopy images. -->
-                        Classify H&E-stained pathology images into one of the given options.
+                        Classical planning tasks testing core reasoning skills through factual retrieval, spatial reasoning, and multi-step planning across 21 domains with varying complexity.
                       </p>
                     </div>
                   </div>
-                  <footer class="card-footer">
-                    <a href="tools/path_generalist_classifier/tool.html#metadata" class="card-footer-item" target="_blank">Metadata</a>
-                    <a href="https://github.com/zou-group/toolbox-agent/blob/main/opentools/tools/path_generalist_classifier/tool.py" class="card-footer-item" target="_blank">Code</a>
-                    <a href="tools/connect_four/tra.html" class="card-footer-item" target="_blank">Example</a>
-                  </footer>
                 </div>
               </div>
 
@@ -389,20 +407,14 @@
                   <div class="card-content">
                     <div class="content">
                       <p class="title is-4">
-                        <span class="tool-emoji" style="font-size: 24px;">🔬</span>
+                        <span class="tool-emoji" style="font-size: 24px;">⭕</span>
                         <a href="tools/ttt/tra.html" class="tool-name" target="_blank">Tic Tac Toe</a>
                       </p>
                       <p class="tool-description">
-                        <!-- answering multiple choice questions about H&E microscopy images. -->
-                        Classify H&E-stained pathology images into one of the given options.
+                        A simple competitive game played on a 3×3 grid, evaluating LLMs' understanding of basic rules, turn-taking, and elementary strategic planning against solvers and other LLMs.
                       </p>
                     </div>
                   </div>
-                  <footer class="card-footer">
-                    <a href="tools/path_generalist_classifier/tool.html#metadata" class="card-footer-item" target="_blank">Metadata</a>
-                    <a href="https://github.com/zou-group/toolbox-agent/blob/main/opentools/tools/path_generalist_classifier/tool.py" class="card-footer-item" target="_blank">Code</a>
-                    <a href="tools/ttt/tra.html" class="card-footer-item" target="_blank">Example</a>
-                  </footer>
                 </div>
               </div>
 
@@ -411,20 +423,14 @@
                   <div class="card-content">
                     <div class="content">
                       <p class="title is-4">
-                        <span class="tool-emoji" style="font-size: 24px;">🔬</span>
+                        <span class="tool-emoji" style="font-size: 24px;">🔴</span>
                         <a href="tools/connect_four/tra.html" class="tool-name" target="_blank">Connect Four</a>
                       </p>
                       <p class="tool-description">
-                        <!-- answering multiple choice questions about H&E microscopy images. -->
-                        Classify H&E-stained pathology images into one of the given options.
+                        An intermediate strategy game with a 6×7 vertical grid where players drop colored discs, requiring foresight to align four discs while blocking opponents' attempts.
                       </p>
                     </div>
                   </div>
-                  <footer class="card-footer">
-                    <a href="tools/path_generalist_classifier/tool.html#metadata" class="card-footer-item" target="_blank">Metadata</a>
-                    <a href="https://github.com/zou-group/toolbox-agent/blob/main/opentools/tools/path_generalist_classifier/tool.py" class="card-footer-item" target="_blank">Code</a>
-                    <a href="tools/connect_four/tra.html" class="card-footer-item" target="_blank">Example</a>
-                  </footer>
                 </div>
               </div>
 
@@ -433,20 +439,14 @@
                   <div class="card-content">
                     <div class="content">
                       <p class="title is-4">
-                        <span class="tool-emoji" style="font-size: 24px;">🔬</span>
+                        <span class="tool-emoji" style="font-size: 24px;">♟️</span>
                         <a href="tools/chess/tra.html" class="tool-name" target="_blank">Chess</a>
                       </p>
                       <p class="tool-description">
-                        <!-- answering multiple choice questions about H&E microscopy images. -->
-                        Classify H&E-stained pathology images into one of the given options.
+                        A complex strategic board game played on an 8×8 checkered board, testing advanced planning, deep calculation, pattern recognition, and sophisticated decision-making.
                       </p>
                     </div>
                   </div>
-                  <footer class="card-footer">
-                    <a href="tools/path_generalist_classifier/tool.html#metadata" class="card-footer-item" target="_blank">Metadata</a>
-                    <a href="https://github.com/zou-group/toolbox-agent/blob/main/opentools/tools/path_generalist_classifier/tool.py" class="card-footer-item" target="_blank">Code</a>
-                    <a href="tools/chess/tra.html" class="card-footer-item" target="_blank">Example</a>
-                  </footer>
                 </div>
               </div>
 
@@ -455,20 +455,14 @@
                   <div class="card-content">
                     <div class="content">
                       <p class="title is-4">
-                        <span class="tool-emoji" style="font-size: 24px;">🔬</span>
+                        <span class="tool-emoji" style="font-size: 24px;">🎆</span>
                         <a href="tools/hanabi/tra.html" class="tool-name" target="_blank">Hanabi</a>
                       </p>
                       <p class="tool-description">
-                        <!-- answering multiple choice questions about H&E microscopy images. -->
-                        Classify H&E-stained pathology images into one of the given options.
+                        A cooperative card game where players see everyone else's cards but not their own, testing coordination with partial information across teams of 2-5 LLM agents.
                       </p>
                     </div>
                   </div>
-                  <footer class="card-footer">
-                    <a href="tools/path_generalist_classifier/tool.html#metadata" class="card-footer-item" target="_blank">Metadata</a>
-                    <a href="https://github.com/zou-group/toolbox-agent/blob/main/opentools/tools/path_generalist_classifier/tool.py" class="card-footer-item" target="_blank">Code</a>
-                    <a href="tools/connect_four/tra.html" class="card-footer-item" target="_blank">Example</a>
-                  </footer>
                 </div>
               </div>
 
@@ -477,20 +471,14 @@
                   <div class="card-content">
                     <div class="content">
                       <p class="title is-4">
-                        <span class="tool-emoji" style="font-size: 24px;">🔬</span>
+                        <span class="tool-emoji" style="font-size: 24px;">🌍</span>
                         <a href="tools/diplomacy/tra.html" class="tool-name" target="_blank">Diplomacy</a>
                       </p>
                       <p class="tool-description">
-                        <!-- answering multiple choice questions about H&E microscopy images. -->
-                        Classify H&E-stained pathology images into one of the given options.
+                        A grand strategy game featuring seven European powers, testing negotiation skills, alliance formation, spatial reasoning, and complex strategic planning in a multi-agent environment.
                       </p>
                     </div>
                   </div>
-                  <footer class="card-footer">
-                    <a href="tools/path_generalist_classifier/tool.html#metadata" class="card-footer-item" target="_blank">Metadata</a>
-                    <a href="https://github.com/zou-group/toolbox-agent/blob/main/opentools/tools/path_generalist_classifier/tool.py" class="card-footer-item" target="_blank">Code</a>
-                    <a href="tools/connect_four/tra.html" class="card-footer-item" target="_blank">Example</a>
-                  </footer>
                 </div>
               </div>
 
@@ -501,6 +489,69 @@
       </div>
   </section>
   <!--/ Tool Cards -->
+
+  <section class="section" id="solver-trajectories">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">LLM vs Solver Game Trajectories</h2>
+          <div class="content has-text-justified">
+            <p>
+              To establish rigorous baselines, we evaluate LLMs against optimal or near-optimal solvers. These matchups reveal how models perform against mathematically perfect play, highlighting their strategic reasoning capabilities and limitations:
+            </p>
+            <div class="columns is-multiline">
+              <div class="column is-one-third">
+                <div class="card tool-card">
+                  <div class="card-content">
+                    <div class="content">
+                      <p class="title is-4">
+                        <span class="tool-emoji" style="font-size: 24px;">⭕</span>
+                        <a href="tools/ttt/solver.html" class="tool-name" target="_blank">Tic Tac Toe vs Minimax</a>
+                      </p>
+                      <p class="tool-description">
+                        LLMs compete against a perfect Minimax solver that never loses. This tests basic game understanding and ability to achieve draws through optimal play in a theoretically solved game.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="column is-one-third">
+                <div class="card tool-card">
+                  <div class="card-content">
+                    <div class="content">
+                      <p class="title is-4">
+                        <span class="tool-emoji" style="font-size: 24px;">🔴</span>
+                        <a href="tools/connect_four/solver.html" class="tool-name" target="_blank">Connect Four vs Solver</a>
+                      </p>
+                      <p class="tool-description">
+                        LLMs play against the Connect Four solver implementation that can calculate optimal moves for any board position, testing deeper tactical awareness and multi-step planning capabilities.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="column is-one-third">
+                <div class="card tool-card">
+                  <div class="card-content">
+                    <div class="content">
+                      <p class="title is-4">
+                        <span class="tool-emoji" style="font-size: 24px;">♟️</span>
+                        <a href="tools/chess/solver.html" class="tool-name" target="_blank">Chess vs Stockfish</a>
+                      </p>
+                      <p class="tool-description">
+                        LLMs face the Stockfish chess engine at different skill levels (0, 5, 10, 15, and 20). Even against reduced-strength engines, this reveals significant gaps in deep calculation.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
 
   <!-- Game Settings and Evaluation Metrics -->
   <section class="section" id="visualization">
@@ -548,83 +599,6 @@
     </div>
   </section>
 
-  <!-- Framework -->
-  <section class="section" id="framework">
-    <div class="container" style="margin-bottom: 2vh;">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">The <span style="color: var(--color-octo-red);"><b>Octo</b></span><span
-              style="color: var(--color-tools-blue);"><b>Tools</b></span> Framework</h2>
-          <div class="content has-text-justified">
-            <p>
-              We propose <span style="color: var(--color-octo-red);"><b>Octo</b></span><span
-                style="color: var(--color-tools-blue);"><b>Tools</b></span>, an open-source, versatile, and
-              user-friendly agent-toolbox framework for <b>complex reasoning</b> tasks. Given a user query $q \in
-              \mathcal{Q}$ and a pretrained language model $\text{LLM}_\theta(\cdot)$, a naive approach would generate
-              an output directly as $y \sim \text{LLM}_\theta(q)$, providing a single-step response. In contrast, our
-              <span style="color: var(--color-octo-red);"><b>Octo</b></span><span
-                style="color: var(--color-tools-blue);"><b>Tools</b></span> framework introduces a <b>structured</b>,
-              <b>multi-step</b> process that leverages <b>external tools</b> to tackle queries effectively.
-            </p>
-            <p>
-              Specifically, <span style="color: var(--color-octo-red);"><b>Octo</b></span><span
-                style="color: var(--color-tools-blue);"><b>Tools</b></span> contains a set of <b>tools</b> $\mathcal{D}
-              = \{d_i\}_{i=1}^n$ and associated metadata $\mathcal{M} = \{m_i\}_{i=1}^n$, where $n$ is the number of
-              available tools. Given a query, a <b>planner</b> (based on a language model) first generates a
-              <b>tentative plan</b> from a high-level perspective, indicating how these tools can be used to address the
-              query, which forms the initial <b>context</b> $s_0$. From this plan, the planner determines the initial
-              <b>action</b> $a_1$ for tool usage, specifying which tool $d_1$ to use, the relevant context, and a
-              sub-goal. An <b>executor</b> (also powered by a language model) then converts the planner's text-based
-              action $a_1$ into a machine-executable <b>command</b> $o_t$, which is run to obtain intermediate results
-              $r_1$. These results, along with the original action, update the context to $s_1 := (a_1, o_1, r_1)$. This
-              process constitutes one step in our framework.
-            </p>
-            <p>
-              This process repeats, with the planner iteratively refining its actions based on the evolving context
-              until it either finds a complete solution or inference limits (e.g., time or steps) are reached. After $T$
-              steps, the framework produces a full <b>trajectory</b> $(s_0, s_1, \dots, s_T)$, which is stored in a
-              structured manner in the context. The planner then uses this trajectory to generate the <b>final
-                solution</b> to the original query.
-            </p>
-            <p>
-              To sum up, <span style="color: var(--color-octo-red);"><b>Octo</b></span><span
-                style="color: var(--color-tools-blue);"><b>Tools</b></span> provides a robust and effective framework
-              for solving complex tasks through sub-goal decomposition and systematical tool usage. Standardized <b>tool
-                cards</b> encapsulate functionality , the <b>planner</b> orchestrates both high-level and low-level task
-              planning, and the <b>executor</b> instantiates tool calls for each sub-goal.
-            </p>
-          </div>
-          <h3 class="title is-4">Task-Specific Tool Selection</h3>
-          <div class="content has-text-justified">
-            <p>
-              The <span style="color: var(--color-octo-red);"><b>Octo</b></span><span
-                style="color: var(--color-tools-blue);"><b>Tools</b></span> toolbox contains a diverse set of tools
-              covering different modalities and skills. By leveraging structured tool cards and robust planning
-              capabilities, <span style="color: var(--color-octo-red);"><b>Octo</b></span><span
-                style="color: var(--color-tools-blue);"><b>Tools</b></span> demonstrates strong generality when all
-              available tools are enabled across different tasks. However, when a small set of validation examples are
-              available for a task, configuring a <b>task-specific subset of tools</b> can further enhance efficiency
-              and effectiveness.
-            </p>
-            <p>
-              To this end, we propose an automated algorithm to optimize the toolset configuration for each task. Given
-              $n$ available tools in the toolbox, the total number of possible subsets is $O(2^n)$, which is
-              prohibitively large. To make this tractable, we employ a greedy search strategy that reduces the
-              complexity to $O(n)$. Our approach proceeds in three stages.
-            </p>
-            <div class="container is-max-desktop">
-              <div class="content has-text-centered">
-                <img src="assets/models/algorithm.png" width="50%">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!--/ Framework -->
-
-
   <!-- Results -->
   <section class="section" id="results">
     <div class="container">
@@ -636,68 +610,59 @@
               <div class="box m-5">
                 <div class="content has-text-centered">
                   <img src="assets/results/main-table.png" width="90%">
-                  <p>Caption</p>
                 </div>
               </div>
               
               <div class="box m-5">
                 <div class="content has-text-centered">
                   <img src="assets/results/spatial-tracking-accuracy.png" width="90%">
-                  <p>Caption</p>
+                  <p>To investigate whether LLMs’ planning deficits stem from weaker spatial understanding, we designed tasks requiring each model to track positions across sequences of relative movements. This figure plots the accuracy of each model against the length of the movement trajectory. Notably, <code>o1-mini</code> and <code>GPT-4o</code> exhibit declining performance as the number of steps increases, whereas <code>o1</code> sustains <strong>perfect</strong> accuracy (100%) up to 29 steps. </p>
                 </div>
               </div>
               <div class="box m-5">
                 <div class="content has-text-centered">
                   <img src="assets/results/factual-tracking-accuracy.png" width="90%">
-                  <p>Caption</p>
+                  <p>Here, we investigate whether LLMs can reliably retrieve key facts from a planning trajectory. This figure illustrates how retrieval accuracy varies with trajectory length. Notably, <code>o1</code> performs most consistently, confirming that it “reads” multi-step expansions more accurately than either <code>GPT-4o</code> or <code>o1-mini</code></p>
                 </div>
               </div>
               <div class="box m-5">
                 <div class="content has-text-centered">
                   <img src="assets/results/diplomacy-factual-heatmap.png" width="90%">
-                  <p>Caption</p>
+                  <p>In Diplomacy, we design and categorize several factual queries into <strong>one-hop</strong> vs. <strong>multi-hop</strong> to further check models' factual retrieval in a highly strategic environment. The figure shows that nearly all LLMs do well on basic location or adjacency checks but degrade by a large margin on “Attackable” and “Attack Analysis,” which demand deeper, multi-hop inference. Again, <code>o1</code> and <code>o1-preview</code> lead, but still exhibit significant drops compared to simpler tasks.</p>
                 </div>
               </div>
               <div class="box m-5">
                 <div class="content has-text-centered">
                   <img src="assets/results/action-state-space.png" width="90%">
-                  <p>Caption</p>
                 </div>
               </div>
               <div class="box m-5">
                 <div class="content has-text-centered">
                   <img src="assets/results/game-leaderboard.png" width="90%">
-                  <p>Caption</p>
                 </div>
               </div>
               <div class="box m-5">
                 <div class="content has-text-centered">
                   <img src="assets/results/solver-win-rate.png" width="90%">
-                  <p>Caption</p>
                 </div>
+                <p>The Table shows that solvers always win or draw the game. Tic-tac-toe reveals that advanced LLMs (e.g., <code>o1</code>, <code>GPT-4-turbo</code>, <code>Claude 3.5 Sonnet</code>) can achieve draws <strong>some</strong> of the time, but typically still lose or draw to the perfect solver. In Connect Four and Chess, the gap widens: our solver and Stockfish-level engines maintain a 100% win rate across all tested LLMs.</p>
               </div>
               <div class="box m-5">
                 <div class="content has-text-centered">
                   <img src="assets/results/top-move-percentage.png" width="90%">
-                  <p>Caption</p>
-                </div>
-              </div>
-              <div class="box m-5">
-                <div class="content has-text-centered">
-                  <img src="assets/results/multi-agent-diplomacy-setting.png" width="90%">
-                  <p>Caption</p>
+                  <p>The Top Move distribution shows that while LLMs sometimes pick optimal moves in Connect Four, their accuracy drops drastically in Chess, underscoring how deeper tactics and branching expansions are beyond current LLMs’ capacity.</p>
                 </div>
               </div>
               <div class="box m-5">
                 <div class="content has-text-centered">
                   <img src="assets/results/multi-agent-diplomacy-result.png" width="90%">
-                  <p>Caption</p>
+                  <p>Diplomacy also allows variable numbers of participating powers. Detailed results of more multi-agent settings are shown here. As the agent count grows (beyond 2-3 test seats for LLMs), we observe decreasing order accuracy, fewer successful attacks, and minimal supply-center gains. Ultimately, LLMs lose traction in highly interactive scenarios, underscoring how partial observability and shifting alliances further intensify the multi-agent complexity. </p>
                 </div>
               </div>
               <div class="box m-5">
                 <div class="content has-text-centered">
                   <img src="assets/results/hanabi-human-performance.png" width="90%">
-                  <p>Caption</p>
+                  <p>We collected 54,977 human-played Hanabi games from BoardGameGeek, spanning 2- to 5-player settings. This figure plots the human score distribution, highlighting quartiles (Q1--Q4) around a typical range of 15--25 points. While some LLMs do show patterns of declining performance with more agents, none approach even the first quartile of human scores. This underscores the <strong>significant gap</strong> in cooperative planning under hidden-information constraints—despite Hanabi’s narrower branching factor relative to some competitive games. </p>
                 </div>
               </div>
             </div>
@@ -712,7 +677,8 @@
   <section class="section" id="Share">
 
   <div class="column has-text-centered">
-    <h2 class="title is-3 has-text-centered">Share <span style="color: var(--color-octo-red);">SPIN-Bench</span></h2>
+    <h2 class="title is-3 has-text-centered">Share <span style="color: var(--color-octo-red);"><b>SPIN</b></span>-<span
+      style="color: var(--color-tools-blue);"><b>Bench</b></span></h2>
     <!-- Social Media Share Buttons -->
     <div class="social-share-buttons" style="margin-top: 20px;">
       <!-- Twitter Share Button -->
@@ -744,7 +710,7 @@
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title is-3 has-text-centered">BibTeX</h2>
-      <pre><code>@misc{yao2023spinbench,
+      <pre><code>@misc{spinbench,
   title = {SPIN-Bench: A Benchmark for Scientific Paper Inference},
   author = {Jianzhu Yao and Kevin Wang and Ryan Hsieh and Haisu Zhou and Tianqing Zou and Zerui Cheng and Zhangyang Wang and Pramod Viswanath},
   year = {2025}

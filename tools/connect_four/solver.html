@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Connect Four Trajectory Viewer (vs Solver)</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="../../static/css/bulma.min.css">
+  <link rel="stylesheet" href="../../static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="../../static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="../../static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="../../static/css/index.css">
+
+  <style>
+    /* Custom styling to match Hanabi viewer */
+    body {
+      font-family: 'Noto Sans', sans-serif;
+      background-color: #f5f7fa;
+    }
+    
+    .hero {
+      background: linear-gradient(135deg, #4a66ac 0%, #667eea 100%);
+      color: white;
+      padding: 2rem 0;
+      margin-bottom: 2rem;
+    }
+    
+    .hero .title {
+      font-family: 'Google Sans', sans-serif;
+      font-weight: 700;
+    }
+    
+    .section {
+      padding: 2rem 1.5rem;
+    }
+    
+    .container {
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      background-color: white;
+      border-radius: 8px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .state {
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      border: 1px solid #eaeaea;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      background-color: white;
+      transition: all 0.3s ease;
+    }
+    
+    .state:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    .select-container {
+      margin-bottom: 1.5rem;
+    }
+    
+    .button.is-primary {
+      background-color: #4a66ac;
+      transition: background-color 0.3s ease;
+    }
+    
+    .button.is-primary:hover {
+      background-color: #3a5499;
+    }
+    
+    .navigation-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    
+    .card-header {
+      background-color: #f5f7fa;
+      border-bottom: 1px solid #eaeaea;
+    }
+    
+    .card-header-title {
+      font-size: 1.1rem;
+    }
+    
+    /* Connect Four specific styling */
+    #trajectoryImage {
+      display: block;
+      margin: 1.5rem auto;
+      max-width: 100%;
+      height: 50%;
+      width: 50%;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    .trajectory-details {
+      margin-top: 1.5rem;
+      padding: 1.5rem;
+      background-color: #f8f9fa;
+      border-radius: 8px;
+      border-left: 4px solid #4a66ac;
+    }
+    
+    .step-indicator {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    
+    .step-count {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #4a66ac;
+    }
+    
+    .footer {
+      background-color: #f5f7fa;
+      padding: 2rem;
+    }
+    
+    .action-legend {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+    
+    .action-cell {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f5f7fa;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop has-text-centered">
+        <h1 class="title is-2">
+          Connect Four Trajectory Viewer (vs Solver)
+        </h1>
+        <p class="subtitle is-5">Visualize and analyze Connect Four games from SPIN-Bench</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trajectory Selection -->
+  <section class="section" id="trajectory-selection">
+    <div class="container">
+      <h2 class="title is-4">
+        Trajectory Selection
+      </h2>
+      <div class="columns is-multiline">
+        <div class="column is-half">
+          <div class="field">
+            <label class="label">
+              LLM Player:
+            </label>
+            <div class="control">
+              <div class="select is-medium is-fullwidth">
+                <select id="model1Select">
+                  <option value="Claude-3.5-Sonnet">Claude-3.5-Sonnet</option>
+                  <option value="Qwen2.5:72b">Qwen2.5:72b</option>
+                  <option value="Llama3:70b">Llama3:70b</option>
+                  <option value="GPT-4o">GPT-4o</option>
+                  <option value="GPT-4o-mini">GPT-4o-mini</option>
+                  <option value="Llama3.3:70b">Llama3.3:70b</option>
+                  <option value="o1-preview">o1-preview</option>
+                  <option value="o1-mini">o1-mini</option>
+                  <option value="o3-mini">o3-mini</option>
+                  <option value="o1">o1</option>
+                  <option value="Claude-3.5-Haiku">Claude-3.5-Haiku</option>
+                  <option value="GPT-4-turbo">GPT-4-turbo</option>
+                  <option value="GPT-3.5-turbo">GPT-3.5-turbo</option>
+                  <option value="Llama3.2:3b">Llama3.2:3b</option>
+                  <option value="Llama3.1:70b">Llama3.1:70b</option>
+                  <option value="Deepseek-R1">Deepseek-R1</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column is-half">
+          <div class="field">
+            <label class="label">
+              First or Second Turn:
+            </label>
+            <div class="control">
+              <div class="select is-medium is-fullwidth">
+                <select id="model2Select">
+                  <option value="First">First</option>
+                  <option value="Second">Second</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column has-text-centered">
+          <button class="button is-primary is-medium" id="loadTrajectoryButton">
+            <span>Load Trajectory</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trajectory Navigation and State Display -->
+  <section class="section">
+    <div class="container">
+      <!-- Step indicator -->
+      <div class="step-indicator is-hidden" id="stepIndicator">
+        <div class="step-count">
+          Move <span id="currentStep">0</span> of <span id="totalSteps">0</span>
+        </div>
+        <div class="field has-addons">
+          <p class="control">
+            <button class="button" id="firstButton" onclick="goToFirst()">
+              First
+            </button>
+          </p>
+          <p class="control">
+            <button class="button" id="prevButton" onclick="prevState()">
+              Prev
+            </button>
+          </p>
+          <p class="control">
+            <button class="button" id="nextButton" onclick="nextState()">
+              Next
+            </button>
+          </p>
+          <p class="control">
+            <button class="button" id="lastButton" onclick="goToLast()">
+              Last
+            </button>
+          </p>
+        </div>
+      </div>
+
+      <!-- State Display -->
+      <div id="stateDisplay" class="state">
+        <div class="loading-state">
+          <p class="has-text-centered">
+            Please load a trajectory to view game states.
+          </p>
+        </div>
+      </div>
+
+      <!-- Column Legend -->
+      <div class="content">
+        <div class="notification is-light py-3">
+          <p class="has-text-weight-bold mb-2">Column Numbers:</p>
+          <div class="action-legend">
+            <div class="action-cell">0</div>
+            <div class="action-cell">1</div>
+            <div class="action-cell">2</div>
+            <div class="action-cell">3</div>
+            <div class="action-cell">4</div>
+            <div class="action-cell">5</div>
+            <div class="action-cell">6</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <strong>Connect Four Trajectory Viewer</strong> - Part of the SPIN-Bench Benchmark
+      </p>
+      <div class="tags is-centered">
+        <span class="tag is-light">AI Benchmarking</span>
+        <span class="tag is-light">Competitive Games</span>
+        <span class="tag is-light">Connect Four</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    let trajectoryData = [];
+    let currentIndex = 0;
+    let base_path = null;
+
+    // Load trajectory JSON based on selected models
+    function loadTrajectory(path) {
+      // Show loading indicator
+      document.getElementById('stateDisplay').innerHTML = `
+        <div class="loading-state">
+          <div class="has-text-centered">
+            Loading...
+            <p class="mt-3">Loading trajectory data...</p>
+          </div>
+        </div>
+      `;
+      
+      fetch(path)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then(data => {
+          trajectoryData = data;
+          currentIndex = 0;
+          
+          document.getElementById('stepIndicator').classList.remove('is-hidden');
+          document.getElementById('currentStep').textContent = currentIndex + 1;
+          document.getElementById('totalSteps').textContent = trajectoryData.length;
+          
+          if (trajectoryData.length > 0) {
+            showState(currentIndex);
+          } else {
+            document.getElementById('stateDisplay').innerHTML = `
+              <div class="notification is-warning">
+                <p class="has-text-centered">No state data found in trajectory.</p>
+              </div>
+            `;
+          }
+        })
+        .catch(error => {
+          console.error('Error loading trajectory:', error);
+          document.getElementById('stateDisplay').innerHTML = `
+            <div class="notification is-danger">
+              <p class="has-text-centered">
+                Failed to load trajectory. Please try different models.
+              </p>
+              <p class="has-text-centered is-size-7 mt-2">Error: ${error.message}</p>
+            </div>
+          `;
+        });
+    }
+
+    // Display a single state
+    function showState(index) {
+      if (index < 0 || index >= trajectoryData.length) return;
+      
+      const state = trajectoryData[index];
+      let model1 = document.getElementById('model1Select').value;
+      let model2 = document.getElementById('model2Select').value;
+      if (model2 == "First") {
+        model2 = "Solver";
+      } else {
+        model2 = document.getElementById('model1Select').value;
+        model1 = "Solver";
+      }
+
+      
+      document.getElementById('currentStep').textContent = index + 1;
+      
+      let html = `
+      <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">
+            Game State ${index + 1}/${trajectoryData.length}
+          </p>
+          <div class="card-header-icon">
+            <span class="tag is-danger is-medium">${model1}</span>
+            <span class="tag is-dark is-medium ml-2">${model2}</span>
+          </div>
+        </header>
+        <div class="card-content">
+          <!-- Board Image -->
+          <figure class="image has-text-centered">
+            <img id="trajectoryImage" src="${base_path}${state.image_path}" alt="Connect Four Board">
+          </figure>
+          
+          <!-- Player Response -->
+          <div class="box action-box mt-4">
+            <h3 class="title is-5">
+              Player Move
+            </h3>
+            <div class="columns">
+              <div class="column is-three-quarters">
+                <p class="has-text-weight-semibold mb-2">Reasoning:</p>
+                <div class="reason-block p-3 has-background-light">
+                  ${state.reason || 'No reasoning provided'}
+                </div>
+              </div>
+              <div class="column is-one-quarter">
+                <div class="notification ${state.turn === model1 ? 'is-danger' : 'is-dark'} has-text-centered">
+                  <p class="has-text-weight-semibold mb-2">Current Player:</p>
+                  <p class="is-size-5">${state.turn}</p>
+                  <hr class="my-2">
+                  <p class="has-text-weight-semibold mb-2">Selected Column:</p>
+                  <p class="is-size-4 has-text-weight-bold">${state.action}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      `;
+      
+      document.getElementById('stateDisplay').innerHTML = html;
+      
+      // Update navigation buttons
+      document.getElementById('firstButton').disabled = (index === 0);
+      document.getElementById('prevButton').disabled = (index === 0);
+      document.getElementById('nextButton').disabled = (index === trajectoryData.length - 1);
+      document.getElementById('lastButton').disabled = (index === trajectoryData.length - 1);
+    }
+
+    function prevState() {
+      if (currentIndex > 0) {
+        currentIndex--;
+        showState(currentIndex);
+      }
+    }
+
+    function nextState() {
+      if (currentIndex < trajectoryData.length - 1) {
+        currentIndex++;
+        showState(currentIndex);
+      }
+    }
+    
+    function goToFirst() {
+      currentIndex = 0;
+      showState(currentIndex);
+    }
+    
+    function goToLast() {
+      currentIndex = trajectoryData.length - 1;
+      showState(currentIndex);
+    }
+
+    document.getElementById('loadTrajectoryButton').addEventListener('click', function () {
+      const model1 = document.getElementById('model1Select').value;
+      const model2 = document.getElementById('model2Select').value;
+      let trajectoryPath = null;
+
+      
+      if (model2 == "First") {
+        trajectoryPath = `../../trajectories/llmsolver/cf/${model1}_solver/trajectory.json`;
+        base_path = `../../trajectories/llmsolver/cf/${model1}_solver/`;
+      } else {
+        trajectoryPath = `../../trajectories/llmsolver/cf/solver_${model1}/trajectory.json`;
+        base_path = `../../trajectories/llmsolver/cf/solver_${model1}/`;
+      }
+      console.log('Loading trajectory:', trajectoryPath);
+      loadTrajectory(trajectoryPath);
+    });
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', function(event) {
+      if (trajectoryData.length === 0) return;
+      
+      switch(event.key) {
+        case 'ArrowLeft':
+          prevState();
+          break;
+        case 'ArrowRight':
+          nextState();
+          break;
+        case 'Home':
+          goToFirst();
+          break;
+        case 'End':
+          goToLast();
+          break;
+      }
+    });
+  </script>
+</body>
+
+</html>
