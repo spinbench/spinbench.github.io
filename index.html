@@ -173,42 +173,7 @@
               social reasoning, and human–AI teaming.
             </p>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!--/ Introduction -->
 
-  <!-- Framework -->
-  <section class="section" id="framework">
-    <div class="container">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">The <span style="color: var(--color-octo-red);"><b>SPIN</b></span>-<span
-              style="color: var(--color-tools-blue);"><b>Bench</b></span> Framework</h2>
-          <div class="content has-text-justified">
-            <p>
-              Building on the motivations outlined in our introduction, <span style="color: var(--color-octo-red);"><b>SPIN</b></span>-<span
-              style="color: var(--color-tools-blue);"><b>Bench</b></span>'s architecture is organized around three progressively complex
-              problem settings for automated action selection: <b>Classical Planning</b> (single-agent, deterministic), 
-              <b>Multi-Agent Games</b> (cooperative or competitive), and <b>Strategic Games</b> (mixed cooperation, competition, and negotiation).
-              Each setting introduces additional layers of complexity, requiring increasingly sophisticated reasoning capabilities.
-            </p>
-            <p>
-              The framework consists of two core components: (1) the <b>Game Agent</b>, which encompasses the LLMs and their adaptive prompting,
-              and (2) the <b>Environment and Evaluation</b> subsystem, which manages game logic, tracks interactions, and quantifies performance.
-              Our flexible interface feeds models the current state description, relevant history, and legal actions, enabling standardized
-              evaluation across diverse scenarios while maintaining game-specific requirements.
-            </p>
-            <p>
-              For evaluation, we employ multiple metrics tailored to each environment type. Our <b>rule-based metrics</b> include accuracy 
-              and N-Step Look Ahead for planning tasks, move quality comparison against solvers for competitive games, and final scores 
-              for cooperative scenarios. We maintain <b>leaderboard-based comparisons</b> with internal Elo ratings to gauge relative 
-              performance across models and against human baselines. For negotiation-heavy settings, we utilize six fine-grained, 
-              <b>LLM-assisted negotiation metrics</b> that analyze message-strategy alignment, proposal acceptance, deal equity, 
-              conflict tendencies, perspective-taking, and conditional negotiation abilities.
-            </p>
-          </div>
           <h3 class="title is-4">Task Taxonomy and Environments</h3>
           <div class="content has-text-justified">
             <p>
@@ -236,7 +201,7 @@
       </div>
     </div>
   </section>
-  <!--/ Framework -->
+  <!--/ Introduction -->
 
   <!-- Game Trajectory Visualization -->
   <section class="section" id="game-trajectory">
@@ -463,6 +428,42 @@
       </div>
     </div>
   </section>
+
+  <!-- Framework -->
+  <section class="section" id="framework">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">The <span style="color: var(--color-octo-red);"><b>SPIN</b></span>-<span
+              style="color: var(--color-tools-blue);"><b>Bench</b></span> Framework</h2>
+          <div class="content has-text-justified">
+            <p>
+              Building on the motivations outlined in our introduction, <span style="color: var(--color-octo-red);"><b>SPIN</b></span>-<span
+              style="color: var(--color-tools-blue);"><b>Bench</b></span>'s architecture is organized around three progressively complex
+              problem settings for automated action selection: <b>Classical Planning</b> (single-agent, deterministic), 
+              <b>Multi-Agent Games</b> (cooperative or competitive), and <b>Strategic Games</b> (mixed cooperation, competition, and negotiation).
+              Each setting introduces additional layers of complexity, requiring increasingly sophisticated reasoning capabilities.
+            </p>
+            <p>
+              The framework consists of two core components: (1) the <b>Game Agent</b>, which encompasses the LLMs and their adaptive prompting,
+              and (2) the <b>Environment and Evaluation</b> subsystem, which manages game logic, tracks interactions, and quantifies performance.
+              Our flexible interface feeds models the current state description, relevant history, and legal actions, enabling standardized
+              evaluation across diverse scenarios while maintaining game-specific requirements.
+            </p>
+            <p>
+              For evaluation, we employ multiple metrics tailored to each environment type. Our <b>rule-based metrics</b> include accuracy 
+              and N-Step Look Ahead for planning tasks, move quality comparison against solvers for competitive games, and final scores 
+              for cooperative scenarios. We maintain <b>leaderboard-based comparisons</b> with internal Elo ratings to gauge relative 
+              performance across models and against human baselines. For negotiation-heavy settings, we utilize six fine-grained, 
+              <b>LLM-assisted negotiation metrics</b> that analyze message-strategy alignment, proposal acceptance, deal equity, 
+              conflict tendencies, perspective-taking, and conditional negotiation abilities.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ Framework -->
 
   <!-- Results -->
   <section class="section" id="results">
