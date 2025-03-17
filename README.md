@@ -33,3 +33,9 @@ After starting either server, you can access your site at:
 http://localhost:8000 (for Python server)
 http://localhost:8080 (for http-server)
 ```
+
+### Development tips
+
+After you start the local server and change something, most of time you can just refresh the page to see the changes. However, sometimes your browser may cache the old content and you need to clear the cache or do a hard refresh. 
+
+Another recommended approach: If you are using Chrome, you can use Command + Option + I (macos shortcut) to open the developer tools, select the Network tab, and check the "Disable cache" option. This will prevent the browser from caching the content.
