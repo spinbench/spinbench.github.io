@@ -6,6 +6,17 @@
   <meta name="description" content="How Well Do Large Language Models Reason Strategically and Socially?">
   <meta name="keywords" content="SPINBench, LLM Agents, Strategic Reasoning, LLMs, Social Intelligence">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KXWQ1327FT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-KXWQ1327FT');
+  </script>
+  
   <title>SPIN-Bench: How Well Do Large Language Models Reason Strategically and Socially?</title>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
@@ -482,19 +493,19 @@
               <div class="box m-5">
                 <div class="content has-text-centered">
                   <img src="assets/results/spatial-tracking-accuracy.png" width="90%">
-                  <p>To investigate whether LLMs’ planning deficits stem from weaker spatial understanding, we designed tasks requiring each model to track positions across sequences of relative movements. This figure plots the accuracy of each model against the length of the movement trajectory. Notably, <code>o1-mini</code> and <code>GPT-4o</code> exhibit declining performance as the number of steps increases, whereas <code>o1</code> sustains <strong>perfect</strong> accuracy (100%) up to 29 steps. </p>
+                  <p>To investigate whether LLMs' planning deficits stem from weaker spatial understanding, we designed tasks requiring each model to track positions across sequences of relative movements. This figure plots the accuracy of each model against the length of the movement trajectory. Notably, <code>o1-mini</code> and <code>GPT-4o</code> exhibit declining performance as the number of steps increases, whereas <code>o1</code> sustains <strong>perfect</strong> accuracy (100%) up to 29 steps. </p>
                 </div>
               </div>
               <div class="box m-5">
                 <div class="content has-text-centered">
                   <img src="assets/results/factual-tracking-accuracy.png" width="90%">
-                  <p>Here, we investigate whether LLMs can reliably retrieve key facts from a planning trajectory. This figure illustrates how retrieval accuracy varies with trajectory length. Notably, <code>o1</code> performs most consistently, confirming that it “reads” multi-step expansions more accurately than either <code>GPT-4o</code> or <code>o1-mini</code></p>
+                  <p>Here, we investigate whether LLMs can reliably retrieve key facts from a planning trajectory. This figure illustrates how retrieval accuracy varies with trajectory length. Notably, <code>o1</code> performs most consistently, confirming that it "reads" multi-step expansions more accurately than either <code>GPT-4o</code> or <code>o1-mini</code></p>
                 </div>
               </div>
               <div class="box m-5">
                 <div class="content has-text-centered">
                   <img src="assets/results/diplomacy-factual-heatmap.png" width="90%">
-                  <p>In Diplomacy, we design and categorize several factual queries into <strong>one-hop</strong> vs. <strong>multi-hop</strong> to further check models' factual retrieval in a highly strategic environment. The figure shows that nearly all LLMs do well on basic location or adjacency checks but degrade by a large margin on “Attackable” and “Attack Analysis,” which demand deeper, multi-hop inference. Again, <code>o1</code> and <code>o1-preview</code> lead, but still exhibit significant drops compared to simpler tasks.</p>
+                  <p>In Diplomacy, we design and categorize several factual queries into <strong>one-hop</strong> vs. <strong>multi-hop</strong> to further check models' factual retrieval in a highly strategic environment. The figure shows that nearly all LLMs do well on basic location or adjacency checks but degrade by a large margin on "Attackable" and "Attack Analysis," which demand deeper, multi-hop inference. Again, <code>o1</code> and <code>o1-preview</code> lead, but still exhibit significant drops compared to simpler tasks.</p>
                 </div>
               </div>
               <div class="box m-5">
@@ -516,7 +527,7 @@
               <div class="box m-5">
                 <div class="content has-text-centered">
                   <img src="assets/results/top-move-percentage.png" width="90%">
-                  <p>The Top Move distribution shows that while LLMs sometimes pick optimal moves in Connect Four, their accuracy drops drastically in Chess, underscoring how deeper tactics and branching expansions are beyond current LLMs’ capacity.</p>
+                  <p>The Top Move distribution shows that while LLMs sometimes pick optimal moves in Connect Four, their accuracy drops drastically in Chess, underscoring how deeper tactics and branching expansions are beyond current LLMs' capacity.</p>
                 </div>
               </div>
               <div class="box m-5">
@@ -528,7 +539,7 @@
               <div class="box m-5">
                 <div class="content has-text-centered">
                   <img src="assets/results/hanabi-human-performance.png" width="90%">
-                  <p>We collected 54,977 human-played Hanabi games from BoardGameGeek, spanning 2- to 5-player settings. This figure plots the human score distribution, highlighting quartiles (Q1--Q4) around a typical range of 15--25 points. While some LLMs do show patterns of declining performance with more agents, none approach even the first quartile of human scores. This underscores the <strong>significant gap</strong> in cooperative planning under hidden-information constraints—despite Hanabi’s narrower branching factor relative to some competitive games. </p>
+                  <p>We collected 54,977 human-played Hanabi games from BoardGameGeek, spanning 2- to 5-player settings. This figure plots the human score distribution, highlighting quartiles (Q1--Q4) around a typical range of 15--25 points. While some LLMs do show patterns of declining performance with more agents, none approach even the first quartile of human scores. This underscores the <strong>significant gap</strong> in cooperative planning under hidden-information constraints—despite Hanabi's narrower branching factor relative to some competitive games. </p>
                 </div>
               </div>
             </div>
@@ -599,9 +610,11 @@
               href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
               Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
+                             
           <p>
             If you found any errors or typos in the website / trajectory viewer, please contact <a href="https://ece.princeton.edu/people/jianzhu-yao" target="_blank">Jianzhu Yao</a>
-            <a href="mailto:jy0246@princeton.edu"><svg class="svg-inline--fa fa-envelope fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="envelope" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path></svg></a>.</span>
+            <a href="mailto:jy0246@princeton.edu"><svg class="svg-inline--fa fa-envelope fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="envelope" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path></svg></a> and <a href="https://www.kevin-ai.com/" target="_blank">Kevin Wang</a>
+            <a href="mailto:kevinwang.1839@utexas.edu"><svg class="svg-inline--fa fa-envelope fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="envelope" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path></svg></a>.</span>
           </p>
         </div>
       </div>
