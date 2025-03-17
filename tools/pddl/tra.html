@@ -92,8 +92,8 @@
       display: block;
       margin: 1.5rem auto;
       max-width: 100%;
-      height: 50%;
-      width: 50%;
+      height: auto;
+      width: auto;
       border-radius: 8px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
@@ -143,6 +143,16 @@
       border-radius: 4px;
       font-weight: bold;
     }
+    
+    .gif-container {
+      text-align: center;
+      margin: 2rem 0;
+    }
+    
+    .view-options {
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+    }
   </style>
 </head>
 
@@ -155,11 +165,154 @@
             PDDL Viewer
         </h1>
         <p class="subtitle is-5">Visualize and analyze PDDL from SPIN-Bench</p>
-        <p class="subtitle is-5">Waiting for Kevin...</p>
       </div>
     </div>
   </section>
 
+  <!-- Domain Selection -->
+  <section class="section" id="domain-selection">
+    <div class="container">
+      <h2 class="title is-4">
+        Domain Selection
+      </h2>
+      <div class="columns is-multiline">
+        <div class="column is-one-third">
+          <div class="field">
+            <label class="label">
+              Domain:
+            </label>
+            <div class="control">
+              <div class="select is-medium is-fullwidth">
+                <select id="domainSelect">
+                  <option value="blocksworld">Blocksworld</option>
+                  <option value="elevators">Elevators</option>
+                  <option value="satellite">Satellite</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="field">
+            <label class="label">
+              Model:
+            </label>
+            <div class="control">
+              <div class="select is-medium is-fullwidth">
+                <select id="modelSelect">
+                  <option value="o1">o1</option>
+                  <option value="Claude-3.5-Sonnet">Claude-3.5-Sonnet</option>
+                  <option value="Qwen2.5:72b">Qwen2.5:72b</option>
+                  <option value="Llama3:70b">Llama3:70b</option>
+                  <option value="GPT-4o">GPT-4o</option>
+                  <option value="GPT-4o-mini">GPT-4o-mini</option>
+                  <option value="Mistral:7b">Mistral:7b</option>
+                  <option value="Llama3.3:70b">Llama3.3:70b</option>
+                  <option value="o1-mini">o1-mini</option>
+                  <option value="Claude-3.5-Haiku">Claude-3.5-Haiku</option>
+                  <option value="GPT-4-turbo">GPT-4-turbo</option>
+                  <option value="GPT-3.5-turbo">GPT-3.5-turbo</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="field">
+            <label class="label">
+              Problem:
+            </label>
+            <div class="control">
+              <div class="select is-medium is-fullwidth">
+                <select id="problemSelect">
+                  <!-- Will be populated dynamically -->
+                  <option value="">Select a domain first</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="view-options">
+        <label class="label">View Mode:</label>
+        <div class="field has-addons">
+          <p class="control">
+            <button class="button is-primary is-selected" id="gifModeButton">
+              <span>GIF Animation</span>
+            </button>
+          </p>
+          <p class="control">
+            <button class="button" id="keyframeModeButton">
+              <span>Step-by-Step Keyframes</span>
+            </button>
+          </p>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column has-text-centered">
+          <button class="button is-primary is-medium" id="loadTrajectoryButton">
+            <span>Load Trajectory</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trajectory Display -->
+  <section class="section">
+    <div class="container">
+      <!-- GIF Display Mode -->
+      <div id="gifDisplay" class="gif-container">
+        <div class="has-text-centered">
+          <p>Please select a domain, model, and problem to view the trajectory</p>
+        </div>
+      </div>
+
+      <!-- Step indicator (for keyframe mode) -->
+      <div class="step-indicator is-hidden" id="stepIndicator">
+        <div class="step-count">
+          Step <span id="currentStep">0</span> of <span id="totalSteps">0</span>
+        </div>
+        <div class="field has-addons">
+          <p class="control">
+            <button class="button" id="firstButton" onclick="goToFirst()">
+              First
+            </button>
+          </p>
+          <p class="control">
+            <button class="button" id="prevButton" onclick="prevState()">
+              Prev
+            </button>
+          </p>
+          <p class="control">
+            <button class="button" id="nextButton" onclick="nextState()">
+              Next
+            </button>
+          </p>
+          <p class="control">
+            <button class="button" id="lastButton" onclick="goToLast()">
+              Last
+            </button>
+          </p>
+        </div>
+      </div>
+
+      <!-- Keyframe Display Mode -->
+      <div id="keyframeDisplay" class="state is-hidden">
+        <div class="has-text-centered">
+          <p>Please select a domain, model, and problem to view the trajectory</p>
+        </div>
+      </div>
+
+      <!-- Model Reasoning (outside the step card) -->
+      <div id="modelReasoning" class="box mt-4 is-hidden">
+        <h3 class="title is-5">Model Reasoning</h3>
+        <div class="content reasoning-content">
+          <pre style="white-space: pre-wrap; font-family: 'Noto Sans', sans-serif; background-color: #f8f9fa; padding: 1rem; border-radius: 0.25rem;">No reasoning available yet.</pre>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer class="footer">
@@ -170,12 +323,362 @@
       <div class="tags is-centered">
         <span class="tag is-light">AI Benchmarking</span>
         <span class="tag is-light">PDDL</span>
+        <span class="tag is-light">Planning</span>
       </div>
     </div>
   </footer>
 
   <!-- JavaScript -->
   <script>
+    // Problem options for each domain
+    const problems = {
+      blocksworld: [
+        "p04",
+      ],
+      elevators: [
+        "elevators-areas2_asize3_pass8_fast1_slow2_seed1",
+      ],
+      satellite: [
+        "p01",
+      ]
+    };
+
+    let trajectoryData = [];
+    let currentIndex = 0;
+    let viewMode = "gif"; // "gif" or "keyframe"
+    
+    // Populate problem dropdown based on selected domain
+    document.getElementById('domainSelect').addEventListener('change', function() {
+      const domain = this.value;
+      const problemSelect = document.getElementById('problemSelect');
+      
+      // Clear current options
+      problemSelect.innerHTML = '';
+      
+      // Add new options
+      if (problems[domain]) {
+        problems[domain].forEach(problem => {
+          const option = document.createElement('option');
+          option.value = problem;
+          option.textContent = problem;
+          problemSelect.appendChild(option);
+        });
+      }
+    });
+    
+    // Initialize with the first domain's problems
+    document.getElementById('domainSelect').dispatchEvent(new Event('change'));
+    
+    // Toggle view mode
+    document.getElementById('gifModeButton').addEventListener('click', function() {
+      viewMode = "gif";
+      this.classList.add('is-primary');
+      document.getElementById('keyframeModeButton').classList.remove('is-primary');
+      document.getElementById('gifDisplay').classList.remove('is-hidden');
+      document.getElementById('keyframeDisplay').classList.add('is-hidden');
+      document.getElementById('stepIndicator').classList.add('is-hidden');
+      document.getElementById('modelReasoning').classList.add('is-hidden');
+    });
+    
+    document.getElementById('keyframeModeButton').addEventListener('click', function() {
+      viewMode = "keyframe";
+      this.classList.add('is-primary');
+      document.getElementById('gifModeButton').classList.remove('is-primary');
+      document.getElementById('gifDisplay').classList.add('is-hidden');
+      document.getElementById('keyframeDisplay').classList.remove('is-hidden');
+      
+      if (trajectoryData.length > 0) {
+        document.getElementById('stepIndicator').classList.remove('is-hidden');
+        document.getElementById('modelReasoning').classList.remove('is-hidden');
+      }
+    });
+    
+    // Load trajectory
+    document.getElementById('loadTrajectoryButton').addEventListener('click', function() {
+      const domain = document.getElementById('domainSelect').value;
+      const model = document.getElementById('modelSelect').value;
+      const problem = document.getElementById('problemSelect').value;
+      
+      if (!domain || !problem) {
+        alert('Please select a domain and problem');
+        return;
+      }
+      
+      console.log(`Loading ${domain}/${model}/${problem}`);
+      
+      // GIF Mode
+      if (viewMode === "gif") {
+        // Construct exact path as specified
+        const gifPath = `../../trajectories/PDDL/${domain}/${model}/${problem}/${problem}.gif`;
+        console.log("GIF path:", gifPath);
+        
+        document.getElementById('gifDisplay').innerHTML = `
+          <div class="gif-wrapper" style="position: relative; display: inline-block;">
+            <img id="trajectoryGif" src="${gifPath}" alt="${domain} ${problem} trajectory" style="max-width: 100%; height: auto;">
+          </div>
+          <p class="mt-3">Model: ${model}</p>
+          <button id="restartGifButton" class="button is-primary mt-3">Restart Animation</button>
+        `;
+        
+        // Add error handling for GIF loading
+        const gifImg = document.getElementById('trajectoryGif');
+        gifImg.onerror = function() {
+          console.error(`Failed to load GIF at path: ${gifPath}`);
+          document.getElementById('gifDisplay').innerHTML = `
+            <div class="notification is-warning">
+              <p class="has-text-centered">Error loading GIF animation. Path: ${gifPath}</p>
+              <p class="has-text-centered mt-2">Please verify that the file exists and is accessible.</p>
+            </div>
+          `;
+        };
+        
+        // Store the original gifPath for reuse
+        document.getElementById('restartGifButton').setAttribute('data-gif-path', gifPath);
+        
+        // Set up the restart button
+        document.getElementById('restartGifButton').addEventListener('click', function() {
+          restartGif(this.getAttribute('data-gif-path'));
+        });
+        
+        // Function to restart the GIF
+        function restartGif(originalPath) {
+          const gif = document.getElementById('trajectoryGif');
+          if (!gif) return;
+          
+          // Create a new timestamp for cache busting
+          const timestamp = new Date().getTime();
+          // Apply the timestamp as a query parameter
+          const newSrc = originalPath + "?t=" + timestamp;
+          
+          // Replace the image source directly
+          gif.src = newSrc;
+        }
+      } 
+      // Keyframe Mode
+      else {
+        loadKeyframes(domain, model, problem);
+      }
+    });
+    
+    // Load keyframes for step-by-step viewing
+    function loadKeyframes(domain, model, problem) {
+      document.getElementById('keyframeDisplay').innerHTML = `
+        <div class="has-text-centered">
+          <p>Loading keyframes...</p>
+        </div>
+      `;
+      
+      // Hide reasoning until loaded
+      document.getElementById('modelReasoning').classList.add('is-hidden');
+      
+      // Path to keyframes - exactly as specified
+      const basePath = `../../trajectories/PDDL/${domain}/${model}/${problem}/keyframes/`;
+      console.log("Keyframes path:", basePath);
+      
+      // Path to the reasoning text file
+      const reasoningPath = `../../trajectories/PDDL/${domain}/${model}/${problem}/${problem}_reasoning.txt`;
+      console.log("Reasoning path:", reasoningPath);
+      
+      // Load the reasoning text file
+      fetch(reasoningPath)
+        .then(response => {
+          if (!response.ok) {
+            console.warn(`Reasoning file not found at: ${reasoningPath}`);
+            return Promise.resolve("No reasoning file available for this trajectory.");
+          }
+          return response.text();
+        })
+        .then(reasoningText => {
+          // Store the reasoning text for later use
+          window.reasoningContent = reasoningText;
+          
+          // Now continue with finding frames
+          findTotalFrames(basePath, 0, function(totalFrames) {
+            if (totalFrames === 0) {
+              document.getElementById('keyframeDisplay').innerHTML = `
+                <div class="notification is-warning">
+                  <p class="has-text-centered">No keyframe data found for this trajectory.</p>
+                  <p class="has-text-centered">Path searched: ${basePath}keyframe_XXX.png</p>
+                </div>
+              `;
+              return;
+            }
+            
+            // Now populate trajectory data with all frames
+            trajectoryData = [];
+            for (let i = 0; i < totalFrames; i++) {
+              const frameNumber = String(i).padStart(3, '0');
+              trajectoryData.push({
+                image_path: `${basePath}keyframe_${frameNumber}.png?v=${new Date().getTime()}`, // Add timestamp to prevent caching
+                action: `Action ${i+1}`,
+                description: `Description for action ${i+1} in ${problem}`
+              });
+            }
+            
+            currentIndex = 0;
+            
+            document.getElementById('stepIndicator').classList.remove('is-hidden');
+            document.getElementById('modelReasoning').classList.remove('is-hidden');
+            document.getElementById('currentStep').textContent = currentIndex + 1;
+            document.getElementById('totalSteps').textContent = trajectoryData.length;
+            
+            if (trajectoryData.length > 0) {
+              showState(currentIndex);
+            }
+          });
+        })
+        .catch(error => {
+          console.error("Error loading reasoning file:", error);
+          window.reasoningContent = "Error loading reasoning content.";
+          
+          // Continue with loading frames even if reasoning fails
+          findTotalFrames(basePath, 0, function(totalFrames) {
+            if (totalFrames === 0) {
+              document.getElementById('keyframeDisplay').innerHTML = `
+                <div class="notification is-warning">
+                  <p class="has-text-centered">No keyframe data found for this trajectory.</p>
+                  <p class="has-text-centered">Path searched: ${basePath}keyframe_XXX.png</p>
+                </div>
+              `;
+              return;
+            }
+            
+            // Now populate trajectory data with all frames
+            trajectoryData = [];
+            for (let i = 0; i < totalFrames; i++) {
+              const frameNumber = String(i).padStart(3, '0');
+              trajectoryData.push({
+                image_path: `${basePath}keyframe_${frameNumber}.png?v=${new Date().getTime()}`,
+                action: `Action ${i+1}`,
+                description: `Description for action ${i+1} in ${problem}`
+              });
+            }
+            
+            currentIndex = 0;
+            
+            document.getElementById('stepIndicator').classList.remove('is-hidden');
+            document.getElementById('modelReasoning').classList.remove('is-hidden');
+            document.getElementById('currentStep').textContent = currentIndex + 1;
+            document.getElementById('totalSteps').textContent = trajectoryData.length;
+            
+            if (trajectoryData.length > 0) {
+              showState(currentIndex);
+            }
+          });
+        });
+    }
+    
+    // Function to find the total number of frames by checking for image existence
+    function findTotalFrames(basePath, startIndex, callback) {
+      let count = 0;
+      let checkNextFrame = function(index) {
+        const frameNumber = String(index).padStart(3, '0');
+        const img = new Image();
+        
+        // Add timestamp to prevent caching
+        img.src = `${basePath}keyframe_${frameNumber}.png?v=${new Date().getTime()}`;
+        
+        img.onload = function() {
+          count = index + 1;
+          checkNextFrame(index + 1);
+        };
+        
+        img.onerror = function() {
+          callback(count);
+        };
+      };
+      
+      checkNextFrame(startIndex);
+    }
+    
+    // Display a single state
+    function showState(index) {
+      if (index < 0 || index >= trajectoryData.length) return;
+      
+      const state = trajectoryData[index];
+      document.getElementById('currentStep').textContent = index + 1;
+      
+      // For demo purposes, we'll use the GIF as a fallback if frame images aren't available
+      const domain = document.getElementById('domainSelect').value;
+      const model = document.getElementById('modelSelect').value;
+      const problem = document.getElementById('problemSelect').value;
+      const fallbackImage = `../../trajectories/PDDL/${domain}/${model}/${problem}/${problem}.gif?v=${new Date().getTime()}`;
+      
+      let html = `
+      <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">
+            Step ${index + 1}/${trajectoryData.length}
+          </p>
+          <div class="card-header-icon">
+            <span class="tag is-info is-medium">${document.getElementById('modelSelect').value}</span>
+          </div>
+        </header>
+        <div class="card-content">
+          <!-- Frame Image -->
+          <figure class="image has-text-centered">
+            <img id="trajectoryImage" src="${state.image_path}" alt="PDDL State" onerror="this.src='${fallbackImage}'; this.onerror=null;">
+          </figure>
+        </div>
+      </div>
+      `;
+      
+      document.getElementById('keyframeDisplay').innerHTML = html;
+      
+      // Update the reasoning display (outside the card)
+      document.getElementById('modelReasoning').classList.remove('is-hidden');
+      document.getElementById('modelReasoning').querySelector('pre').textContent = window.reasoningContent || "No reasoning available.";
+      
+      // Update navigation buttons
+      document.getElementById('firstButton').disabled = (index === 0);
+      document.getElementById('prevButton').disabled = (index === 0);
+      document.getElementById('nextButton').disabled = (index === trajectoryData.length - 1);
+      document.getElementById('lastButton').disabled = (index === trajectoryData.length - 1);
+    }
+    
+    function prevState() {
+      if (currentIndex > 0) {
+        currentIndex--;
+        showState(currentIndex);
+      }
+    }
+    
+    function nextState() {
+      if (currentIndex < trajectoryData.length - 1) {
+        currentIndex++;
+        showState(currentIndex);
+      }
+    }
+    
+    function goToFirst() {
+      currentIndex = 0;
+      showState(currentIndex);
+    }
+    
+    function goToLast() {
+      currentIndex = trajectoryData.length - 1;
+      showState(currentIndex);
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', function(event) {
+      if (viewMode !== 'keyframe' || trajectoryData.length === 0) return;
+      
+      switch(event.key) {
+        case 'ArrowLeft':
+          prevState();
+          break;
+        case 'ArrowRight':
+          nextState();
+          break;
+        case 'Home':
+          goToFirst();
+          break;
+        case 'End':
+          goToLast();
+          break;
+      }
+    });
   </script>
 </body>
 
