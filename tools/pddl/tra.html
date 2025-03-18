@@ -160,11 +160,23 @@
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-body">
-      <div class="container is-max-desktop has-text-centered">
-        <h1 class="title is-2">
-            PDDL Viewer
-        </h1>
-        <p class="subtitle is-5">Visualize and analyze PDDL from SPIN-Bench</p>
+      <div class="container is-max-desktop">
+        <!-- Back to Home link -->
+        <div class="is-flex is-justify-content-space-between mb-4">
+          <a href="/index.html" class="button is-medium has-background-white has-text-grey has-shadow">
+            <span class="icon is-small">
+              <i class="fas fa-home"></i>
+            </span>
+            <span>Back to Home</span>
+          </a>
+        </div>
+        
+        <div class="has-text-centered">
+          <h1 class="title is-2">
+              PDDL Viewer
+          </h1>
+          <p class="subtitle is-5">Visualize and analyze PDDL from SPIN-Bench</p>
+        </div>
       </div>
     </div>
   </section>
@@ -243,6 +255,11 @@
               <span>Step-by-Step Keyframes</span>
             </button>
           </p>
+          <p class="control">
+            <button class="button" id="interactiveModeButton">
+              <span>Try It Yourself</span>
+            </button>
+          </p>
         </div>
       </div>
       <div class="columns">
@@ -301,6 +318,13 @@
         </div>
       </div>
 
+      <!-- Interactive Display -->
+      <div id="interactiveDisplay" class="is-hidden">
+        <div class="has-text-centered">
+          <p>Loading interactive mode...</p>
+        </div>
+      </div>
+
       <!-- Model Reasoning (outside the step card) -->
       <div id="modelReasoning" class="box mt-4 is-hidden">
         <h3 class="title is-5">Model Reasoning</h3>
@@ -338,7 +362,11 @@
     // Problem options for each domain
     const problems = {
       blocksworld: [
+        "p01",
+        "p02",
+        "p03",
         "p04",
+        "p05"
       ],
       elevators: [
         "elevators-areas2_asize3_pass8_fast1_slow2_seed1",
@@ -350,7 +378,7 @@
 
     let trajectoryData = [];
     let currentIndex = 0;
-    let viewMode = "gif"; // "gif" or "keyframe"
+    let viewMode = "gif"; // "gif" or "keyframe" or "interactive"
     
     // Populate problem dropdown based on selected domain
     document.getElementById('domainSelect').addEventListener('change', function() {
@@ -368,6 +396,11 @@
           option.textContent = problem;
           problemSelect.appendChild(option);
         });
+        
+        // Set p05 as default for blocksworld
+        if (domain === 'blocksworld') {
+          problemSelect.value = 'p05';
+        }
       }
     });
     
@@ -379,8 +412,10 @@
       viewMode = "gif";
       this.classList.add('is-primary');
       document.getElementById('keyframeModeButton').classList.remove('is-primary');
+      document.getElementById('interactiveModeButton').classList.remove('is-primary');
       document.getElementById('gifDisplay').classList.remove('is-hidden');
       document.getElementById('keyframeDisplay').classList.add('is-hidden');
+      document.getElementById('interactiveDisplay').classList.add('is-hidden');
       document.getElementById('stepIndicator').classList.add('is-hidden');
       document.getElementById('modelReasoning').classList.add('is-hidden');
     });
@@ -389,13 +424,29 @@
       viewMode = "keyframe";
       this.classList.add('is-primary');
       document.getElementById('gifModeButton').classList.remove('is-primary');
+      document.getElementById('interactiveModeButton').classList.remove('is-primary');
       document.getElementById('gifDisplay').classList.add('is-hidden');
       document.getElementById('keyframeDisplay').classList.remove('is-hidden');
+      document.getElementById('interactiveDisplay').classList.add('is-hidden');
       
       if (trajectoryData.length > 0) {
         document.getElementById('stepIndicator').classList.remove('is-hidden');
         document.getElementById('modelReasoning').classList.remove('is-hidden');
       }
+    });
+    
+    document.getElementById('interactiveModeButton').addEventListener('click', function() {
+      viewMode = "interactive";
+      this.classList.add('is-primary');
+      document.getElementById('gifModeButton').classList.remove('is-primary');
+      document.getElementById('keyframeModeButton').classList.remove('is-primary');
+      document.getElementById('gifDisplay').classList.add('is-hidden');
+      document.getElementById('keyframeDisplay').classList.add('is-hidden');
+      document.getElementById('interactiveDisplay').classList.remove('is-hidden');
+      
+      // Hide step indicators and navigation in interactive mode
+      document.getElementById('stepIndicator').classList.add('is-hidden');
+      document.getElementById('modelReasoning').classList.add('is-hidden');
     });
     
     // Load trajectory
@@ -462,6 +513,93 @@
           gif.src = newSrc;
         }
       } 
+      // Interactive mode
+      else if (viewMode === "interactive") {
+        // For Blocksworld domain, set up the interactive game
+        if (domain === "blocksworld") {
+          // Create interactive UI structure
+          document.getElementById('interactiveDisplay').innerHTML = `
+            <div class="has-text-centered mb-4">
+              <p class="subtitle">Loading interactive Blocksworld game...</p>
+              <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
+          `;
+          
+          // Include the interactive game script if not already loaded
+          if (!document.getElementById('blocksworldScript')) {
+            const script = document.createElement('script');
+            script.id = 'blocksworldScript';
+            script.src = 'blocksworld-interactive.js';
+            script.onload = function() {
+              // Once script is loaded, set up the game
+              setupBlocksworldGame(domain, model, problem);
+            };
+            document.body.appendChild(script);
+          } else {
+            // Script already loaded, just set up the game
+            setupBlocksworldGame(domain, model, problem);
+          }
+        } else {
+          document.getElementById('interactiveDisplay').innerHTML = `
+            <div class="notification is-warning mt-3">
+              <p class="has-text-centered">Interactive mode is currently only available for the Blocksworld domain.</p>
+            </div>
+          `;
+        }
+        
+        // Show domain rules but explicitly hide step indicators and navigation in interactive mode
+        document.getElementById('domainRules').classList.remove('is-hidden');
+        document.getElementById('modelReasoning').classList.add('is-hidden');
+        document.getElementById('stepIndicator').classList.add('is-hidden');
+        
+        // First, increase font size for main rules and reasoning sections
+        document.getElementById('modelReasoning').querySelector('pre').style.fontSize = '1.1rem';
+        document.getElementById('domainRules').querySelector('pre').style.fontSize = '1.1rem';
+
+        // Add styling for interactive game (with improvements)
+        const styleEl = document.createElement('style');
+        styleEl.textContent = `
+          .game-container {
+            margin-top: 1rem;
+          }
+          #gameCanvas {
+            background-color: #f8f9fa;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+          }
+          .game-controls {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+          }
+          
+          /* Larger button styling */
+          #pickupButton, #putdownButton, #stackButton, #unstackButton, #resetGameButton {
+            font-size: 1.2rem !important;
+            padding: 0.5rem 1rem !important; 
+            font-weight: 500 !important;
+          }
+          
+          /* Highlight phrases in the game message */
+          .highlight-table {
+            font-weight: bold;
+            color: #3273dc;
+          }
+          
+          .highlight-block {
+            font-weight: bold;
+            color: #ff3860;
+          }
+          
+          /* Increase size of rules and reasoning text */
+          #modelReasoning pre, #domainRules pre {
+            font-size: 1.1rem;
+            line-height: 1.5;
+          }
+        `;
+        document.head.appendChild(styleEl);
+      }
       // Keyframe Mode
       else {
         loadKeyframes(domain, model, problem);
@@ -571,8 +709,8 @@
             document.getElementById('stepIndicator').classList.remove('is-hidden');
             document.getElementById('modelReasoning').classList.remove('is-hidden');
             document.getElementById('domainRules').classList.remove('is-hidden');
-            document.getElementById('currentStep').textContent = currentIndex + 1;
-            document.getElementById('totalSteps').textContent = trajectoryData.length;
+            document.getElementById('currentStep').textContent = currentIndex;
+            document.getElementById('totalSteps').textContent = trajectoryData.length - 1;
             
             if (trajectoryData.length > 0) {
               showState(currentIndex);
@@ -611,8 +749,8 @@
             document.getElementById('stepIndicator').classList.remove('is-hidden');
             document.getElementById('modelReasoning').classList.remove('is-hidden');
             document.getElementById('domainRules').classList.remove('is-hidden');
-            document.getElementById('currentStep').textContent = currentIndex + 1;
-            document.getElementById('totalSteps').textContent = trajectoryData.length;
+            document.getElementById('currentStep').textContent = currentIndex;
+            document.getElementById('totalSteps').textContent = trajectoryData.length - 1;
             
             if (trajectoryData.length > 0) {
               showState(currentIndex);
@@ -649,7 +787,7 @@
       if (index < 0 || index >= trajectoryData.length) return;
       
       const state = trajectoryData[index];
-      document.getElementById('currentStep').textContent = index + 1;
+      document.getElementById('currentStep').textContent = index;
       
       // For demo purposes, we'll use the GIF as a fallback if frame images aren't available
       const domain = document.getElementById('domainSelect').value;
@@ -661,7 +799,7 @@
       <div class="card">
         <header class="card-header">
           <p class="card-header-title">
-            Step ${index + 1}/${trajectoryData.length}
+            Step ${index}/${trajectoryData.length - 1}
           </p>
           <div class="card-header-icon">
             <span class="tag is-info is-medium">${document.getElementById('modelSelect').value}</span>

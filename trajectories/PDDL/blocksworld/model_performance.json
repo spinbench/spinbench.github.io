@@ -1,0 +1,611 @@
+{
+  "results_by_task": {
+    "p03": [
+      {
+        "model": "DeepSeek-R1",
+        "task": "p03",
+        "status": "goal_complete",
+        "steps": 8,
+        "rank": 1
+      },
+      {
+        "model": "claude-3-5-haiku-20241022",
+        "task": "p03",
+        "status": "error",
+        "error_message": "list.remove(x): x not in list",
+        "steps": 0,
+        "rank": 5
+      },
+      {
+        "model": "claude-3-5-sonnet-20241022",
+        "task": "p03",
+        "status": "goal_complete",
+        "steps": 10,
+        "rank": 3
+      },
+      {
+        "model": "gpt-4-turbo",
+        "task": "p03",
+        "status": "goal_not_complete",
+        "steps": 8,
+        "rank": 5
+      },
+      {
+        "model": "gpt-4o",
+        "task": "p03",
+        "status": "error",
+        "error_message": "list.remove(x): x not in list",
+        "steps": 0,
+        "rank": 5
+      },
+      {
+        "model": "o1",
+        "task": "p03",
+        "status": "goal_complete",
+        "steps": 8,
+        "rank": 2
+      },
+      {
+        "model": "o1-mini",
+        "task": "p03",
+        "status": "error",
+        "error_message": "list.remove(x): x not in list",
+        "steps": 0,
+        "rank": 5
+      },
+      {
+        "model": "o3-mini",
+        "task": "p03",
+        "status": "goal_complete",
+        "steps": 10,
+        "rank": 4
+      }
+    ],
+    "p02": [
+      {
+        "model": "DeepSeek-R1",
+        "task": "p02",
+        "status": "goal_complete",
+        "steps": 22,
+        "rank": 4
+      },
+      {
+        "model": "claude-3-5-haiku-20241022",
+        "task": "p02",
+        "status": "error",
+        "error_message": "list.remove(x): x not in list",
+        "steps": 0,
+        "rank": 5
+      },
+      {
+        "model": "claude-3-5-sonnet-20241022",
+        "task": "p02",
+        "status": "error",
+        "error_message": "list.remove(x): x not in list",
+        "steps": 0,
+        "rank": 5
+      },
+      {
+        "model": "gpt-4-turbo",
+        "task": "p02",
+        "status": "error",
+        "steps": 0,
+        "rank": 5
+      },
+      {
+        "model": "gpt-4o",
+        "task": "p02",
+        "status": "error",
+        "error_message": "list.remove(x): x not in list",
+        "steps": 0,
+        "rank": 5
+      },
+      {
+        "model": "o1",
+        "task": "p02",
+        "status": "goal_complete",
+        "steps": 18,
+        "rank": 2
+      },
+      {
+        "model": "o1-mini",
+        "task": "p02",
+        "status": "error",
+        "error_message": "list.remove(x): x not in list",
+        "steps": 0,
+        "rank": 5
+      },
+      {
+        "model": "o3-mini",
+        "task": "p02",
+        "status": "goal_complete",
+        "steps": 18,
+        "rank": 3
+      }
+    ],
+    "p01": [
+      {
+        "model": "DeepSeek-R1",
+        "task": "p01",
+        "status": "error",
+        "error_message": "list.remove(x): x not in list",
+        "steps": 0,
+        "rank": 4
+      },
+      {
+        "model": "claude-3-5-haiku-20241022",
+        "task": "p01",
+        "status": "error",
+        "error_message": "list.remove(x): x not in list",
+        "steps": 0,
+        "rank": 4
+      },
+      {
+        "model": "claude-3-5-sonnet-20241022",
+        "task": "p01",
+        "status": "goal_complete",
+        "steps": 22,
+        "rank": 1
+      },
+      {
+        "model": "gpt-4-turbo",
+        "task": "p01",
+        "status": "goal_not_complete",
+        "steps": 8,
+        "rank": 4
+      },
+      {
+        "model": "gpt-4o",
+        "task": "p01",
+        "status": "error",
+        "error_message": "list.remove(x): x not in list",
+        "steps": 0,
+        "rank": 4
+      },
+      {
+        "model": "o1",
+        "task": "p01",
+        "status": "goal_complete",
+        "steps": 32,
+        "rank": 2
+      },
+      {
+        "model": "o1-mini",
+        "task": "p01",
+        "status": "error",
+        "error_message": "list.remove(x): x not in list",
+        "steps": 0,
+        "rank": 4
+      },
+      {
+        "model": "o3-mini",
+        "task": "p01",
+        "status": "goal_complete",
+        "steps": 32,
+        "rank": 3
+      }
+    ],
+    "p04": [
+      {
+        "model": "DeepSeek-R1",
+        "task": "p04",
+        "status": "goal_complete",
+        "steps": 20,
+        "rank": 1
+      },
+      {
+        "model": "claude-3-5-haiku-20241022",
+        "task": "p04",
+        "status": "error",
+        "error_message": "list.remove(x): x not in list",
+        "steps": 0,
+        "rank": 5
+      },
+      {
+        "model": "claude-3-5-sonnet-20241022",
+        "task": "p04",
+        "status": "goal_complete",
+        "steps": 22,
+        "rank": 2
+      },
+      {
+        "model": "gpt-4-turbo",
+        "task": "p04",
+        "status": "error",
+        "error_message": "list.remove(x): x not in list",
+        "steps": 0,
+        "rank": 5
+      },
+      {
+        "model": "gpt-4o",
+        "task": "p04",
+        "status": "error",
+        "error_message": "list.remove(x): x not in list",
+        "steps": 0,
+        "rank": 5
+      },
+      {
+        "model": "o1",
+        "task": "p04",
+        "status": "goal_complete",
+        "steps": 22,
+        "rank": 3
+      },
+      {
+        "model": "o1-mini",
+        "task": "p04",
+        "status": "error",
+        "error_message": "list.remove(x): x not in list",
+        "steps": 0,
+        "rank": 5
+      },
+      {
+        "model": "o3-mini",
+        "task": "p04",
+        "status": "goal_complete",
+        "steps": 28,
+        "rank": 4
+      }
+    ],
+    "p05": [
+      {
+        "model": "DeepSeek-R1",
+        "task": "p05",
+        "status": "goal_complete",
+        "steps": 20,
+        "rank": 2
+      },
+      {
+        "model": "claude-3-5-haiku-20241022",
+        "task": "p05",
+        "status": "error",
+        "error_message": "list.remove(x): x not in list",
+        "steps": 0,
+        "rank": 5
+      },
+      {
+        "model": "claude-3-5-sonnet-20241022",
+        "task": "p05",
+        "status": "goal_complete",
+        "steps": 18,
+        "rank": 1
+      },
+      {
+        "model": "gpt-4-turbo",
+        "task": "p05",
+        "status": "error",
+        "error_message": "list.remove(x): x not in list",
+        "steps": 0,
+        "rank": 5
+      },
+      {
+        "model": "gpt-4o",
+        "task": "p05",
+        "status": "error",
+        "error_message": "list.remove(x): x not in list",
+        "steps": 0,
+        "rank": 5
+      },
+      {
+        "model": "o1",
+        "task": "p05",
+        "status": "goal_complete",
+        "steps": 20,
+        "rank": 3
+      },
+      {
+        "model": "o1-mini",
+        "task": "p05",
+        "status": "goal_not_complete",
+        "steps": 16,
+        "rank": 5
+      },
+      {
+        "model": "o3-mini",
+        "task": "p05",
+        "status": "goal_complete",
+        "steps": 20,
+        "rank": 4
+      }
+    ]
+  },
+  "all_results": [
+    {
+      "model": "DeepSeek-R1",
+      "task": "p03",
+      "status": "goal_complete",
+      "steps": 8,
+      "rank": 1
+    },
+    {
+      "model": "claude-3-5-haiku-20241022",
+      "task": "p03",
+      "status": "error",
+      "error_message": "list.remove(x): x not in list",
+      "steps": 0,
+      "rank": 5
+    },
+    {
+      "model": "claude-3-5-sonnet-20241022",
+      "task": "p03",
+      "status": "goal_complete",
+      "steps": 10,
+      "rank": 3
+    },
+    {
+      "model": "gpt-4-turbo",
+      "task": "p03",
+      "status": "goal_not_complete",
+      "steps": 8,
+      "rank": 5
+    },
+    {
+      "model": "gpt-4o",
+      "task": "p03",
+      "status": "error",
+      "error_message": "list.remove(x): x not in list",
+      "steps": 0,
+      "rank": 5
+    },
+    {
+      "model": "o1",
+      "task": "p03",
+      "status": "goal_complete",
+      "steps": 8,
+      "rank": 2
+    },
+    {
+      "model": "o1-mini",
+      "task": "p03",
+      "status": "error",
+      "error_message": "list.remove(x): x not in list",
+      "steps": 0,
+      "rank": 5
+    },
+    {
+      "model": "o3-mini",
+      "task": "p03",
+      "status": "goal_complete",
+      "steps": 10,
+      "rank": 4
+    },
+    {
+      "model": "DeepSeek-R1",
+      "task": "p02",
+      "status": "goal_complete",
+      "steps": 22,
+      "rank": 4
+    },
+    {
+      "model": "claude-3-5-haiku-20241022",
+      "task": "p02",
+      "status": "error",
+      "error_message": "list.remove(x): x not in list",
+      "steps": 0,
+      "rank": 5
+    },
+    {
+      "model": "claude-3-5-sonnet-20241022",
+      "task": "p02",
+      "status": "error",
+      "error_message": "list.remove(x): x not in list",
+      "steps": 0,
+      "rank": 5
+    },
+    {
+      "model": "gpt-4-turbo",
+      "task": "p02",
+      "status": "goal_complete",
+      "steps": 16,
+      "rank": 1
+    },
+    {
+      "model": "gpt-4o",
+      "task": "p02",
+      "status": "error",
+      "error_message": "list.remove(x): x not in list",
+      "steps": 0,
+      "rank": 5
+    },
+    {
+      "model": "o1",
+      "task": "p02",
+      "status": "goal_complete",
+      "steps": 18,
+      "rank": 2
+    },
+    {
+      "model": "o1-mini",
+      "task": "p02",
+      "status": "error",
+      "error_message": "list.remove(x): x not in list",
+      "steps": 0,
+      "rank": 5
+    },
+    {
+      "model": "o3-mini",
+      "task": "p02",
+      "status": "goal_complete",
+      "steps": 18,
+      "rank": 3
+    },
+    {
+      "model": "DeepSeek-R1",
+      "task": "p01",
+      "status": "error",
+      "error_message": "list.remove(x): x not in list",
+      "steps": 0,
+      "rank": 4
+    },
+    {
+      "model": "claude-3-5-haiku-20241022",
+      "task": "p01",
+      "status": "error",
+      "error_message": "list.remove(x): x not in list",
+      "steps": 0,
+      "rank": 4
+    },
+    {
+      "model": "claude-3-5-sonnet-20241022",
+      "task": "p01",
+      "status": "goal_complete",
+      "steps": 22,
+      "rank": 1
+    },
+    {
+      "model": "gpt-4-turbo",
+      "task": "p01",
+      "status": "goal_not_complete",
+      "steps": 8,
+      "rank": 4
+    },
+    {
+      "model": "gpt-4o",
+      "task": "p01",
+      "status": "error",
+      "error_message": "list.remove(x): x not in list",
+      "steps": 0,
+      "rank": 4
+    },
+    {
+      "model": "o1",
+      "task": "p01",
+      "status": "goal_complete",
+      "steps": 32,
+      "rank": 2
+    },
+    {
+      "model": "o1-mini",
+      "task": "p01",
+      "status": "error",
+      "error_message": "list.remove(x): x not in list",
+      "steps": 0,
+      "rank": 4
+    },
+    {
+      "model": "o3-mini",
+      "task": "p01",
+      "status": "goal_complete",
+      "steps": 32,
+      "rank": 3
+    },
+    {
+      "model": "DeepSeek-R1",
+      "task": "p04",
+      "status": "goal_complete",
+      "steps": 20,
+      "rank": 1
+    },
+    {
+      "model": "claude-3-5-haiku-20241022",
+      "task": "p04",
+      "status": "error",
+      "error_message": "list.remove(x): x not in list",
+      "steps": 0,
+      "rank": 5
+    },
+    {
+      "model": "claude-3-5-sonnet-20241022",
+      "task": "p04",
+      "status": "goal_complete",
+      "steps": 22,
+      "rank": 2
+    },
+    {
+      "model": "gpt-4-turbo",
+      "task": "p04",
+      "status": "error",
+      "error_message": "list.remove(x): x not in list",
+      "steps": 0,
+      "rank": 5
+    },
+    {
+      "model": "gpt-4o",
+      "task": "p04",
+      "status": "error",
+      "error_message": "list.remove(x): x not in list",
+      "steps": 0,
+      "rank": 5
+    },
+    {
+      "model": "o1",
+      "task": "p04",
+      "status": "goal_complete",
+      "steps": 22,
+      "rank": 3
+    },
+    {
+      "model": "o1-mini",
+      "task": "p04",
+      "status": "error",
+      "error_message": "list.remove(x): x not in list",
+      "steps": 0,
+      "rank": 5
+    },
+    {
+      "model": "o3-mini",
+      "task": "p04",
+      "status": "goal_complete",
+      "steps": 28,
+      "rank": 4
+    },
+    {
+      "model": "DeepSeek-R1",
+      "task": "p05",
+      "status": "goal_complete",
+      "steps": 20,
+      "rank": 3
+    },
+    {
+      "model": "claude-3-5-haiku-20241022",
+      "task": "p05",
+      "status": "goal_complete",
+      "steps": 10,
+      "rank": 1
+    },
+    {
+      "model": "claude-3-5-sonnet-20241022",
+      "task": "p05",
+      "status": "goal_complete",
+      "steps": 18,
+      "rank": 2
+    },
+    {
+      "model": "gpt-4-turbo",
+      "task": "p05",
+      "status": "error",
+      "error_message": "list.remove(x): x not in list",
+      "steps": 0,
+      "rank": 6
+    },
+    {
+      "model": "gpt-4o",
+      "task": "p05",
+      "status": "error",
+      "error_message": "list.remove(x): x not in list",
+      "steps": 0,
+      "rank": 6
+    },
+    {
+      "model": "o1",
+      "task": "p05",
+      "status": "goal_complete",
+      "steps": 20,
+      "rank": 4
+    },
+    {
+      "model": "o1-mini",
+      "task": "p05",
+      "status": "goal_not_complete",
+      "steps": 16,
+      "rank": 6
+    },
+    {
+      "model": "o3-mini",
+      "task": "p05",
+      "status": "goal_complete",
+      "steps": 20,
+      "rank": 5
+    }
+  ]
+}
