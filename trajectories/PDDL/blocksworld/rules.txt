@@ -1,0 +1,64 @@
+BLOCKSWORLD DOMAIN EXPLANATION
+============================
+
+TLDR; Blocksworld is a planning domain where a robot arm must rearrange blocks by picking them up (only when they're clear on top) and stacking them to achieve a goal configuration. The challenge comes from figuring out the right sequence of moves, as you can only interact with blocks that have nothing on top of them, and the arm can only hold one block at a time.
+
+BASIC PREDICATES (States):
+--------------------------
+- clear(X):     Block X has nothing on top of it
+- on-table(X):  Block X is directly on the table
+- on(X,Y):      Block X is directly on top of block Y
+- holding(X):   The robot arm is holding block X
+- arm-empty:    The robot arm isn't holding any block
+
+AVAILABLE ACTIONS:
+-----------------
+
+1. PICKUP(block)
+   Description: Pick up a block from the table
+   Preconditions:
+   • The block must be clear (nothing on top)
+   • The block must be on the table
+   • The robot arm must be empty
+   Effects:
+   • The robot arm is now holding the block
+   • The block is no longer clear or on the table
+   • The arm is no longer empty
+
+2. PUTDOWN(block)
+   Description: Place a block on the table
+   Preconditions:
+   • The robot arm must be holding the block
+   Effects:
+   • The block is now clear and on the table
+   • The robot arm is now empty
+   • The arm is no longer holding the block
+
+3. STACK(block1, block2)
+   Description: Place block1 on top of block2
+   Preconditions:
+   • The robot arm must be holding block1
+   • Block2 must be clear (nothing on top)
+   Effects:
+   • Block1 is now clear and on top of block2
+   • Block2 is no longer clear
+   • The robot arm is now empty
+   • The arm is no longer holding block1
+
+4. UNSTACK(block1, block2)
+   Description: Remove block1 from on top of block2
+   Preconditions:
+   • Block1 must be on top of block2
+   • Block1 must be clear (nothing on top)
+   • The robot arm must be empty
+   Effects:
+   • The robot arm is now holding block1
+   • Block2 is now clear
+   • Block1 is no longer clear or on block2
+   • The arm is no longer empty
+
+PLANNING CHALLENGE:
+-----------------
+The task in Blocksworld is to determine a sequence of these actions that transforms an initial configuration of blocks into a desired goal configuration. This requires reasoning about which blocks to move first, considering that you can only move blocks that are clear on top, and you need an empty arm to pick up blocks.
+
+This problem becomes exponentially more complex as the number of blocks increases, demonstrating how even seemingly simple domains can present significant challenges for automated planning.

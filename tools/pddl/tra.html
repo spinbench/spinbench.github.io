@@ -308,6 +308,14 @@
           <pre style="white-space: pre-wrap; font-family: 'Noto Sans', sans-serif; background-color: #f8f9fa; padding: 1rem; border-radius: 0.25rem;">No reasoning available yet.</pre>
         </div>
       </div>
+      
+      <!-- Domain Rules (after model reasoning) -->
+      <div id="domainRules" class="box mt-4 is-hidden">
+        <h3 class="title is-5">Domain Rules</h3>
+        <div class="content rules-content">
+          <pre style="white-space: pre-wrap; font-family: 'Noto Sans', sans-serif; background-color: #f8f9fa; padding: 1rem; border-radius: 0.25rem;">No rules available yet.</pre>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -403,6 +411,9 @@
       
       console.log(`Loading ${domain}/${model}/${problem}`);
       
+      // Load domain rules
+      loadDomainRules(domain, model, problem);
+      
       // GIF Mode
       if (viewMode === "gif") {
         // Construct exact path as specified
@@ -457,6 +468,38 @@
       }
     });
     
+    // Load domain rules
+    function loadDomainRules(domain, model, problem) {
+      // Path to domain rules
+      const rulesPath = `../../trajectories/PDDL/${domain}/rules.txt`;
+      
+      // Load the full rules directly
+      fetch(rulesPath)
+        .then(response => {
+          if (!response.ok) {
+            console.warn(`Rules file not found at: ${rulesPath}`);
+            return Promise.resolve("No rules available for this domain.");
+          }
+          return response.text();
+        })
+        .then(rulesText => {
+          // Store the rules text for later use
+          window.rulesContent = rulesText;
+          
+          // Update the rules display
+          document.getElementById('domainRules').classList.remove('is-hidden');
+          document.getElementById('domainRules').querySelector('pre').textContent = window.rulesContent;
+        })
+        .catch(error => {
+          console.error("Error loading rules:", error);
+          window.rulesContent = "Error loading rules for this domain.";
+          
+          // Update the rules display with error
+          document.getElementById('domainRules').classList.remove('is-hidden');
+          document.getElementById('domainRules').querySelector('pre').textContent = window.rulesContent;
+        });
+    }
+    
     // Load keyframes for step-by-step viewing
     function loadKeyframes(domain, model, problem) {
       document.getElementById('keyframeDisplay').innerHTML = `
@@ -474,14 +517,25 @@
       
       // Path to the reasoning text file
       const reasoningPath = `../../trajectories/PDDL/${domain}/${model}/${problem}/${problem}_reasoning.txt`;
-      console.log("Reasoning path:", reasoningPath);
       
-      // Load the reasoning text file
-      fetch(reasoningPath)
+      // Path to domain rules explanation
+      const rulesPath = `../../trajectories/PDDL/${domain}/${model}/${problem}/rules.txt`;
+      console.log("Reasoning path:", reasoningPath);
+      console.log("Rules path:", rulesPath);
+      
+      // First try to load the rules file
+      fetch(rulesPath)
         .then(response => {
           if (!response.ok) {
-            console.warn(`Reasoning file not found at: ${reasoningPath}`);
-            return Promise.resolve("No reasoning file available for this trajectory.");
+            // If rules file doesn't exist, try the regular reasoning file
+            return fetch(reasoningPath)
+              .then(reasoningResponse => {
+                if (!reasoningResponse.ok) {
+                  console.warn(`Reasoning file not found at: ${reasoningPath}`);
+                  return Promise.resolve("No reasoning file available for this trajectory.");
+                }
+                return reasoningResponse.text();
+              });
           }
           return response.text();
         })
@@ -516,6 +570,7 @@
             
             document.getElementById('stepIndicator').classList.remove('is-hidden');
             document.getElementById('modelReasoning').classList.remove('is-hidden');
+            document.getElementById('domainRules').classList.remove('is-hidden');
             document.getElementById('currentStep').textContent = currentIndex + 1;
             document.getElementById('totalSteps').textContent = trajectoryData.length;
             
@@ -525,8 +580,8 @@
           });
         })
         .catch(error => {
-          console.error("Error loading reasoning file:", error);
-          window.reasoningContent = "Error loading reasoning content.";
+          console.error("Error loading rule/reasoning files:", error);
+          window.reasoningContent = "Error loading rules or reasoning content.";
           
           // Continue with loading frames even if reasoning fails
           findTotalFrames(basePath, 0, function(totalFrames) {
@@ -555,6 +610,7 @@
             
             document.getElementById('stepIndicator').classList.remove('is-hidden');
             document.getElementById('modelReasoning').classList.remove('is-hidden');
+            document.getElementById('domainRules').classList.remove('is-hidden');
             document.getElementById('currentStep').textContent = currentIndex + 1;
             document.getElementById('totalSteps').textContent = trajectoryData.length;
             
