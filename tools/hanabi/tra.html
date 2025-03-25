@@ -434,9 +434,23 @@ Last
     
     // Create a visual representation of fireworks
     function renderFireworks(fireworks) {
-      if (!fireworks || Object.keys(fireworks).length === 0) {
+      if (!fireworks || typeof fireworks !== 'string') {
         return '<div class="notification is-light">No fireworks data available</div>';
       }
+      
+      console.log(fireworks); // e.g. "R1 Y0 G1 W0 B1"
+      
+      // Parse the string format into an object
+      const fireworksObj = {};
+      const parts = fireworks.trim().split(' ');
+      
+      parts.forEach(part => {
+        if (part.length >= 2) {
+          const color = part.charAt(0);
+          const level = parseInt(part.substring(1), 10) || 0;
+          fireworksObj[color] = level;
+        }
+      });
       
       // Define color information with names and CSS color values
       const colorMap = {
@@ -455,7 +469,7 @@ Last
       
       // Ensure all colors are displayed even if not in the data
       sortOrder.forEach(color => {
-        const level = fireworks[color] || 0;
+        const level = fireworksObj[color] || 0;
         const colorInfo = colorMap[color];
         
         html += `
@@ -471,7 +485,6 @@ Last
       html += '</div>';
       return html;
     }
-
 
     // Display a single state using the enhanced template
     function showState(index) {
