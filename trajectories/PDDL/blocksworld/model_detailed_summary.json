@@ -1,0 +1,815 @@
+{
+  "ranked_models": [
+    {
+      "model": "o1",
+      "overall_rank": 1,
+      "tasks_successful": 5,
+      "average_rank": 2.6,
+      "average_steps": 20.0,
+      "tasks_completed": [
+        "p03",
+        "p02",
+        "p01",
+        "p04",
+        "p05"
+      ],
+      "problem_rankings": {
+        "p03": {
+          "rank": 2,
+          "steps": 8,
+          "status": "goal_complete"
+        },
+        "p02": {
+          "rank": 2,
+          "steps": 18,
+          "status": "goal_complete"
+        },
+        "p01": {
+          "rank": 2,
+          "steps": 32,
+          "status": "goal_complete"
+        },
+        "p04": {
+          "rank": 3,
+          "steps": 22,
+          "status": "goal_complete"
+        },
+        "p05": {
+          "rank": 4,
+          "steps": 20,
+          "status": "goal_complete"
+        }
+      }
+    },
+    {
+      "model": "o3-mini",
+      "overall_rank": 2,
+      "tasks_successful": 5,
+      "average_rank": 3.8,
+      "average_steps": 21.6,
+      "tasks_completed": [
+        "p03",
+        "p02",
+        "p01",
+        "p04",
+        "p05"
+      ],
+      "problem_rankings": {
+        "p03": {
+          "rank": 4,
+          "steps": 10,
+          "status": "goal_complete"
+        },
+        "p02": {
+          "rank": 3,
+          "steps": 18,
+          "status": "goal_complete"
+        },
+        "p01": {
+          "rank": 3,
+          "steps": 32,
+          "status": "goal_complete"
+        },
+        "p04": {
+          "rank": 4,
+          "steps": 28,
+          "status": "goal_complete"
+        },
+        "p05": {
+          "rank": 5,
+          "steps": 20,
+          "status": "goal_complete"
+        }
+      }
+    },
+    {
+      "model": "claude-3-5-sonnet-20241022",
+      "overall_rank": 3,
+      "tasks_successful": 4,
+      "average_rank": 2.0,
+      "average_steps": 18.0,
+      "tasks_completed": [
+        "p03",
+        "p01",
+        "p04",
+        "p05"
+      ],
+      "problem_rankings": {
+        "p03": {
+          "rank": 3,
+          "steps": 10,
+          "status": "goal_complete"
+        },
+        "p02": {
+          "rank": 5,
+          "steps": 0,
+          "status": "error"
+        },
+        "p01": {
+          "rank": 1,
+          "steps": 22,
+          "status": "goal_complete"
+        },
+        "p04": {
+          "rank": 2,
+          "steps": 22,
+          "status": "goal_complete"
+        },
+        "p05": {
+          "rank": 2,
+          "steps": 18,
+          "status": "goal_complete"
+        }
+      }
+    },
+    {
+      "model": "DeepSeek-R1",
+      "overall_rank": 4,
+      "tasks_successful": 4,
+      "average_rank": 2.25,
+      "average_steps": 17.5,
+      "tasks_completed": [
+        "p03",
+        "p02",
+        "p04",
+        "p05"
+      ],
+      "problem_rankings": {
+        "p03": {
+          "rank": 1,
+          "steps": 8,
+          "status": "goal_complete"
+        },
+        "p02": {
+          "rank": 4,
+          "steps": 22,
+          "status": "goal_complete"
+        },
+        "p01": {
+          "rank": 4,
+          "steps": 0,
+          "status": "error"
+        },
+        "p04": {
+          "rank": 1,
+          "steps": 20,
+          "status": "goal_complete"
+        },
+        "p05": {
+          "rank": 3,
+          "steps": 20,
+          "status": "goal_complete"
+        }
+      }
+    },
+    {
+      "model": "gpt-4-turbo",
+      "overall_rank": 5,
+      "tasks_successful": 1,
+      "average_rank": 1.0,
+      "average_steps": 16.0,
+      "tasks_completed": [
+        "p02"
+      ],
+      "problem_rankings": {
+        "p03": {
+          "rank": 5,
+          "steps": 8,
+          "status": "goal_not_complete"
+        },
+        "p02": {
+          "rank": 1,
+          "steps": 16,
+          "status": "goal_complete"
+        },
+        "p01": {
+          "rank": 4,
+          "steps": 8,
+          "status": "goal_not_complete"
+        },
+        "p04": {
+          "rank": 5,
+          "steps": 0,
+          "status": "error"
+        },
+        "p05": {
+          "rank": 6,
+          "steps": 0,
+          "status": "error"
+        }
+      }
+    },
+    {
+      "model": "claude-3-5-haiku-20241022",
+      "overall_rank": 6,
+      "tasks_successful": 1,
+      "average_rank": 1.0,
+      "average_steps": 10.0,
+      "tasks_completed": [
+        "p05"
+      ],
+      "problem_rankings": {
+        "p03": {
+          "rank": 5,
+          "steps": 0,
+          "status": "error"
+        },
+        "p02": {
+          "rank": 5,
+          "steps": 0,
+          "status": "error"
+        },
+        "p01": {
+          "rank": 4,
+          "steps": 0,
+          "status": "error"
+        },
+        "p04": {
+          "rank": 5,
+          "steps": 0,
+          "status": "error"
+        },
+        "p05": {
+          "rank": 1,
+          "steps": 10,
+          "status": "goal_complete"
+        }
+      }
+    },
+    {
+      "model": "o1-mini",
+      "overall_rank": 7,
+      "tasks_successful": 0,
+      "average_rank": 9,
+      "average_steps": Infinity,
+      "tasks_completed": [],
+      "problem_rankings": {
+        "p03": {
+          "rank": 5,
+          "steps": 0,
+          "status": "error"
+        },
+        "p02": {
+          "rank": 5,
+          "steps": 0,
+          "status": "error"
+        },
+        "p01": {
+          "rank": 4,
+          "steps": 0,
+          "status": "error"
+        },
+        "p04": {
+          "rank": 5,
+          "steps": 0,
+          "status": "error"
+        },
+        "p05": {
+          "rank": 6,
+          "steps": 16,
+          "status": "goal_not_complete"
+        }
+      }
+    },
+    {
+      "model": "gpt-4o",
+      "overall_rank": 8,
+      "tasks_successful": 0,
+      "average_rank": 9,
+      "average_steps": Infinity,
+      "tasks_completed": [],
+      "problem_rankings": {
+        "p03": {
+          "rank": 5,
+          "steps": 0,
+          "status": "error"
+        },
+        "p02": {
+          "rank": 5,
+          "steps": 0,
+          "status": "error"
+        },
+        "p01": {
+          "rank": 4,
+          "steps": 0,
+          "status": "error"
+        },
+        "p04": {
+          "rank": 5,
+          "steps": 0,
+          "status": "error"
+        },
+        "p05": {
+          "rank": 6,
+          "steps": 0,
+          "status": "error"
+        }
+      }
+    }
+  ],
+  "total_tasks": 5,
+  "problem_rankings": {
+    "p03": [
+      {
+        "model": "DeepSeek-R1",
+        "rank": 1,
+        "steps": 8,
+        "status": "goal_complete"
+      },
+      {
+        "model": "o1",
+        "rank": 2,
+        "steps": 8,
+        "status": "goal_complete"
+      },
+      {
+        "model": "claude-3-5-sonnet-20241022",
+        "rank": 3,
+        "steps": 10,
+        "status": "goal_complete"
+      },
+      {
+        "model": "o3-mini",
+        "rank": 4,
+        "steps": 10,
+        "status": "goal_complete"
+      },
+      {
+        "model": "o1-mini",
+        "rank": 5,
+        "steps": 0,
+        "status": "error"
+      },
+      {
+        "model": "gpt-4o",
+        "rank": 5,
+        "steps": 0,
+        "status": "error"
+      },
+      {
+        "model": "gpt-4-turbo",
+        "rank": 5,
+        "steps": 8,
+        "status": "goal_not_complete"
+      },
+      {
+        "model": "claude-3-5-haiku-20241022",
+        "rank": 5,
+        "steps": 0,
+        "status": "error"
+      }
+    ],
+    "p02": [
+      {
+        "model": "gpt-4-turbo",
+        "rank": 1,
+        "steps": 16,
+        "status": "goal_complete"
+      },
+      {
+        "model": "o1",
+        "rank": 2,
+        "steps": 18,
+        "status": "goal_complete"
+      },
+      {
+        "model": "o3-mini",
+        "rank": 3,
+        "steps": 18,
+        "status": "goal_complete"
+      },
+      {
+        "model": "DeepSeek-R1",
+        "rank": 4,
+        "steps": 22,
+        "status": "goal_complete"
+      },
+      {
+        "model": "claude-3-5-sonnet-20241022",
+        "rank": 5,
+        "steps": 0,
+        "status": "error"
+      },
+      {
+        "model": "o1-mini",
+        "rank": 5,
+        "steps": 0,
+        "status": "error"
+      },
+      {
+        "model": "gpt-4o",
+        "rank": 5,
+        "steps": 0,
+        "status": "error"
+      },
+      {
+        "model": "claude-3-5-haiku-20241022",
+        "rank": 5,
+        "steps": 0,
+        "status": "error"
+      }
+    ],
+    "p01": [
+      {
+        "model": "claude-3-5-sonnet-20241022",
+        "rank": 1,
+        "steps": 22,
+        "status": "goal_complete"
+      },
+      {
+        "model": "o1",
+        "rank": 2,
+        "steps": 32,
+        "status": "goal_complete"
+      },
+      {
+        "model": "o3-mini",
+        "rank": 3,
+        "steps": 32,
+        "status": "goal_complete"
+      },
+      {
+        "model": "o1-mini",
+        "rank": 4,
+        "steps": 0,
+        "status": "error"
+      },
+      {
+        "model": "gpt-4o",
+        "rank": 4,
+        "steps": 0,
+        "status": "error"
+      },
+      {
+        "model": "DeepSeek-R1",
+        "rank": 4,
+        "steps": 0,
+        "status": "error"
+      },
+      {
+        "model": "gpt-4-turbo",
+        "rank": 4,
+        "steps": 8,
+        "status": "goal_not_complete"
+      },
+      {
+        "model": "claude-3-5-haiku-20241022",
+        "rank": 4,
+        "steps": 0,
+        "status": "error"
+      }
+    ],
+    "p04": [
+      {
+        "model": "DeepSeek-R1",
+        "rank": 1,
+        "steps": 20,
+        "status": "goal_complete"
+      },
+      {
+        "model": "claude-3-5-sonnet-20241022",
+        "rank": 2,
+        "steps": 22,
+        "status": "goal_complete"
+      },
+      {
+        "model": "o1",
+        "rank": 3,
+        "steps": 22,
+        "status": "goal_complete"
+      },
+      {
+        "model": "o3-mini",
+        "rank": 4,
+        "steps": 28,
+        "status": "goal_complete"
+      },
+      {
+        "model": "o1-mini",
+        "rank": 5,
+        "steps": 0,
+        "status": "error"
+      },
+      {
+        "model": "gpt-4o",
+        "rank": 5,
+        "steps": 0,
+        "status": "error"
+      },
+      {
+        "model": "gpt-4-turbo",
+        "rank": 5,
+        "steps": 0,
+        "status": "error"
+      },
+      {
+        "model": "claude-3-5-haiku-20241022",
+        "rank": 5,
+        "steps": 0,
+        "status": "error"
+      }
+    ],
+    "p05": [
+      {
+        "model": "claude-3-5-haiku-20241022",
+        "rank": 1,
+        "steps": 10,
+        "status": "goal_complete"
+      },
+      {
+        "model": "claude-3-5-sonnet-20241022",
+        "rank": 2,
+        "steps": 18,
+        "status": "goal_complete"
+      },
+      {
+        "model": "DeepSeek-R1",
+        "rank": 3,
+        "steps": 20,
+        "status": "goal_complete"
+      },
+      {
+        "model": "o1",
+        "rank": 4,
+        "steps": 20,
+        "status": "goal_complete"
+      },
+      {
+        "model": "o3-mini",
+        "rank": 5,
+        "steps": 20,
+        "status": "goal_complete"
+      },
+      {
+        "model": "o1-mini",
+        "rank": 6,
+        "steps": 16,
+        "status": "goal_not_complete"
+      },
+      {
+        "model": "gpt-4o",
+        "rank": 6,
+        "steps": 0,
+        "status": "error"
+      },
+      {
+        "model": "gpt-4-turbo",
+        "rank": 6,
+        "steps": 0,
+        "status": "error"
+      }
+    ]
+  },
+  "ranking_tables": {
+    "p03": [
+      {
+        "rank": 1,
+        "model": "DeepSeek-R1",
+        "steps": 8,
+        "status": "goal_complete"
+      },
+      {
+        "rank": 2,
+        "model": "o1",
+        "steps": 8,
+        "status": "goal_complete"
+      },
+      {
+        "rank": 3,
+        "model": "claude-3-5-sonnet-20241022",
+        "steps": 10,
+        "status": "goal_complete"
+      },
+      {
+        "rank": 4,
+        "model": "o3-mini",
+        "steps": 10,
+        "status": "goal_complete"
+      },
+      {
+        "rank": 5,
+        "model": "o1-mini",
+        "steps": 0,
+        "status": "error"
+      },
+      {
+        "rank": 6,
+        "model": "gpt-4o",
+        "steps": 0,
+        "status": "error"
+      },
+      {
+        "rank": 7,
+        "model": "gpt-4-turbo",
+        "steps": 8,
+        "status": "goal_not_complete"
+      },
+      {
+        "rank": 8,
+        "model": "claude-3-5-haiku-20241022",
+        "steps": 0,
+        "status": "error"
+      }
+    ],
+    "p02": [
+      {
+        "rank": 1,
+        "model": "gpt-4-turbo",
+        "steps": 16,
+        "status": "goal_complete"
+      },
+      {
+        "rank": 2,
+        "model": "o1",
+        "steps": 18,
+        "status": "goal_complete"
+      },
+      {
+        "rank": 3,
+        "model": "o3-mini",
+        "steps": 18,
+        "status": "goal_complete"
+      },
+      {
+        "rank": 4,
+        "model": "DeepSeek-R1",
+        "steps": 22,
+        "status": "goal_complete"
+      },
+      {
+        "rank": 5,
+        "model": "claude-3-5-sonnet-20241022",
+        "steps": 0,
+        "status": "error"
+      },
+      {
+        "rank": 6,
+        "model": "o1-mini",
+        "steps": 0,
+        "status": "error"
+      },
+      {
+        "rank": 7,
+        "model": "gpt-4o",
+        "steps": 0,
+        "status": "error"
+      },
+      {
+        "rank": 8,
+        "model": "claude-3-5-haiku-20241022",
+        "steps": 0,
+        "status": "error"
+      }
+    ],
+    "p01": [
+      {
+        "rank": 1,
+        "model": "claude-3-5-sonnet-20241022",
+        "steps": 22,
+        "status": "goal_complete"
+      },
+      {
+        "rank": 2,
+        "model": "o1",
+        "steps": 32,
+        "status": "goal_complete"
+      },
+      {
+        "rank": 3,
+        "model": "o3-mini",
+        "steps": 32,
+        "status": "goal_complete"
+      },
+      {
+        "rank": 4,
+        "model": "o1-mini",
+        "steps": 0,
+        "status": "error"
+      },
+      {
+        "rank": 5,
+        "model": "gpt-4o",
+        "steps": 0,
+        "status": "error"
+      },
+      {
+        "rank": 6,
+        "model": "DeepSeek-R1",
+        "steps": 0,
+        "status": "error"
+      },
+      {
+        "rank": 7,
+        "model": "gpt-4-turbo",
+        "steps": 8,
+        "status": "goal_not_complete"
+      },
+      {
+        "rank": 8,
+        "model": "claude-3-5-haiku-20241022",
+        "steps": 0,
+        "status": "error"
+      }
+    ],
+    "p04": [
+      {
+        "rank": 1,
+        "model": "DeepSeek-R1",
+        "steps": 20,
+        "status": "goal_complete"
+      },
+      {
+        "rank": 2,
+        "model": "claude-3-5-sonnet-20241022",
+        "steps": 22,
+        "status": "goal_complete"
+      },
+      {
+        "rank": 3,
+        "model": "o1",
+        "steps": 22,
+        "status": "goal_complete"
+      },
+      {
+        "rank": 4,
+        "model": "o3-mini",
+        "steps": 28,
+        "status": "goal_complete"
+      },
+      {
+        "rank": 5,
+        "model": "o1-mini",
+        "steps": 0,
+        "status": "error"
+      },
+      {
+        "rank": 6,
+        "model": "gpt-4o",
+        "steps": 0,
+        "status": "error"
+      },
+      {
+        "rank": 7,
+        "model": "gpt-4-turbo",
+        "steps": 0,
+        "status": "error"
+      },
+      {
+        "rank": 8,
+        "model": "claude-3-5-haiku-20241022",
+        "steps": 0,
+        "status": "error"
+      }
+    ],
+    "p05": [
+      {
+        "rank": 1,
+        "model": "claude-3-5-haiku-20241022",
+        "steps": 10,
+        "status": "goal_complete"
+      },
+      {
+        "rank": 2,
+        "model": "claude-3-5-sonnet-20241022",
+        "steps": 18,
+        "status": "goal_complete"
+      },
+      {
+        "rank": 3,
+        "model": "DeepSeek-R1",
+        "steps": 20,
+        "status": "goal_complete"
+      },
+      {
+        "rank": 4,
+        "model": "o1",
+        "steps": 20,
+        "status": "goal_complete"
+      },
+      {
+        "rank": 5,
+        "model": "o3-mini",
+        "steps": 20,
+        "status": "goal_complete"
+      },
+      {
+        "rank": 6,
+        "model": "o1-mini",
+        "steps": 16,
+        "status": "goal_not_complete"
+      },
+      {
+        "rank": 7,
+        "model": "gpt-4o",
+        "steps": 0,
+        "status": "error"
+      },
+      {
+        "rank": 8,
+        "model": "gpt-4-turbo",
+        "steps": 0,
+        "status": "error"
+      }
+    ]
+  }
+}

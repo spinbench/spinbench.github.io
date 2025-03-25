@@ -1,0 +1,84 @@
+SATELLITE DOMAIN EXPLANATION
+===========================
+
+TLDR: The Satellite domain models space observation missions where satellites equipped with various instruments must be maneuvered, powered up, calibrated, and used to take images of different celestial directions in specific modes. The challenge is to efficiently manage power constraints, calibration requirements, and satellite pointing to collect all required images.
+
+BASIC ELEMENTS:
+--------------
+- Satellites: Space vehicles that can point in different directions
+- Instruments: Tools mounted on satellites that take images
+- Directions: Celestial locations that can be observed
+- Modes: Different types of observations (infrared, spectrographic, etc.)
+
+BASIC PREDICATES (States):
+-------------------------
+- on_board(instrument, satellite): An instrument is installed on a satellite
+- supports(instrument, mode): An instrument can operate in a specific mode
+- pointing(satellite, direction): A satellite is aimed at a specific direction
+- power_avail(satellite): A satellite has power available for an instrument
+- power_on(instrument): An instrument is currently powered on
+- calibrated(instrument): An instrument is properly calibrated for use
+- have_image(direction, mode): We have obtained an image of a direction in a specific mode
+- calibration_target(instrument, direction): A direction can be used to calibrate an instrument
+
+AVAILABLE ACTIONS:
+----------------
+
+1. TURN_TO(satellite, new_direction, previous_direction)
+   Description: Reorient a satellite to point to a new direction
+   Preconditions:
+   • The satellite must be currently pointing at the previous direction
+   Effects:
+   • The satellite is now pointing at the new direction
+   • The satellite is no longer pointing at the previous direction
+
+2. SWITCH_ON(instrument, satellite)
+   Description: Power on an instrument on a satellite
+   Preconditions:
+   • The instrument must be on board the satellite
+   • The satellite must have power available
+   Effects:
+   • The instrument is now powered on
+   • The instrument is no longer calibrated (power-up disrupts calibration)
+   • The satellite no longer has power available (allocated to this instrument)
+
+3. SWITCH_OFF(instrument, satellite)
+   Description: Power off an instrument on a satellite
+   Preconditions:
+   • The instrument must be on board the satellite
+   • The instrument must be currently powered on
+   Effects:
+   • The instrument is no longer powered on
+   • The satellite now has power available
+
+4. CALIBRATE(satellite, instrument, direction)
+   Description: Calibrate an instrument using a calibration target
+   Preconditions:
+   • The instrument must be on board the satellite
+   • The direction must be a calibration target for this instrument
+   • The satellite must be pointing at the direction
+   • The instrument must be powered on
+   Effects:
+   • The instrument is now calibrated
+
+5. TAKE_IMAGE(satellite, direction, instrument, mode)
+   Description: Use a calibrated instrument to take an image
+   Preconditions:
+   • The instrument must be properly calibrated
+   • The instrument must be on board the satellite
+   • The instrument must support the required mode
+   • The instrument must be powered on
+   • The satellite must be pointing at the target direction
+   Effects:
+   • We now have an image of the direction in the specified mode
+
+PLANNING CHALLENGE:
+-----------------
+The task in the Satellite domain is to collect a set of images of specific directions in specific modes. This requires coordinating multiple satellites, each with different instruments, to:
+
+1. Point satellites at appropriate directions
+2. Manage power constraints (only one instrument can be on per satellite)
+3. Calibrate instruments by pointing at their calibration targets
+4. Take images in the required modes
+
+The complexity comes from finding efficient sequences that minimize the number of operations (particularly satellite reorientations, which are time-consuming). The planner must decide which satellite should take which image, how to sequence the observations, and how to handle the power and calibration constraints.

@@ -1,0 +1,110 @@
+ELEVATORS DOMAIN EXPLANATION
+===========================
+
+TLDR: The Elevators domain models a building with multiple floors and different types of elevators (fast and slow) that must transport passengers to their destination floors. The challenge is to determine the optimal sequence of elevator movements and passenger boarding/leaving to efficiently deliver all passengers while minimizing travel costs.
+
+BASIC ELEMENTS:
+--------------
+- Elevators: Two types (slow and fast) with different travel costs
+- Passengers: People who need to be transported between floors
+- Floors: Locations in the building (represented by count objects)
+- Capacity: Each elevator can hold a limited number of passengers
+
+BASIC PREDICATES (States):
+-------------------------
+- passenger-at(person, floor): A passenger is at a specific floor
+- boarded(person, elevator): A passenger is inside an elevator
+- lift-at(elevator, floor): An elevator is at a specific floor
+- reachable-floor(elevator, floor): An elevator can travel to a specific floor
+- above(floor1, floor2): Floor1 is above Floor2 (floor relationship)
+- passengers(elevator, n): The elevator contains n passengers
+- can-hold(elevator, n): The elevator has capacity for n passengers
+- next(n1, n2): n2 is one more than n1 (used for counting passengers)
+
+COST FUNCTIONS:
+-------------
+- travel-slow(floor1, floor2): Cost of moving a slow elevator between floors
+- travel-fast(floor1, floor2): Cost of moving a fast elevator between floors
+- total-cost: The cumulative cost of all actions in the plan
+
+AVAILABLE ACTIONS:
+----------------
+
+1. MOVE-UP-SLOW(elevator, floor1, floor2)
+   Description: Move a slow elevator upward from floor1 to floor2
+   Preconditions:
+   • The elevator must be at floor1
+   • floor1 must be above floor2
+   • floor2 must be reachable by this elevator
+   Effects:
+   • The elevator is now at floor2
+   • The elevator is no longer at floor1
+   • The total cost increases by the travel cost
+
+2. MOVE-DOWN-SLOW(elevator, floor1, floor2)
+   Description: Move a slow elevator downward from floor1 to floor2
+   Preconditions:
+   • The elevator must be at floor1
+   • floor2 must be above floor1
+   • floor2 must be reachable by this elevator
+   Effects:
+   • The elevator is now at floor2
+   • The elevator is no longer at floor1
+   • The total cost increases by the travel cost
+
+3. MOVE-UP-FAST(elevator, floor1, floor2)
+   Description: Move a fast elevator upward from floor1 to floor2
+   Preconditions:
+   • The elevator must be at floor1
+   • floor1 must be above floor2
+   • floor2 must be reachable by this elevator
+   Effects:
+   • The elevator is now at floor2
+   • The elevator is no longer at floor1
+   • The total cost increases by the travel cost (less than slow elevator)
+
+4. MOVE-DOWN-FAST(elevator, floor1, floor2)
+   Description: Move a fast elevator downward from floor1 to floor2
+   Preconditions:
+   • The elevator must be at floor1
+   • floor2 must be above floor1
+   • floor2 must be reachable by this elevator
+   Effects:
+   • The elevator is now at floor2
+   • The elevator is no longer at floor1
+   • The total cost increases by the travel cost (less than slow elevator)
+
+5. BOARD(passenger, elevator, floor, n1, n2)
+   Description: A passenger enters an elevator at a floor
+   Preconditions:
+   • The elevator must be at the same floor as the passenger
+   • The elevator currently has n1 passengers
+   • n2 is one more than n1 (next relationship)
+   • The elevator must have capacity for n2 passengers
+   Effects:
+   • The passenger is no longer at the floor
+   • The passenger is now boarded on the elevator
+   • The elevator now has n2 passengers instead of n1
+
+6. LEAVE(passenger, elevator, floor, n1, n2)
+   Description: A passenger exits an elevator at a floor
+   Preconditions:
+   • The elevator must be at the floor
+   • The passenger must be boarded on the elevator
+   • The elevator currently has n1 passengers
+   • n2 is one less than n1 (next relationship)
+   Effects:
+   • The passenger is now at the floor
+   • The passenger is no longer boarded on the elevator
+   • The elevator now has n2 passengers instead of n1
+
+PLANNING CHALLENGE:
+-----------------
+The task in the Elevators domain is to transport all passengers from their initial floors to their destination floors using the available elevators. The planner must decide:
+
+1. Which elevator should pick up each passenger
+2. How to efficiently route the elevators between floors
+3. When to board and unboard passengers
+4. How to manage elevator capacity constraints
+
+The optimal solution minimizes the total travel cost, which is lower for fast elevators but may require more complex coordination. The challenge increases with the number of passengers, floors, and elevators, requiring significant planning to find the most efficient solution.
