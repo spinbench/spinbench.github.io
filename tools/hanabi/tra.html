@@ -508,7 +508,8 @@ Last
       
       let this_action = null;
       for (const action of state.legal_actions || []) {
-        if (action.index === state.player_response.action) {
+        console.log(action.index, state.player_response.action);
+        if (parseInt(action.index, 10) === parseInt(state.player_response.action, 10)) {
           this_action = action;
           break;
         }
