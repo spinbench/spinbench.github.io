@@ -62,6 +62,7 @@
     </h4>
     <ul class="toc-list">
       <li><a href="#introduction">Introduction</a></li>
+      <li><a href="#rankings">Model Rankings</a></li>
       <li><a href="#framework">Framework</a></li>
       <li><a href="#game-trajectory">Game Trajectory Visualization</a></li>
       <li><a href="#solver-trajectories">LLM vs Solver Game Trajectories</a></li>
@@ -253,7 +254,44 @@
       </div>
     </div>
   </section>
-  <!--/ Introduction -->
+
+  <!-- Rankings Section -->
+  <section class="section" id="rankings">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Model Rankings</h2>
+          <div class="content has-text-justified">
+            <p>
+              We evaluate the performance of various large language models across planning tasks, competitive games, and collaborative scenarios. Here are the top-performing models based on our comprehensive evaluation:
+            </p>
+            
+            <table id="index-rankings-table" class="table is-striped is-fullwidth">
+              <thead>
+                <tr>
+                  <th>Rank</th>
+                  <th>Model</th>
+                  <th>Planning avg</th>
+                  <th>Competitive avg</th>
+                  <th>Collaborative avg</th>
+                  <th>Average Score</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- This will be populated by JavaScript -->
+              </tbody>
+            </table>
+            
+            <div class="has-text-centered mt-4">
+              <a href="rankings.html" class="button is-link">
+                <span>View Full Rankings</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Game Trajectory Visualization -->
   <section class="section" id="game-trajectory">
@@ -676,4 +714,75 @@
   <button onclick="topFunction()" id="topButton" title="Go to top">
     <i class="fas fa-arrow-up"></i>
   </button>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Model data for rankings
+      const modelData = [
+        { rank: 1, model: "o1", planning: "58.59%", competitive: "39.80%", collaborative: "15.05%", average: "49.80%" },
+        { rank: 2, model: "o4-mini", planning: "46.79%", competitive: "42.32%", collaborative: "12.40%", average: "45.7%" },
+        { rank: 3, model: "DeepSeek R1", planning: "44.30%", competitive: "27.34%", collaborative: "11.58%", average: "36.60%" },
+        { rank: 4, model: "Claude 3.5 Sonnet", planning: "20.55%", competitive: "37.68%", collaborative: "8.35%", average: "34.30%" },
+        { rank: 5, model: "o3-mini", planning: "51.25%", competitive: "29.40%", collaborative: "8.30%", average: "33.10%" },
+        { rank: 6, model: "o1-mini", planning: "13.20%", competitive: "34.70%", collaborative: "8.95%", average: "33.00%" },
+        { rank: 7, model: "GPT-4-turbo", planning: "5.62%", competitive: "36.50%", collaborative: "5.45%", average: "27.50%" },
+        { rank: 8, model: "GPT-4o", planning: "8.75%", competitive: "23.26%", collaborative: "5.20%", average: "20.80%" },
+        { rank: 9, model: "Claude 3.5 Haiku", planning: "4.22%", competitive: "31.10%", collaborative: "3.00%", average: "20.80%" },
+        { rank: 10, model: "llama4-Maverick", planning: "13.05%", competitive: "25.34%", collaborative: "4.30%", average: "20.9%" },
+        { rank: 11, model: "Llama-3.3-70b", planning: "5.78%", competitive: "20.98%", collaborative: "1.30%", average: "13.10%" }
+      ];
+      
+      // Sort data by average score descending
+      modelData.sort((a, b) => {
+        return parseFloat(b.average) - parseFloat(a.average);
+      });
+      
+      // Find maximum scores for each metric
+      const maxPlanning = Math.max(...modelData.map(model => parseFloat(model.planning)));
+      const maxCompetitive = Math.max(...modelData.map(model => parseFloat(model.competitive)));
+      const maxCollaborative = Math.max(...modelData.map(model => parseFloat(model.collaborative)));
+      const maxAverage = Math.max(...modelData.map(model => parseFloat(model.average)));
+      
+      // Populate the index table with top 5 models
+      const indexTable = document.getElementById('index-rankings-table');
+      if (indexTable) {
+        const tbody = indexTable.querySelector('tbody');
+        
+        // Clear existing rows
+        tbody.innerHTML = '';
+        
+        // Add style for highlighted cells
+        const style = document.createElement('style');
+        style.textContent = `
+          .highlight-best {
+            background-color: rgba(72, 199, 255, 0.2);
+            font-weight: bold;
+          }
+        `;
+        document.head.appendChild(style);
+        
+        // Add top 5 models
+        modelData.slice(0, 5).forEach(model => {
+          const row = document.createElement('tr');
+          
+          // Clean values by removing percentage signs
+          const planningVal = parseFloat(model.planning);
+          const competitiveVal = parseFloat(model.competitive);
+          const collaborativeVal = parseFloat(model.collaborative);
+          const averageVal = parseFloat(model.average);
+          
+          // Create row with highlighting
+          row.innerHTML = `
+            <td>${model.rank}</td>
+            <td><code>${model.model}</code></td>
+            <td class="${planningVal === maxPlanning ? 'highlight-best' : ''}">${model.planning.replace('%', '')}</td>
+            <td class="${competitiveVal === maxCompetitive ? 'highlight-best' : ''}">${model.competitive.replace('%', '')}</td>
+            <td class="${collaborativeVal === maxCollaborative ? 'highlight-best' : ''}">${model.collaborative.replace('%', '')}</td>
+            <td class="${averageVal === maxAverage ? 'highlight-best' : ''}">${model.average.replace('%', '')}</td>
+          `;
+          tbody.appendChild(row);
+        });
+      }
+    });
+  </script>
 </html>
