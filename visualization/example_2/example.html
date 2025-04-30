@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>SPIN-Bench: Tic Tac Toe</title>
+    
+    <!-- Reuse styles from template -->
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/css/bulma.min.css">
+    <link rel="stylesheet" href="../../static/css/fontawesome.all.min.css">
+
+    <!-- Add Prism.js for syntax highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css">
+    
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Noto Sans', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f7fa;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Google Sans', sans-serif;
+            margin-top: 20px;
+            margin-bottom: 15px;
+        }
+        h1 {
+            font-size: 2.4rem;
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        h2 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 10px;
+        }
+        .top-sections-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .game-intro-section,
+        .game-setting-section {
+            flex: 1;
+            min-width: 320px;
+            padding: 0 15px;
+            margin: 0;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .game-intro-section {
+            background-color: #f0f8ff;
+        }
+        .game-setting-section {
+            background-color: #f5fffa;
+        }
+        .game-intro-badge,
+        .game-setting-badge {
+            display: inline-block;
+            padding: 8px 15px;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .game-intro-badge {
+            background-color: #3498db;
+        }
+        .game-setting-badge {
+            background-color: #2ecc71;
+        }
+        .image-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .image-container img {
+            max-width: 100%;
+            max-height: 300px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .details {
+            margin-top: 15px;
+        }
+        .details p {
+            margin-bottom: 10px;
+        }
+        .steps-badge {
+            display: inline-block;
+            background-color: #9b59b6;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+        .button-legend {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+        .legend-dot {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 5px;
+        }
+        .legend-dot.llm-solver {
+            background-color: #3498db;
+        }
+        .legend-dot.llm-llm {
+            background-color: #e74c3c;
+        }
+        .legend-dot.metrics {
+            background-color: #f39c12;
+        }
+        .legend-text {
+            font-size: 0.9rem;
+            margin-right: 15px;
+        }
+        .steps-container {
+            display: flex;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .steps-buttons {
+            flex: 0 0 300px;
+            background-color: #f5f7fa;
+            padding: 20px;
+            border-right: 1px solid #eaeaea;
+        }
+        .step-button {
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #f8f9fa;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .step-button:hover {
+            background-color: #e9ecef;
+        }
+        .step-button.active {
+            background-color: #007bff;
+            color: white;
+        }
+        .step-button.llm-solver {
+            border-left: 5px solid #3498db;
+        }
+        .step-button.llm-llm {
+            border-left: 5px solid #e74c3c;
+        }
+        .step-button.metrics {
+            border-left: 5px solid #f39c12;
+        }
+        .step-content {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            max-height: 600px;
+        }
+        .step-content h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .step-content p {
+            margin-bottom: 15px;
+        }
+        .step-content ul, .step-content ol {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        .step-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .step-content table th, 
+        .step-content table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        .step-content table th {
+            background-color: #f8f9fa;
+        }
+        .step-content table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        .performance-chart {
+            width: 100%;
+            height: 300px;
+            background-color: #f8f9fa;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .tic-tac-toe-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(3, 100px);
+            gap: 5px;
+            margin: 30px auto;
+            width: 310px;
+        }
+        .tic-tac-toe-cell {
+            width: 100px;
+            height: 100px;
+            background-color: #f8f9fa;
+            border: 2px solid #ddd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 48px;
+            font-weight: bold;
+        }
+        .model-comparison {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .model-card {
+            flex: 1;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+            margin: 0 10px;
+            text-align: center;
+        }
+        .model-card h4 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .model-card-highlight {
+            background-color: #e8f4fd;
+            border: 1px solid #bed6e3;
+        }
+        code {
+            background-color: #f8f9fa;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+    </style>
+
+    <!-- Custom JS -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="../../static/js/example.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Tic Tac Toe: Competitive Game</h1>
+        
+        <!-- Wrap sections in new container -->
+        <div class="top-sections-wrapper">
+            <!-- Game Introduction Section -->
+            <div class="game-intro-section">
+                <h3 class="game-intro-badge">Game Introduction</h3>
+                <div class="image-container">
+                    <img src="../../trajectories/llmllm/ttt/Claude-3.5-Haiku_Claude-3.5-Sonnet/6.png" alt="Tic Tac Toe game board" />
+                </div>
+                <div class="details">
+                    <p><strong>Game:</strong> Tic Tac Toe</p>
+                    <p><strong>Complexity:</strong> Low (Simplest setting in SPIN-Bench)</p>
+                    <p><strong>Description:</strong> A classic two-player game played on a 3x3 grid. Players take turns marking spaces with X or O, aiming to align three marks horizontally, vertically, or diagonally.</p>
+                    <p><strong>Purpose:</strong> Evaluates LLMs' ability to understand basic rules and strategy in competitive settings.</p>
+                </div>
+            </div>
+            
+            <!-- Game Setting Section -->
+            <div class="game-setting-section">
+                <h3 class="game-setting-badge">Game Settings</h3>
+                <div class="details">
+                    <p><strong>Settings:</strong> Two primary configurations are used to evaluate LLM performance:</p>
+                    <ol>
+                        1. <strong>LLM-vs-Solver:</strong> LLMs play against a Minimax algorithm-based solver that determines optimal moves by recursively evaluating all possible game states.
+                        <br>
+                        2. <strong>LLM-vs-LLM:</strong> Different LLM models compete against each other (14 models total, 91 game pairs, 10 games per pair, position switched after half).
+                    </ol>
+                    <br>
+                    <p><strong>Evaluation Metrics:</strong></p>
+                    <ul>
+                        1. Internal Elo ratings (relative performance between models)<br>
+                        2. Step-wise evaluation using solver-generated move scores<br>
+                        3. Illegal Move Lost Rate (IML %)<br>
+                        4. Illegal Moves per Total Turns (IMT %)<br>
+                    </ul><br>
+                    <p><strong>Models Evaluated:</strong> GPT-4o, Claude 3.5 Sonnet, o1, o1-preview, o1-mini, o3-mini, DeepSeek-R1, Llama3.3-70b, Claude 3.5 Haiku, Qwen2.5-72b, Llama3.1-70b, GPT-4o-mini, GPT-4-turbo, Llama3-70b, Mistral-7b, Llama3.2-3b, GPT-3.5-turbo</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Steps Section -->
+        <h3 class="steps-badge">Game Setup and Metrics</h3>
+
+        <div class="button-legend">
+            <div class="legend-item">
+                <span class="legend-dot llm-solver"></span>
+                <span class="legend-text">LLM-vs-Solver</span>
+                <span class="legend-dot llm-llm"></span>
+                <span class="legend-text">LLM-vs-LLM</span>
+                <span class="legend-dot metrics"></span>
+                <span class="legend-text">Performance Metrics</span>
+            </div>
+        </div>
+
+        <div class="steps-container">
+            <div class="steps-buttons">
+                <button class="step-button llm-solver" data-step="game-overview">Game Overview</button>
+                <br>
+                <button class="step-button llm-solver" data-step="llm-solver-setup">LLM-vs-Solver Setup</button>
+                <br>
+                <button class="step-button llm-llm" data-step="llm-llm-setup">LLM-vs-LLM Setup</button>
+                <br>
+                <button class="step-button metrics" data-step="elo-ratings">Elo Ratings</button>
+                <button class="step-button metrics" data-step="illegal-moves">Illegal Move Analysis</button>
+                <button class="step-button metrics" data-step="stepwise-evaluation">Step-wise Evaluation</button>
+            </div>
+            <div class="step-content">
+                <!-- Default content -->
+                <h3>Select a section to view details</h3>
+                <p>Click on any button from the left panel to view detailed information about Tic Tac Toe game analysis in SPIN-Bench.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Step content data
+        let stepContentTTT = {
+            'game-overview': `
+                <h3>Tic Tac Toe Game in SPIN-Bench</h3>
+                <p>Tic Tac Toe serves as the simplest competitive game setting in SPIN-Bench, designed to evaluate basic strategic reasoning capabilities of large language models (LLMs). Despite its simplicity, the game requires fundamental understanding of rules, turn-taking, and basic adversarial planning.</p>
+                
+                <h4>Game Rules</h4>
+                <ul>
+                    <li>Two players take turns marking spaces on a 3×3 grid</li>
+                    <li>One player uses "X", the other uses "O"</li>
+                    <li>The first player to align three marks horizontally, vertically, or diagonally wins</li>
+                    <li>If all spaces are filled without a winner, the game ends in a draw</li>
+                </ul>
+                
+                <h4>Game Complexity</h4>
+                <ul>
+                    <li><strong>State space complexity:</strong> 3^9 ≈ 19,683 possible board configurations</li>
+                    <li><strong>Game tree complexity:</strong> ≈ 26,830 possible games</li>
+                    <li><strong>Branching factor:</strong> Decreases as game progresses (9 → 8 → 7 → ... → 1)</li>
+                    <li><strong>Solved game:</strong> Perfect play by both players leads to a draw</li>
+                </ul>
+                
+                <div class="tic-tac-toe-grid">
+                    <div class="tic-tac-toe-cell">X</div>
+                    <div class="tic-tac-toe-cell">O</div>
+                    <div class="tic-tac-toe-cell">X</div>
+                    <div class="tic-tac-toe-cell">X</div>
+                    <div class="tic-tac-toe-cell">O</div>
+                    <div class="tic-tac-toe-cell"></div>
+                    <div class="tic-tac-toe-cell">O</div>
+                    <div class="tic-tac-toe-cell"></div>
+                    <div class="tic-tac-toe-cell">X</div>
+                </div>
+                
+                <p>While Tic Tac Toe is simple for humans to master, it serves as an important baseline to evaluate whether LLMs can:</p>
+                <ul>
+                    <li>Understand and follow game rules consistently</li>
+                    <li>Recognize winning patterns and blocking strategies</li>
+                    <li>Plan basic moves that consider both offensive and defensive play</li>
+                    <li>Avoid making illegal moves</li>
+                </ul>
+            `,
+            'llm-solver-setup': `
+                <h3>LLM-vs-Solver Setup</h3>
+                <p>In this evaluation setting, language models play against a Minimax-based perfect solver that never loses. This provides a standardized benchmark to assess LLM performance against optimal play.</p>
+                
+                <h4>Solver Implementation</h4>
+                <p>The Minimax solver:</p>
+                <ul>
+                    <li>Recursively evaluates all possible game states</li>
+                    <li>Checks if the game has ended in a win or draw</li>
+                    <li>Explores all legal moves, simulating outcomes by alternating between maximizing 'X' scores and minimizing 'O' scores</li>
+                    <li>Selects the optimal move (randomly chosen from moves with the highest values)</li>
+                    <li>Guarantees perfect play - cannot lose, only win or draw</li>
+                </ul>
+                
+                <h4>Evaluation Protocol</h4>
+                <ul>
+                    <li>Each LLM plays multiple games against the solver</li>
+                    <li>LLMs alternate between playing as 'X' (first player) and 'O' (second player)</li>
+                    <li>All legal moves are provided to the LLM at each turn</li>
+                    <li>Game outcomes (win/loss/draw) are recorded</li>
+                    <li>Move quality is assessed by comparing LLM moves to optimal solver moves</li>
+                    <li>Illegal moves are tracked and counted</li>
+                </ul>
+                
+                <h4>Models Evaluated</h4>
+                <div class="model-comparison">
+                    <div class="model-card">
+                        <h4>Open Models</h4>
+                        <ul>
+                            <li>DeepSeek-R1</li>
+                            <li>Llama3.3-70b</li>
+                            <li>Llama3.2-3b</li>
+                            <li>Llama3.1-70b</li>
+                            <li>Llama3-70b</li>
+                            <li>Qwen2.5-72b</li>
+                        </ul>
+                    </div>
+                    <div class="model-card">
+                        <h4>OpenAI Models</h4>
+                        <ul>
+                            <li>o1</li>
+                            <li>o1-mini</li>
+                            <li>o3-mini</li>
+                            <li>GPT-4o</li>
+                            <li>GPT-4-turbo</li>
+                            <li>GPT-4o-mini</li>
+                            <li>GPT-3.5-turbo</li>
+                        </ul>
+                    </div>
+                    <div class="model-card">
+                        <h4>Anthropic Models</h4>
+                        <ul>
+                            <li>Claude 3.5 Sonnet</li>
+                            <li>Claude 3.5 Haiku</li>
+                        </ul>
+                    </div>
+                </div>
+            `,
+            'llm-llm-setup': `
+                <h3>LLM-vs-LLM Setup</h3>
+                <p>The LLM-vs-LLM evaluation setting pits different language models against each other to assess relative strategic capabilities in a competitive environment.</p>
+                
+                <h4>Evaluation Protocol</h4>
+                <ul>
+                    <li>14 models tested, forming 91 unique model pairs</li>
+                    <li>10 games played for each pair (5 with each model playing first)</li>
+                    <li>Players alternate positions (X and O) after half of the competitions</li>
+                    <li>No external guidance or move suggestions provided</li>
+                    <li>Full game history maintained in context for each match</li>
+                    <li>Elo ratings calculated based on match outcomes</li>
+                </ul>
+                
+                <h4>Tournament Structure</h4>
+                <p>The round-robin tournament structure ensures each model faces every other model, controlling for position advantage by having each model play both as X and O.</p>
+                
+                <h4>Human Baseline</h4>
+                <p>To provide context for model performance, human players also participated in matches against the LLMs and participate in the leaderboard.</p>
+                
+                <h4>Analysis Focus</h4>
+                <ul>
+                    <li>Relative performance between different LLMs</li>
+                    <li>Performance gap between open and closed-source models</li>
+                    <li>Comparison to human players</li>
+                    <li>Consistency of play and strategic understanding</li>
+                    <li>Correlation between model size/architecture and game performance</li>
+                </ul>
+            `,
+            'elo-ratings': `
+                <h3>Elo Ratings</h3>
+                <p>Elo ratings provide a standardized way to measure relative performance across all models in the tournament. These internal Elo ratings are calculated based on match outcomes, with ratings updated after each game.</p>
+                <p>Elo ratings demonstrate that while LLMs have made impressive progress in strategic reasoning, there remains a measurable gap between the best models and expert human play in even this simplest competitive game setting.</p>
+            `,
+            'illegal-moves': `
+                <h3>Illegal Move Analysis</h3>
+                <p>An important aspect of evaluating LLMs in game settings is assessing their ability to follow game rules consistently. This analysis tracks how often models make illegal moves despite being provided with the list of legal moves.</p>
+                
+                <h4>Illegal Move Metrics</h4>
+                <ul>
+                    <li><strong>Illegal Move Lost Rate (IML) (%):</strong> Percentage of games lost due to illegal moves</li>
+                    <li><strong>Illegal Moves per Total Turns (IMT) (%):</strong> Percentage of all turns where illegal moves were made</li>
+                </ul>
+                
+                <p>A game is considered lost if a model makes 10 consecutive illegal moves in a single turn.</p>
+                
+                <p>This analysis demonstrates that rule comprehension and adherence is a valuable indicator of model quality, even in simple game environments.</p>
+            `,
+            'stepwise-evaluation': `
+                <h3>Step-wise Evaluation</h3>
+                <p>To assess the quality of each move generated by LLMs, we compare it against the optimal move derived from the Minimax solver and then assign a top-k move index to the LLM's action. Then we investigate the frequency distribution of top move indices for different models to compare.</p>
+                
+                <p>The step-wise evaluation reveals that while LLMs have strong general game understanding, they still lack the perfect tactical awareness that characterizes optimal play.</p>
+            `,
+        };
+
+        // Handle button clicks
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.step-button').forEach(button => {
+                button.addEventListener('click', () => {
+                    // Toggle active state
+                    document.querySelectorAll('.step-button').forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    button.classList.add('active');
+
+                    // Show content
+                    const stepId = button.dataset.step;
+                    const contentDiv = document.querySelector('.step-content');
+                    contentDiv.innerHTML = stepContentTTT[stepId] || '<h3>Content coming soon...</h3><p>This section is under development. Please check back later.</p>';
+                });
+            });
+
+            // Trigger first button click automatically
+            const firstButton = document.querySelector('.step-button');
+            if (firstButton) {
+                firstButton.click();
+            }
+        });
+    </script>
+</body>
+</html>

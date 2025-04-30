@@ -1,0 +1,50 @@
+[
+    {
+        "index": 0,
+        "turn": "None",
+        "turn_index": 0,
+        "reason": "None",
+        "action": "None",
+        "image_path": "0.png"
+    },
+    {
+        "index": 1,
+        "turn": "our_solver",
+        "turn_index": 0,
+        "reason": "solver/human",
+        "action": 5,
+        "image_path": "1.png"
+    },
+    {
+        "index": 2,
+        "turn": "GPT-3.5-turbo",
+        "turn_index": 1,
+        "reason": "Placing my mark in cell 2 forms a winning diagonal line from top right to bottom left.",
+        "action": 2,
+        "image_path": "2.png"
+    },
+    {
+        "index": 3,
+        "turn": "our_solver",
+        "turn_index": 0,
+        "reason": "solver/human",
+        "action": 4,
+        "image_path": "3.png"
+    },
+    {
+        "index": 4,
+        "turn": "GPT-3.5-turbo",
+        "turn_index": 1,
+        "reason": "I will place my mark at index 8 to win the game. By placing 'O' in this cell, I will complete a diagonal line from the bottom left corner to the top right corner, securing my victory.",
+        "action": 8,
+        "image_path": "4.png"
+    },
+    {
+        "index": 5,
+        "turn": "our_solver",
+        "turn_index": 0,
+        "reason": "solver/human",
+        "action": 3,
+        "image_path": "5.png"
+    }
+]
